@@ -26,5 +26,4 @@ _Empty. Notes arrive here as `/process-inbox` promotes capture, or when you add 
 
 ## Code repos
 
-- `payoff-project` — payoff diagrams for option structures, at `D:\Convex Hedge\payoff-project`
-- _Platform repo — access pending._
+Listed in the contract, [CLAUDE.md](CLAUDE.md).
