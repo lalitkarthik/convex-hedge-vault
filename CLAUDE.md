@@ -12,7 +12,9 @@ Code truth lives in the code repos and stays there. Reference it with a **pointe
 
 > Data caveats: `payoff-project/docs/data-quality.md`
 
-Linked repos: - `payoff-project` — payoff diagrams for option structures, at `D:\Convex Hedge\payoff-project`
+Linked repos:
+
+- `payoff-project` — payoff diagrams for option structures, at `D:\Convex Hedge\payoff-project`
 - _Platform repo — access pending._
 
 ## Note types
