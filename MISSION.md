@@ -1,6 +1,6 @@
 # Mission: Convex Hedge
 
-<!-- Stub. Run the teach skill in this vault to fill it in by interview, then delete this comment. -->
+<!-- Why this vault exists. Not a teach mission: those live one per folder under teach/. -->
 
 ## Why
 
@@ -8,12 +8,12 @@ Understand Convex Hedge's options-trading platform and its data well enough to b
 
 ## Success looks like
 
-- _To be defined with the teach skill._
+- _To be filled in._
 
 ## Constraints
 
-- _To be defined with the teach skill._
+- _To be filled in._
 
 ## Out of scope
 
-- _To be defined with the teach skill._
+- _To be filled in._

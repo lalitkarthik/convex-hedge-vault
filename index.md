@@ -17,6 +17,7 @@ _Empty. Notes arrive here as `/process-inbox` promotes capture, or when you add 
 - [RESOURCES.md](RESOURCES.md) — trusted sources
 - [NOTES.md](NOTES.md) — working scratch for the teach skill
 - [learning-records/](learning-records/) — what I understand, in order
+- [teach/](teach/) — teach-skill workspaces, one folder per topic
 - [session-log.md](session-log.md) — decisions and open questions
 
 ## Capture

@@ -27,7 +27,8 @@ Linked repos:
 | `domain/` | One concept per file — the canonical answer. | Human and Claude, on request |
 | `index.md` | Curated links and status. A map, never content. | Claude keeps current |
 | `GLOSSARY.md` | Canonical terms for Convex Hedge. | Claude, updated in place |
-| `MISSION.md`, `RESOURCES.md`, `NOTES.md`, `learning-records/` | teach-skill workspace. | teach skill |
+| `MISSION.md`, `RESOURCES.md`, `NOTES.md`, `learning-records/` | Why this vault exists, its sources, and what you now understand. | Human and Claude |
+| `teach/<topic>/` | One teach-skill workspace per topic about their system. Never the vault root. | teach skill |
 | `session-log.md` | Decisions and open questions. | Claude, appended each session |
 
 ## Rules
