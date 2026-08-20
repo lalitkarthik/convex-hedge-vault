@@ -23,6 +23,7 @@ _Empty. Notes arrive here as `/process-inbox` promotes capture, or when you add 
 
 - [inbox/](inbox/) — daily capture, staging only
 - [meetings/](meetings/) — dated record of what was said
+- [sources/](sources/) — their documents, kept off GitHub
 
 ## Code repos
 

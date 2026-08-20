@@ -2,3 +2,5 @@
 .obsidian/workspace-mobile.json
 .obsidian/graph.json
 .trash/
+sources/*
+!sources/.gitkeep

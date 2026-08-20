@@ -23,6 +23,7 @@ Linked repos:
 |---|---|---|
 | `inbox/YYYY-MM-DD.md` | Raw daily capture. Staging, not fact. | Human, appended |
 | `meetings/` | Dated record of what was said. | Human, appended |
+| `sources/` | Their documents, as handed to you. Git-ignores everything inside; never pushed. | Human drops files in |
 | `domain/` | One concept per file — the canonical answer. | Human and Claude, on request |
 | `index.md` | Curated links and status. A map, never content. | Claude keeps current |
 | `GLOSSARY.md` | Canonical terms for Convex Hedge. | Claude, updated in place |
@@ -43,7 +44,7 @@ Linked repos:
 
 **Name files in kebab-case. Hold each note to one topic and under 200 lines**, this file included. Split a note that outgrows the bound.
 
-**Keep Convex Hedge proprietary code and data out of this repo — notes and pointers only.** This vault is a personal repo; their code lives in their repos.
+**Keep Convex Hedge proprietary code and data out of this repo — notes and pointers only.** This vault is a personal repo; their code lives in their repos. Documents they hand you belong in `sources/`, which git ignores.
 
 ## Git is the sync layer
 
