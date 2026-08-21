@@ -52,7 +52,18 @@ A strategy that ships with the engine.
 
 **Echo**: (inferred)
 The other source a strategy can come from, distinct from Registry, and able to sit in a
-`NOT VALIDATED` state. What authors an Echo strategy is not yet known.
+`NOT VALIDATED` state. What authors an Echo strategy, and what validation checks, is not yet known.
+
+**Fork**:
+Taking a copy of an existing strategy to modify. Offered on every strategy page beside New Run.
+
+**Signal**:
+A named, tagged rule that fires on a candle to open or close a position. A strategy is a set of
+signals evaluated per candle, not a script that runs start to finish.
+
+**Group / Instance**:
+The two identifiers that reassemble individual legs into the structure they belonged to. Legs
+sharing a group were one trade.
 
 **Run**:
 One execution of a Strategy over one date range with one capital base. Versioned — a strategy
@@ -99,5 +110,31 @@ Set against IV to ask whether options were dear or cheap.
 Holding DTE fixed while time advances, by rolling across expiries, so an IV series is comparable
 over long spans. Contrasted with **front**, which follows the nearest expiry.
 
-**GEX**: (inferred)
-Gamma exposure, the second view on the open-interest screen. Not yet loaded; confirm before use.
+**GEX**:
+Net gamma exposure by strike, in currency per index point — how much the dealer community must
+trade for each one-point move. Inferred from open interest under an assumption about who is on
+which side, never observed.
+
+**Gamma Flip**:
+The level where net GEX crosses zero. Above it dealer hedging conventionally damps moves; below it
+it amplifies them.
+
+**Call Wall / Put Wall**:
+The strikes carrying the largest positive and negative gamma exposure. Read as where hedging
+pressure is heaviest, not as price predictions.
+
+**PCR**:
+Put open interest divided by call open interest, across the expiries in view.
+
+**Reserve Table**: (inferred)
+A DTE-keyed schedule of how much capital a hedged strategy holds back — more near expiry, where
+gamma forces frequent re-hedging.
+
+**Synthetic Forward**:
+The instrument a delta hedger trades, built from options rather than from a futures contract.
+Used because no futures series exists in the data — the same absence `payoff-project` refuses to
+paper over.
+
+**Regime**:
+A field stamped on every backtest diagnostic row and filterable in the UI, intended to classify
+market conditions at a decision. **Currently empty on every row.**

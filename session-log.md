@@ -85,3 +85,42 @@ what `VOL` counts, and whether the 414 minutes are a fixed grid.
 Worth carrying into the structure-chain pass: the far-expiry forward sat 1,150 points above spot
 and was fitted from an 11-strike chain. Row count is the tell for whether a forward can be trusted,
 and every structure built at that expiry inherits the doubt.
+
+**Depth passes 2–6, run in one sweep.** Wrote [structure-chain](domain/structure-chain.md),
+[volatility](domain/volatility.md), [open-interest](domain/open-interest.md),
+[strategies](domain/strategies.md), [backtest-engine](domain/backtest-engine.md). Filled in
+[RESOURCES.md](RESOURCES.md) and extended [GLOSSARY.md](GLOSSARY.md).
+
+**Corrected in [platform-map](domain/platform-map.md):** the breadth pass claimed the Structure
+Chain FEATURE toggle repaints the grid as any Greek. It does not — only PRICE is built; IV, Δ, Γ,
+Ν and ΔOI are disabled placeholders marked "Coming soon". The breadth pass also counted three tabs
+on the volatility page where there are two. Both fixed.
+
+**Open questions resolved:**
+
+- **#6, premium sign** — settled. The Structure Chain signs by cashflow: LONG negative, SHORT
+  positive. Opposite to `payoff-project`, where a debit is positive.
+- **#7, `/oi`** — mapped. Both OI and GEX are fully built.
+- **#4, sub-−100% returns** — confirmed a sizing-and-anchor artifact, not a P&L error, with the
+  per-leg arithmetic checked exactly.
+
+**Still open and needing a person, not a screen:** #1 Echo, #2 margin per unit, #3 rejected orders,
+#8 MISSION.md, #9 vault root layout, #10 the `teach` skill being disabled.
+
+**New, and the most consequential thing found:** some strategy parameters are decorative. On
+`daily_straddle_delta_hedged` only `capital` is read; `entry_time`, `exit_time`, `delta_band`,
+`tolerance` and `default_dte` display as tunable and are hard-coded in the source, which says so in
+its own docstrings. A parameter sweep over those fields would return identical results that look
+like a finding. Which other strategies do this is unchecked, and checking it comes before any
+parameter study.
+
+**Also new:** the `regime` field is empty on every diagnostics row; margin per unit does not
+reconcile between long and short books; the chain reports 414 minutes for a date where the
+structure chain and OI report 376.
+
+**Their source code stays theirs.** Strategy pages expose Python. Structure and behaviour are
+recorded here in our own words; no code was copied, per [CLAUDE.md](CLAUDE.md).
+
+**Best single teaching artefact found:** the IV vs RV chart. NIFTY constant-maturity 30-DTE IV
+against 20-day realised vol shows IV above RV through to late January, then RV crossing above from
+mid-February and staying there — the entire case for and against selling premium, in one picture.

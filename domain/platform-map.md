@@ -19,14 +19,14 @@ are always looking at one reconstructed snapshot of the option chain, and you sc
 
 ## The six surfaces
 
-| Nav | Path | What it is |
-|---|---|---|
-| BKT | `/backtest` | Backtest runs — the landing page. Table of every run with its performance |
-| LIB | `/strategies` | Strategy library. 19 strategies, the things backtests are run *from* |
-| CHN | `/chain` | Option chain at one minute. Per-strike quotes and Greeks |
-| STR | `/structure-chain` | Multi-leg structures priced across a whole grid at once |
-| VOL | `/iv-surface` | Volatility: smile, and implied vs realised |
-| — | `/oi` | Open interest and gamma exposure |
+| Nav | Path | What it is | Depth note |
+|---|---|---|---|
+| BKT | `/backtest` | Backtest runs — the landing page. Every run with its performance | [backtest-engine](backtest-engine.md) |
+| LIB | `/strategies` | Strategy library. 19 rules, the things backtests are run *from* | [strategies](strategies.md) |
+| CHN | `/chain` | Option chain at one minute. Per-strike quotes and Greeks | [option-chain](option-chain.md) |
+| STR | `/structure-chain` | Multi-leg structures priced across a whole grid at once | [structure-chain](structure-chain.md) |
+| VOL | `/iv-surface` | Volatility: smile, and implied vs realised | [volatility](volatility.md) |
+| — | `/oi` | Open interest and gamma exposure | [open-interest](open-interest.md) |
 
 ### `/backtest` — runs and results
 
@@ -81,15 +81,16 @@ One screen therefore prices the entire straddle-and-strangle family at that minu
 Ratio Spreads gives three legs — **A / B / C**, each independently long or short (defaulting
 long-short-long, a butterfly) — with independent call and put axes, drawn as two grids.
 
-The lever that matters: a **FEATURE** selector — **PRICE · IV · Δ · Γ · Ν · ΔOI** — repaints the
-same grid as any of those. Reading delta or vega across every strike and every width at once is the
-thing this screen exists for, and it is the concrete form of "see how structures move the Greeks".
+A **FEATURE** selector offers **PRICE · IV · Δ · Γ · Ν · ΔOI**, but in v0.1 **only PRICE is
+built** — the other five are disabled and marked "Coming soon". The screen prices structures; it
+does not yet show their Greeks. See [structure-chain](structure-chain.md).
 
-Also carries a LONG/SHORT direction toggle and a Per Unit / Per Contract basis toggle.
+Also carries a LONG/SHORT direction toggle, which flips the sign of every cell, and a
+Per Unit / Per Contract basis toggle.
 
 ### `/iv-surface` — volatility
 
-Three tabs: **Vol**, **Smile**, **IV vs RV**.
+Two tabs: **Smile** and **IV vs RV** (`VOL` is the page's short name, not a tab).
 
 Smile plots IV against strike, with the x-axis dual-labelled by strike and by **offset from
 forward** — again forward, not spot. Comparison baselines can be overlaid: prev close, day open,
@@ -101,8 +102,25 @@ Garman-Klass, Rogers-Satchell, Yang-Zhang.
 
 ### `/oi` — open interest
 
-Takes asset, date, time, and a strike window (5/10/15/20/25/All). Two views: **OI** and **GEX**.
-Not yet loaded with data — deferred to a depth pass.
+Takes asset, date, time, and a strike window (5/10/15/20/25/All). Two views: **OI** and **GEX**,
+both fully built. Aggregates across expiries, unlike every other screen. GEX derives a gamma flip
+level and labelled call/put walls. See [open-interest](open-interest.md).
+
+## What is not built yet
+
+v0.1 is further along than "Phase 1" suggests, but it is uneven, and the gaps are not where you
+would guess:
+
+- **Structure Chain shows price only.** Its IV, Δ, Γ, Ν and ΔOI views are disabled placeholders.
+  The screen that looks like it answers "how do structures carry the Greeks" does not yet.
+- **ΔOI exists elsewhere.** [open-interest](open-interest.md) has a working OI-change view over five
+  lookbacks. The capability is built, just not wired into the grid.
+- **`regime` is an empty field.** Backtest diagnostics can filter by it; nothing populates it.
+- **Some strategy parameters are decorative.** They display as tunable and are hard-coded in the
+  source. See [strategies](strategies.md) — this one can silently invalidate a study.
+
+Everything else — the chain, both volatility tabs, both OI tabs, the whole backtest reporting
+stack — is complete and behaves.
 
 ## Vocabulary collisions
 
