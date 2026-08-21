@@ -8,7 +8,7 @@ Read this first, then open only what you need.
 
 <!-- one line per domain note: link — what it covers — status (solid / partial / stub) -->
 
-_Empty. Notes arrive here as `/process-inbox` promotes capture, or when you add a file under `domain/`._
+- [platform-map](domain/platform-map.md) — the six surfaces of app.convexhedge.ai, what each is for, and where its vocabulary collides with `payoff-project` — **partial** (breadth only; `/oi` unseen)
 
 ## Workspace
 

@@ -1,0 +1,127 @@
+# Platform map — app.convexhedge.ai
+
+The Convex Hedge terminal, surface by surface. A map of what exists and what each screen is *for*.
+Depth notes live in their own files; this one never grows into them.
+
+Mapped 2026-08-21 against **v0.1 · Phase 1**. Access is Google SSO, authorised accounts only.
+
+## What the product is
+
+An **options backtesting terminal** over historical Indian and US index option data. Not a
+live-trading front end: there is no order ticket, no broker connection, no position blotter.
+Everything is replay and research.
+
+Two underlyings carry data: **NIFTY** (INR, IST) and **SPXW** (USD, US 0DTE).
+
+The spine of the whole terminal is a **minute-level time machine**. Every research screen takes an
+asset, a date, and a time, and exposes a minute slider (`208/414`) with prev/next-minute steps. You
+are always looking at one reconstructed snapshot of the option chain, and you scrub it.
+
+## The six surfaces
+
+| Nav | Path | What it is |
+|---|---|---|
+| BKT | `/backtest` | Backtest runs — the landing page. Table of every run with its performance |
+| LIB | `/strategies` | Strategy library. 19 strategies, the things backtests are run *from* |
+| CHN | `/chain` | Option chain at one minute. Per-strike quotes and Greeks |
+| STR | `/structure-chain` | Multi-leg structures priced across a whole grid at once |
+| VOL | `/iv-surface` | Volatility: smile, and implied vs realised |
+| — | `/oi` | Open interest and gamma exposure |
+
+### `/backtest` — runs and results
+
+Table across: strategy, org, underlying, period, capital, status, launched, and then the
+performance block — Net P&L, total return, Sharpe, Sortino, Calmar, max drawdown, trades, avg/day,
+win %. Rows carry **Show params**, **Rerun run**, **Delete run**.
+
+A run detail page has four tabs — **Overview**, **Daylog**, **Trades**, **Diagnostics** — plus
+version history (one run had 32 versions) and a **Capital / Per Unit** basis toggle.
+
+Overview carries equity + drawdown curve, returns and risk blocks, VaR and CVaR at 95%, a daily
+returns KDE, a monthly returns heatmap, best/worst day, order counts, average margin, and an
+explicit **cost model** (`ibkr_per_contract v1` for SPXW, `india_legacy_pct v1` for NIFTY).
+Charges ran 18.7% of returns on one SPXW run — costs are not an afterthought here.
+
+Trades tab lists every leg: entry/exit time, structure, strike, type, side, entry and exit price,
+qty, lot, hold time, tag, gross P&L, cost, net P&L, group, instance. Exportable as CSV.
+
+The **tag** field records why a leg opened and closed — `premium-target-entry → time-exit`,
+`→ profit-take`, `→ EXPIRY`. That is the exit-reason audit trail.
+
+### `/strategies` — the library
+
+19 strategies, filterable by source, status, owner, asset, and run count. Two sources:
+**REGISTRY** and **ECHO**; Echo entries can carry a `NOT VALIDATED` status. Names describe the
+structure and the regime — `daily_iron_condor`, `weekly_roll_short_straddle`,
+`daily_straddle_delta_hedged`, `spxw_0dte_strangle`, `expiryday_strangle_premium_sl`.
+
+Strategies are parameterised, not hand-drawn. One run's params: `max_dte`, `min_dte`, `entry_time`,
+`exit_time`, `min_entry_premium`, `entry_premium_target`, `target_multiplier`.
+
+### `/chain` — the option chain
+
+Calls mirrored against puts around a centre **STRIKE** column. Per side: OI, VOL, VEGA, THETA,
+GAMMA, DELTA, IV, LTP. Column set is configurable (`8/11` shown).
+
+Header carries **SPOT**, **FORWARD**, **ATM IV**, **DTE**, row count, and an expiry strip with each
+expiry's DTE (`13-APR 1.8D` … `29-DEC 177.8D`). Units are stated explicitly: `INR · ×65 · IST`.
+
+Spot and Forward are shown as **separate numbers** — see [vocabulary](#vocabulary-collisions).
+
+Far-OTM strikes show quotes but dashes for Greeks: below some premium the IV solve does not return.
+
+### `/structure-chain` — the one to understand
+
+Two tabs: **Straddle / Strangle** and **Ratio Spreads**.
+
+Straddle/Strangle is a grid, not a list. Rows are strikes around ATM; columns are **offsets**
+(0, 50, 100, 150, 200). Column `D=0` is a straddle; each column past it is a strangle of that width.
+One screen therefore prices the entire straddle-and-strangle family at that minute.
+
+Ratio Spreads gives three legs — **A / B / C**, each independently long or short (defaulting
+long-short-long, a butterfly) — with independent call and put axes, drawn as two grids.
+
+The lever that matters: a **FEATURE** selector — **PRICE · IV · Δ · Γ · Ν · ΔOI** — repaints the
+same grid as any of those. Reading delta or vega across every strike and every width at once is the
+thing this screen exists for, and it is the concrete form of "see how structures move the Greeks".
+
+Also carries a LONG/SHORT direction toggle and a Per Unit / Per Contract basis toggle.
+
+### `/iv-surface` — volatility
+
+Three tabs: **Vol**, **Smile**, **IV vs RV**.
+
+Smile plots IV against strike, with the x-axis dual-labelled by strike and by **offset from
+forward** — again forward, not spot. Comparison baselines can be overlaid: prev close, day open,
+prev expiry, n-avg, primary. Observed skew was steep: ~55% IV on the low put wing against ~18% ATM.
+
+IV vs RV is a date-range study: constant-maturity / front / user expiry, a target DTE, a window
+and bar size, and **six realised-vol estimators** — close-close, log return, Parkinson,
+Garman-Klass, Rogers-Satchell, Yang-Zhang.
+
+### `/oi` — open interest
+
+Takes asset, date, time, and a strike window (5/10/15/20/25/All). Two views: **OI** and **GEX**.
+Not yet loaded with data — deferred to a depth pass.
+
+## Vocabulary collisions
+
+The vault glossary is canon for Convex Hedge's terms. Where `payoff-project` uses a word
+differently, both are recorded rather than reconciled:
+
+- **Spot vs Forward.** Both agree, and both keep them separate. `payoff-project/CONTEXT.md` insists
+  the model consumes Forward and never Spot; the terminal displays both side by side and measures
+  smile offsets from Forward. This is the strongest point of agreement between the two.
+- **"Structure".** `payoff-project/CONTEXT.md` bans the word and calls the thing a Strategy. The
+  terminal makes **Structure Chain** a first-class screen, and uses **Strategy** for a parameterised,
+  backtestable rule. They are not the same object.
+- **Premium sign.** `payoff-project` treats a debit as positive Net Premium. The Structure Chain
+  shows a long straddle as **negative**. Opposite conventions; check which one a number is in.
+- **Lot size.** Both refuse to store it on a leg. The terminal applies it per period — lot 50 on
+  2024 trades, ×65 on the 2026 chain.
+
+## Pointers
+
+- Backtest engine truth, once the repo lands — _access pending._
+- Payoff and Greek maths, reimplemented independently: `payoff-project/docs/calculations.md`
+- Vocabulary for that project: `payoff-project/CONTEXT.md`
