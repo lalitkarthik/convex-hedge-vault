@@ -9,6 +9,7 @@ Read this first, then open only what you need.
 <!-- one line per domain note: link — what it covers — status (solid / partial / stub) -->
 
 - [platform-map](domain/platform-map.md) — the six surfaces of app.convexhedge.ai, what each is for, and where its vocabulary collides with `payoff-project` — **partial** (breadth only; `/oi` unseen)
+- [option-chain](domain/option-chain.md) — the chain screen in depth: the snapshot model, forward per expiry, all eleven columns, what DTE does to the Greeks, and the data traps — **solid**
 
 ## Workspace
 

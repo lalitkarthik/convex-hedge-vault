@@ -60,3 +60,28 @@ and seeded [GLOSSARY.md](GLOSSARY.md) with the terminal's vocabulary.
    whether they are vault-level or leftovers.
 10. **The `teach` skill is not enabled.** Cached under `mattpocock-skills/skills/productivity/`
     but that group is switched off, so Phase 3 cannot start.
+
+**Depth pass 1 of 6 — option chain.** Wrote [option-chain](domain/option-chain.md).
+
+Cadence confirmed: map all six surfaces first, teach afterwards. Sequential, no parallel agents —
+the six screens share one browser session whose asset/date/minute are global, and the surfaces have
+a learning dependency order (the structure grid is built out of chain quotes). Teaching will run in
+chat rather than through the `teach` skill, but each session still ends with a learning record,
+routed by subject: portable options knowledge to `second-brain\learning\`, Convex Hedge's own
+system to `teach/` here.
+
+Because teaching now comes after all six passes, session seven should open with retrieval on
+surfaces one and two rather than assuming they survived the gap.
+
+Resolved from the depth pass: **#5 is answered in part** — the Greeks blank out because the IV
+solve fails, and the deeper cause is that LTP is a last-traded price with no bid/ask, going stale
+and non-monotonic on illiquid strikes. The exact rejection rule is still open.
+
+New open questions, chain-specific, listed at the foot of
+[option-chain](domain/option-chain.md): the IV-solve rejection rule, how the per-strike IV is
+fitted given calls and puts agree exactly, whether the contract multiplier is stored or inferred,
+what `VOL` counts, and whether the 414 minutes are a fixed grid.
+
+Worth carrying into the structure-chain pass: the far-expiry forward sat 1,150 points above spot
+and was fitted from an 11-strike chain. Row count is the tell for whether a forward can be trusted,
+and every structure built at that expiry inherits the doubt.
