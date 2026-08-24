@@ -14,7 +14,8 @@ Read this first, then open only what you need.
 - [volatility](domain/volatility.md) — smile and skew, IV against realised vol, the six estimators, and the Feb 2026 regime change — **solid**
 - [open-interest](domain/open-interest.md) — OI by strike, PCR, OI change, and the GEX gamma flip with its call and put walls — **solid**
 - [strategies](domain/strategies.md) — what a strategy is made of, how hedging is specified, and the parameters that silently do nothing — **solid**
-- [backtest-engine](domain/backtest-engine.md) — runs, the four report tabs, cost models, and which numbers not to trust — **solid**
+- [backtest-engine](domain/backtest-engine.md) — runs, the four report tabs, per-run parameter JSON, cost models, and which numbers not to trust — **solid**
+- [portfolio](domain/portfolio.md) — combining runs into a book: correlation, the no-diversification baseline, and why there is no per-unit track — **solid**
 
 ## Workspace
 

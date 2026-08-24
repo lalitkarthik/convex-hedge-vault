@@ -10,6 +10,24 @@ versioned and accumulate history — one strategy had 32. Rows carry **Rerun** a
 The list reports: strategy, org, underlying, period, capital, status, launched, net P&L, total
 return, Sharpe, Sortino, Calmar, max drawdown, trades, avg/day, win %.
 
+**Expanding a row (`▸`) prints the exact parameter JSON the run used**, alongside its capital.
+This is the most useful control on the page and the easiest to miss. On an `spxw_0dte_strangle`
+run: `max_dte`, `min_dte`, `entry_time`, `exit_time`, `inflow_pct`, `profit_pct`, `n_sl_cycles`,
+`premium_pct`, `stop_multiples` (a list — `[1.25, 1.3, 1.4]`), `cooldown_minutes`,
+`profit_reentries`.
+
+Two consequences worth holding on to:
+
+- **It is how a parameter sweep is read.** Thirteen runs of the same strategy over the same window
+  differ only here, and their results range from +4.40% to +11.04%. Expanding each row is the only
+  way to see which setting produced which outcome.
+- **It is how the dead-parameter trap gets tested.** [strategies](strategies.md) records that some
+  declared parameters are never read. Two runs whose JSON differs *only* in such a field, returning
+  identical results, would prove it — and the same test would expose a field that does matter.
+
+**`SELECT RUNS` is bulk delete, nothing else.** It relabels to `SELECT RUNS TO DELETE` and adds a
+checkbox column. Not a comparison tool, despite reading like one. Cancel exits it.
+
 A run page has four tabs and a **Capital / Per Unit** basis toggle.
 
 ## Overview
@@ -102,6 +120,12 @@ whether the sample contains a bad enough day. Cross-check the period against
 [volatility](volatility.md): this run spans February to July 2026, which includes the stretch where
 realised volatility crossed above implied. That it survived is the interesting fact, and it is worth
 finding which days hurt.
+
+## Where a run goes next
+
+A finished run is the unit a [portfolio](portfolio.md) is built from. On that screen a run is
+called a **leg**, and combining several exposes correlation and diversification that no single run
+reports.
 
 ## Open questions
 
