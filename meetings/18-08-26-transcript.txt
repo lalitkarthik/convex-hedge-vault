@@ -1,0 +1,497 @@
+Claude Workflow
+Tue, Aug 18, 2026
+
+0:11 - Rahul J Perumatty
+How are things going? Condo, particularly nature videos.
+
+0:29 - Rahul J Perumatty
+How was yesterday's meeting? Sorry, I couldn't join. Market outline. Three o'clock, four o'clock in a mumbled meeting. Okay, Bilal Lai and Lee and the Gaza.
+
+0:52 - Bilal Sagar Razak
+Why are we using skills using Matt Kacanda Dum Metra GSD Superpowers?
+
+1:10 - Lalit Karthikeyan
+grill with the docs bowler, we have spec builder in them, other ticket side to convert and then consecutively agents will respond to solve one ticket.
+
+1:38 - Lalit Karthikeyan
+What is superpowers different from a higher scale, like higher level random same task will uh GSV superpowers or specific agents will with specific skill like testing engineer angana core counter overall views, about me to understand.
+
+2:44 - Bilal Sagar Razak
+Let's say let's say we have to make a feature feature and I don't know let's say we have to make a product we'll be working on a feature working on a bug.
+
+3:17 - Bilal Sagar Razak
+Basically, like fixing it is very easy. Above more grilling, basically. Basically, I was debugging debugging.
+
+3:37 - Bilal Sagar Razak
+For debugging and what you can use is let's say.
+
+4:02 - Bilal Sagar Razak
+Debugging and superpower, there is something called systematic debugging.
+
+4:11 - Unidentified Speaker
+Okay.
+
+4:14 - Bilal Sagar Razak
+Bug fix and the little main it is bug fix feature product.
+
+4:23 - Bilal Sagar Razak
+Different type of work. About the product, like we have to start from the beginning and what we are thinking of
+
+4:37 - Bilal Sagar Razak
+Feature is a small project but not very small as bug. Above different basically. Above UCMO basically. Superpower debugger. If it is just a bug, super power since debugging UC. So, what superpower debugging is just what is a error thingy? We what it assists it assumes something.
+
+5:21 - Bilal Sagar Razak
+so instead of assuming it, code base correct no ki kanda tam indi using other systematic superpowers systematic debugging it works pretty well it is handled by like euro uh skill uh let's say superpowers powers There are a lot of developers. Our developers are 274K developers.
+
+5:59 - Bilal Sagar Razak
+So, openly our manager put requests already for issues.
+
+6:17 - Bilal Sagar Razak
+actively, they are working on everything updated like issues.
+
+6:29 - Bilal Sagar Razak
+So, we met thing. But whatever we do, it won't be very good than them because they are good in development, everything. About a inspiration. Our workflow and name UCNA basically product in the basic.
+
+6:55 - Bilal Sagar Razak
+This will be a big project.
+
+7:00 - Bilal Sagar Razak
+Big project.
+
+7:07 - Bilal Sagar Razak
+Office hours. Office hours.
+
+7:41 - Bilal Sagar Razak
+Our two sentences.
+
+7:44 - Bilal Sagar Razak
+Above Agency, Namalandano this context fully kitam and a grilling user. He asks us what we want.
+
+7:59 - Bilal Sagar Razak
+I'm going to correct him. He'll have an idea. In the idea, I'm going to answer either context to this. Abo Indikle if we had office hours.
+
+8:21 - Bilal Sagar Razak
+Okay, commands office hours take in skill in it. Are they using what office offices use for? Very productive grilling or something you see personalized. We go very wide.
+
+8:45 - Bilal Sagar Razak
+Very big perspective.
+
+8:53 - Bilal Sagar Razak
+Adiniba again. What it does is like productivity patterns faster methods. They ask whether it is a side project or other. Or startup idea or no, are you working on idea and starting it?
+
+9:17 - Bilal Sagar Razak
+If just a presenting project, you are presenting to your professor.
+
+9:23 - Bilal Sagar Razak
+Above Adina is the turn of Ida.
+
+9:29 - Bilal Sagar Razak
+10,000 lines in the architecture different out for just two people, it is different. Above streamlines, like first, we have to make it for 10 users. We have 10 users.
+
+9:47 - Bilal Sagar Razak
+For streamline, I will use product manager role in e-office.
+
+9:56 - Bilal Sagar Razak
+You can use it either way. Like office hours first. We now use the streamliner.
+
+10:09 - Bilal Sagar Razak
+grilling UCM Either method UCM first either interchange or pilla basically or office hours on a character Pina office hours grilling you get the whole context of it.
+
+10:35 - Bilal Sagar Razak
+What we do is we make it into a spec spec this context is how to design the architecture.
+
+10:50 - Bilal Sagar Razak
+There will be a specific.
+
+10:58 - Bilal Sagar Razak
+This is the product and the idea what we have in our mind agency.
+
+11:07 - Bilal Sagar Razak
+How much architecture build? Different types of architectures only in development.
+
+11:19 - Bilal Sagar Razak
+Superpower brainstorming skill wavelength. Above brainstorming.
+
+11:28 - Bilal Sagar Razak
+they assume that we are a developer.
+
+11:33 - Bilal Sagar Razak
+We are a good level of developing skills.
+
+11:43 - Bilal Sagar Razak
+What you do is you should brainstorm yourself blocks. Let's say even driven architecture.
+
+11:54 - Bilal Sagar Razak
+driven architecture event-driven architecture and dangle other symbol guy and done event-driven architecture and art just anoka. Otherwise, brainstorming.
+
+12:12 - Bilal Sagar Razak
+So, like, uh, ask it to tell like example which it uh explain it. And better.
+
+12:24 - Bilal Sagar Razak
+What we do is so brainstorming which is like where we should go, which method. You know, like art designing the main part.
+
+12:41 - Bilal Sagar Razak
+More ideas. Pina if you an execution engine and trade.
+
+13:13 - Bilal Sagar Razak
+Pinna era la Urika narrow GitHub level like anything like let's say trade execution engine GitHub is very like these are open source engines execution engines which is already built by a very good people Working we inspire this architecture.
+
+13:51 - Bilal Sagar Razak
+Architecture is inspired. We also develop. Not fully the same thing. This architecture is a component message concept. What is the message based in the concept?
+
+14:28 - Bilal Sagar Razak
+What we do is we use Claude as Nord Senior as a co co-worker. You see that we discuss with them. Then, research, what you have is you will gain your knowledge. Learning you will know what everything is. You might not be knowing what API is.
+
+15:03 - Bilal Sagar Razak
+You won't be knowing about a Docker. What is Docker container? Apangana or execution engine and should we keep the processes engines or script?
+
+15:28 - Bilal Sagar Razak
+is script a cono wherever a script are giving other CPU isolated iter on you know this decisions on the seller decisions okay you can make it like uh it is the money uh like uh isolated it is what is the benefit. Adu other like you go to cloud itself, like don't do it context.
+
+16:06 - Bilal Sagar Razak
+Go to a different window, like cloud in the browser.
+
+16:13 - Bilal Sagar Razak
+Let's say cloud in the browser line. You ask about it in Dana Sambong, and so it says.
+
+16:23 - Bilal Sagar Razak
+discussion discussion we go forward. This brainstorming design is the biggest job.
+
+16:38 - Bilal Sagar Razak
+What we have done is brainstorming.
+
+16:45 - Bilal Sagar Razak
+Almost every context. What design we are looking at, everything. This finalize.
+
+16:56 - Bilal Sagar Razak
+This is taken from Matt. Matt Packock.
+
+17:07 - Bilal Sagar Razak
+This Superpowers.
+
+17:16 - Bilal Sagar Razak
+This is the superpower send this tech.
+
+17:38 - Bilal Sagar Razak
+Like as a product to spec query to pinette to spec in two tickets. Is also uh uh from MathPack Packbook. Idinipagaram, what I used uh before was uh ideas uh spec and Writing clients, writing clients a lot.
+
+18:28 - Bilal Sagar Razak
+Subdivision brainstorming, brainstorming automatically specundagamandi, so you give superpowers and spec and agamenti joy give. Can I make the spectrum again? Can I write the spectrum again? Ah, you should call. To spec because the supervisor issues it makes up bigger brands.
+
+19:10 - Bilal Sagar Razak
+Like after half of the work, it will be like context will be sixty percentage. Above the context window, less than 40%, 40 to 50 is very good. 80 is 70, like it keeps on hallucinating. L pipe is very tough, it takes a lot of time. But we make it specifically in tickets.
+
+19:40 - Bilal Sagar Razak
+But tickets are like feature based. Our set here.
+
+19:50 - Bilal Sagar Razak
+Or your feature not as cases and all the Writing lines then comes and then implementers. Secure vehicles sub-base interven sub-base interven a deployment and extend implementing after writing lines.
+
+20:30 - Bilal Sagar Razak
+Very long time for implementing. And better, it's make it into tickets.
+
+20:45 - Bilal Sagar Razak
+And Z of the ticket.
+
+20:52 - Bilal Sagar Razak
+Tickets. Let's say this output item we got like 10 tickets.
+
+21:01 - Bilal Sagar Razak
+10 tickets. About 10 tickets. 192 might be dependent. In a three and four, we can make it as parallel, everything. Above starting, you start with the sequence in itself. One, two, three.
+
+21:18 - Bilal Sagar Razak
+Don't look on the dependency. In a technique, you assign to each of the new sessions. Above ticket one in there. Let's say. We have 10 tickets right. Let's take what we do is ticket one is the first thing we have to do.
+
+22:00 - Bilal Sagar Razak
+Okay.
+
+22:11 - Bilal Sagar Razak
+Let's say we have one, two, three, and a lot of till ten specs tickets in there.
+
+22:29 - Bilal Sagar Razak
+let's say VS Code you see an angle as VS Code score VS Code you see the terminal we have uh in a correct session idea Claude session new terminal session address terminal will do cloud address.
+
+23:14 - Bilal Sagar Razak
+You want to transfer the ticket context to weekly.
+
+23:25 - Bilal Sagar Razak
+So, what we use is ticket one in a matrait passion. We use handoff.
+
+23:39 - Bilal Sagar Razak
+Handoff skill from math back handoff.
+
+23:50 - Bilal Sagar Razak
+What it does is this ticket in the context we use implement. This implementation we use a method called test case development methods. Test case-driven development. What test case-driven development in the china case is the novel? Let's say lead code without lead code. They already have test cases with you. But your condition is you have to code in such a way that the test cases pass. There are already test cases in the test cases accept the DP the problem different type of methods problem with the time complexity relation we can do it as just simple loops and arrays.
+
+25:34 - Bilal Sagar Razak
+We are building the product. Building the product wise I don't know building or an angle we'll be depthwise optimate optimizing it. At timer, the time complexity will come into mind. Above what we need is test cases.
+
+25:57 - Bilal Sagar Razak
+Above test cases will implement cases in the give that edge cases also to it. Above average cases, slash implement.
+
+26:15 - Unidentified Speaker
+Let's say we are building execution engine.
+
+26:18 - Bilal Sagar Razak
+Implement in the give it take on ticket one go on.
+
+26:39 - Bilal Sagar Razak
+I have some test cases.
+
+26:44 - Bilal Sagar Razak
+Are there test cases like how what happens the engine should take let's say if the field is delayed by one twenty minutes. 1120 seconds then then and then exit hold hold new positions hold new positions.
+
+27:41 - Bilal Sagar Razak
+This is one test case we give. Above you are making like idum design test cases in the signo, what you get is a code in order to correct. Above code, they will also generate.
+
+28:00 - Bilal Sagar Razak
+Baki coding part, like Claude is very good with it. Single test cases in volume attendance. Claude is doing the work. Work. So, Opusum, we develop it, implement.
+
+28:15 - Bilal Sagar Razak
+Brainstorming do with fabric. Brainstorming part. Because otherwise, table, your tokens will be out. Grilling do with opus, brainstorming do with fabric, respectum opus. You doom opus in order then give this hand off to hand off also opus, you doom opus.
+
+28:46 - Unidentified Speaker
+Okay.
+
+28:48 - Bilal Sagar Razak
+For in what I do. Here met the issue is like nikora bigar correct cases wenduka, auroticets in a feature no test cases.
+
+29:31 - Bilal Sagar Razak
+So, Adana or you feature and the silly way directly grilling office house basically. You know what you are doing.
+
+29:53 - Bilal Sagar Razak
+Basically, grilling can be done. We have brainstorming.
+
+29:59 - Bilal Sagar Razak
+Feature can be different ways. If multiple users, your architecture you need to brainstorm it. Otherwise, you don't need.
+
+30:14 - Bilal Sagar Razak
+If you are just adding a button or something, no need of brainstorming it. I didn't skip brainstorming, directly go to spec and two tickets. So, this workflow is how you go about it.
+
+31:08 - Bilal Sagar Razak
+Which brainstorming you don't want directly in product in the main activity architectures and time consumed brainstorming. If you want grilling, you can do grilling cardinal session. What you can do is.
+
+31:51 - Bilal Sagar Razak
+Whatever context you have done with grilling and often service, other handoff is brainstorming and it are in the intersection.
+
+32:01 - Bilal Sagar Razak
+Our GST and the UCNA basically context window terminal STOIRU some if we install GST EU somewhere.
+
+32:16 - Bilal Sagar Razak
+You get context is you have used or not.
+
+32:28 - Bilal Sagar Razak
+Their method is similar to superpowers. Super OS is better than GST.
+
+32:35 - Bilal Sagar Razak
+Startingly, you do it sequentially. Sequencing better method.
+
+32:43 - Bilal Sagar Razak
+course rules and GitHub rules. Director, you make a branch of it, then do the ticket and give a merge merge request to it. I wanna get a bang et al. You see the tuning you see the tunic push.
+
+33:11 - Lalit Karthikeyan
+commit and proper branching.
+
+33:20 - Meghav Pradeep
+Like in a GitHub repository, see you see it in the loop.
+
+33:23 - Bilal Sagar Razak
+Like direct push it up. Directly.
+
+33:33 - Bilal Sagar Razak
+Like there are different methods of development.
+
+33:38 - Bilal Sagar Razak
+Convex engine you see there is a method is the branches up and share to me. Execution engine we are using a different method.
+
+34:02 - Bilal Sagar Razak
+Can you see this?
+
+34:39 - Bilal Sagar Razak
+If you are going into this git connector, our project is flow diagram how it is taken.
+
+34:55 - Bilal Sagar Razak
+Above the main branch, what you do is here. You make a branch You try out the new feature, fix added. The you give a pull request to it. A pulled request will be reviewed by other developers.
+
+35:29 - Bilal Sagar Razak
+They'll give a review to it. I'll show one thing.
+
+35:53 - Bilal Sagar Razak
+I did a pull truck to it.
+
+36:01 - Bilal Sagar Razak
+So after doing a pull request, what it happens is correctly. But it this will claw. Like math pack, I implement the method. They have very well done with the like NG structure and pull request in there.
+
+36:25 - Bilal Sagar Razak
+already mentioned?
+
+36:32 - Bilal Sagar Razak
+And files changed. There is 21 files changed.
+
+36:40 - Bilal Sagar Razak
+You will see what is the file changed.
+
+36:48 - Bilal Sagar Razak
+So, if let's say, you do some boy and I know let me I'll say TypeScript and a language like modern die script ideally rema let's say some both in a baki where not the same I can drag down here and comment about it. Answer. About the comment allowance already.
+
+37:31 - Bilal Sagar Razak
+You get access to submit a review idea and okay, accept I am Atra?
+
+38:11 - Bilal Sagar Razak
+third side or some video in each Gitabina UCL.
+
+38:18 - Bilal Sagar Razak
+When you are doing this payoff diagram, in the same project, seeing Gita Rakole, you two guys will be collaborators. Along with Claude. In the tech, you guys try out how the merging is happening.
+
+38:45 - Unidentified Speaker
+Then do it very timely work you will get.
+
+38:51 - Bilal Sagar Razak
+You might you have to use worktrees some boundary. Parallel work trees is better once.
+
+39:05 - Bilal Sagar Razak
+come and what are you both collaborating and reactions to like how merger questions What is it?
+
+39:27 - Bilal Sagar Razak
+Mostly type scripting friend end bargain.
+
+39:33 - Bilal Sagar Razak
+bargained openly.
+
+39:42 - Bilal Sagar Razak
+If you know TypeScript good, then with you because TypeScript friend in Bargang.
+
+39:56 - Bilal Sagar Razak
+That you can understand right like Python, both of you may be new.
+
+40:02 - Bilal Sagar Razak
+What is ha happening?
+
+40:13 - Bilal Sagar Razak
+One thing is there is one more to speculate.
+
+40:25 - Bilal Sagar Razak
+It usually makes this MD file. Basically, to speculate, make that into an MD file and save it in a docs file.
+
+40:44 - Bilal Sagar Razak
+This docs in our file starting. I was using superbose. For supervising specs.
+
+40:57 - Bilal Sagar Razak
+Specs I used to add it in the citizens. Pani Adimuru spectral data Claude will usually understand what your method is.
+
+41:14 - Bilal Sagar Razak
+Claude MD keep that rule in it. Claude MD in the file rules. What is there?
+
+41:25 - Unidentified Speaker
+Above the branch definitions.
+
+41:37 - Bilal Sagar Razak
+We all are aligned CI pipeline. Continuous integration. And the merge request add email EU condition. Branch corrected defined correct inoku.
+
+42:04 - Bilal Sagar Razak
+Let's say you are doing on a feature.
+
+42:11 - Bilal Sagar Razak
+Mostly it will be a feature only. Above feature bug fix on the feature I have to review it a bit more.
+
+42:35 - Bilal Sagar Razak
+For now, just see how Claude is using it. Claude featured adding. Let's say feature cost branch and I get lung.
+
+42:50 - Bilal Sagar Razak
+but a hot fix on hot fix slash hot fix engine like hot fixer hot fix slash inflow three three execution engine lay what we do is uh we have execution engine we have a We have a main branch as a level dev branch.
+
+43:35 - Bilal Sagar Razak
+Main unit. So execution engineer among it is in the production. Production. Above the main production. Production branch. Above the production, whatever we have tested everything. And ready to go to production, be there in production. Now, in the feature working on production, we make it in the dev within a direct copy.
+
+44:12 - Bilal Sagar Razak
+Deb in a direct copy in the alum, product in a direct copy. Note that we'll make a branch of it. It. DevInder branch in the code. Is it a feature branch in the code? That after feature is done, what we do is we merge request full request.
+
+44:45 - Bilal Sagar Razak
+A feature devico. Corsodium will write it down. Above what we do is deviting testing. Whatever new feature at testing, when it is ready to go to production on it, we'll merge it where you pull the cursor.
+
+45:12 - Bilal Sagar Razak
+Estimates to is main. Tanangala direct merger because no one is going to review it. It is already tested here.
+
+45:29 - Bilal Sagar Razak
+About what happens is that doesn't test the product.
+
+45:38 - Bilal Sagar Razak
+Niba produces changes. But the same it up then we do the connection. Adini Varana hot fixunadla or you method. Have hot fixed idler and pump and Adina Apotene uh ERACTI merging merging. Abada devunalis on this adenite um So that Devin you copy to Trana.
+
+46:28 - Bilal Sagar Razak
+Is a Devikum added video.
+
+46:35 - Bilal Sagar Razak
+Like these are different methods to do.
+
+46:40 - Bilal Sagar Razak
+If you have faster methods directly, I will push you on to you. Production. If you are having a production as well as dev, then they will learn the stage and case of convex building stage.
+
+47:08 - Bilal Sagar Razak
+But execution engine dev boom Devboom produce different branches in Okigania main it looked branch server back your feature branches The oxygenal branches are if you are going to execution engine in dev branch engine, we have a main branch too.
+
+47:53 - Bilal Sagar Razak
+The main branch is also there. For dev branch, I'll go it.
+
+48:44 - Bilal Sagar Razak
+But in depth we have 152 are 142 are still testing like when it is good to go we will be pushing it to me.
+
+49:07 - Bilal Sagar Razak
+Okay.
+
+49:10 - Bilal Sagar Razak
+That is how we do.
+
+49:18 - Bilal Sagar Razak
+It's kills try you to know example. And how to start a feature and build in from scratch.
+
+49:34 - Bilal Sagar Razak
+how to use many there are better methods. Okay. Pinigit in a lower use of moding and I chera. Apo, you'll get an idea.
+
+49:52 - Meghav Pradeep
+Hello. In a chat parni like Git repository number get hip Oh, I didn't.
+
+50:10 - Bilal Sagar Razak
+Oh, what else do you see? Internet?
+
+50:36 - Bilal Sagar Razak
+You need to work on it. Okay.
+
+51:04 - Bilal Sagar Razak
+work how it is being done.
+
+51:31 - Bilal Sagar Razak
+We should know how to do it. What is the concept?
+
+51:59 - Bilal Sagar Razak
+where we will also learn.
+
+52:26 - Bilal Sagar Razak
+You will get an idea. You will get an idea.
+
+52:54 - Bilal Sagar Razak
+hard-coded like if a function in Python, you can only change the function. If you make a script, you can make a Python file as a utility. You can make it based on that. If you make something that is always shareable, the code base will be lesser.
+
+53:20 - Bilal Sagar Razak
+going future That is how you design things. If you want to add one more thing, you can make another adapter. If you are combining it, you have to re-structure it. That is very difficult. Always think of adding 2-3 things.
+
+54:14 - Bilal Sagar Razak
+the front end should be, how the back end should be, by this weekend.
+
+54:44 - Bilal Sagar Razak
+Next Tuesday, I will give you an idea. Staddles, Triangle, Iron Corner, Credit Spreads. Pay off is in the starting. Staddles, Triangle, Iron Corner, Credit Spreads. Inflame and control are similar. The payoff of this Anjanath can be set first.
+
+55:15 - Bilal Sagar Razak
+For Anjanath, you need to add naked and naked cells.
+
+55:33 - Bilal Sagar Razak
+Okay. Okay.
+
+56:00 - Bilal Sagar Razak
+But if you are dealing with money, it is better to make it as another product. We are good with this. Directly we are dealing with money. But in convexity, we are Uh, money. Uh, uh, uh, We need to learn GitHub, because that is needed for development. You will get an idea. In Quant, we add different layers of signals to the base case. We add these signals and create a branch and merge it. If this type of signal doesn't work, we can avoid it. It won't merge.
+
+57:24 - Unidentified Speaker
+I know. I know.
+
+57:51 - Bilal Sagar Razak
+in a in a

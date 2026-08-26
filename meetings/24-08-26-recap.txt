@@ -1,0 +1,88 @@
+Meet
+Mon, Aug 24, 2026
+
+Summary:
+
+The meeting aligned options analytics, strategy backtesting, and dashboard development.
+• Decompose P&L by delta, gamma, theta, and vega
+• Analyze approximately 375 minutes of intraday data
+• Support straddles, strangles, spreads, and calendar structures
+• Add interactive spot, time, volatility, and Greek visualizations
+• Build backtesting and user-defined strategy templates
+• Beta will initially exclude XPX
+• Implementation timelines and final requirements remain unresolved
+
+
+Action Items:
+
+* Meeting participant will verify Claude-generated calculations against their original source or methodology.
+* Bilal Sagar Razak will present the current analysis in a concise presentation for review.
+* Meeting participant will add an additional Taylor-expansion field to the dashboard.
+* Meeting participant will calculate ATM implied volatility from the first minute through the last minute of a full trading day.
+* Meeting participant will compare changes in implied volatility with spot changes and decompose the resulting P&L using regression.
+* Meeting participant will convert the decomposition analysis into a backend product.
+* Meeting participant will explore implementing an interactive payoff graph with time, implied-volatility, spot-price, and Greeks-based changes
+* Meeting participant will investigate frontend and API requirements for connecting the tool to live market data
+* Bilal Sagar Razak will clarify the upcoming timeline and next steps for the options-tool and trading-development work
+* Meeting participant will backtest proposed trading ideas for potential deployment in U.S. markets
+* Meeting participant will continue developing the backtesting-engine application
+* Bilal Sagar Razak will send an example test card to the group
+
+
+Key Discussion Points:
+
+Scheduling and Travel
+Bilal and Meghav discussed Kolkata availability, an Onam event, a possible meeting the following week, and travel to Kerala on September 10. The scheduling discussion then transitioned into the technical topic of options strategy analysis.
+
+Greek-Based P&L Attribution
+Bilal explained that strategy construction requires understanding how market movements affect P&L through theta, gamma, vega, and other Greeks. He emphasized that traders may lose money despite limited market movement and need Greek-level attribution to identify the source of the loss.
+
+Taylor Expansion and Intraday Decomposition
+The group discussed decomposing a portfolio or vehicle using delta, VANA, and Taylor-series expansion. Bilal proposed tracking changing intraday exposures and P&L, while Lalit contrasted the relative importance of vega for longer expiries with gamma for shorter expiries.
+
+Presentation and Quantitative Methods
+Bilal requested a presentation explaining the analysis and stressed that Claude-generated calculations should be checked against their sources. The participants reviewed futures, put-call parity, regression, discount rates, implied volatility, and numerical methods including Newton-Raphson, secant, and bisection techniques.
+
+Strategy Classification and Visualization
+The discussion covered volatility smiles, spline-based analysis, option legs, and the classification of combination strategies. The group also considered expiry structure, P&L charts based on spot and forward prices, and visualizations for straddles, strangles, and credit spreads.
+
+Greek Calculations and Dashboard Enhancements
+The participants discussed Greek calculations, analytical derivatives under the Black-Scholes model, quantity scaling, and aggregate delta for multi-leg strategies. Proposed dashboard improvements included smoothing and an additional Taylor-expansion field.
+
+Intraday Data and Backend Productization
+Bilal outlined an intraday workflow using approximately 375 minutes of data to calculate ATM implied volatility, compare implied-volatility and spot changes, and perform regression-based decomposition. He identified backend productization as the next major step and estimated two to three days of work with Claude assistance, but the transcript ends before the implementation discussion is completed.
+
+Interactive Options-Strategy User Experience
+Bilal discussed improving the options tool’s user experience and making its output more flexible and interactive. Proposed enhancements included dynamic payoff visualization based on time, implied volatility, spot-price changes, and Greeks such as gamma and vega.
+
+Existing Tools and Product Features
+The discussion referenced other options tools and platforms as potential sources of UX inspiration. The team considered features such as strategy parameters, payoff analysis, and more accessible visual presentation for option traders.
+
+Development, APIs, and Market Data
+Bilal shifted the discussion toward implementation, including frontend development, different API requirements, calculation logic, and live data. The group also considered live cryptocurrency data and the need to build practical development knowledge.
+
+Practical Greeks and Trading Strategies
+Lalit requested clearer timing or next steps, and Bilal agreed to clarify. Bilal then explained short-straddle risk, including negative gamma exposure and the roles of theta, vega, and delta, before discussing calendar spreads and implied-volatility scenarios.
+
+Testing and Live Strategy Development
+Bilal described the team’s market-development process, including roughly two months of testing and backtesting followed by a live deployment that had been running for about one month. He encouraged collaborative study of U.S. markets and further strategy development.
+
+Strategy Ownership and Deployment Model
+Participants were invited to share ideas, observe markets, and use the backtesting process to assess profitability. Bilal described a potential model in which participants could own strategies and share income from successful deployments, while keeping financial returns as the central objective.
+
+Meeting Cadence and Backtesting Application
+The final discussion covered the flexibility of technology meetings and allowing participants to work on ideas without disrupting their workflow. The exchange ended with a reference to a backtesting-engine application, although the specific requirements and ownership were not established.
+
+Options Strategy Structure
+Bilal Sagar Razak and Meghav Pradeep discussed how to improve the presentation and structure of an options strategy. Bilal explained the 1:3:1 configuration, its relationship to a butterfly strategy, the 50-strike spacing, and the net premium example.
+
+Application Scope and Backtesting
+The participants reviewed the current state of the application, noting that points and strike sections had been added but that depth-wise work and endpoints remained incomplete. Bilal explained that the application would support backtesting, trade-by-trade review, and templates for testing strategies based on users’ logic.
+
+Beta Release and Repository Organization
+Bilal described app.convexness.ai as an in-house application and outlined the beta-release approach. XPX will be excluded from the beta, features will be added gradually, and GitHub branches will be organized around individual features across production and main repositories.
+
+
+Notepad:
+
+* No notes

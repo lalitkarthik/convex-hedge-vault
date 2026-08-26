@@ -1,0 +1,128 @@
+Daily meet
+Wed, Aug 19, 2026
+
+2:29 - Bilal Sagar Razak
+If we don't have a clear either Tryoti ago. He get up into the conductor.
+
+3:34 - Meghav Pradeep
+Get up in the current conduct.
+
+3:39 - Bilal Sagar Razak
+So other basically like what is Gita Gita Bang and you see another different developers.
+
+3:49 - Bilal Sagar Razak
+cycle using various testing or studio divided. I can see the nor and I basically merge him or you test automatically test. Above other basically priority and Iran in In future, develop you may already have an idea of it as well. Above Ingenama development ideas with the research party.
+
+4:49 - Lalit Karthikeyan
+Above the pay of Finden Totting idea data like black shoals and 76, like Black School 76. Usually, theoretically this spot price basis is Black School. So, Black School 76.
+
+6:22 - Bilal Sagar Razak
+Going forward. First, basically, I would back-end it.
+
+6:40 - Bilal Sagar Razak
+Above the front-end layer, I am APIs in Narva Samba. Abo uh front-end back-end is a milli uh let's say.
+
+6:53 - Bilal Sagar Razak
+board lay events.
+
+7:08 - Bilal Sagar Razak
+We basically every website too. Like, I don't know how much you guys know the development.
+
+7:25 - Bilal Sagar Razak
+Backhand side window.
+
+7:31 - Bilal Sagar Razak
+Client side is where the user is using user interface geometer.
+
+7:43 - Bilal Sagar Razak
+This client side other back end diagrams we can slowly move into these parts. This client side is like fully designing type. Paki design is like Claude will rest of it.
+
+8:39 - Bilal Sagar Razak
+For a friend end is coming in next JSON or something. Ninga quan angle next day. Then you can host it in version hosting platform website. But the host is the triam. Above what you have to use back end. Back end is like if you are taking to different days and expiry data. I experienced different days days.
+
+9:25 - Bilal Sagar Razak
+Like OTMs just one day extracted. Just try OTMs in ITMs. But if you are good with Jupiter notebook, otherwise it is a item better. First, I initialize what the data is, then our data give a different column. Is OTM ATM is EU strike because we need what is OTM ITM segregation.
+
+10:10 - Bilal Sagar Razak
+let's say a striangle like three strikes away from the ATM. I'm not sure two striangles which is outside.
+
+11:19 - Bilal Sagar Razak
+In the day, you will get an idea like what is back again in the written. Are you like try a Python script where Jupiter notebook already Python script Claude itself will do it?
+
+11:36 - Bilal Sagar Razak
+But none can productive and other visualization.
+
+11:43 - Bilal Sagar Razak
+Okay.
+
+11:57 - Bilal Sagar Razak
+Structures for Adinde Payoffs almost. Uh either keyword can see um calculated that will be very good.
+
+12:10 - Unidentified Speaker
+Okay.
+
+12:27 - Lalit Karthikeyan
+Shaida Boomura Doubt Nanamada. Corona tricky defied book also.
+
+12:36 - Lalit Karthikeyan
+Okay, anyway.
+
+12:37 - Bilal Sagar Razak
+Uh in the which straddle and strangled uh pinna naked by naked cell.
+
+12:57 - Unidentified Speaker
+Just pay of uh graphic.
+
+12:59 - Bilal Sagar Razak
+drawing a really delete.
+
+13:03 - Bilal Sagar Razak
+Male plot on the later plot on the lady for the strike code as in the pay of it and I will plot it with a function like you got it. Our Jupiter notebook it is easy for you to go through.
+
+13:21 - Bilal Sagar Razak
+Fandasu, which it so it didn't come with under fandasu.
+
+13:28 - Bilal Sagar Razak
+So calculations like in that video calculations you see down.
+
+13:39 - Unidentified Speaker
+Okay.
+
+14:03 - Bilal Sagar Razak
+You will be having the calculation with theory. Calculations or the naked by your naked cell in the calculations and functions I have variable. A variable site markdown file.
+
+14:24 - Bilal Sagar Razak
+Keep it as a markdown function. Adium trio ta the calculation variables accumulated. If a strike variable make it into a markdown file.
+
+14:44 - Bilal Sagar Razak
+Let's say naked by naked cell in the bay a foot turn. Abo Adinda pay off Sumatra just to doc MD file in Dagina Sani. Files and documentary MD file in Dagangarna Sinya. Like going forward, we will be moving with Claude and MD files. It is easy to give it to Claude.
+
+15:12 - Bilal Sagar Razak
+Then I will also share one more thing: like MD files in Dakarisambo Nasiya. Obsidian Voltan is Obsidian. Have you heard of it?
+
+15:25 - Bilal Sagar Razak
+Ah okay. Abo Obsidian with second brain daga, basically obsidian sitieno. Abo second brain or project in a motilograin uh in Dakanakina. Dakum. Apoclotin is just obsidian and a keyama thing, it is BC for. It to gather the context. In a namuck, in the ideas on the other added. Apollo reconnection overview type of graphical view, graphical view, graphical connection obsidian in that. So if for now project obsidian going forward. If you say your project can also be added easily into the above cloud, and be easy for it to move through the context. Okay.
+
+16:32 - Bilal Sagar Razak
+Contexting setup going forward. For other basically city and other okay. We empty file calculations.
+
+16:47 - Bilal Sagar Razak
+Jupiter notebook, just a either calculations with columns, idea good. What is OTM? What is it?
+
+17:03 - Bilal Sagar Razak
+Pinne Yamuna file index or nam. Options.
+
+17:11 - Bilal Sagar Razak
+Okay. Padila LTPI to use LTP to close price.
+
+17:18 - Bilal Sagar Razak
+Options in the retailer park OHLC would mother you see the madi but close price mother you see them okay.
+
+17:39 - Meghav Pradeep
+Yeah, so okay.
+
+17:41 - Bilal Sagar Razak
+Aponale Siana Timoti in Chidamori. Later in that day Marmoy.
+
+17:51 - Unidentified Speaker
+Okay, right.

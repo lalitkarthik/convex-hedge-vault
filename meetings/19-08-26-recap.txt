@@ -1,0 +1,43 @@
+Daily meet
+Wed, Aug 19, 2026
+
+Summary:
+
+The meeting outlined a workflow for building an options-analysis project.
+• Separate front-end interface from back-end processing
+• Define options data fields and ATM classifications
+• Use Python and Jupyter for analysis
+• Document payoff logic in Markdown
+• Organize project context with Obsidian
+• No deadlines, owners, or final decisions established
+
+
+Action Items:
+
+* No action items generated
+
+
+Key Discussion Points:
+
+Development Architecture and Project Direction
+The discussion opened with development priorities and moved into the distinction between front-end and back-end components. Bilal described the front end as the user-facing interface and the back end as the layer responsible for retrieving and processing data.
+
+Options Data Preparation and Classification
+The team discussed preparing options data in a notebook, adding relevant columns, and separating contracts into ATM, ITM, and OTM categories. Strike distance from the ATM level was identified as part of the classification logic.
+
+Payoff Analysis and Visualization
+The discussion shifted to payoff structures and graphical analysis for options strategies. Bilal referenced straddles, strangles, naked positions, and plotting payoff functions by strike price.
+
+Documentation Using Markdown Files
+Bilal explained that calculations, theories, variables, and functions should be documented in Markdown files. The proposed approach was intended to make the analysis easier to review and provide structured context to Claude.
+
+Obsidian Knowledge Management
+Bilal introduced Obsidian as a “second brain” for organizing project ideas and documentation. He described using linked notes and graphical views to connect project concepts and make context easier to retrieve.
+
+Options Fields and Price Definitions
+The final portion returned to the structure of the calculation files and options dataset. The team raised questions about OTM data and discussed LTP, close price, and OHLC fields used in options records.
+
+
+Notepad:
+
+* No notes

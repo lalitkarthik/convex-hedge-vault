@@ -1,0 +1,93 @@
+Daily meet
+Thu, Aug 20, 2026
+
+Summary:
+
+The meeting aligned on option-pricing models, payoff structures, and implementation requirements.
+• Use implied forwards from put-call parity regression
+• Support spot and forward payoff calculations
+• Calculate expiry using 252 trading days
+• Add credit and ratio spread models
+• Validate Greeks and implied volatility calculations
+• Optimize incremental volatility recalculation
+
+
+Action Items:
+
+* Conference room participant will add support for switching between spot and forward price views
+* Conference room participant will share the GitHub or repository link for the straddle implementation
+* Bilal Sagar Razak will review the shared implementation and understand its calculations
+* Conference room participant will add credit-spread functionality after completing the current straddle work
+* Conference room participant will implement implied-forward calculations for credit spreads
+* Conference room participant will implement missing-value handling and regression rules for implied-forward calculations
+* Conference room participant will incorporate the trading-minute-based days-to-expiry calculation
+* Conference room participant will evaluate spline-based interpolation for payoff curves
+* Bilal Sagar Razak will review the calculations and code in English.
+* Meghav Pradeep will add Bilal Sagar Razak as a collaborator in GitHub.
+* Bilal Sagar Razak will add the relevant development access for the team.
+* The team will add an authentication page to the website.
+* Bilal Sagar Razak will review the referenced paper and LinkedIn post on closed-form implied-volatility calculation.
+* Bilal Sagar Razak will validate calculated values using five-point regression and online calculators.
+* Bilal Sagar Razak will compare Black–Scholes calculations based on spot and forward values.
+
+
+Key Discussion Points:
+
+Notebook Structure and Forward-Price Modeling
+The team reviewed the Jupiter notebook structure and clarified the relationship between iron condor, iron fly, spot price, and forward price calculations. The discussion focused on date-to-expiry differences and converting spot prices to forward prices for valuation and payoff analysis.
+
+Implied Forward from Option-Chain Data
+Bilal explained that the forward price can be inferred from option-chain call and put prices using put-call parity. The proposed regression uses call-minus-put values across strikes to derive the discount factor and implied forward, which is then used for ATM and payoff calculations.
+
+Spot Versus Forward Payoff Display
+The team examined whether payoff graphs should use spot or forward prices on the horizontal axis. Bilal recommended implementing a toggle that allows users to switch between the two representations, noting that the change primarily shifts the axis.
+
+Straddles, Credit Spreads, and Missing Data
+The discussion moved from straddle visualization to the planned addition of credit spreads, which will use the implied forward. Bilal also described handling missing values by using valid strikes only, requiring at least three points for regression where possible, and using direct calculations as a fallback.
+
+Days-to-Expiry Calculation
+The team reviewed the calculation of time to expiry using 375 trading minutes per day and 252 trading days per year. The method includes the remaining fraction of the current trading day, illustrated with an example based on elapsed minutes during a Thursday session.
+
+Credit-Spread Payoffs and Interpolation
+The team defined credit and debit treatment for credit spreads and reviewed how the net premium is calculated. They then discussed interpolating payoff points, with spline-based methods identified as the likely way to generate smooth curves.
+
+Expiry-Related Modeling Discussion
+The participants connected days to expiry with the Black-Scholes model and payoff-curve generation. They discussed holding days to expiry constant while generating points and applying spline interpolation, but the expiry discussion remains in progress at the end of the available meeting segment.
+
+Payoff Graphs and Spread Mechanics
+Bilal explained how buying and selling quantities affect payoff graphs and described payoff construction through superimposed naked positions. He introduced debit spreads and contrasted their limited payoff profile and negative theta with the positive theta of credit spreads.
+
+Ratio Spreads and Strike Structures
+The discussion covered ratio spreads with different leg ratios, including one-to-three, one-to-four, and one-to-five structures. Bilal explained how leg spacing, strike selection, and changes in the initial strike can create different debit or credit outcomes.
+
+Market Movement, Time Decay, and Structure Selection
+Bilal examined how selected long and short leg combinations respond when the market moves, including scenarios that can become negatively exposed. The team discussed choosing structures with greater headroom, managing overshooting risk, and improving risk-adjusted returns.
+
+Straddles, Strangles, and Advanced Combinations
+Bilal identified straddles, strangles, and related combinations as more sophisticated strategies that may provide opportunities when fewer market participants use the same approach. He also described how changing strikes and adding naked positions alters the resulting payoff.
+
+Mathematical Modeling and Live Greeks
+The discussion shifted to mathematical structures, payoff combinations, and the role of delta, gamma, and vega. The platform is intended to support Nifty, SPX, and potentially Delta Exchange crypto options, with live Greek calculations for each market tick.
+
+Calculation Performance and Documentation
+Bilal compared regression-based estimates with direct calculations and said the latter could be faster for live Greek computation, though they require substantial processing. The participants also discussed documenting calculations and reviewing code in English.
+
+Repository Access and Website Authentication
+Bilal requested to be added as a GitHub collaborator and discussed access to the relevant repository and development environment. He also indicated that an authentication page should be added to the website.
+
+Calculation Topics and Supporting Theory
+The discussion covered the importance of system design and foundational theory for understanding pricing calculations. Topics included series calculations, triangle-based payoff concepts, forward pricing, credit spreads, ratio spreads, and Greeks.
+
+Implied Volatility Methods
+The group discussed calculating Greeks and implied volatility with computer-based methods. Bilal identified the Newton–Raphson method as the practical numerical approach and referenced additional material describing a possible closed-form method.
+
+Calculation Efficiency and Validation
+The discussion addressed the performance cost of recalculating implied volatility when price differences are small. Bilal recommended improving calculation speed and validating outputs through five-point regression and online calculator comparisons.
+
+Spot, Forward, and Black–Scholes Comparisons
+The group reviewed Black–Scholes calculations using forward and spot values. Bilal proposed calculating both versions, comparing the outputs in real time, and minimizing unnecessary calculation time before closing the meeting.
+
+
+Notepad:
+
+* No notes

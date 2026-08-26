@@ -1,0 +1,83 @@
+Claude Workflow
+Tue, Aug 18, 2026
+
+Summary:
+
+The meeting defined a workflow for turning product ideas into tested, collaborative implementation work.
+• Use discovery to scale architecture appropriately
+• Convert specifications into approximately ten dependency-aware tickets
+• Apply systematic debugging and test-driven development
+• Use Git branches, pull requests, reviews, and CI rules
+• Store specifications in Markdown documentation
+• Design reusable Python utilities and adapters
+• Develop quantitative signals through separate branches
+
+
+Action Items:
+
+* Conference room participant will define test cases, including edge cases, before implementing each ticket.
+* Conference room participant will create a branch for each ticket, implement the change, and submit a pull request for review.
+* Conference room participant will convert specifications into Markdown files and save them in the documentation directory.
+* Conference room participant will review the Claude MD rules and branch definitions for alignment with the continuous integration pipeline
+* Conference room participant will learn the repository workflow and how to start and build a feature from scratch
+* Conference room participant will design reusable Python utilities or adapters for functionality expected to be shared or extended
+* Conference room participant will learn GitHub for development work
+
+
+Key Discussion Points:
+
+Workflow Components and Work Types
+The meeting introduced the Claude workflow and explored why it uses skills and Superpowers. The discussion distinguished among bug fixes, features, and larger products, with systematic debugging identified as a suitable approach for bug-related work.
+
+Product Context and Project Scale
+Bilal described a broader workflow for developing product ideas, beginning with context gathering through an office-hours-style interaction. The team would clarify the purpose, audience, and scale of the project before deciding how much architecture and planning were appropriate.
+
+Specifications and Architecture Design
+The workflow was described as converting gathered context into a product specification that defines the architecture. Brainstorming would then help compare architectural approaches, including event-driven designs and other possible implementation methods.
+
+Architectural Inspiration and Technical Research
+Bilal discussed using existing open-source execution engines as references while developing a distinct architecture based on components and messages. Claude was presented as a collaborative partner for research, discussion, and learning about concepts such as APIs, Docker, processes, scripts, and isolation.
+
+Design Finalization and Ticket Generation
+The discussion emphasized that brainstorming and design refinement constitute a substantial part of the work. Once the design is finalized, the Superpowers workflow is intended to convert the product concept into a specification and then into tickets, with the explanation continuing at the end of the available transcript.
+
+Specification Decomposition and Ticket Planning
+Bilal discussed context-window limitations and the difficulty of implementing large specifications as a single task. He recommended splitting specifications into approximately ten feature-based tickets, identifying dependencies, and sequencing or parallelizing tickets accordingly.
+
+Handoff and Test-Driven Implementation
+The proposed workflow transfers ticket context through a handoff and uses test-driven development for implementation. The team should define normal and edge-case behavior first, such as how an execution engine responds when a field is delayed by 1,120 seconds.
+
+Model Selection and Brainstorming Scope
+Bilal distinguished between brainstorming and implementation work, recommending different model or session types for each. Brainstorming is appropriate for complex architectures and multi-user features, but unnecessary for simple changes such as adding a button.
+
+Context Management and Development Sequencing
+The discussion addressed carrying context between sessions and applying project and GitHub rules. Bilal recommended a sequential workflow and described creating a branch before implementing a ticket.
+
+Branching, Pull Requests, and Code Review
+The team reviewed a GitHub workflow involving branches, commits, pull requests, review comments, and approval. Lalit emphasized proper commits and branching, while Bilal described inspecting changed files and submitting review feedback.
+
+Collaboration and Parallel Worktrees
+The participants discussed collaborating in the same project with Claude, using parallel worktrees when appropriate, and learning how merges work. TypeScript and Python familiarity were identified as relevant considerations for the collaboration.
+
+Persistent Specification Documentation
+Bilal recommended converting specifications into Markdown files and saving them in the documentation directory. He noted that this allows Claude to understand the intended method and retain structured project context.
+
+Branching and Continuous Integration Workflow
+The discussion focused on documenting Claude MD rules, aligning the continuous integration pipeline, and correcting branch definitions. Bilal described how feature branches, development, main, and production branches are used, including testing and merge-request practices.
+
+Hot-Fix and Promotion Paths
+Bilal explained that hot fixes may follow a different workflow from standard feature development. Depending on whether development and production environments are involved, changes may be moved through staging or promoted more directly after testing.
+
+Repository Practices and Reusable Code Design
+The team discussed learning how to start and build a feature from scratch and understanding the repository workflow. Bilal emphasized reusable Python utility files, adapters, and modular design to avoid difficult restructuring when new functionality is added.
+
+Options Strategy Modeling
+The discussion shifted to options strategies, including straddles, triangles, iron condors, and credit spreads. Bilal emphasized defining the payoff structure first and considering separate products when dealing directly with money or related financial functionality.
+
+GitHub and Quantitative Signal Branching
+Bilal stated that GitHub knowledge is necessary for development. He described adding quantitative signal layers to a base case through separate branches so that ineffective signals can be excluded rather than merged.
+
+
+Notepad:
+
+* No notes

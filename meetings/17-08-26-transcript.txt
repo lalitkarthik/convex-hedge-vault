@@ -1,0 +1,455 @@
+Onboarding - Lalit and Meghav
+Mon, Aug 17, 2026
+
+0:01 - Bilal Sagar Razak
+Hello.
+
+0:02 - Meghav Pradeep
+Sorry about silly table headspot and turn.
+
+0:16 - Bilal Sagar Razak
+First thing I will like I'll give a email ID which is a in the domain of convexes today. Abo uh be like internet. Uh convexes.ai. Otherwise it you guys can have a uh log into it. Initially the password is it you know upon you.
+
+0:47 - Bilal Sagar Razak
+Okay.
+
+0:54 - Bilal Sagar Razak
+So let's take the Okay. Uh before uh this setup, like if it is done, then you password planning.
+
+3:44 - Lalit Karthikeyan
+Okay, password planning access password like change.
+
+3:53 - Bilal Sagar Razak
+Claude Max Claude subscription. Claude will the card details always you give me the password, I will set up it.
+
+4:27 - Unidentified Speaker
+Password.
+
+4:47 - Lalit Karthikeyan
+Chartless.
+
+4:50 - Unidentified Speaker
+please.
+
+5:30 - Bilal Sagar Razak
+Oh, let's just show it.
+
+5:53 - Bilal Sagar Razak
+What do you say to know? What code do you say to know?
+
+6:01 - Meghav Pradeep
+In the UN D you see the response task in D, like cloud code is needed.
+
+6:13 - Lalit Karthikeyan
+Internships, projects, projects okay.
+
+6:19 - Bilal Sagar Razak
+So in any cloud code, you see the prompting and other skills you see there.
+
+7:00 - Lalit Karthikeyan
+Ponytail on the like coding online.
+
+7:05 - Bilal Sagar Razak
+But that isn't that good working.
+
+7:08 - Lalit Karthikeyan
+Ponytail what they say is like the number of code lines will be less, but it is efficient on all I have ADHD, like paragraph I did the other point by points on which mathematical heavy named alpha nor MCP MCP is currently.
+
+8:26 - Bilal Sagar Razak
+Mainly front-end jobs in cloud is very good.
+
+8:33 - Bilal Sagar Razak
+But if the back end job architecture we have to know something. What is API? Just blindly claude. The channel is dangerous. Better is first you go on and see the in YouTube or something and better. If you have videos, I said starting like for development back inside plus cont math.
+
+9:40 - Bilal Sagar Razak
+I'll just show in sensible world sensible uses.
+
+9:57 - Bilal Sagar Razak
+So, younger competitor is still we are having the capabilities of sensible to adding into the A more sensible logging data.
+
+10:48 - Bilal Sagar Razak
+Starting out, like in the false side area. What we have in context, like we think complex site works.
+
+11:04 - Bilal Sagar Razak
+But complexity is the way you are trading difference. So, basically, strangle selling strangle one yet selling returns. So it's like market gives you a good amount of return. So our signals is basically to reduce the risk. Whatever the condition is in entry, entry exit should be much more better. So, that is a conditioning options like both US and India markets. India market mega panic US market just sensible. Sensible basically options in our name. This options, let's say this is twenty-four to fifty. Put put of August 18th expiry.
+
+12:20 - Unidentified Speaker
+Okay. You would expiry my time with a spot price on this.
+
+12:27 - Bilal Sagar Razak
+This is ATM and whichever is this is ITM and this is also ITM. And ya video ICE alternative video is what is ITM? Okay. Better you guys learn it yourself.
+
+12:49 - Bilal Sagar Razak
+Yes, yes, three hours.
+
+13:00 - Bilal Sagar Razak
+Like, he has like almost everything. Because someone, when you guys do.
+
+13:09 - Bilal Sagar Razak
+Options of the Avid Madi Apo Ningala or the pay of graphs okay other than already paranoid. Apo our matinsley the practical account project.
+
+13:25 - Bilal Sagar Razak
+You guys will be confident with everything.
+
+13:32 - Bilal Sagar Razak
+Just a chart.
+
+13:41 - Bilal Sagar Razak
+see the payoff graph.
+
+13:57 - Bilal Sagar Razak
+Pina max profit, max loss margin. So live about margin and max. Break-even max profit max profit, max loss graph. Above currently, starting sell conditions is ideal that's a starting.
+
+14:30 - Bilal Sagar Razak
+Abo go through that video as well as.
+
+14:35 - Bilal Sagar Razak
+options.
+
+14:38 - Bilal Sagar Razak
+How do you make the payoff graph?
+
+15:00 - Bilal Sagar Razak
+You will get almost zero, approximately zero. Above the direction are real. We don't edge of direction. We don't know what direction go. We will do straddles because not exposed to direction. That is what delta is given. But before that, just to examine what is this Greeks. Example just delta theoretically? What we say is it is first derivative of options price with respect to spot price. And then in case of trading prosperity, probability of being in profit.
+
+15:56 - Bilal Sagar Razak
+say 0.05.
+
+16:00 - Bilal Sagar Razak
+It can be anything. This profit is uncertainty in a defining probability year value, delta. The magnitude.01. Apollo this random add is delta of call minus delta of put pick. Add in magnitude add it will be equal to one.
+
+16:27 - Bilal Sagar Razak
+On the profit if this is profit, loss. Our poverty going upwards, poverty reduces. Going downwards, poverty reduces. One more thing is most of the time otium sauna we trade.
+
+16:52 - Bilal Sagar Razak
+OTMs are more liquid.
+
+16:57 - Bilal Sagar Razak
+More people this is OINARE SMBO Number of open contracts open OI. Above the OIs in the value in ITMs, it is less. In case of BTC or like Nifty or not Nifty. In case of BTC or any stocks or any, it's like volume about over strike volume. If auro strike in a Euro charted, it's a time series, like a BTC.
+
+17:35 - Bilal Sagar Razak
+Pinna let's say it's a time series.
+
+17:48 - Bilal Sagar Razak
+So it's like we are having so much let's say strike in the let's say 10 strikes.
+
+18:08 - Bilal Sagar Razak
+Apart from total we will be having twenty strikes plus type one. Put on the call only. So we are having forty. Basically, you are basically forty times.
+
+18:29 - Bilal Sagar Razak
+Mostly we will be using only OTMs and some amount of ITMs. Only that much.
+
+18:41 - Bilal Sagar Razak
+What we use. For trading. Basically, we do 20 user. Above basically, I'm going to sell up. I will just show that options. Above this is our platform, app.convex.ai. Ngungakum is an accessor. I've internship.
+
+19:24 - Bilal Sagar Razak
+Going forward payoff diagram and similar as sensible option. We click on it. Our time series is.
+
+19:43 - Bilal Sagar Razak
+currently, what we thought is like we are building on backtesting engine. So, backtesting like we will be having a set of templates. So, templates and let's say we are taking zero DT striangle and the concept.
+
+20:09 - Bilal Sagar Razak
+10 o'clock end regime with the target premium that they are just in the stop 1.x for any premium. So, simple base case.
+
+20:29 - Bilal Sagar Razak
+Like, we will be having a node system, like how to visually see the strategy.
+
+20:39 - Unidentified Speaker
+Okay.
+
+20:41 - Bilal Sagar Razak
+Just entry time, exit time exit inflow basically is 14 credit percentage. If you are selling, let's say if you are selling this one 23,450, then getting a credit of 20. Rupees, 20.75 rupees. Above are you inflow credit to know if you are selling, the price should go down, right? Above price should go down. So, the maximum R profit we can get is 10.75 into 65.
+
+21:24 - Bilal Sagar Razak
+So, that is the maximum profit we can get. Above year, maximum profit, everything you will get to know when you. Learn about this one, like payoff grubs. Let's say I'm selling 13.55. The maximum profit is 8878 rupees.
+
+21:46 - Bilal Sagar Razak
+But percentages computed against the margin, year margin against computer closing. So, currently, what you do is just the absolute value.
+
+21:58 - Bilal Sagar Razak
+going forward marginal calculation for NARA. Like if you are interested, then you can also search on it. Like NSC how the margin calculation is. For margin calculation, it is basically simulation.
+
+22:21 - Unidentified Speaker
+Simulation Monte Carlo simulation.
+
+22:25 - Bilal Sagar Razak
+like different methods scenarios which are scenarios in there, worst case of the tanner is calculated. Okay.
+
+22:39 - Bilal Sagar Razak
+Going forward, different than simulation.
+
+22:45 - Unidentified Speaker
+Which are better is first you guys get with this. Like a ready-made formula, prox value with TMA basically.
+
+22:58 - Bilal Sagar Razak
+Max profit loss, max loss, break even is the have to do as well as Greeks. Greeks basically then probability of profit calculated probability of profit is also based on the simulation.
+
+23:21 - Bilal Sagar Razak
+Simulation, you a probability rate. So, basically, CDF of this graph. That is the probability calculated.
+
+23:43 - Bilal Sagar Razak
+This profit regions are CDF POP. Power TF profit let's say we are selling a straddle like we are selling a straddle for 56 we are selling a strangle above 91% what if if you want, you can calculate, but really important.
+
+24:42 - Bilal Sagar Razak
+while trading, we look into the credit only. Like delta, we will get the probability. With delta itself, we will get the probability. If you are taking a 0.05 delta, then it is probable that it will be not, it will be an ITM at time of expiries 5%. If you are selling it, then more chances it will go to zero. The value will go to zero. If value is going to zero, then euro three rupees will be three into sixty-five will be a profit for us.
+
+25:22 - Lalit Karthikeyan
+Most of the lot say 75.
+
+25:26 - Bilal Sagar Razak
+No, no, it is 65 till last year it was uh six seventy-five, now it is sixty-five before the item changing. Lot says historically change. I know it is due to IV and India, which is provided by the change. They used to say. Mostly every year they change. Lord says.
+
+25:54 - Bilal Sagar Razak
+Basically, retail clients in the PICE work.
+
+26:02 - Bilal Sagar Razak
+Atal do so they keep that 65 50 range.
+
+26:12 - Bilal Sagar Razak
+Then comes a theta. So, what is theta nai singha with time with respect to time? How the uh this goes? Uh value changes value of options uh price changes. Above theta or theta with time.
+
+26:38 - Bilal Sagar Razak
+Ingenendo option theta with respect to time to expire. So time to expire is expiring today is Monday, tomorrow is expiry. About one dt and zero dt. So if Thursday is a expiry, then today it will be 3 dtane. So which dt theta acceleration? It will be more negative. More negative. Above 0 dt the theta dt will be very good in lesser dt, the theta dt will less. Above a proof, like if you are, let's say we have insensible, we have eight days to experience, it will be less for the same strike.
+
+27:42 - Bilal Sagar Razak
+Twenty-four thousand minus eight.
+
+27:49 - Bilal Sagar Razak
+It is minus six.
+
+27:53 - Bilal Sagar Razak
+So, with one day change, six rupees is what is changed from here.
+
+28:01 - Bilal Sagar Razak
+If the market doesn't move and the IV doesn't change, I condition it. Assuming that the market doesn't move and IV doesn't change, the amount of option price which decays in one day is. This theta as well. So that is what theta is. So Vega is similarly IV changes.
+
+28:36 - Bilal Sagar Razak
+So here I V change basically option the price.
+
+28:43 - Lalit Karthikeyan
+So basically Black Shall's equation is platform like the method like arbitrage interpolate like either method construction.
+
+29:01 - Bilal Sagar Razak
+Construction is black source basically.
+
+29:04 - Lalit Karthikeyan
+Black shoes basically option prices, whatever is there in the option chain, other than inverted IV good.
+
+29:14 - Bilal Sagar Razak
+to Random interpolation and connection, we need this one, right? Finite element methods of UCND. Finite difference methods.
+
+29:29 - Bilal Sagar Razak
+Like, we don't need that much of a situation. Because our connection we don't have strike to train. Then why do we need that value? Yum kara value lingui. Why do we need to interpolate it?
+
+29:43 - Bilal Sagar Razak
+is the difference. It's a plot. I know, like, for you kidding.
+
+29:49 - Bilal Sagar Razak
+We interplay some methods, Watson methods, that is also method. About starting, our thing is like Black Shaw's equation first derivatives, second derivatives.
+
+30:21 - Bilal Sagar Razak
+In our platform, Vana, Volga, Charm, Vega, Theta.
+
+30:29 - Bilal Sagar Razak
+Already calculated on you can backtrack the method, like what we have done.
+
+30:38 - Lalit Karthikeyan
+Like bump and replace delta change model.
+
+30:55 - Bilal Sagar Razak
+Iv we calculate with Newton Raspan method.
+
+31:02 - Bilal Sagar Razak
+Like what we do is we take two of it. It.
+
+31:08 - Bilal Sagar Razak
+And our column put to me, we take implied forward basically implied forward using put col parity. Nyana full calculation therea. How it is done. Abo implied we take like 85 0.5 k divided by s.
+
+31:33 - Bilal Sagar Razak
+K divided by F implied forward K divided by S D. So, if it is 0.85 and 1.15 strikes. Adina option prices which we make a regression.
+
+31:51 - Bilal Sagar Razak
+What it is regression is in the septum. Slope gives values and forward in the value or no, we will get e raised to RT value. Ah, this is the RF assume R F R minus Q. Q na another is dividend in the value.
+
+32:23 - Bilal Sagar Razak
+What we are doing is we are We are in changing, interpolating from the options because we are trading options. Above already, options are price based on that. Like people and then a price is not by just an assignment.
+
+32:46 - Bilal Sagar Razak
+Basically, basically, options are delayed. Above the options basically end over what prices are basically supply and demand and meeting. Not perfect equation. Apayana calculated the option. We calculated the IV. Not the other way. What price is what price we get is theoretical price. Not the real price. When I'm trading real price, with real price, how we get it? Now, what we get is like with just it is like more than a hundred plus time series.
+
+33:39 - Bilal Sagar Razak
+This hundred plus time series, we are changing into a different dimension, low dimension. A lower dimension you see on the transformation on a Sergei Mara black shoes in the function. Ah, kitunna pude dimension on a IV voltity surface. Above as per black shoes and black shoes.
+
+34:32 - Bilal Sagar Razak
+As per black shoals model, this will be a flat player. But due to people's demand, it is skewed or smiles shaped.
+
+34:51 - Bilal Sagar Razak
+This is like time tax pairing, like maturity, time tax pair. If you are just trading one next pairing, then you would strike volatility.
+
+35:17 - Meghav Pradeep
+It will be a smile.
+
+35:19 - Bilal Sagar Razak
+Above this also changes with time. Above, basically, this expiry we have expired.
+
+35:37 - Bilal Sagar Razak
+Three dimensions are one dimensional time.
+
+35:46 - Bilal Sagar Razak
+So basically, full options in IV smile for an expiry. Surface. But that main criteria treat every model, H1 model, it's just a transformation model. Or you have a higher dimension in the lower dimension.
+
+36:09 - Bilal Sagar Razak
+Like a PCA method, like PCLA. Most settler methods. But the transformation and different dimensions, how the market is seen. That's why IV Shillimara Bangara marketing sentiments.
+
+36:29 - Bilal Sagar Razak
+That most of the people are real basically. If stocks, whatever people are. Basically, if you are profiting, one person will be losing, right? Above the options, 90% is losers.
+
+36:52 - Bilal Sagar Razak
+Basically, we can profit. Then, why do we want to go to complex things? Because 90% are already losers.
+
+37:03 - Bilal Sagar Razak
+What we have to do is IV ingredients. Most of the people they don't know to trade with it. How to see it?
+
+37:15 - Bilal Sagar Razak
+a low-dimensional space of the sprite full market. But otherwise, we can see, like the change, let's say EU value minus EU ATM value, it says something.
+
+37:33 - Bilal Sagar Razak
+day open blue line where day open a basin of strike like twenty one nine hundred and strike it became more expensive for more expensive what we will do is we sell it and say that we sell it or me in reversion that is another time series.
+
+38:03 - Bilal Sagar Razak
+Signals, but the way we trade on it differently.
+
+38:11 - Bilal Sagar Razak
+Lik you know, that is a where I am, but uh, channels is no key to but it's not explaining our control. Like, or you want to explain.
+
+38:30 - Bilal Sagar Razak
+how to tell if if there is a total signal like uh reading.
+
+39:05 - Bilal Sagar Razak
+Let's say we are entering a new market. So, stocks basically conduit. What we do is let's say another condition. Exit.
+
+39:34 - Bilal Sagar Razak
+Other sada BTC single time series, it is easier to backtrack. But when it comes to options, year time year time we got the entry signal. Which strike to enter, which contract to trade, what to trade. It can be straddle, it can be strangled, it can be credit spreads, it can be a condor, endo ayu ya gunsiya. But what to do? Ah, you that is a different signal. What to trade is another signal.
+
+40:11 - Bilal Sagar Razak
+That is a complexity of options. That is the complexity. Most of the people are really long directions. But just structure they are being not profitable. And they took more risk than a better.
+
+40:38 - Bilal Sagar Razak
+They use just a naked by or naked self.
+
+40:45 - Bilal Sagar Razak
+He will lose it. But let's say entry signal, it is going going upwards in direction upwards. But you can just call by.
+
+41:14 - Bilal Sagar Razak
+Let's say we got a signal from here at 23.50. 24 the 50 late is going upwards in another 30. If we are buying a call and if market goes up, we will be in profit.
+
+41:34 - Bilal Sagar Razak
+Now, if you are max loss cap down, this is limited. Unlimited. Profit is unlimited.
+
+41:48 - Bilal Sagar Razak
+If we are selling it.
+
+41:54 - Bilal Sagar Razak
+Our next option is selling a put. Selling a put to if the market goes up, we are profiting. You would have, but it is reversed. Max profit under the max loss unlimited. Pina variable difference is the probability of profit. But a thirty sixty-six thirty-five percentage. If we need more profit, win rate.
+
+42:28 - Bilal Sagar Razak
+We have to sell sell put.
+
+42:36 - Bilal Sagar Razak
+Let's say clear direction it will go up condition. We can put the sell and limited loss on the Now, if you want to reduce the risk, you buy by UDI Maga Max loss reducing. But if the market goes up, in profit.
+
+43:20 - Bilal Sagar Razak
+So that is what happens.
+
+43:31 - Bilal Sagar Razak
+It is ninety two three hundred it is different percentage of risk we are taking less lesser in trade expense. Margin is different. Margin is absolute value divided by margin in percentage. Apart to trade one contract of EU is 50,000. But if it is just selling, 1.69 lakhs. Above other different margin also depends on strike selection. Above justice.
+
+44:18 - Bilal Sagar Razak
+What to do next and planning to what you need is a pair of graphs for you. In a UX amount, let's say Let's say year trending year non-trending.
+
+44:54 - Bilal Sagar Razak
+We don't have a clear signal. Above say twenty-three eight hundred twenty-four two fifty and two fifty. Let's say twenty-four three hundred.
+
+45:30 - Bilal Sagar Razak
+I just there are no twenty four three hundred twenty four four hundred twenty four uh three hundred put down three hundred none and four hundred non put. So, call.
+
+47:03 - Bilal Sagar Razak
+You can see for three hundred twenty four.
+
+47:31 - Bilal Sagar Razak
+Twenty-four three hundred five sorry, sorry, sorry. Then I negative called selling twenty-four four hundred in there.
+
+47:54 - Bilal Sagar Razak
+Twenty-four three hundred.
+
+48:01 - Bilal Sagar Razak
+24,400 sell. Abola, here you are. Price will be in profit.
+
+48:14 - Bilal Sagar Razak
+So if we know the price is always breakout, chance on let's say price will go below or we know. But direction are real.
+
+48:28 - Bilal Sagar Razak
+But direction are real angle. We can do the opposite.
+
+48:35 - Bilal Sagar Razak
+Random by year by year, you three still angel will be profit.
+
+48:45 - Bilal Sagar Razak
+Blue line blue line blue line currently market in the movement is it la profit current.
+
+49:00 - Bilal Sagar Razak
+green or red at the time of expiry expiry, what will profit?
+
+49:10 - Bilal Sagar Razak
+This current with time.
+
+49:21 - Bilal Sagar Razak
+This blue line, how do we calculate this with delta and gamma? Delta, gamma, theta, green switch on the calculator our price. Like you might have said, like you price in the Euro 414, but we we don't have to options interpolate it. We price use Taylor's cycle, equation.
+
+50:12 - Bilal Sagar Razak
+Attribution Peta into delta t Delta into Delta T, Vega into Delta Sigma, then Rho into R. Gamma R and Rho would be not equal. Just take these three. Because here, the changes are just time. One variable is coming.
+
+50:55 - Bilal Sagar Razak
+Strikes are our distance. First, the payoff at the time of expiry. The blue line we will take into account later. First, the payoff at the time of expiry.
+
+51:22 - Bilal Sagar Razak
+I don't for a better uh you know like the option chain and the data it's a little bit of constructing the data like back end and uh like uh what I'll do is for now I'll give one weeks of data so with one next where you can make the payoff one next You will get an idea of what to trade, how the payoff of it.
+
+52:46 - Bilal Sagar Razak
+For example, I told you about the Greeks. We are selling this. We thought we were selling put. When we sell put, our Greek Even if there is a slight movement in price, the value of this option will move a lot. If there is a 1 rupee change spot, here there will be a 0.49 rupee change.
+
+53:14 - Bilal Sagar Razak
+option the price of it. Let's say if you are doing a credit spread.
+
+53:41 - Bilal Sagar Razak
+delta, theta, gamma, vega.
+
+54:06 - Bilal Sagar Razak
+a static value. If it is in the market, it will be static. Let's look at it like that. Another thing to note today is, let's take today's time, let's say 1 o'clock. Let's take a time In that let's look at the price today.
+
+54:31 - Bilal Sagar Razak
+0.11 ATM 0.25 So, with time it increases.
+
+55:25 - Bilal Sagar Razak
+is also good about how it Basically, we are hedging gamma concept.
+
+56:21 - Bilal Sagar Razak
+This is how Greeks play into trading methods.
+
+56:42 - Bilal Sagar Razak
+Oh. Oh.
+
+57:10 - Bilal Sagar Razak
+You can also go into this.
+
+57:39 - Bilal Sagar Razak
+in a previous experience is also working.
+
+58:07 - Bilal Sagar Razak
+I in the calculation. Okay. That is what is it?
+
+58:32 - Bilal Sagar Razak
+is what we have to face. We can learn that from the way of graphing. We can learn that from the way of graphing.
+
+59:01 - Bilal Sagar Razak
+We You can have a daily meeting at the beginning of the day. You can tell how long it has been.

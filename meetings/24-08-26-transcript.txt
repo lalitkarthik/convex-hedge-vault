@@ -1,0 +1,626 @@
+Meet
+Mon, Aug 24, 2026
+
+0:00 - Bilal Sagar Razak
+Hello. Hello.
+
+0:28 - Unidentified Speaker
+You look sad. No, I'm not sad.
+
+0:29 - Bilal Sagar Razak
+Oh, you've reached Kolkata, right? Yes, I have. When will you be free?
+
+0:32 - Meghav Pradeep
+This week, we have a Sunday Onam event. We'll be free on Saturday.
+
+0:38 - Bilal Sagar Razak
+When are you coming to Onam?
+
+0:57 - Bilal Sagar Razak
+I don't know.
+
+1:25 - Meghav Pradeep
+We can meet next week.
+
+1:25 - Bilal Sagar Razak
+If you are free, you can come to Kolkata. How many days will you be in Kolkata? We both are going to Kerala on September 10th.
+
+1:51 - Bilal Sagar Razak
+Oh, okay.
+
+2:19 - Bilal Sagar Razak
+I don't know.
+
+2:19 - Meghav Pradeep
+I don't know.
+
+2:47 - Bilal Sagar Razak
+Do you know how it comes? When we move forward, this is what is used in strategy creation. That is, when we move the market in different structures, where do we get the P&L from Sometimes we lose theta, but we get profit quickly. Or we lose gamma. So, we create a strategy by distinguishing each of these. That is, when we trade, if we get 10,000 rupees profit from one thing, We can bifurcate the ETN and VN. Or we can look at the market and see if we got the money or not. But what is the reason for that money going? We don't really know. Is it actually a gamma loss or a Vega loss? I have spoken to a lot of people. People sell straddle or strangle. But the market doesn't move.
+
+3:43 - Bilal Sagar Razak
+But they are not able to figure out why this loss is coming. Usually, what we think is that if the market does not move, you make money.
+
+3:50 - Unidentified Speaker
+Right?
+
+3:51 - Bilal Sagar Razak
+Yeah. But in other situations, people are surprised. I sold an option and the market did not move, but how did I get a loss? That is why the importance of Greeks is there. So, the DT wise of each of the Greeks and the second derivatives. See, not that we do not use second derivatives.
+
+4:10 - Bilal Sagar Razak
+But if you understand it in depth, it will help you better. That's the main thing. Now that you mention it, let's say you take the whole vehicle.
+
+4:37 - Bilal Sagar Razak
+How to decompose it?
+
+5:06 - Unidentified Speaker
+Delta.
+
+5:16 - Unidentified Speaker
+Delta.
+
+5:36 - Bilal Sagar Razak
+And VANA. This is the Taylor Series expansion. Now you understand why we need this. When we think about it, we learn more when we go back.
+
+6:02 - Bilal Sagar Razak
+But if we don't know when to use it, then there is no use. We need it to trade. If we know why it is needed, then it is of no use. Let's try this too. I forgot about this last time. I remembered it when Rahul came. Let's try this too.
+
+6:28 - Bilal Sagar Razak
+If you want, you can try with this too. Because we don't use these two.
+
+6:56 - Bilal Sagar Razak
+complex things.
+
+7:23 - Bilal Sagar Razak
+The next step is to take a DT 5-4 and decompose it throughout the day.
+
+7:52 - Bilal Sagar Razak
+Throughout the day, you can define it. Throughout the day, the velocity has changed.
+
+8:00 - Bilal Sagar Razak
+You have to do it in a structure. In a structure, throughout the day, the PNLs have changed.
+
+8:19 - Lalit Karthikeyan
+When I used Claude and chatted with him, in the longer days to expiry, the effect of Vega will be more pronounced. And in the shorter days, you are expecting a lot of price change rather than volatility change. So the effect of Gamma will be more.
+
+8:47 - Lalit Karthikeyan
+like from the chain, how to Read it.
+
+8:50 - Bilal Sagar Razak
+Those calculations are basically, if there is a calculation coming from Claude, you have to look at the source correctly. No, this is it.
+
+8:58 - Lalit Karthikeyan
+This is what I prefer.
+
+9:01 - Bilal Sagar Razak
+Okay, Taylor's expansion is a series expansion, right? That's fine. So, let's try this out too. Okay. Then, the next thing is, what you did now, Can you please present it so that I can understand it? It's a simple 50-minute presentation.
+
+9:21 - Unidentified Speaker
+50 or 10 minutes?
+
+9:39 - Meghav Pradeep
+I'll screenshot it.
+
+9:45 - Bilal Sagar Razak
+See, we need a basic understanding of another.
+
+9:53 - Bilal Sagar Razak
+Ready correctly to the trade.
+
+10:01 - Bilal Sagar Razak
+In the Greek, other master. Mina paisna stab, endo yana stapurno.
+
+10:15 - Bilal Sagar Razak
+Decaled like market fields.
+
+10:57 - Lalit Karthikeyan
+Faster, like last time discuss futures in a regress either canon. So last time, like 6.5% callback, but then other than that, put call parity using regression, and then we compare the discount rate and futures with the one you provided.
+
+11:24 - Meghav Pradeep
+So, and then yeah, implied on First in a data set like IST UTC difference and data.
+
+11:43 - Bilal Sagar Razak
+Okay, time.
+
+11:45 - Meghav Pradeep
+Time into the like other picks regression forward rate discount rate other than like other mostly match I will be sixty values in it.
+
+12:03 - Bilal Sagar Razak
+different sorry, yes.
+
+12:06 - Meghav Pradeep
+Six point five.
+
+12:08 - Lalit Karthikeyan
+Uh I V calculation like E black seventy six model chip like forward forward rate is it like Newton Russian method is it Newton Russian last time it's three issues and there no like uh research paper based flat and convergent IV data fifteen percentage to twenty three or thirty-three percentage default I did it so initializing issues Another thing: Newton drafts and secant methods combines bisection and Newton draft. Other convergence speed faster. So are they good in Okanu?
+
+14:50 - Bilal Sagar Razak
+Try out the delta trend on average delta delta average change at complex that is the thing.
+
+15:07 - Bilal Sagar Razak
+Complex computation power fine.
+
+15:25 - Bilal Sagar Razak
+So that is the difference.
+
+15:30 - Meghav Pradeep
+In the dane, voltage in the spring is stripers volatility. Smile on the binum like, smoothie under another, like spline okay, they like strategy seven D, like like audio option, like get normal class defined.
+
+16:03 - Lalit Karthikeyan
+So basically or a strategy in which call option, put option, buying, shorting. So either leg, like buying a call. This is a leg. So this is a combination strategy. So our classifying like our lega defined. So strategy is combination of legs. This is a design pattern.
+
+16:28 - Bilal Sagar Razak
+Or you condition expire is also a discriminating thing. Because calendars like can be different, different experience.
+
+16:45 - Bilal Sagar Razak
+Yes, yes.
+
+16:49 - Bilal Sagar Razak
+That is a thing.
+
+16:50 - Meghav Pradeep
+Okay.
+
+16:52 - Bilal Sagar Razak
+Going forward, that is a next thing to think about.
+
+17:10 - Meghav Pradeep
+Like either strategies, all the strategies function.
+
+17:25 - Unidentified Speaker
+Mathematical.
+
+17:27 - Meghav Pradeep
+Ah just on the like a markdown on the EDS level in a uh like charts okay charts say like uh spot price versus uh PNL chart on the in a forward versus PNL chart on tender directly.
+
+17:55 - Lalit Karthikeyan
+that check like the same graphic course shift like horizontal shift in a basis in a like F minus S in a basis across the option chain as a constant.
+
+18:12 - Meghav Pradeep
+Yes, yes, yes straddled strangled in a credit spreads into them, like them, other calculations in the chart.
+
+18:26 - Unidentified Speaker
+Same some like here also.
+
+18:28 - Meghav Pradeep
+Termin uh spot versus PNLU in a forward is PNLU other call spread.
+
+18:44 - Meghav Pradeep
+Greeks in the calculation.
+
+18:56 - Meghav Pradeep
+Yeah, Greeks in calculation straight black sanitized model check this analytical derivative and the net is formula and just straight up other calculator.
+
+19:28 - Lalit Karthikeyan
+Do you want formula substitution or multiple of quantity?
+
+19:53 - Bilal Sagar Razak
+Long started left at two Delta.
+
+20:00 - Bilal Sagar Razak
+Theta under value theta vague multiple quantity. The tame vague multiple of quantity.
+
+20:13 - Bilal Sagar Razak
+Delta Delta and two long strategy of five minutes computation.
+
+20:40 - Bilal Sagar Razak
+I'm going to go to the castle like in general to one again.
+
+20:44 - Meghav Pradeep
+Ah, okay.
+
+20:47 - Bilal Sagar Razak
+Okay, like total delta zero started total delta two one again.
+
+20:56 - Meghav Pradeep
+Ah, all right.
+
+20:57 - Bilal Sagar Razak
+Slightly away from central A
+
+21:45 - Meghav Pradeep
+Okay.
+
+21:56 - Meghav Pradeep
+Ah, okay. Upon uh minute.
+
+22:09 - Meghav Pradeep
+Allah, like I've been there.
+
+22:12 - Lalit Karthikeyan
+Okay, okay, um it on it's city my face should okay, okay.
+
+22:23 - Meghav Pradeep
+Oh, it did like Greeks in the uh DTS it looked like okay.
+
+23:04 - Bilal Sagar Razak
+Smoothening throughout the dashboarding UCL.
+
+23:11 - Unidentified Speaker
+Yeah.
+
+23:23 - Bilal Sagar Razak
+Or na yamar nai uh add one more field for tailor expansion.
+
+23:31 - Bilal Sagar Razak
+Are they doing some other no conduct? Uh random compared to look. Okay. Akovidosatra change in uh index on a club, change in A TMI on the club uh okay throughout the day.
+
+23:52 - Lalit Karthikeyan
+Pin oh you know It's a clear calculation like moon nala dosa under nacha or strike and across price moves, Vega, how is uh Gamma moving and then decompose that into Taylor series for the profit.
+
+24:11 - Bilal Sagar Razak
+Someone says first what you have to do is like take one day of full di uh data that is like three seventy five minutes. I'll it can be like four to five or uh six to five anything. The tazil is the first you have to what you have to find is ATM IVs. Can change with this also. What you say? With time. IVs. That computing.
+
+24:41 - Bilal Sagar Razak
+This ATM IV first minute to last minute.
+
+24:48 - Bilal Sagar Razak
+That is delta in what to say IV Pinne Ademani delta in spot to noca in Monday.
+
+25:02 - Bilal Sagar Razak
+You compare decomposia. Decombosing is also a regression basically. Or a minute regression. Oil cheesama.
+
+25:17 - Bilal Sagar Razak
+points and regression this delta t change in time remains constant every move okay calculations okay now make it into a product With the back end.
+
+25:59 - Bilal Sagar Razak
+That is the next bigger thing.
+
+26:04 - Bilal Sagar Razak
+It can take two to three days. If Claude is there, two to three days. Or maybe the pads are in a utility username. Otherwise, like Ninglau batch meeting, continued universities for nothing. Above our patent, notebook in a gram, it has to do with answer the in a productive account. U user experience for studio degree accompanying. For sensitivity under It can be that way.
+
+26:52 - Bilal Sagar Razak
+Try to implement it.
+
+26:56 - Bilal Sagar Razak
+Idea and why you implemented that part thing.
+
+27:02 - Bilal Sagar Razak
+try to.
+
+27:26 - Unidentified Speaker
+Okay.
+
+27:35 - Bilal Sagar Razak
+Adela you do cadium. Like, let's say gamma is gamma in the chart vega difference in the jar. Vega difference, or you experience it. Like more flexible it is more better.
+
+28:08 - Bilal Sagar Razak
+Nigga, competitor every day, okay.
+
+28:14 - Meghav Pradeep
+Sensible.
+
+28:17 - Bilal Sagar Razak
+Okay, sensible thing.
+
+28:23 - Bilal Sagar Razak
+But that is just the graph at expiry. I have a payoff graph at expiry.
+
+28:32 - Bilal Sagar Razak
+Just number structure with time with IV increasing with spot chaining.
+
+28:41 - Bilal Sagar Razak
+Just moving a red to green white. So you can make it more better and more interactive.
+
+28:54 - Bilal Sagar Razak
+Because it's just a basic product, but the Greeks involved, Ivies involved. About interactive user alcoholic, basically.
+
+29:52 - Bilal Sagar Razak
+Okay.
+
+30:08 - Bilal Sagar Razak
+If you can Read it.
+
+30:12 - Bilal Sagar Razak
+Going forward helpful migratory.
+
+30:19 - Bilal Sagar Razak
+Okay.
+
+30:23 - Lalit Karthikeyan
+Sensible alla the bear number competitor.
+
+30:28 - Bilal Sagar Razak
+Fire fire select content.
+
+30:35 - Lalit Karthikeyan
+Spin.
+
+30:39 - Bilal Sagar Razak
+Broker Lake Saraza Gro Abo They are more targeting option traders and traders basically.
+
+30:59 - Bilal Sagar Razak
+A video in the news at the General Subarunde.
+
+31:05 - Bilal Sagar Razak
+That is fine. But I use tool that UX experience by US US tool.
+
+31:19 - Bilal Sagar Razak
+But that can be implemented here.
+
+31:24 - Bilal Sagar Razak
+Open1 plus something else and then we divide it. Video, kidalin, theory it's very calm and spread the colours.
+
+31:53 - Unidentified Speaker
+Okay.
+
+31:55 - Bilal Sagar Razak
+Isabeem I'll get to my other it's an Which such tables give butterflux on the post? Options that option strat option strategy strateg dot com.
+
+33:04 - Bilal Sagar Razak
+Serial interesting at all features under parameters.
+
+33:10 - Bilal Sagar Razak
+Payoff in depth.
+
+33:12 - Unidentified Speaker
+Yeah.
+
+33:14 - Bilal Sagar Razak
+This is a very useful atol.
+
+33:43 - Bilal Sagar Razak
+Idupo trained basically someone planning basically.
+
+33:53 - Bilal Sagar Razak
+Adil skeleton and aga Abaskeltan Nakenaman's room. Abo Adina said ready. That is how we have Alangil. Adime alo Dulyakania worker.
+
+34:11 - Bilal Sagar Razak
+April versions it is a front end bargain.
+
+34:36 - Bilal Sagar Razak
+So what? Different type of API is supposed to get.
+
+34:47 - Bilal Sagar Razak
+Once you learn research in it, calculations now we are coming to development side. Okay.
+
+35:02 - Bilal Sagar Razak
+How you compute? Live active. Are they probably crypto data? Adam twenty-four hour live data too.
+
+35:21 - Bilal Sagar Razak
+We'll go move to that too. But if just try the noca.
+
+35:40 - Bilal Sagar Razak
+Night replicate with some development knowledge.
+
+35:53 - Bilal Sagar Razak
+Okay.
+
+36:19 - Bilal Sagar Razak
+But idea, like how options are the market you survey the new course.
+
+37:04 - Lalit Karthikeyan
+So, clarity maybe Ningal Chaina Chirigi clear it under point like next week or time like Ningal Chaina Nangala Kanu and Gitri Goody better.
+
+37:18 - Bilal Sagar Razak
+Yes, sure, sure. Indian markets Karnangan office in the US markets are definitely involved and Practically trading decision in case can't say exactly with examples or with numbers exactly in the summer.
+
+37:46 - Bilal Sagar Razak
+I'm market movie management.
+
+37:51 - Bilal Sagar Razak
+So, right now, chart, our short short straddle negative at the center. I like that is you are selling the biggest. So, your worst enemy is Gamma, but at the same time, your money is coming from TT and Vega.
+
+38:19 - Bilal Sagar Razak
+So, ideally, you should sell at a higher AV and then the market movie and say, major loss will be coming from Gamma.
+
+38:35 - Bilal Sagar Razak
+You will have you will be having delta loss.
+
+38:41 - Bilal Sagar Razak
+of ways to hit Delta.
+
+38:48 - Bilal Sagar Razak
+Going forward, pay off on the key, and then the Greeks like Aimutini, we can sit on it. Like actual practical trading.
+
+38:57 - Bilal Sagar Razak
+Yeah, we can do that. I didn't exercise here. If you can mainly chain short games, so what we usually say is short gamma. Alinam strategy normally usually institutions.
+
+39:29 - Bilal Sagar Razak
+Almost like very short gamma to neutral gamma. But move in the direction of the positive gamia tomorrow. Automatic. So, position plays in there. So, that initially we'll think that our position is against. If the market moves, it's against us. But moving NSH, it will automatically become favourable to that move. If marketplace, we can going forward.
+
+39:56 - Bilal Sagar Razak
+If basic understanding of Greek, you are calendar spreadsheet.
+
+40:09 - Bilal Sagar Razak
+shorter DT Vega exposure low IV scenario, you can sell EIC seller medicine. Once IV expands, you will make a good amount of money in Vega in the for further DT.
+
+40:34 - Bilal Sagar Razak
+But in case the market moves against us and IV expands, you will make enough money to cover for that because you are long next week.
+
+40:47 - Bilal Sagar Razak
+Like hetgy in your basically, or not loss on material profit on but that profit should be more than the loss to make it net positive.
+
+40:59 - Bilal Sagar Razak
+Even that that So, going forward, maybe after one month, okay, why don't we do this? Maybe this is a better strategy.
+
+41:21 - Bilal Sagar Razak
+Market for us also is new.
+
+41:27 - Bilal Sagar Razak
+We are also serving the market currently.
+
+41:31 - Bilal Sagar Razak
+We have been test like testing for two months. Actual live started one month.
+
+41:40 - Bilal Sagar Razak
+Like conversations were going, testing was happening, back testing strategy finalizes. And then we went live actually strategy fixing the live last month.
+
+41:53 - Bilal Sagar Razak
+So, we can all study together. Basically, US markets. So, US markets deploy.
+
+42:05 - Bilal Sagar Razak
+So, we'll figure it out together.
+
+42:11 - Bilal Sagar Razak
+You can connect any time. Group message access.
+
+42:15 - Bilal Sagar Razak
+market movie in Bengal, SKU movie. Greek Senga movie watch you have full access.
+
+42:24 - Bilal Sagar Razak
+You can, if any interesting idea, test out either backstick, engine under the end idea. If it is it's it's a profitable thing, we can deploy it also.
+
+42:39 - Bilal Sagar Razak
+Apply them free on the idea. To watch the markets. Just put a message there and Google Meet screen share. You can get access and watch this market. No problem.
+
+43:05 - Bilal Sagar Razak
+About three months or a strategy creative. Strategies created, deploy the embodiment, you will have a stable income. Carnegie deploy and share income.
+
+43:24 - Bilal Sagar Razak
+Trading is if I am collaborating with anyone, if any fundamental and if a number of strategy deploy and it is working good. 5 CR and strategy deploy either. If you are making 10-20%, there is nothing wrong in that. Basically, you guys are the strategy owners.
+
+43:51 - Bilal Sagar Razak
+More than happy.
+
+43:58 - Bilal Sagar Razak
+Financial markets to make money. Rest, everything is secondary.
+
+44:15 - Bilal Sagar Razak
+Whatever basically complexity, you guys are more interested in trading, which is a good thing.
+
+44:31 - Bilal Sagar Razak
+up a development in the godem, but even going forward, next internship, you will end up in a trading disk somewhere.
+
+45:00 - Bilal Sagar Razak
+Anything else?
+
+45:13 - Unidentified Speaker
+Okay.
+
+45:17 - Bilal Sagar Razak
+Next week, negative media.
+
+45:21 - Bilal Sagar Razak
+Halfway halfway, halfway over here. Halfway halfway.
+
+45:35 - Bilal Sagar Razak
+Okay, technology meeting.
+
+45:42 - Bilal Sagar Razak
+It's not compulsory. If it is disrupting your flow, Yes, yes, yes. Even better. Yes. Aladdi.
+
+46:03 - Bilal Sagar Razak
+Like tomorrow and another metal when you come to the idea.
+
+46:15 - Bilal Sagar Razak
+You work on that time. Love it.
+
+46:21 - Bilal Sagar Razak
+What's it under chemical industry? Industrial DCC. Lingaka app in the accessor.
+
+46:40 - Lalit Karthikeyan
+A backtesting engine app.roms.
+
+46:43 - Bilal Sagar Razak
+Yeah, yeah, I think suggestions on friend and like Langalum other building on the so we are just taking opinion. Ninga Batan and the London. Are you no kio?
+
+47:01 - Meghav Pradeep
+Yes, student.
+
+47:10 - Bilal Sagar Razak
+Can't you screen share in the opinion?
+
+47:16 - Meghav Pradeep
+Structure chain like confusing ideas.
+
+47:39 - Bilal Sagar Razak
+We'll think about it. How to make it better structure change and did you understand what that is? Yeah.
+
+47:48 - Meghav Pradeep
+Yeah. We'll explain it later then.
+
+47:50 - Unidentified Speaker
+Okay.
+
+48:01 - Meghav Pradeep
+I think like early part, like in general. Uh like other one short ratios.
+
+48:13 - Bilal Sagar Razak
+Yeah, it is better than the ratios are.
+
+48:16 - Meghav Pradeep
+Yeah. Up like explain the problem like any good.
+
+48:22 - Bilal Sagar Razak
+I mean man, but still explain in the end of the complexity and the number simplified and no.
+
+48:39 - Bilal Sagar Razak
+Like representation.
+
+48:45 - Bilal Sagar Razak
+It's just a different way of option chain.
+
+48:50 - Meghav Pradeep
+Like are they collective?
+
+48:59 - Bilal Sagar Razak
+Like what is what did you feel is confusing?
+
+49:08 - Bilal Sagar Razak
+Okay, so this strikes.
+
+49:19 - Bilal Sagar Razak
+That is structure, call access, put access, display, other ones like this we'll take care of parameters.
+
+49:38 - Bilal Sagar Razak
+Okay.
+
+49:43 - Bilal Sagar Razak
+So either this is basically steps. 1 is to 1 long, 3 short, 2 long. So, it's similar to a butterfly. But the ratio is butterfly.
+
+50:09 - Bilal Sagar Razak
+Instead of that, we are creating 1 is to 3 is 1 long, 3 short and 2 long. So, the top tab that represents the horizontal strike of it is 50 strikes away, you are 3 short and 50 strikes away, you are 2 long. So, this first Yeah, so 18.2 is the net premium of 24, 50, 3 lot short and 24, 100, 2 lots long. That's the net premium.
+
+50:49 - Unidentified Speaker
+Okay.
+
+50:50 - Bilal Sagar Razak
+So, that 50 is the step between each strike.
+
+50:54 - Unidentified Speaker
+Okay.
+
+50:54 - Meghav Pradeep
+Okay. Makes sense. Yeah. So, the next column is basically 24,000, 1 lot Okay.
+
+51:08 - Bilal Sagar Razak
+But I I understood why the confusion is because I'm it's just written. Yeah.
+
+51:34 - Bilal Sagar Razak
+Yeah.
+
+52:04 - Bilal Sagar Razak
+Okay.
+
+52:29 - Meghav Pradeep
+Did you also go through the app?
+
+52:58 - Bilal Sagar Razak
+There is still a lot of work to be done. As Bilal said, we have done the depth-wise work. We have not gone depth-wise. I have only added points. When you study APM, you will understand. You will add endpoints. You will get an idea of what is going to come in the dashboard. I have added points so that you will never forget.
+
+53:26 - Meghav Pradeep
+We have a separate section for strikes. We have a separate section for strikes.
+
+53:49 - Bilal Sagar Razak
+So, when we backtest a strategy, this is how we plan the outputs. If you want, I can send you an example of a test card in the group. And how do you think this is? Is there anything to add to this? Is it informative?
+
+54:17 - Bilal Sagar Razak
+How is the look of the front end? You are always welcome for inputs.
+
+54:30 - Bilal Sagar Razak
+In this, there is a dialogue, traits, and diagnosis. Change it to the side of the overview. So you can go through trade by trade. Once you guys are also, once you understand this, our strategy, you said okay, I want to try a short straddle strategy.
+
+55:11 - Bilal Sagar Razak
+We will create a template and test it according to your logic. Once you are at the stage to create a strategy, we will create a template based on your idea and test it using our app. This app called app.convexness.ai is basically an in-house app.
+
+55:36 - Bilal Sagar Razak
+We will come back to the beta version. In the beta version, there will be no XPX. We can use XPX in-house. In the beta version, there will be no XPX. In the beta version, there will be no XPX.
+
+56:00 - Bilal Sagar Razak
+After that, only some features of the beta version can be added. Gradually, the beta version will be increased. As I said, the GitHub repos will be changed in the form of prod and main. So, each branch will go for each feature.
+
+56:27 - Bilal Sagar Razak
+That's the main thing. Okay, I don't have much time. Okay, good night.
+
+56:34 - Unidentified Speaker
+Bye guys.

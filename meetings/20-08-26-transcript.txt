@@ -1,0 +1,491 @@
+Daily meet
+Thu, Aug 20, 2026
+
+0:03 - Meghav Pradeep
+Order to date Jupiter notebook file structure.
+
+0:32 - Lalit Karthikeyan
+naked by naked call in iron condarum iron fly.
+
+0:37 - Bilal Sagar Razak
+I encondrum iron fly. Okay, I forgot it's for on this side.
+
+0:54 - Lalit Karthikeyan
+So Data set is 10th February or 10th February and expiry data set 10th February IRB I mean January 15th February 10th data set and then expiry is on February 10th.
+
+1:25 - Bilal Sagar Razak
+ah that is what I like that is how it is weekly expirino or nale it is not just seven days it will start from a long day before and then it will start trading okay straddle the way of pay of Okay, only blue line calculation model not pick black seventy six.
+
+2:22 - Lalit Karthikeyan
+So basically, difference is difference in the date to expiry in our concept.
+
+2:30 - Lalit Karthikeyan
+So let's say 6 day to expiry ratio converted, we have to add it over here. And spot price forward price. So, like this is a spot to forward convert. Like, even if the forward prices are like interpolate, like discount rate to divide and rate like manually map detail like for calculation.
+
+3:16 - Lalit Karthikeyan
+even if spotter like it this doesn't involve any black shows model it is just max of s minus k of max of k by s like okay forward indie forward race indicator.
+
+3:45 - Bilal Sagar Razak
+What we had calculated. Forward basically forwards trade in the futures and sports trading. Forwards are calculated.
+
+4:00 - Bilal Sagar Razak
+It is calculated from option chain itself.
+
+4:04 - Bilal Sagar Razak
+Options calculate. I'll just share how it is calculated.
+
+4:18 - Bilal Sagar Razak
+There is some one who called parrotine or it is.
+
+4:27 - Lalit Karthikeyan
+basically call minus C minus P is equal to F minus K R is the regress a F home discount rate extract Okay F home discount rate so that is a real method so okay Ad okay that is a real method in ah let's say F Call parity put called forward parity.
+
+5:41 - Bilal Sagar Razak
+Basically, your equation your equation uh rearrange is here that is like C minus P into E raised to minus R T in F minus uh k into e raised to R T ln so what happens is either you uh regression idea because C minus P we'll get it from uh option J Ln or C minus P option J for every strike you know K is also uh not a variable a variable. Above C minus V with respect to K and regression line, it will be a straight line. If put called parity comes into that. Above basically, if oh okay.
+
+6:55 - Bilal Sagar Razak
+So basically, C minus P is 25.95 minus E value.
+
+7:09 - Bilal Sagar Razak
+For C minus P for this is this one. For everything it is having limitations for ITMs illiquidity. So every minute limp. We don't have the value for it. So, what we do is for a regression, here regression, what we can get is the slope is e raised to minus RT, which is discount factor and k into e raised to minus rt will be the other sorry, sorry, e raised to minus.
+
+7:52 - Bilal Sagar Razak
+minus here is to minus R base the slope of it slope of the line okay I'll get it here.
+
+9:05 - Bilal Sagar Razak
+Okay, so from market, you will get C minus P as well as D. So using this, what you can get is a regression of it, not d sorry, k so using this you will have a regression equation like f into d minus k into d so in this equation like it is of the form y is equal to mx plus c regression either in what you can get is m is equal to minus b a and uh c is equal to uh f d right You will get D. Otherwise you can get F. F is equal to C divided by D. Okay. Or C V divided by minus N.
+
+10:28 - Bilal Sagar Razak
+So this is implied forward. E rundo values for IV calculation.
+
+10:39 - Bilal Sagar Razak
+What it so basically will get forward. A forward basically we will do the payoff. Not with payoff, we will find the ATM.
+
+10:55 - Bilal Sagar Razak
+So with ATM, basically pay off K minus a scenario. K minus F. What it? So that is how implied for this is called implied for like it is implied from the market. Got it.
+
+11:17 - Lalit Karthikeyan
+Like payoff max of I mean call option max of S minus K and put option max of K minus S anger like how F you say instead of S it is F really not S We always take it take forwards from forwards for finding the item.
+
+11:44 - Bilal Sagar Razak
+Yes, yes.
+
+11:48 - Bilal Sagar Razak
+We will take it as F X axis F y axis profit. Yes, yes, profit. But most of the people, what they do is they. Use it as spot basically. In most of the platforms, in a spot and they might have used a mistake, but uh going forward in the uh the real number of platforms because more people are used to it. But number calculation.
+
+12:27 - Lalit Karthikeyan
+So going forward, Nangala mother you say another layer.
+
+12:32 - Bilal Sagar Razak
+That is better. Then it is easy to change it. Like you have spot as well as F. Then it is easy to change it.
+
+12:42 - Bilal Sagar Razak
+We can give a toggle but always it will be better to do a toggle button. Like Fana, Sana in the layer charitas. It will be a small difference only.
+
+12:57 - Bilal Sagar Razak
+friends in the when it comes to it's just shifting of the axis.
+
+13:04 - Unidentified Speaker
+That's all.
+
+13:10 - Bilal Sagar Razak
+Adili straddle is triangle area. Like, is it in the GitHub or somewhere else?
+
+13:22 - Bilal Sagar Razak
+Okay, you guys share me the link once, so I'll go through it.
+
+13:31 - Unidentified Speaker
+Like what to do, how to do the math.
+
+13:36 - Bilal Sagar Razak
+You guys start adding credit spreads.
+
+13:42 - Bilal Sagar Razak
+Next is credit spreads.
+
+13:45 - Bilal Sagar Razak
+But credit spreads add. Niya other upper thing. This review season. Okay. Pinna credit spreads in a pump. You calculate it with implied forward. That's the next thing. Implied forward. One more thing is there. What I saw showed you is like items.
+
+14:13 - Bilal Sagar Razak
+You won't get items. It will be blank values. So what we do is like mostly if it is five points also no issues. But if you have money done, it occur. Our manniness is K by F. So K by F another value like fifteen was like zero point eight five to one point one five or lesser zero point nine to one point one.
+
+14:45 - Bilal Sagar Razak
+So 10 points outside outside minus 10 point inside 1ins. So all bounding like sitting, you will get this will be minus basically.
+
+14:58 - Bilal Sagar Razak
+You will take it for regression. So at least three points you will take for a regression. If only one point is there, then take this one. No issues.
+
+15:12 - Bilal Sagar Razak
+Forwarding other regression at least three points you see here. At least three points. If there is no three points, like there are conditions where three points where I can turn the value, one item is not having a value. If one of the item is not having the value, then don't take that strike into account. Okay.
+
+15:49 - Bilal Sagar Razak
+If no, like go with C minus P directly already F and T and the other data already F and T and because I come due to it.
+
+16:09 - Bilal Sagar Razak
+basically computer the same value compared and slide. Pinne uh here is to RT I can day is to expiry. How did you calculate?
+
+16:28 - Lalit Karthikeyan
+So basically three seventy-five minutes. Okay, so other one one by three seventy five fraction of a day. And then trading days is 252. And we calculate, I think, 27th January.
+
+16:47 - Lalit Karthikeyan
+That's equivalent to 10.5 numerator and denominator 252.
+
+16:53 - Bilal Sagar Razak
+Deeds to expiry by 252. Days to expiry divided by few. So if it is today, every minute of today is. Today is like since 6x5.
+
+17:07 - Bilal Sagar Razak
+So today it is 080 hold all the day, right?
+
+17:12 - Lalit Karthikeyan
+Zero I did on all minutes fraction I to one by three nine fifteen three thirty or a three seventy five minutes the fraction I to consider. Yes, zero point something under yes.
+
+17:27 - Bilal Sagar Razak
+One day is taken as comparable to like 24 hours is comparable to EU trading hours. So trade like a 9:15 to 3:30 matter legal like 24 hours if the minutes is like from 50 minutes, like let's say 10:30. 10:30 means it is like 75 minutes past.
+
+17:57 - Bilal Sagar Razak
+So 75 divided by what is the total minute coming out to be. That will be the per day fraction. So if it is this one, let's say 0 to the it is 320 almost. For 320 nor it's like almost done. So in the 930 kyan angle, it will be like 1 minus fraction of 15 by total 375 minutes.
+
+18:30 - Unidentified Speaker
+Perfect.
+
+18:32 - Bilal Sagar Razak
+So today, 9:30. Today, if we decide this is If it is uh Thursday Thursday at 10:30 is like Thursday will be zero, it will be one minus uh 75 minutes past divided by 375. So, this will be the DTE of this unit calculation is also there in the idea. What to say? The creeks which I've said. Okay. Slowly that is also needed. Pinne next. If you guys complete this first, like pinne idea and structures as credit spreads credit spreads only pina uh credit spread is like one call and one put me see Then this is a credit spread. Like if you are shorting a credit spread, then it is if it is a credit spread, it is this one.
+
+21:00 - Bilal Sagar Razak
+Because this you are getting as credit, this value, 18 minus 18 you will be getting as credit and this will be debit. If you are buying it, it is debit. Okay, so 18 minus 7.95 is the credit which you get. So uh if you look into like eighteen point three minus seven point nine five that is a credit you you will get that is almost ten point something uh so this is the payoff is similar is similar But calculating which are you interpolating the points or just is it? Are you points? You will strike similar points in the plane.
+
+21:58 - Bilal Sagar Razak
+Linear seed. Be a curved line almost everything.
+
+22:26 - Bilal Sagar Razak
+Splines in regression. They might be using spite splines basically, which are every point they need to go through the line, right? So they'll be using splines. Try splines, but that is not a hard thing which we want now. Mostly they'll be using splines because it will be a curved line most of the time. Okay.
+
+22:59 - Lalit Karthikeyan
+for a like basically TT and so black seventy-six DT is itself a parameter. Like Xpiray DT is zero. Apka R zero green and red line get blue line get let's say Talat the slider is five day to expiry so town fraction I turn down pinna like named chair basically X axis F Y axis profit or whatever the cash. Up like our forwards black shoulders model plugin and whatever forwards we are having and then the days to expiry is constant. So we will get a more uh like points and then interpolate it using the like what cubic spliner splinal executing okay to interpolate using some spline method.
+
+23:49 - Bilal Sagar Razak
+Yes, the spine methods methods. Mostly it will be spine methods. Always do calculation of one like nano trial. But but main is this one. What will be in expiry? Adana, we need to end it. So expirical, this is like one is to one. If you look one quantity of Idana, one lot of selling.
+
+24:17 - Bilal Sagar Razak
+What if it is, let's say?
+
+24:23 - Bilal Sagar Razak
+we are taking buying of this but two quantity we are buying but still we are credited which a two quantity will be seven again so eighteen point seven minus a seven or eleven point seven we are credited.
+
+24:46 - Bilal Sagar Razak
+Still, it is credited, but the pay of graph is different.
+
+24:52 - Bilal Sagar Razak
+Now, if we increase this again, it is again different. Graph.
+
+25:00 - Bilal Sagar Razak
+So, how is this calculated? Is what we have to do. So, if this is like another thing, this is like what we do is like naked selling superimposed. This one by other two random superimposing, it will give this one, this behavior, p of graph. So that is what is happening.
+
+25:29 - Unidentified Speaker
+Three. So try this also.
+
+25:33 - Bilal Sagar Razak
+Instead of sell, if it is by, then what is it?
+
+25:39 - Bilal Sagar Razak
+By sorry, sorry. So, this is called debit spreads.
+
+25:47 - Bilal Sagar Razak
+This is called debit spreads, basically.
+
+25:53 - Bilal Sagar Razak
+Debit spreads will be you would buy, you would sell. It will act like this one: max profit will be less, max loss will be profit will be weak, this will be less. But you would have theta will be working against you. Look at be working against you. It is negative. If holding it, you are losing value waiting. But if it is debit, if it credit, then theta will be working for you. With time, you will be gaining value if the market stays there. That is the difference.
+
+26:30 - Bilal Sagar Razak
+You start adding Greeks to credit spreads, ratio spreads in. Ratios is what we call one is to three, one is to four, one is to five. And one more thing is like uh let's say we do something like uh this one 400 uh by we are buying uh 23 this is 200 points. Two hundred points here per year.
+
+27:09 - Bilal Sagar Razak
+So, this is having a payoff like this, but instead of that, we are doing three and this is as two.
+
+27:21 - Bilal Sagar Razak
+Then we get a payoff like this.
+
+27:26 - Bilal Sagar Razak
+Basically, this is with the quota nine and such, it keeps on increasing. Difference with it. Go either predictive tathal and it go more behind.
+
+27:53 - Bilal Sagar Razak
+This is three hundred points, then three hundred point is very one three two.
+
+28:03 - Bilal Sagar Razak
+This is almost credit like 0.111 type.
+
+28:17 - Bilal Sagar Razak
+We have something called structure chain.
+
+28:21 - Bilal Sagar Razak
+This is the accession on the so this these are straddles value. Straddles value. If you are buying it, if shorting it, then this is crediting.
+
+28:40 - Bilal Sagar Razak
+There is something on ratio spreads. So ratio spreads differently. Call A leg, two leg, three leg. So this is a spread between the legs. Here, what we did is.
+
+29:00 - Bilal Sagar Razak
+Spread between the legs is 300. Okay. X-axis value is the first by leg closer to ATM where the leg garden first.
+
+29:23 - Bilal Sagar Razak
+Let's say minimum step we will take it as minimum will take it as. As 200.
+
+29:35 - Bilal Sagar Razak
+You will have the crediting here as well as debit system too.
+
+29:44 - Bilal Sagar Razak
+Just by changing the strikes, initial strike, you will be getting debit and credit too. Our payoff is really different. Got it. But if you are like selling this, like if you are taking one thing, like long, short, long it is valid. Then what happens is when the market moves, then you go to negative. Basically, zero arena which are but it can go up to negative two.
+
+30:19 - Bilal Sagar Razak
+What it negative two. So you are getting ultimately two point five dollars here, a general dollar two point five rupees per lot per uh lot per unit per quantity you will get that value.
+
+30:42 - Bilal Sagar Razak
+in the changing one four three, there is a different structure again a different structure in one three again a different structure one three of different structure two hundred we will get again here. See what I think one rupee will be credited. And then the exit will be like eleven rupees or something. It will be exiting. Our totally twelve rupees and then you get to me.
+
+31:20 - Bilal Sagar Razak
+And sorry.
+
+31:23 - Bilal Sagar Razak
+But here you do a structure in the ram, uh, year fully access in the ramp. Okay.
+
+31:32 - Bilal Sagar Razak
+Like like one will be credited, one will be depicted. So if you are buying here you'll be buying if you are taking one success here then you will be 1.2 credit and going forward you will be exiting it exiting emo basically is in negative one like you got it for one rupee one rupee then it is going to minus negative And I'm going to peace. But in the hit then success material on the garden, let's say one is to one narrow you can you can't get it, everything is like this.
+
+32:22 - Bilal Sagar Razak
+But going with either if you are moving to one distance, okay, and this is sixty under six okay, it is here. Let's say. 300, you will get again e-structures.
+
+32:41 - Bilal Sagar Razak
+So you will be getting like two rupees here. Two rupees here. Then, when the market moves, let's say it is like 7750, then you are exiting here. Above if the market moves like 450k, 300 points, 200 points will be in profit.
+
+33:06 - Bilal Sagar Razak
+We'll go to this one. Otherwise, with the time, with time also, be DK. C 2.5, 1.9 DK.
+
+33:22 - Bilal Sagar Razak
+So you are getting two points, or if the market moves, it will also help you.
+
+33:32 - Bilal Sagar Razak
+If the market goes other direction, also just think like end down Karanam.
+
+33:45 - Bilal Sagar Razak
+Karana and the market move a change.
+
+33:52 - Bilal Sagar Razak
+Just think about that too. You know, can we secure idea? We won't be trading other things. Like strangler saddle, other these are much more sophisticated things like other people use.
+
+34:11 - Bilal Sagar Razak
+We can profit from it. That is what alpha is. Like, when more people are using the same method, then we can not profit from it. Two there is two things. What one is when to trade. One is what to trade.
+
+34:33 - Bilal Sagar Razak
+What to trade?
+
+34:39 - Bilal Sagar Razak
+That can itself give us a profit. Nature when to trade much more better profit, much more better risk. Risk adjusted return.
+
+34:54 - Bilal Sagar Razak
+So that is how it is structures.
+
+34:58 - Bilal Sagar Razak
+Straddle is triangle on a lady. Now, if you want to make this as triangle, you can make it as zero itself here.
+
+35:10 - Bilal Sagar Razak
+This will be strangles. Triangles in the value.
+
+35:16 - Bilal Sagar Razak
+Triangles allow just naked. Naked head by short instead of shortening the first leg, if you want to buy it, then you can do that too. So this row is This is the first strike. Column is the spread between these two consecutive legs legs in the strike difference on the spread.
+
+35:57 - Bilal Sagar Razak
+So, if you are after credit spreads, try these two.
+
+36:04 - Bilal Sagar Razak
+It's basically additional added two units in the is it just naked by in a cellular addition so pay off available got it okay well here is some both in like what I showed you today right like one success in like minus three in the idikupul that is like uh mix a one or Let's say we are using 1 is to 6.
+
+36:43 - Unidentified Speaker
+Above 2.3, like if you reach here, it is fine. But if you are uh let's say we are using this, trading this, but market movie is overshooted.
+
+36:54 - Bilal Sagar Razak
+Above we'll do negative iterative we'll be in loss, bigger loss. What we have to find is a better uh structure. Best structure to trade. Ibada trade is a bit risky because only some of the strikes are in debit here. So we have more headroom for not overshooting.
+
+37:24 - Bilal Sagar Razak
+So this cutting. We have to what to trade another mathematical economy.
+
+37:34 - Bilal Sagar Razak
+Like we have a lot of things. It's a structure. We can try anything.
+
+37:42 - Bilal Sagar Razak
+When it goes to Nutier Marika, other mathematical ILN could come in planning. Okay, for the main sumbook.
+
+38:01 - Bilal Sagar Razak
+combination superimbus delta the I V is the thing comes in Greek side delta gamma Vega okay again go through the platform nasia fully Bloomberg it's the feels with terminal type We are still building on it.
+
+38:35 - Bilal Sagar Razak
+Going forward, what I have thought is like directly adjacent, what we now have is Nifty and SPX.
+
+38:45 - Bilal Sagar Razak
+We have an offer from this two, like a Delta Exchange. Delta exchanges like crypto options exchange. About delta exchange in the directory.
+
+39:01 - Bilal Sagar Razak
+Okay. About delta exchange and the corresponding value. About if we want to see the live thing, then live it Greeks. When for each tick Greeks.
+
+39:19 - Bilal Sagar Razak
+Sometimes you might not use this regression. Regression will take time to re-momentine regression you see in the aviona. It will be almost similar.
+
+39:37 - Bilal Sagar Razak
+Just C minus P divided by ATM name Fundatu.
+
+39:47 - Bilal Sagar Razak
+The margin error anger lesson. Above, But our computation will be more faster. Because live it is live Greek computation is another very big thing.
+
+40:04 - Bilal Sagar Razak
+You get a lot of time.
+
+40:07 - Bilal Sagar Razak
+You have to compute the Greeks as well as. I as well as the Greeks. That is a different computer speed.
+
+40:22 - Bilal Sagar Razak
+How about be good with these numbers? Like ear calculations, okay. Above the ITL ideal notebook.
+
+40:34 - Bilal Sagar Razak
+Have you written down the calculations?
+
+40:39 - Bilal Sagar Razak
+Okay.
+
+40:40 - Meghav Pradeep
+Like uh comments explain comments I love like Marlon IT explain agent.
+
+40:47 - Unidentified Speaker
+Okay.
+
+40:49 - Bilal Sagar Razak
+Okay. That's fine. But I go through reviews in English.
+
+40:56 - Bilal Sagar Razak
+Okay. You just add me as collaborator like uh in the GitHub.
+
+41:14 - Bilal Sagar Razak
+My username is ID.
+
+41:54 - Bilal Sagar Razak
+Email is with six easy.
+
+42:07 - Bilal Sagar Razak
+Okay. Collaborator to Adiya Madhi. I will join in that.
+
+42:16 - Bilal Sagar Razak
+Okay.
+
+42:19 - Bilal Sagar Razak
+Where are they linking so we can look? Anything else?
+
+42:27 - Bilal Sagar Razak
+Calculation it, how coming. It's just addition of naked by yourself. And you see superimposed calculation with the forward on the engineer.
+
+42:48 - Bilal Sagar Razak
+Make sure it is next. Next commit idea. Next update.
+
+43:18 - Lalit Karthikeyan
+This website like full website and access on a language structure and access on access on access projects in the contributor idea website and convex agenda.
+
+43:39 - Bilal Sagar Razak
+Convex agenda repo.
+
+43:45 - Lalit Karthikeyan
+Our website is the other lady.
+
+43:51 - Bilal Sagar Razak
+That is not kicked up. Currently, this Currently, side in the emo, it is only allowed for uh oh, you could I mean, so it is.
+
+44:40 - Bilal Sagar Razak
+it is not given the access.
+
+44:46 - Bilal Sagar Razak
+Access in a iterum. So I'll add access to in devset uh convexis.a. Are you email agent you can access uh this one.
+
+45:02 - Bilal Sagar Razak
+I have kept it like this. Going forward, I say it to your authentication page. That is like an easy job to do.
+
+45:14 - Bilal Sagar Razak
+Pinna slowly slowly API so system designs are key to it.
+
+45:29 - Bilal Sagar Razak
+Almost in calculations this next part is content theory.
+
+45:37 - Bilal Sagar Razak
+You need a bit of backup knowledge too.
+
+45:49 - Bilal Sagar Razak
+If you get calculations on the series, you will get the idea. If you triangles idea, how the payoff is. Uh I will also review it fitness triads triangle credits per se I fly is mostly in them and anything else we trade lucky we can look up In a first thing is incredible forwards implied forward. I will just write it down.
+
+46:37 - Bilal Sagar Razak
+Change forwards to change spot to inflate. All virtues first job add credit space credits and ratio spreads next is Greeks by to add Greeks to Greeks in the F computer black source and six in the IV computer Greeks calculated so good a match.
+
+47:38 - Bilal Sagar Razak
+Otherwise, like one or two values of the computer.
+
+47:46 - Bilal Sagar Razak
+mostly a pie volume at all, library. Otherwise, Newton Raphson method on IV calculated. There is no closed method.
+
+48:03 - Bilal Sagar Razak
+Where they found a closed form method for IV. I'll put that too. Paper and I guess it is a LinkedIn post.
+
+48:20 - Bilal Sagar Razak
+So go through that too.
+
+48:25 - Bilal Sagar Razak
+Close four IV calculation.
+
+48:34 - Bilal Sagar Razak
+It becomes slow. Above let's say tick by decreasing.
+
+48:45 - Bilal Sagar Razak
+you can take it the same thing. It's a small difference, margin difference and allow.
+
+48:52 - Bilal Sagar Razak
+Like IV price, let's say it is 53 or something.
+
+49:05 - Bilal Sagar Razak
+Let's say our value is 11. 11, 10, what is the difference coming out?
+
+49:14 - Bilal Sagar Razak
+With time, it is 9.45 idea vacuum it is 9.43 small 0.12 difference alone. Above 10 alone, it becomes admin difference.
+
+49:33 - Bilal Sagar Razak
+If it is just a small difference, then carry it change. So we recomputing is just time wasting. Above Adina Keruka, we can slowly improve the speed of it. If Allah tickilump comedy, going forward, just I'll hurry how the change is coming out Adina can e platform the access way another the more with or changes just we play the command.
+
+50:09 - Bilal Sagar Razak
+Okay.
+
+50:13 - Bilal Sagar Razak
+Calculations. Calculations just if it is varying sometimes.
+
+50:21 - Bilal Sagar Razak
+But I gave that value because we we already computed it. What activity they blindly don't believe that values. What you compute.
+
+50:38 - Bilal Sagar Razak
+We are just taking five points of it, right? Regression, five points regression calculators online in the other beauty of the Noka, if whether it is correct or not. We have black shoals in the forward and double. Yes, with forward most of the Okay, okay. With the forward calculators in Dawlia, blackshow.
+
+51:09 - Bilal Sagar Razak
+So we can do this with Marketplace Intakes free videos free reader is concept to computing it about it today.
+
+51:55 - Bilal Sagar Razak
+This also this like D till that is E raise to minus R T minus D is minus E raise to minus D is E raise to minus R T in the Adina log with Randa Tamito because T is time to expiry.
+
+52:23 - Bilal Sagar Razak
+I'm getting under the log of minus D divided by divided by T into minus.
+
+52:53 - Bilal Sagar Razak
+Like you do calculation in both ways. Spotimet calculated forward calculated. How diff a different going forward forwards calculate and spot and you see the mudi in real time. Like Mars is we should not give our time. Time of calculation.
+
+53:31 - Bilal Sagar Razak
+Okay.
+
+53:34 - Bilal Sagar Razak
+That's it for today.
+
+53:45 - Bilal Sagar Razak
+Okay so CTD with um if Okay.
+
+54:35 - Bilal Sagar Razak
+That's all.
+
+54:42 - Bilal Sagar Razak
+Directly call. We can keep a meet or something. We'll keep a wait. Okay.
