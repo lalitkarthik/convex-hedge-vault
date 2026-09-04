@@ -27,6 +27,10 @@ Read this first, then open only what you need.
 - [teach/](teach/) — teach-skill workspaces, one folder per topic
 - [session-log.md](session-log.md) — decisions and open questions
 
+## Research
+
+- [trading-research-map.pdf](research/trading-research-map.pdf) — the field outside Convex Hedge: 25 trading and quant fields triaged, the Indian cost/tax/margin arithmetic computed from primary documents, crypto measured against live APIs, and eleven unpublished questions worth answering. Source `.tex` alongside it; raw agent reports in [research/_raw/](research/_raw/) — **2026-08-29**
+
 ## Capture
 
 - [inbox/](inbox/) — daily capture, staging only
@@ -35,4 +39,14 @@ Read this first, then open only what you need.
 
 ## Code repos
 
-Listed in the contract, [CLAUDE.md](CLAUDE.md).
+Listed in the contract, [CLAUDE.md](CLAUDE.md). Their own documentation is the canonical answer
+for anything inside them — this is a map to it, never a copy of it.
+
+- `payoff-project` — payoff diagrams for option structures.
+- `delta-exchange-payoff` — live crypto option analytics over Delta Exchange India: our own
+  implied volatility and Greeks computed off the websocket while the venue's own figures travel
+  beside them, and a one-minute bar store. Two front doors, both written to be read first:
+  `docs/maths-start-here.md` for how the forward, the IV and the Greeks are each computed, and
+  `docs/storage-start-here.md` for what is kept and where. The evidence behind them is in
+  `docs/forward.md`, `docs/implied-vol.md`, `docs/settlement.md`, `docs/ingestion.md`,
+  `docs/storage.md` and the published interface in `docs/chain-contract.md` — **2026-09-04**

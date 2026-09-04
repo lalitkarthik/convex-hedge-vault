@@ -15,6 +15,8 @@ Code truth lives in the code repos and stays there. Reference it with a **pointe
 Linked repos:
 
 - `payoff-project` — payoff diagrams for option structures, at `D:\Convex Hedge\payoff-project`
+- `delta-exchange-payoff` — live crypto option analytics over Delta Exchange India, at
+  `D:\Convex Hedge\delta-exchange-payoff`
 - _Platform repo — access pending._
 
 ## Note types
