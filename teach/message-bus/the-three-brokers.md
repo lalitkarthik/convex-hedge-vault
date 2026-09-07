@@ -68,8 +68,6 @@ Nautilus's default is `autotrim_mins: 30` — half an hour of history.
 | **lives where** | its own broker process | its own cluster (+ coordination) | inside Redis |
 | **best at** | "this work must get done, once" | "keep the history, everyone reads it" | "fast, recent, in-memory" |
 | **bad at** | replay, and re-reading history | per-message routing; small deployments | anything that must outlive the trim window |
-| **latency at 1 Hz** | to be measured | to be measured | to be measured |
-| **latency at ~1,323/s** | to be measured | to be measured | to be measured |
 
 ---
 
@@ -154,16 +152,13 @@ decides which broker — and it is the path Redis Streams serves worst by defaul
 
 ---
 
-## What this does *not* yet answer
+## The spike
 
-Latency and sustained rate, at our numbers rather than someone's blog. That is the spike:
-replay real decoded frames through (a) our in-process fan-out and (b) Redis Streams on
-localhost, at 1 Hz and at ~1,323/s, recording round-trip latency, maximum sustained rate,
-CPU, and behaviour when the consumer is deliberately slowed.
-
-**Blocked on a runtime.** No Redis on this machine — Docker Desktop's daemon is not
-running, WSL Ubuntu has no `redis-server`, and its `sudo` wants a password. Either will do;
-neither can be arranged without the human.
+Run, and reported separately because this note is at its length bound:
+**[the-spike](the-spike.md)** — our `FanOut` against Redis Streams on the real frame
+capture. Headline: Redis is **798x** the per-message cost, would take **82% of a core** at
+our rate if written one `XADD` per frame, and **silently discarded 9,000 of 10,000 entries**
+when the consumer fell behind, with no count kept.
 
 ## Still open
 

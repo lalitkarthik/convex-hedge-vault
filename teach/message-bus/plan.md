@@ -10,14 +10,16 @@ the caching question to be answered. This workspace is that learning, done as th
 
 1. [vocabulary](vocabulary.md) — every term, defined before use. Start here.
 2. [architectures](architectures.md) — **pass 1, done.** Ours, his, and Nautilus's own.
-3. [the-three-brokers](the-three-brokers.md) — **pass 2, written; the spike is not run.**
+3. [the-three-brokers](the-three-brokers.md) — **pass 2, done.** The three, on their own docs.
+   [the-spike](the-spike.md) — **run 2026-09-07.** Our fan-out against Redis Streams, measured.
 4. [questions-for-the-senior](questions-for-the-senior.md) — five questions, each with the
    plain-words version to actually ask, and a ready-to-send message.
 5. Pass 3 — the four caches, and a decision for our repo. Not started.
 
-**Blocked:** the pass 2 spike needs a Redis to talk to. Docker Desktop's daemon is not
-running and WSL Ubuntu has no `redis-server` (its `sudo` wants a password). Either route
-works; both need the human.
+The spike ran on Redis 7.4.11 in Docker, port 6399, against the real frame capture. It
+**strengthened** the recommendation below rather than changing it: Redis is fast enough at
+our rate *if pipelined*, 798x our current per-message cost, and reproduces the silent-loss
+failure exactly as predicted.
 
 ## What was settled before starting
 
