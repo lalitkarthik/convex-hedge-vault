@@ -117,6 +117,10 @@ when several readers need the same stream over days, or Redis measurably cannot 
 **Our real gap is durability, not caching**, and its cheapest fix is flushing every five
 minutes rather than hourly — one constant, not a dependency.
 
+**Where the standing decision is now written down.** The bus behind an interface, the
+subscription policies, and the nine events that travel on it:
+`delta-exchange-payoff/docs/design/hld.md` and `delta-exchange-payoff/docs/design/events.md`.
+
 ## Two things I got wrong, recorded because the pattern is the point
 
 1. **I inferred the senior's Redis came bundled with Nautilus.** Reasonable — Nautilus does

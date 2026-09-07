@@ -57,3 +57,10 @@ for anything inside them — this is a map to it, never a copy of it.
   `docs/storage-start-here.md` for what is kept and where. The evidence behind them is in
   `docs/forward.md`, `docs/implied-vol.md`, `docs/settlement.md`, `docs/ingestion.md`,
   `docs/storage.md` and the published interface in `docs/chain-contract.md` — **2026-09-04**
+  The design of the feed as a whole now lives beside the code: `delta-exchange-payoff/docs/design/hld.md`
+  is the high-level design — the venues, the broker adapters, the connection controller and its
+  supervisor, the bus, the consumers and the two screens, with the five connection states and
+  their transitions — and `delta-exchange-payoff/docs/design/events.md` is the events catalogue,
+  the envelope and the nine events that cross between them. Low-level designs land one per
+  component in `delta-exchange-payoff/docs/design/lld/`. `docs/architecture.md` is superseded by
+  the first of these and kept — **2026-09-07**
