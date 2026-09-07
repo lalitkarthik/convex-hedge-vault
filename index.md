@@ -25,6 +25,9 @@ Read this first, then open only what you need.
 - [NOTES.md](NOTES.md) — working scratch for the teach skill
 - [learning-records/](learning-records/) — what I understand, in order
 - [teach/](teach/) — teach-skill workspaces, one folder per topic
+  - [message-bus](teach/message-bus/plan.md) — message buses and caching: our in-process fan-out
+    against the senior's Nautilus + Redis engine, then RabbitMQ vs Redis vs Kafka. Pass 1 done —
+    **partial**
 - [session-log.md](session-log.md) — decisions and open questions
 
 ## Research
