@@ -24,6 +24,9 @@ Read this first, then open only what you need.
 - [RESOURCES.md](RESOURCES.md) — trusted sources
 - [NOTES.md](NOTES.md) — working scratch for the teach skill
 - [learning-records/](learning-records/) — what I understand, in order
+  - [message-buses](learning-records/message-buses.md) — why a bus exists at all, the three
+    brokers measured, Redis Streams' mechanics and its one trap, state sorted by
+    recoverability, and why our cache cannot go stale — **2026-09-07**
 - [teach/](teach/) — teach-skill workspaces, one folder per topic
   - [message-bus](teach/message-bus/plan.md) — message buses and caching: our in-process fan-out
     against the senior's Nautilus + Redis engine, RabbitMQ vs Redis vs Kafka measured, and the
