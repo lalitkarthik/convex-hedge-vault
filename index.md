@@ -26,8 +26,9 @@ Read this first, then open only what you need.
 - [learning-records/](learning-records/) — what I understand, in order
 - [teach/](teach/) — teach-skill workspaces, one folder per topic
   - [message-bus](teach/message-bus/plan.md) — message buses and caching: our in-process fan-out
-    against the senior's Nautilus + Redis engine, then RabbitMQ vs Redis vs Kafka. Pass 1 done —
-    **partial**
+    against the senior's Nautilus + Redis engine, RabbitMQ vs Redis vs Kafka measured, and the
+    four caches. His answers are in [what-the-senior-said](teach/message-bus/what-the-senior-said.md);
+    the teaching order is [sessions](teach/message-bus/sessions.md) — **solid**
 - [session-log.md](session-log.md) — decisions and open questions
 
 ## Research

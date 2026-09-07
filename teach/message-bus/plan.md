@@ -6,6 +6,10 @@ the caching question to be answered. This workspace is that learning, done as th
 
 **Started** 2026-09-07.
 
+**The senior has answered.** [what-the-senior-said](what-the-senior-said.md) records the
+answers and the one correction they force. [sessions](sessions.md) is the five-session
+teaching order built from them — **start there**.
+
 ## Read in this order
 
 1. [vocabulary](vocabulary.md) — every term, defined before use. Start here.
@@ -15,6 +19,9 @@ the caching question to be answered. This workspace is that learning, done as th
 4. [questions-for-the-senior](questions-for-the-senior.md) — five questions, each with the
    plain-words version to actually ask, and a ready-to-send message.
 5. [caching](caching.md) — **pass 3, done.** The four caches, measured, and the gap.
+6. [what-the-senior-said](what-the-senior-said.md) — his answers, decoded, 2026-09-07.
+7. [the-disk-bloat](the-disk-bloat.md) — his one open problem, and why Kafka is the wrong fix.
+8. [sessions](sessions.md) — five sessions with videos, built from his answers.
 
 The spike ran on Redis 7.4.11 in Docker, port 6399, against the real frame capture. It
 **strengthened** the recommendation below rather than changing it: Redis is fast enough at
