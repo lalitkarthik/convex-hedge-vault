@@ -14,7 +14,7 @@ the caching question to be answered. This workspace is that learning, done as th
    [the-spike](the-spike.md) — **run 2026-09-07.** Our fan-out against Redis Streams, measured.
 4. [questions-for-the-senior](questions-for-the-senior.md) — five questions, each with the
    plain-words version to actually ask, and a ready-to-send message.
-5. Pass 3 — the four caches, and a decision for our repo. Not started.
+5. [caching](caching.md) — **pass 3, done.** The four caches, measured, and the gap.
 
 The spike ran on Redis 7.4.11 in Docker, port 6399, against the real frame capture. It
 **strengthened** the recommendation below rather than changing it: Redis is fast enough at
@@ -58,15 +58,10 @@ behind**. Run it at both 1 Hz and ~1,323/s.
 
 ## Pass 3 — the four caches
 
-Four different things wear the word "cache" here. One framework for all of them:
-**what goes stale, how fast, and who notices?**
-
-| | what it holds | where |
-|---|---|---|
-| latest frame per contract | the newest `ticker` and `ob_l2` per symbol | `ChainStream`, built |
-| the computed chain | solved IV and Greeks per `(underlying, expiry)` | `ChainStream`, built; open ticket T6 |
-| stored-history reads | a day of bars off Parquet | the `/smile` read path |
-| Nautilus's `Cache` | instruments, accounts, orders, positions, plus a bounded ring of ticks and bars | the senior's engine |
+Done: [caching](caching.md). Headline — we need no caching we do not already have. Our
+computed chain is invalidated by **arrival, not by time**, so it cannot serve a stale
+answer; the history reads are 6.8 ms and want no cache; and the real gap is **durability**,
+whose cheapest fix is flushing every five minutes rather than a new dependency.
 
 ## Where the answer stands, before pass 3
 
