@@ -152,6 +152,12 @@ decides which broker — and it is the path Redis Streams serves worst by defaul
 
 ---
 
+## Kafka against Redis Streams, in detail
+
+Their structural differences — where data lives, per-message acks versus offsets, partitions,
+retention — plus pub/sub versus Streams, and what a migration would actually involve:
+**[kafka-vs-redis](kafka-vs-redis.md)**.
+
 ## The spike
 
 Run, and reported separately because this note is at its length bound:

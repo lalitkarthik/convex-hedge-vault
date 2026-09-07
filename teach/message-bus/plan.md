@@ -22,6 +22,7 @@ teaching order built from them — **start there**.
 6. [what-the-senior-said](what-the-senior-said.md) — his answers, decoded, 2026-09-07.
 7. [the-disk-bloat](the-disk-bloat.md) — his one open problem, and why Kafka is the wrong fix.
 8. [sessions](sessions.md) — five sessions with videos, built from his answers.
+9. [kafka-vs-redis](kafka-vs-redis.md) — the two head to head, and the migration mapping.
 
 The spike ran on Redis 7.4.11 in Docker, port 6399, against the real frame capture. It
 **strengthened** the recommendation below rather than changing it: Redis is fast enough at
