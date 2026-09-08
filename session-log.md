@@ -124,3 +124,46 @@ recorded here in our own words; no code was copied, per [CLAUDE.md](CLAUDE.md).
 **Best single teaching artefact found:** the IV vs RV chart. NIFTY constant-maturity 30-DTE IV
 against 20-day realised vol shows IV above RV through to late January, then RV crossing above from
 mid-February and staying there — the entire case for and against selling premium, in one picture.
+
+**Study session 19 completed, 2026-09-07.** Option-chain data quality: put-call-parity residuals
+flagged two mismatched deep-ITM rows, but only by comparison with the chain's residual baseline;
+they could not identify which leg was stale. Confirmed the three related screen limits: LTP is a
+historical print rather than a current quote, blank IV means a leg has no usable Greeks, and a
+one-sided row can simply mean its missing contract never traded. Portable learning record:
+`second-brain/learning/option-structures/learning-records/0010-parity-residuals-need-a-baseline.md`.
+
+**Study session 20 completed, 2026-09-08.** IV-surface reading: moneyness is measured from the
+selected expiry's forward, not spot. On the live NIFTY surface, the deep 23,000 put wing sat above
+previous-close IV (30.3% versus 28.6%), while primary IV was below previous close near ATM. The
+curve's shape must therefore be compared by region and against history. Portable learning record:
+`second-brain/learning/option-structures/learning-records/0011-moneyness-is-relative-to-forward.md`.
+
+**Study session 21 completed, 2026-09-08.** Open-interest reading: OI is the stock of outstanding
+contracts, volume counts trades, and OI change marks net position creation or closure. On NIFTY's
+live five-minute view at 09:21:59, the largest positive put OI change was 23,800 and the largest
+positive call OI change was 24,000. Neither establishes trade direction: every OI increase creates
+a new long and short together. Portable learning record:
+`second-brain/learning/option-structures/learning-records/0012-oi-is-paired-position-creation.md`.
+
+**Engine Feed Management shipped, 2026-09-08.** All thirteen tickets of
+`delta-exchange-payoff` #33 are on `main` at `9266230` — broker adapters behind a protocol,
+canonical events, a connection controller and supervisor, `/health` that reports the feed,
+a badge, pause/resume/reconnect, structured logging, ETH recorded, compute that follows the
+page, the historical chain and the contract chart. Suite went 576 → **996 passing**, ruff,
+`tsc`, web guards and `next build` all clean. Design lives beside the code:
+`delta-exchange-payoff/docs/design/hld.md`, `events.md`, and eleven LLDs under
+`docs/design/lld/`.
+
+Four defects were found and fixed as their own issues rather than folded in: a null spot
+rendered the ladder backwards (#47); the live chain never opened its websocket at all, a
+deadlock that passed `tsc` and `next build` (#49); a load-flaky test plus 21 siblings of the
+same shape (#50); and #39's own review round, which caught measurement tools silently
+reporting full windows they had not observed.
+
+Three numbers were corrected rather than inherited. The BTC feed comment claiming ~600 msg/s
+had **never been run** — BTC alone is `measured` 1,095.1 msg/s, BTC+ETH 1,693.6, so ETH costs
++55% and not a doubling. The 7.25 ms fixture solve was wrong by 35% per expiry and 3x on the
+pass: live it is `measured` 9.790 ms and a full pass 175 ms, which means the old hot loop
+**could not finish inside its own 100 ms tick** and ran at roughly 275 ms and ~64% of a core.
+And `reconnect_after` = 45 s survived a `measured` 3,610 s hour by **0.215 s**, which is no
+margin at all and is the first thing worth re-measuring.
