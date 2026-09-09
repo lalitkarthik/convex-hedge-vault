@@ -243,3 +243,9 @@ as `delta-exchange-payoff` now has, and repos we do not own keep their rules in
 `~/.codex/AGENTS.md`, which is private to this machine and leaves no untracked file in
 their checkout for someone else to commit by accident. `geo-pulse` already carries an
 `AGENTS.md` its owners wrote; it is authoritative and is not to be edited.
+
+**#59 closed, 2026-09-09 19:10Z.** The six-hour tagged run landed before the session ended:
+longest quiet gap on an unbroken connection `measured` **6.792 s**, so `reconnect_after` = 45 s
+is supported and the 44.785 s of 2026-09-07 was a gap across a drop. Thirteen connections in six
+hours, partly this laptop's tunnel; the venue's own drop rate waits for a host without one.
+Code repo at `064e246`. All five research tickets are now closed.
