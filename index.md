@@ -64,3 +64,6 @@ for anything inside them — this is a map to it, never a copy of it.
   the envelope and the nine events that cross between them. Low-level designs land one per
   component in `delta-exchange-payoff/docs/design/lld/`. `docs/architecture.md` is superseded by
   the first of these and kept — **2026-09-07**
+  The services epic — four services on a Redis Streams bus, no AWS service decided until its
+  research ticket closes — is `delta-exchange-payoff` #57, mirrored at
+  `delta-exchange-payoff/docs/design/cloud/epic.md`, tickets #58–#73 — **2026-09-09**

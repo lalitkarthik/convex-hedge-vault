@@ -167,3 +167,20 @@ pass: live it is `measured` 9.790 ms and a full pass 175 ms, which means the old
 **could not finish inside its own 100 ms tick** and ran at roughly 275 ms and ~64% of a core.
 And `reconnect_after` = 45 s survived a `measured` 3,610 s hour by **0.215 s**, which is no
 margin at all and is the first thing worth re-measuring.
+
+**Services epic designed, 2026-09-09.** A grilling session over three rounds settled the
+split of `delta-exchange-payoff` into four services on a Redis Streams bus — `feed`,
+`store`, `api`, `web` — with Redis as a thirty-minute pipe, trimmed by age, no persistence,
+and the store replaying from its last flushed minute so the five-minute loss window closes.
+Currency lands as two instrument fields and a `-USD` symbol suffix. **No AWS service is
+decided**: durable store, compute and region, and Redis hosting are research tickets against
+five ordered criteria — invariants, ops burden, cost at 1x and 10x, path to OMS and NSE,
+latency — and run after the local split and after cloud access arrives. The spec is
+`delta-exchange-payoff` **#57**, mirrored at `docs/design/cloud/epic.md`; sixteen tickets
+**#58–#73** in dependency order, R1 naming first, I10 staging last. Opus for research,
+controller, bus policy and schemas; Sonnet for mechanical work; never Fable on a ticket.
+Work runs one ticket at a time, findings mirrored into each issue so he can study the last
+while the next runs. Two reversals worth recording: he chose currency *in* the symbol over
+my recommendation of fields only, and I had overstated the cost — the canonical string is
+derived, never stored, so the blast radius is code and tests, not data. Both servers were
+down all session; nothing recorded since 2026-09-09T00:02Z.
