@@ -232,3 +232,14 @@ trusted git directory. Still `assumed`: that an unattended `workspace-write` run
 stall on an approval, so the first one is to be watched rather than slept through. Owed:
 the repo's `CLAUDE.md` documents `.venv/bin/` and `bun`, neither of which exists on this
 machine.
+
+A second `measured` result settled where a repo's rules may live, and it matters for Lean
+Summits, whose repos are theirs and must carry nothing of ours. `codex debug prompt-input`
+renders the model-visible prompt without calling a model, so this cost no quota: Codex
+reads `~/.codex/AGENTS.md` on every run and the git repo root's `AGENTS.md`, merging both,
+but **ignores any directory above the repo root** — a shared folder holding several clones
+cannot carry one file for all of them. So repos we own take a committed root `AGENTS.md`,
+as `delta-exchange-payoff` now has, and repos we do not own keep their rules in
+`~/.codex/AGENTS.md`, which is private to this machine and leaves no untracked file in
+their checkout for someone else to commit by accident. `geo-pulse` already carries an
+`AGENTS.md` its owners wrote; it is authoritative and is not to be edited.
