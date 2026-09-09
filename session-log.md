@@ -205,3 +205,30 @@ The engine was restarted twice at flush boundaries and lost nothing. A study pro
 reading a ticket back with ChatGPT is at `delta-exchange-payoff/docs/study-with-chatgpt.md`.
 Two things owed: `hld.md` is 219 lines against a 200 bound, and every cloud decision
 carries "re-cost after #65" and "measure the network hop once access arrives".
+
+**Codex enters the ticket loop, 2026-09-09 evening.** Implementation moves to Codex;
+judgment, review and the gate stay with Claude. A ChatGPT-written routing plan he brought
+was checked against `~/.codex/models_cache.json` and largely did not survive: the real
+ladder is Astra > Sol > Terra > Luna, Sol is described as a workhorse rather than a scarce
+top tier, and Astra — the most capable model on the plan — went unmentioned entirely; its
+per-window message figures and several of its citations could not be verified. He chose
+Luna at `max` first, Sol medium then Sol high on gate failure, never Astra, which would
+empty the window in minutes. His own idea carried the design: Codex writes `rate_limits`
+into its session rollout after every turn, so the orchestrator reads the 5-hour and weekly
+windows for free and switches wholly to Claude at 92% used *before* dispatching. That
+removes the break-even — expected cost becomes `12 − 7p` against a baseline of 12, so the
+arrangement is never worse than doing the work on Claude, only better by however often
+Codex succeeds. Research tickets stay with Opus: there is no gate for a decision record,
+and a plausible-but-wrong conclusion feeds the epic uncaught for days; Codex is used inside
+them only to gather evidence read-only. The `learning` label means he learns from the
+ticket, not that it is research — an Opus pass writes "What I learned" from the finished
+diff, whoever implemented it. The routing lives at `~/.claude/skills/codex-route/`, global
+so every repo and every vault created later inherits it; the one per-repo file is a root
+`AGENTS.md`, now written for `delta-exchange-payoff`. `measured` against `codex-cli
+0.153.4`: `-c model_reasoning_effort=max` does reach the model and the rollout records it,
+though the model misreported its own effort as "high" when asked — trust the rollout, not
+the answer; `--approve-for-me` cannot be combined with `-s`; Codex refuses to run outside a
+trusted git directory. Still `assumed`: that an unattended `workspace-write` run does not
+stall on an approval, so the first one is to be watched rather than slept through. Owed:
+the repo's `CLAUDE.md` documents `.venv/bin/` and `bun`, neither of which exists on this
+machine.

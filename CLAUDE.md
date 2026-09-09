@@ -57,3 +57,4 @@ Linked repos:
 
 - `/process-inbox` — promote durable capture into `domain/` and the glossary
 - `/vault-lint` — check links, orphans, note size, inbox overflow
+- `/codex-route` — run a published ticket through Codex, gated by Claude. Global skill at `~/.claude/skills/codex-route/`; each linked code repo carries its own `AGENTS.md`. Not used in this vault — implementation happens in the code repos.
