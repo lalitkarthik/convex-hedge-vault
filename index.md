@@ -66,4 +66,7 @@ for anything inside them — this is a map to it, never a copy of it.
   the first of these and kept — **2026-09-07**
   The services epic — four services on a Redis Streams bus, no AWS service decided until its
   research ticket closes — is `delta-exchange-payoff` #57, mirrored at
-  `delta-exchange-payoff/docs/design/cloud/epic.md`, tickets #58–#73 — **2026-09-09**
+  `delta-exchange-payoff/docs/design/cloud/epic.md`, tickets #58–#73. Five research tickets and two implementation tickets landed the same day;
+  the decisions are one page each under `delta-exchange-payoff/docs/design/decisions/`, the
+  evidence under `docs/design/research/`, and the two cloud documents assemble from
+  `docs/design/cloud/`. Study a ticket with `docs/study-with-chatgpt.md` — **2026-09-09**

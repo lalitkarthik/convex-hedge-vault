@@ -184,3 +184,24 @@ while the next runs. Two reversals worth recording: he chose currency *in* the s
 my recommendation of fields only, and I had overstated the cost — the canonical string is
 derived, never stored, so the blast radius is code and tests, not data. Both servers were
 down all session; nothing recorded since 2026-09-09T00:02Z.
+
+**Seven tickets landed, 2026-09-09, second half.** After #57 was published the day ran
+research in parallel with the local split, on his reversal of "cloud last" — the
+comparisons never needed the Compose stack, only the sizing inputs, and those existed.
+Closed in `delta-exchange-payoff`: **#58** naming (`{env}:{event_type}:{VENUE}:{UNDERLYING}`,
+envelope flat, JSON `payload`, colon between sections per Redis's own convention — a
+correction to the epic's spelling); **#69** Redis as a container beside the services,
+persistence off, `noeviction`, 2 GB, MemoryDB rejected because its durability cannot be
+turned off; **#67** the bars stay Parquet on S3 Standard compacted nightly — Timescale is
+not on RDS and Timestream LiveAnalytics is closed to new customers, and uncompacted the
+same reads cost 288x in requests; **#68** ECS on one `m7g.large` in Mumbai, host networking,
+no NAT gateway — inbound market data through a NAT would cost more than the compute;
+**#60** currency fields and the `-USD` symbol suffix, live on the engine; **#61** Redis
+Streams behind the bus seam, `DELTA_BUS=redis`, 50 ms batches, `measured` 1,056.4 MiB at
+thirty minutes against #58's `derived` 1,051.5. **#59** the controller adopted one rule
+from Nautilus — silence past `reconnect_after` now cuts the socket and redials — and stays
+open for a six-hour tagged quiet-gap run due 2026-09-09T19:03Z (00:33 IST), PID 28432.
+The engine was restarted twice at flush boundaries and lost nothing. A study prompt for
+reading a ticket back with ChatGPT is at `delta-exchange-payoff/docs/study-with-chatgpt.md`.
+Two things owed: `hld.md` is 219 lines against a 200 bound, and every cloud decision
+carries "re-cost after #65" and "measure the network hop once access arrives".
