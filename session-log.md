@@ -249,3 +249,27 @@ longest quiet gap on an unbroken connection `measured` **6.792 s**, so `reconnec
 is supported and the 44.785 s of 2026-09-07 was a gap across a drop. Thirteen connections in six
 hours, partly this laptop's tunnel; the venue's own drop rate waits for a host without one.
 Code repo at `064e246`. All five research tickets are now closed.
+
+**The senior's review, folded into the epic, 2026-09-12.** Six things came out of the
+meeting and each is now a decision in #57 and a ticket under it, grilled to a shared
+understanding first. Stream names lose the environment slot — one local, one prod, never a
+shared Redis, so `{env}:` protected nothing; record 0001 gains a successor rather than a
+rewrite, and I11 (#74) lands before I3 so the split builds on the final grammar. The store
+partitions `underlying/date`, no venue level; I12 (#77) moves the 4,812 files once, engine
+stopped at a flush boundary, between I3 and I4 and before anything reaches S3. Two research
+tickets replace an adjective with a table: R6 (#75) derives a per-service load profile from
+the monolith's `measured` numbers with `oms` and `strategy` as `assumed` rows — the senior
+named services that do not exist, and a topology with no slot for them is redone the day
+they arrive — and R7 (#78) costs one box against several on that profile, confirming or
+superseding 0005 while #68 stays closed. The inter-instance hop is answered `derived` for
+the five real services — same AZ, three orders below a one-second refresh — and left open
+for `oms`, where a millisecond may matter. R8 (#76) settles compaction on the go against
+at the close with a measurement, having established that Parquet cannot append and the
+only thing keeping the open day out of the compactor is a non-atomic flush. D1 (#72) is now
+the single source of truth he asked for — action-first, Simplified Technical English, a
+`CONTEXT.md` for the vocabulary. I13 (#79) and I14 (#80) are the "re-cost after #65" and
+"measure the hop after access" promises, made tickets. `to-tickets` was followed by hand:
+numbered breakdown approved before publishing, native blocking edges, blockers first.
+Frontier is now I11, R6, R8 in parallel; #62 waits on #74. Owed: `epic.md` was 233 lines
+before this and is longer now; it mirrors an issue that wins, and should become a pointer
+or be split.
