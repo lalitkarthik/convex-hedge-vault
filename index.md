@@ -27,6 +27,9 @@ Read this first, then open only what you need.
   - [message-buses](learning-records/message-buses.md) — why a bus exists at all, the three
     brokers measured, Redis Streams' mechanics and its one trap, state sorted by
     recoverability, and why our cache cannot go stale — **2026-09-07**
+  - [tests-that-prove-nothing](learning-records/tests-that-prove-nothing.md) — six green
+    tests that verified nothing, the five checks that find them, and the three mechanisms
+    that all wore the symptom "flaky under load" — **2026-09-12**
 - [teach/](teach/) — teach-skill workspaces, one folder per topic
   - [message-bus](teach/message-bus/plan.md) — message buses and caching: our in-process fan-out
     against the senior's Nautilus + Redis engine, RabbitMQ vs Redis vs Kafka measured, and the
