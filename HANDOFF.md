@@ -139,5 +139,5 @@ keys) and **#93** (28 more tests wait on a duration instead of a condition).
    drain-to-empty correction. Then **#92** and **#93**, which are ready to start.
 3. [session-log.md](session-log.md) — today's entry. Earlier periods are split into
    [August](session-log-2026-08.md) and [1–9 September](session-log-2026-09-01-to-09-09.md).
-4. `~/.claude/skills/codex-route/SKILL.md` — the routing, and the traps it now records.
+4. The memory note on parallel Claude agents in worktrees — the routing that replaced Codex.
 5. `D:/Convex Hedge/i13-day/` — the day's samples, the Redis curve, the viewer windows.
