@@ -1,4 +1,4 @@
-# Handoff — 2026-09-12 (second session)
+# Handoff — 2026-09-12 (third session)
 
 Everything below happened in `delta-exchange-payoff`. Nothing in this vault is half-built: the
 session log is split and current, and the working tree is clean.
@@ -38,42 +38,50 @@ An earlier draft of this file said the cutover had happened; it had not.
 
 ## In flight
 
-- **Nothing is mid-implementation.** No Codex worker is running, no worktree is dirty. The only
+- **Nothing is mid-implementation.** No worker is running, no worktree is dirty. The only
   worktree left is `dxp-54` (`rv-backfill`), untouched on the owner's instruction.
-- **A first-ever Fable 5.1 audit of the whole epic was running when this was written.** Its
-  findings are posted as tickets labelled `audit`. Check `gh issue list --label audit` before
-  planning anything; fixes go through the normal Codex/Opus/Sonnet routing, never the auditor.
+- **Codex is retired as the implementation route.** Fixes now run as parallel Claude agents,
+  one git worktree each, disjoint file territories, and the orchestrator commits. Two Codex
+  workers were killed mid-run on 2026-09-12 after 65 and 100 sandboxed commands with the
+  source files still untouched.
+- **The Fable audit finished and every finding is closed.** Ten issues: #82 to #91.
 - **The live engine on :8000 and the web app on :3000 are up and recording**, as always.
+- **One directory needs a UAC click to delete**: `D:/Convex Hedge/dxp-docs/engine/.sandbox-tmp`,
+  owned by the Codex sandbox user. Nothing depends on it; it is the last trace of that worktree.
 
 ## What changed
 
 | Commit | |
 |---|---|
-| `49c23c5` | The local stack's Redis ceiling was below its own retention window |
-| `3499ec7` `b8bdd71` | A test that checked that ceiling never read the Redis command |
-| `f2fd905` | **#81** — the split api answers from a live right edge |
-| `6e20870` | `AGENTS.md` said three things that stopped being true |
-| `ed7b538` | **#66** — a sixth service posts alerts to Discord, no producer changed |
-| `4a22022` | #66's repair had put its own guarantee behind a silent fallback |
+| `1c72a4c` | **#84** (blocker) and **#85** — the replay delivered its tail twice |
+| `1d68f69` | **#86**, **#91** — Discord posted its own downtime; a test with no assertion |
+| `c01abbd` | **#87**, **#88**, **#89** — documents describing a stack three tickets ago |
+| `38c4af4` | **#82**, **#83** — conservation, not equality; a duration where a condition belonged |
+| `02fca06` | The verification command in `AGENTS.md` made 315 tests not run |
 
-`main` is pushed. **1,379 passed, 0 failed, ruff clean.**
+`main` is at `02fca06`, pushed. **1,401 passed, 0 failed, ruff clean.**
 
-**#81 is closed.** #63, #65, #79 and #66 all have full comments and stay open on criteria that
-need the day or the owner. Two new tickets came out of findings: **#82** and **#83**.
+**Ten issues closed with full comments**: #82, #83, #84, #85, #86, #87, #88, #89, #90, #91.
+Two new tickets came out of the work: **#92** (two suites at once delete each other's Redis
+keys) and **#93** (28 more tests wait on a duration instead of a condition).
 
 ## Decisions made
 
 - **The day runs on the real venue feed**, not the smoke override, because #79's own text says
-  "live feed, one full trading day". That settles the question the last session left open.
+  "live feed, one full trading day".
 - **One day serves both #79 and #63.** Two days would measure two different sessions.
 - **Redis's ceiling is 2gb everywhere**, matching #69. 1gb was below the retention the same
   file documents.
-- **#82 rather than a widened tolerance.** `compare_store_runs.py` demands byte-equality
-  between two recorders holding separate websockets. That premise is falsified, not the store:
-  tick sums are identical at **1,333,097 on both sides** and table B matches bit for bit
-  including its counts. Loosening the tolerance to go green would have destroyed the check.
-- **Closing a ticket whose criteria are unmet is not on the table**, however much it would tidy
-  the list.
+- **#82 was rewritten, not relaxed.** `compare_store_runs.py` demanded byte-equality between
+  two recorders on separate websockets. That premise is false, so the tool now checks
+  conservation and identity. It exits **0** on the real 05:52–06:12Z pair: tick sums
+  **1,333,097** on both sides, `net=0`, no row outside a bound of one, tables B and D
+  byte-exact. Loosening a tolerance to go green would have destroyed the check.
+- **Stale Discord alerts are dropped, not posted** (#86). #66 had already decided it; the code
+  did not do it. The drop happens *ahead of* the gate, so a stale alert cannot spend a real
+  one's collapse or rate-limit slot.
+- **Closing a ticket whose criteria are unmet is not on the table.** #63, #65, #66 and #79 are
+  still open for that reason.
 
 ## Open questions
 
@@ -89,10 +97,25 @@ need the day or the owner. Two new tickets came out of findings: **#82** and **#
 - **A published measurement did not reach the file a later ticket wrote.** #61 recorded "1 GiB
   is not enough for thirty minutes of BTC+ETH"; #65 then shipped 1gb. Before writing a
   configured value, grep the repo for a measurement of it.
-- **A test can be satisfied by a comment.** `"1gb" in blocks["redis"]` read the whole service
-  block, comments included, so it never read the configuration and passed unchanged when the
-  real value moved. **That is the fourth vacuous test in this epic, and three of the four were
-  found by running something rather than reading it.**
+- **`--basetemp` fails when its parent does not exist.** pytest makes that directory with
+  `parents=False`, so **315 tests error at setup**, are reported as errors rather than
+  failures, and the run finishes *faster* because they never ran. `AGENTS.md` prescribed the
+  flag and told every worker to delete the directory as its last command, so the next run was
+  always a first run. Four agents read it as load. Fixed in `02fca06`; `mkdir -p` first.
+- **Three mechanisms wore one symptom.** "The suite is flaky under load" was the `--basetemp`
+  trap, a shared test Redis container (#92), and one genuine duration-bet (#83). A ticket that
+  closes on the wrong mechanism is worse than one left open, because the next person stops
+  looking.
+- **A test that takes exactly what it expects cannot see one too many.** `take(restarted, 10)`
+  asserted ten bids and was green with five duplicates behind it. **Drain to empty and assert
+  empty.** That one correction fixed both halves of the blocker #84.
+- **"Nothing raised" is evidence only where something can raise.** The bus isolates reader
+  failures by design, which silently turned every such test against it into a no-op (#91).
+- **Six vacuous tests in this epic now**, so the answer moved from fixing them one at a time to
+  an **AST scan** that fails if a test in the file has no assertion.
+- **A correct addition can make a document worse.** #81 added a true paragraph to `store.md`
+  and left the one it superseded in place. Neither is wrong alone; the file is wrong because it
+  holds both.
 - **`getattr(obj, "method", None)` with a silent no-op gives back exactly what a fix took
   away.** #66's repair did this and a test double had been running the pre-repair path ever
   since, saying nothing.
@@ -102,12 +125,8 @@ need the day or the owner. Two new tickets came out of findings: **#82** and **#
 - **`--samples` on `measure_containers.py` is a tick count, not a duration.** A tick costs
   `measured` 16.2 s here against the 5 s asked for, because the `docker stats` call happens
   before the sleep.
-- **This machine's Codex sandbox rejects `Remove-Item -Recurse -Force`.** `AGENTS.md` now
-  prescribes `rm -rf .sandbox-tmp` literally, because a worker that picked its own equivalent
-  lost its cleanup.
-- **The pagefile cannot be enlarged without a UAC click**, so two Codex workers fit only when
-  commit charge is near 82%, not 92%. Claude subagents cost this machine nothing and are the
-  lever when it is tight.
+- **A Codex sandbox leaves directories the real user cannot delete.** `takeown` and `icacls`
+  both fail unelevated. Anything that worktree owns needs a UAC click to remove.
 - **Unlink a junction before `git worktree remove`.** A guard blocks `rmdir`; use
   `[System.IO.Directory]::Delete(path, $false)`, which unlinks a reparse point without walking
   it, and check the real directory's entry count before and after.
@@ -116,7 +135,8 @@ need the day or the owner. Two new tickets came out of findings: **#82** and **#
 
 1. `gh issue view 79` and `gh issue view 63` — the two comments posted today carry the day's
    parameters and say exactly which criteria are waiting on it.
-2. `gh issue list --label audit` — the audit's findings, if it finished.
+2. `gh issue view 84` — the blocker's comment, and the clearest worked example of the
+   drain-to-empty correction. Then **#92** and **#93**, which are ready to start.
 3. [session-log.md](session-log.md) — today's entry. Earlier periods are split into
    [August](session-log-2026-08.md) and [1–9 September](session-log-2026-09-01-to-09-09.md).
 4. `~/.claude/skills/codex-route/SKILL.md` — the routing, and the traps it now records.

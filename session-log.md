@@ -128,3 +128,47 @@ recorders on separate sockets agree by conservation, not equality -- tick sums i
 1,333,097 on both sides) and **#83** (the suite is green only when the machine is idle; 30
 `time.sleep` call sites, and #50 was the same shape). A first-ever Fable audit of the whole
 epic is running. Owed: the day lands 2026-09-13T05:50Z and four issues close off it.
+
+## 2026-09-12 (third session) — the audit's findings, fixed and closed
+
+Codex is retired as the implementation route. Two Codex workers had reached 65 and 100
+sandboxed commands and were still writing red tests with the source file untouched; both were
+killed, their partial diffs salvaged, and the work handed to **four Claude agents running in
+parallel, one git worktree each, disjoint file territories**. All four landed. That is the
+model now — see the memory note, not this file, for how to set it up.
+
+**Ten issues closed with full comments**: #82, #83, #84, #85, #86, #87, #88, #89, #90, #91.
+`main` is at `02fca06`, pushed, **1,401 passed, 0 failed, ruff clean**.
+
+**#84 is the one that mattered.** It is #63's own "none duplicated" acceptance criterion, and
+#63 shipped believing it held. `XREAD` takes a start and no end, so `_replay` handed the writer
+every entry past the group's `last-delivered-id`, which the live `>` read then delivered again:
+15 delivered for 10 distinct on fakeredis, 14 on real Redis, and a position index of **20
+against an `entries-added` of 15** — an index larger than the stream has entries, which is what
+the *next* restart's gap arithmetic is computed from. The test that let it ship ended with
+`take(restarted, 10)` and asserted ten bids, never that the queue was then empty. **Drain to
+empty and assert empty** is the correction, and it was the fix for both halves.
+
+**Three different mechanisms were all being called "the suite is flaky".** Only one was #83.
+The second is the trap worth remembering: pytest creates the `--basetemp` directory with
+`parents=False`, so `--basetemp=X/basetemp` fails outright when `X` does not exist — **315
+tests error at setup, are reported as errors rather than failures, and the run finishes
+faster because they never ran**. `AGENTS.md` prescribed that flag *and* told every worker to
+delete the directory as its last command, guaranteeing the next run was always a first run.
+Four agents read it as load and moved on. Fixed in `02fca06`. The third is a shared test Redis
+container, filed as **#92**; the remaining 28 duration-bets are **#93**.
+
+**#82 now exits 0 on the real pair** (05:52–06:12Z, `data` against `.stack-data`): tick sums
+1,333,097 both sides, `net=0`, no row outside a bound of one, tables B and D byte-exact. The
+556 `right_only` rows were never a store defect. Widening the tolerance would have destroyed
+the only thing the check was for.
+
+Two more of the green-while-proving-nothing family, taking the count to **six**: a rejoin test
+with **no assertion at all** (#91) — unfalsifiable because the bus deliberately isolates reader
+failures — and #84's pair above. The answer this time was an **AST scan** that fails if any
+test in the file has no assertion. Six in one epic says the one-at-a-time repairs are not
+keeping up.
+
+Owed: the 24-hour run lands **2026-09-13T05:50Z** and four issues close off it. One directory,
+`dxp-docs/engine/.sandbox-tmp`, cannot be deleted without a UAC click — the Codex sandbox user
+owns it.
