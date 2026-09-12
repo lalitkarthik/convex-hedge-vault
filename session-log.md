@@ -87,3 +87,46 @@ ruff clean**, up from 1,401.
 **The measurement is cut to 05:50:07Z–11:24:28Z** and even that now ends inside a stalled
 system. I loaded the host myself with gate runs 12:24–12:55Z and said so on #79 rather than
 letting the earlier, cleaner-sounding cut stand.
+
+### Later the same evening — the fixes landed, and the tear-downs were the bug
+
+**Eight issues closed with red-green evidence**: #93, #95, #97, #98, #99, #100, #101, #102.
+`main` **1,502 passed, 0 failed, ruff clean** — up from 1,401, **+101 tests**, pushed at `af82c3b`.
+
+**The best find came out of fixing #103.** `store.py:2237` read `value.split("-", 1)` and unpacked
+**three** names from **two** parts, so `_stream_id_seconds` raised `ValueError` on *every* stream id
+there is — `0-0` included — and `seal_clock` caught `(TypeError, ValueError)` and fell through to the
+wall clock. **Record 0010 R4 had never once executed**, since #63 introduced it at `83120d6`. It is
+written in the decision record, defined in `CONTEXT.md`, and was written into `message-bus.md` as
+rule A6 by #72 *that same day*. One word — `partition` for `split` — and R4 pins for the first time.
+
+**So the same shape occurs twice in one subsystem**: an exception a defensive handler swallowed, and
+a signal that silently became a default. Neither was caught by a test, a health check, or a log a
+person could see. Assume there is a third.
+
+**Three un-torn-down processes were found in one day, and two of them were tear-down scripts.** The
+112 `burn.py`; the collector the 13:30Z watchdog reported stopped and did not stop; and
+**`stop-at-24h.ps1`, still running, armed for 05:50Z tomorrow to force-kill three PIDs that are
+already dead** — Windows recycles PIDs, so it would have killed whatever unrelated processes then
+held those numbers. Found by #99's agent while building the fix for exactly that class of defect.
+
+**A belief I had been repeating all day was wrong.** "Two concurrent suites are safe, three trip the
+fail-safe bounds" rested on a `measured` 304 s and 4 timeouts — **taken while those 112 processes
+were running.** Re-measured on a verified quiet machine: **130 s against 97 s alone, 1.34x, zero
+failures.** Corrected in the memory note and on #99.
+
+**Instruments, not systems, were the day's theme.** Three were lying — #100 (16.4 s cadence when
+told 5 s, six reads stamped with one clock), #102 (an arrival-lag harness replaying the retention
+window into its own numbers), #104 (a gap probe that cannot see a store that stopped, because a
+stall shortens its grid rather than holing it). All three were found by accident while doing
+something else. **Nothing checks the instruments.**
+
+**#79 survived anyway.** #100's salvage analysis puts the instrument's contribution under 9% of every
+published cell, far below R6's 25% call-out threshold, so the table can be written from the existing
+collection — with two qualifiers attached to the figures: the p95s are of ~1.9 s-averaged CPU, and
+the per-viewer cost carries ±0.6–0.8.
+
+Seven filed and still open: **#103** (fixed and merged, four verifications need the stack restarted),
+**#104**, **#105**, **#106**, **#107**, plus #96 and #70 held open on unmet criteria. **The final
+audit was not run** — its brief is written at `D:\Convex Hedge\incident-103\audit-brief.md` and is
+the next session's first task.
