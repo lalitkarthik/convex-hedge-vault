@@ -1,95 +1,115 @@
-# Handoff — 2026-09-07
+# Handoff — 2026-09-12 (second session)
 
-Vault session. All work landed in [teach/message-bus/](teach/message-bus/plan.md) and
-[learning-records/message-buses.md](learning-records/message-buses.md). A second agent is
-working in `delta-exchange-payoff` on the volatility screens — **stay out of `engine/src`
-and `web/` there unless told otherwise.**
+Everything below happened in `delta-exchange-payoff`. Nothing in this vault is half-built: the
+session log is split and current, and the working tree is clean.
 
 ## Start here
 
-Settle the one open measurement. The engine is up, so this takes ten minutes:
+**A 24-hour measurement is running and it ends at 2026-09-13T05:50:07Z.** Four issues close
+off it. Do not disturb it before then.
 
 ```bash
-cd "D:/Convex Hedge/delta-exchange-payoff/engine" && ./.venv/Scripts/python.exe -c "import time,sys; sys.path.insert(0,'src')"
+cat "D:/Convex Hedge/i13-day/watchdog.log"
 ```
 
-`stream.py` records that a full `recompute_dirty()` pass over every listed expiry is
-"~10 ms". `measured` this session on the 69-row fixture: **7.25 ms for ONE expiry**, and
-**eight are listed live**. 8 × 7 ms ≈ 56 ms against a 100 ms tick would be over half a core,
-not the ~10% the comment implies. The fixture may not be representative — that is why it is
-tagged `assumed` in [caching.md](teach/message-bus/caching.md) rather than claimed.
+A watchdog (PID 5804) stops the collector (19236), the viewer driver (15564) and the Redis
+watcher (28200) at that moment and writes the final sample count. **If that file says the day
+finished, the next four steps are the whole morning:**
 
-Measure it against the running engine. It either closes the flag or finds a live problem.
+1. `tools/measure_containers.py summarize --in "D:/Convex Hedge/i13-day/containers-2026-09-12.jsonl"`,
+   then fill R6's table and close **#79**. Slice by the windows in `viewer-windows.log` to get
+   the `api` row at 0, 1 and 3 viewers — that log is the authority, not the schedule.
+2. `tools/measure_computed_gaps.py` and `tools/compact_store.py` over the day the store
+   recorded in `.stack-data/`, which closes **#63**'s criteria 4 and 6.
+3. Take a clean per-container start-to-healthy — the collector must be started **before**
+   `docker compose up`, which is why it could not be done today — then run
+   `tools/smoke_stack.py`, which needs port 8080 back. Both are **#65**'s last two criteria,
+   and the smoke run is also **#66**'s.
+4. Then `docker compose up -d --build` afresh so the running stack carries #81 and #66. The
+   stack now up was built at `c05ebe1` and carries neither.
 
 ## In flight
 
-- **Both servers are running.** Engine PID **25748** on 8000 (`/health` returns ok, eight
-  expiries listed); web on 3000 via `bun run dev`, HTTP 200. Started this session at ~09:45Z.
-- **`tools/measure_bus.py` is untracked** in `delta-exchange-payoff`. It is the spike from
-  this session and it is reproducible; commit it there or delete it, but do not leave it
-  drifting.
-- **Nothing half-built in the vault.** Working tree clean, `master`, pushed.
+- **Nothing is mid-implementation.** No Codex worker is running, no worktree is dirty. The only
+  worktree left is `dxp-54` (`rv-backfill`), untouched on the owner's instruction.
+- **A first-ever Fable 5.1 audit of the whole epic was running when this was written.** Its
+  findings are posted as tickets labelled `audit`. Check `gh issue list --label audit` before
+  planning anything; fixes go through the normal Codex/Opus/Sonnet routing, never the auditor.
+- **The live engine on :8000 and the web app on :3000 are up and recording**, as always.
 
-## What changed this session
+## What changed
 
-Five commits, all pushed to `master`:
-
-| | |
+| Commit | |
 |---|---|
-| `6350113` | Pass 1 — our architecture, his, and Nautilus's own |
-| `e5969b3` | The spike — 798x, and the silent loss reproduced |
-| `03c273d` | Pass 3 — the cache cannot be stale; the gap is durability |
-| `f55f857` | The senior's answers, and the correction they force |
-| `df91ff5` | The learning record |
-| `7474869` | Kafka against Redis Streams, and the migration mapping |
+| `49c23c5` | The local stack's Redis ceiling was below its own retention window |
+| `3499ec7` `b8bdd71` | A test that checked that ceiling never read the Redis command |
+| `f2fd905` | **#81** — the split api answers from a live right edge |
+| `6e20870` | `AGENTS.md` said three things that stopped being true |
+| `ed7b538` | **#66** — a sixth service posts alerts to Discord, no producer changed |
+| `4a22022` | #66's repair had put its own guarantee behind a silent fallback |
 
-Also: five teaching sessions delivered, each closed by a check question answered unaided.
-`teach/` and `learning-records/` were both empty before this session.
+`main` is pushed. **1,379 passed, 0 failed, ruff clean.**
+
+**#81 is closed.** #63, #65, #79 and #66 all have full comments and stay open on criteria that
+need the day or the owner. Two new tickets came out of findings: **#82** and **#83**.
 
 ## Decisions made
 
-- **No broker while we are one process; Redis alone if we ever split** —
-  [plan.md](teach/message-bus/plan.md), "Where the answer stands".
-- **The senior's Redis was chosen, not inherited from Nautilus** — corrects pass 1's
-  inference. [what-the-senior-said.md](teach/message-bus/what-the-senior-said.md) §4.
-- **His disk problem is probably not Redis** and Kafka would likely worsen it —
-  [the-disk-bloat.md](teach/message-bus/the-disk-bloat.md), with a five-step diagnosis.
-- **We need no caching we do not already have; the real gap is durability** —
-  [caching.md](teach/message-bus/caching.md).
+- **The day runs on the real venue feed**, not the smoke override, because #79's own text says
+  "live feed, one full trading day". That settles the question the last session left open.
+- **One day serves both #79 and #63.** Two days would measure two different sessions.
+- **Redis's ceiling is 2gb everywhere**, matching #69. 1gb was below the retention the same
+  file documents.
+- **#82 rather than a widened tolerance.** `compare_store_runs.py` demands byte-equality
+  between two recorders holding separate websockets. That premise is falsified, not the store:
+  tick sums are identical at **1,333,097 on both sides** and table B matches bit for bit
+  including its counts. Loosening the tolerance to go green would have destroyed the check.
+- **Closing a ticket whose criteria are unmet is not on the table**, however much it would tidy
+  the list.
 
 ## Open questions
 
-- **The recompute discrepancy above.** `assumed` until measured live.
-- **Session 4 has no video.** None found that was any good; taught cold instead. If a good
-  one turns up, [sessions.md](teach/message-bus/sessions.md) should carry it.
-- **The disk diagnosis is the senior's to run**, not ours — steps 1 and 2 of
-  [the-disk-bloat.md](teach/message-bus/the-disk-bloat.md) take one minute and settle it.
-- **The store has a three-day hole**, 2026-09-04 09:38Z to 2026-09-07 ~09:45Z. Not
-  recoverable. 782,870 quote-bar rows on disk now.
+- **#66's core claim is unproven end to end.** "A message arrives in Discord" needs a real
+  webhook URL, and only the owner has one. Everything up to the HTTP boundary is proven.
+- **Three of #81's four read paths were proven at the seam, not live.** The argument for them
+  is an argument, not an observation.
+- **The 4.43 MiB buffer figure is still unchecked against a full buffer.** The live run held
+  1,669 bars over one minute and never reached the 360 s horizon, so eviction never ran.
 
 ## Traps found
 
-- **This machine's two clocks disagree by three days.** WSL `date` said 2026-09-04 while
-  Windows said 2026-09-07. Vault notes were stamped wrong and corrected. **Trust
-  `Get-Date`, not `date`.**
-- **I stated a number I had never measured.** Claimed a flush costs "hundreds of
-  milliseconds" and derived a backlog from it; `measured` 37.7 ms for all four tables —
-  wrong by five times, in the alarming direction. Recorded in
-  [the-three-brokers.md](teach/message-bus/the-three-brokers.md) rather than quietly fixed.
-- **I told the user the flush was still hourly and uncommitted. It is not.** The other agent
-  landed #16; `store.py:135` reads `FLUSH_SECONDS = 300.0` and the running engine is
-  verifiably writing every five minutes (files at 15:22, 15:27, 15:32, 15:37, 15:42 local).
-  **Re-read state before reporting it; do not carry the morning's picture into the evening.**
-- **A `FanOut` throughput test hung forever** because it awaited 20,000 items from a
-  drop-oldest queue capped at 1,000. Fixed by making both subscriptions lossless — the test
-  measures transport, not policy.
-- **Docker's daemon must be started by the human.** Redis for the spike:
-  `docker run -d --name X -p 6399:6379 redis:7-alpine`. Remove the container afterwards.
+- **A published measurement did not reach the file a later ticket wrote.** #61 recorded "1 GiB
+  is not enough for thirty minutes of BTC+ETH"; #65 then shipped 1gb. Before writing a
+  configured value, grep the repo for a measurement of it.
+- **A test can be satisfied by a comment.** `"1gb" in blocks["redis"]` read the whole service
+  block, comments included, so it never read the configuration and passed unchanged when the
+  real value moved. **That is the fourth vacuous test in this epic, and three of the four were
+  found by running something rather than reading it.**
+- **`getattr(obj, "method", None)` with a silent no-op gives back exactly what a fix took
+  away.** #66's repair did this and a test double had been running the pre-repair path ever
+  since, saying nothing.
+- **The same scope gap hit three tickets running** (#63, #81, #66): a test asserting a *global*
+  shape — a whole `/health` payload, a whole service set — belongs to whoever changes that
+  shape, and no plan can know which tests those are from the ticket text.
+- **`--samples` on `measure_containers.py` is a tick count, not a duration.** A tick costs
+  `measured` 16.2 s here against the 5 s asked for, because the `docker stats` call happens
+  before the sleep.
+- **This machine's Codex sandbox rejects `Remove-Item -Recurse -Force`.** `AGENTS.md` now
+  prescribes `rm -rf .sandbox-tmp` literally, because a worker that picked its own equivalent
+  lost its cleanup.
+- **The pagefile cannot be enlarged without a UAC click**, so two Codex workers fit only when
+  commit charge is near 82%, not 92%. Claude subagents cost this machine nothing and are the
+  lever when it is tight.
+- **Unlink a junction before `git worktree remove`.** A guard blocks `rmdir`; use
+  `[System.IO.Directory]::Delete(path, $false)`, which unlinks a reparse point without walking
+  it, and check the real directory's entry count before and after.
 
 ## Read these
 
-1. [teach/message-bus/plan.md](teach/message-bus/plan.md) — the map. Everything else hangs off it.
-2. [learning-records/message-buses.md](learning-records/message-buses.md) — the durable answer, if you only read one.
-3. [teach/message-bus/what-the-senior-said.md](teach/message-bus/what-the-senior-said.md) — what is now `stated` rather than `assumed`.
-4. [teach/message-bus/the-disk-bloat.md](teach/message-bus/the-disk-bloat.md) — the only live problem, and it is his.
-5. `handoff-delta-exchange-payoff-2026-09-03-evening.md` in `%TEMP%` — its **"How he engages"** section still governs. Unchanged and still the most important thing in any of these files.
+1. `gh issue view 79` and `gh issue view 63` — the two comments posted today carry the day's
+   parameters and say exactly which criteria are waiting on it.
+2. `gh issue list --label audit` — the audit's findings, if it finished.
+3. [session-log.md](session-log.md) — today's entry. Earlier periods are split into
+   [August](session-log-2026-08.md) and [1–9 September](session-log-2026-09-01-to-09-09.md).
+4. `~/.claude/skills/codex-route/SKILL.md` — the routing, and the traps it now records.
+5. `D:/Convex Hedge/i13-day/` — the day's samples, the Redis curve, the viewer windows.

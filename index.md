@@ -32,7 +32,8 @@ Read this first, then open only what you need.
     against the senior's Nautilus + Redis engine, RabbitMQ vs Redis vs Kafka measured, and the
     four caches. His answers are in [what-the-senior-said](teach/message-bus/what-the-senior-said.md);
     the teaching order is [sessions](teach/message-bus/sessions.md) — **solid**
-- [session-log.md](session-log.md) — decisions and open questions
+- [session-log.md](session-log.md) — decisions and open questions. Closed periods are
+  split off: [August](session-log-2026-08.md), [1–9 September](session-log-2026-09-01-to-09-09.md)
 
 ## Research
 
