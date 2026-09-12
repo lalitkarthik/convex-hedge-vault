@@ -273,3 +273,32 @@ numbered breakdown approved before publishing, native blocking edges, blockers f
 Frontier is now I11, R6, R8 in parallel; #62 waits on #74. Owed: `epic.md` was 233 lines
 before this and is longer now; it mirrors an issue that wins, and should become a pointer
 or be split.
+
+**First run of the Codex route, 2026-09-12.** Six tickets closed in `delta-exchange-payoff`:
+#73 (not planned), R6 #75, R8 #76, I11 #74, R7 #78 and I3 #62 (`b4d5fce`). Research went to
+Opus; implementation to Codex Luna max, planned first by Sol medium read-only, gated by
+Claude, reviewed by Sonnet — every Codex run passed on its first attempt, no escalation.
+Answers worth keeping: R7 keeps one box but a `c7g.xlarge`; R8 keeps nightly compaction for
+local disk. I3's live check killed `feed` for 14.8 s and the ladder came back 0.59 s after
+it did. Sandbox traps found and written into `~/.claude/skills/codex-route/SKILL.md`: the
+first command after a reboot fails once; the sandbox user can write neither `%TEMP%` nor any
+directory the real user made, so its temp tree is `.sandbox-tmp/`. In flight: I12 #77 (store
+layout migration) and the I5 #64 plan. Owed: nightly compaction has never run on this
+machine; this log is past the 200-line bound and should be split.
+
+**The rest of that run, 2026-09-12.** Four more tickets landed: I3 #62 (the feed as its own
+process), I12 #77 (the store's underlying-first layout, including a live migration of 5,098
+files with the engine stopped 133 s at a flush boundary), I5 #64 (the api learns the feed's
+state from the bus and commands it over the bus), and #54 (realised volatility read from a
+backfilled index series). Two blockers were caught before they could cost anything, each by a
+different check: the store migration tool had no `__main__` block, so run as a command it
+printed nothing, moved nothing and exited 0 while 1,120 tests passed — found by a trial
+migration on a copy of real data, not by the suite or the review; and a failure partway
+through its delete phase would have stranded the migration unresumable — found by the review,
+which reproduced it. Both fixed in one repair round. I4 #63 was not built: its planner refused,
+naming seven unsettled design questions, so an Opus pass settled them in decision
+`0010-store-replay.md` and the owner answered five judgment calls, one of which became a new
+ticket, #81. Method notes worth keeping: two tickets whose files are disjoint ran at once in
+separate git worktrees; and when the Codex 5-hour window reached 91%, the routing rule moved
+#54's implementation to Claude without ceremony, which is the behaviour the rule was written
+for.
