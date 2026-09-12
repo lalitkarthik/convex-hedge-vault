@@ -27,6 +27,14 @@ finished, the next four steps are the whole morning:**
    and the smoke run is also **#66**'s.
 4. Then `docker compose up -d --build` afresh so the running stack carries #81 and #66. The
    stack now up was built at `c05ebe1` and carries neither.
+5. Run #63's criterion 5 live — a `POST` pause and resume over the bus against the split
+   composition. It was never run; the plan has an orchestrator step for it and no record
+   exists. Do it on a scratch stack, not on the `dxp` one, or a pause puts a hole in the day.
+
+**There has been no I3 to I4 cutover, and nothing needs one.** The monolith on :8000 still
+writes `data/` with its in-process writer, and the `dxp` stack's `store` records `.stack-data/`
+beside it. Two independent recorders, which is what makes #63's comparison possible at all.
+An earlier draft of this file said the cutover had happened; it had not.
 
 ## In flight
 
