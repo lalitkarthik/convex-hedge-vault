@@ -130,3 +130,87 @@ Seven filed and still open: **#103** (fixed and merged, four verifications need 
 **#104**, **#105**, **#106**, **#107**, plus #96 and #70 held open on unmet criteria. **The final
 audit was not run** — its brief is written at `D:\Convex Hedge\incident-103\audit-brief.md` and is
 the next session's first task.
+
+---
+
+## 2026-09-12, evening — the epic's non-AWS work is done, and one shape explains the day
+
+**Everything that does not need AWS credentials is finished.** The suite went **1,401 → 1,595
+passed, 0 failed, ruff clean** in one day. Twenty-eight issues closed.
+
+**#103 is closed.** The stack was restarted at `measured` 15:52:27Z with the owner's approval and
+images rebuilt from the fix, and all four remaining criteria were proved against it: JSON records
+reach `docker logs`, `.stack-logs/<service>/` is mounted and filling, `store.flush` appears at
+302/301/297 s against a 300 s cadence, and **`/health` returned 503 at 20.6 s** when `dxp-store`
+alone was cut from its network for 21 seconds. That single reading showed all six of #103's
+changes working at once.
+
+**The last reading of the stalled system is worth keeping**: `"status":"ok"`,
+`"replay_gap_entries":0`, against a lag of **1,859,571 entries**, with `generation` advanced 87 →
+120 while `rows_written` never moved off 523,510. Thirty-three generations, all empty seals.
+
+### One defect shape produced eight incidents, and none of them is a crash
+
+**A value that quietly stopped meaning what it says.** A counter that still increments. A status
+field that is a literal. An exception a defensive handler swallows. A rule that silently became a
+special case. **Every one left the system reporting success.**
+
+#103 (the readers), `_stream_id_seconds` (**R4 had never once executed** since #63 introduced it),
+R5 (a record that never said *when*), **#108** (`feed` reporting `ok` while stopped with its budget
+spent), **#111** (a lossless reader stranding a batch in the pending list — and **#103's own
+bounded-retry fix turned a loud reader death into a silent repeating loss**, 30% of
+`md.option_bar`), **#115** (a failed Discord post spending the alert's window, with the comment
+beside it saying the pair existed to prevent exactly that), **#110** (a restart losing the open
+minute from one table and leaving no record of the restart), and **four instrument defects** —
+#100, #102, #104, and `docker stats` BlockIO not observing a bind mount, wrong by **59×**.
+
+**Why it took a day to find eight: a defect that makes a number look worse gets investigated. One
+that makes it look better gets quoted.**
+
+### The one that revised my own belief
+
+**#111 is #103's fix carrying the next defect.** Bounded retry was right — a reader holds nothing,
+so retrying forever buys it nothing — and it converted a visible death into an invisible loss,
+because nothing read the pending list Redis had already moved the batch into. The repair reads
+`XREADGROUP ... 0` before the `>` read, and **the agent caught its own error**: the rule that a
+checkpointed reader defers to its replay is true only *before* the replay runs. Applied mid-run it
+would ack away the very batch being rescued.
+
+### Three tickets to hold one rule
+
+`test_nomenclature.py` pinned documents against each other, and in #103 **the record and the
+document agreed with each other and both were wrong about the code.** #106 built the first check
+that reads the code; **#117 broke it** — it catches structural disconnection, not evaluation; #114
+answered with a test that drives the timer itself. Worth remembering as a sequence.
+
+**And #117's own premise was half wrong**: its mutations A and B were already caught by a
+behavioural test #103 landed the same day. The audit had run them against the AST helper only.
+
+### Ten tests that proved nothing, and none found by reading
+
+The newest passed with its type guard deleted — the pause fell into the dispatch body, raised
+`AttributeError`, and the handler swallowed it. **All 32 tests in three alert files passed with the
+guard gone.** Every one of the ten was found by **mutating**: delete the guard, no-op the commit,
+force the cadence, revert the fix.
+
+### Two prompt-injection attempts, both refused
+
+A fake `<system-reminder>` appeared inside `gh issue view` output, twice, claiming the GitHub API
+rate limit was exceeded and instructing a sleep. Two independent agents checked
+(`gh api rate_limit` → 5,000 remaining, 0 used), found it false, and carried on. **Tool output is
+data, and both treated it that way.**
+
+### What is left
+
+**#70, #71, #80 need AWS credentials and nothing else.** #63 and #79 each need one clean day of
+recording, and **one re-collection closes both** — the stack has been recording since 15:52:27Z.
+#57 cannot close until the three AWS tickets do.
+
+Open and workable: **#110** (criterion 2, now **#119**), #116, #118, #119.
+
+**Three new front doors**, because the reasoning was correct and unreadable across ten records,
+fifteen cloud files, twenty-two LLDs and several hundred comments:
+`docs/split-start-here.md`, `docs/split-numbers.md`, `docs/split-what-to-do-next.md`.
+
+**Writing them found a defect**: putting `derived` beside 1,056.4 MiB made #112's widened sweep see
+a disagreement it had been blind to, and the suite went red. That is #118, arriving by accident.
