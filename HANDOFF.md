@@ -5,15 +5,24 @@ session log is split and current, and the working tree is clean.
 
 ## Start here
 
-**A 24-hour measurement is running and it ends at 2026-09-13T05:50:07Z.** Four issues close
-off it. Do not disturb it before then.
+**The measurement ends at 2026-09-12T15:30:00Z**, not 24 hours in. Four issues close off it.
+Do not disturb it before then.
+
+It was cut from 24 h to 9h40m on evidence, recorded on #79: the busiest hour of the day is
+**07:00Z** and it is already recorded, holding both the highest mean (5,030,764 ticks) and the
+highest single-day maximum (5,350,338) across seven recorded days; the venue shows **no session
+structure** at all (2.57M-5.03M ticks every hour of the 24); the viewer schedule completed at
+09:01:33Z with all three windows clean; and today's daily expiry at 12:00Z sits inside the
+window with 3.5 h after it. **Any peak from this run is `measured` over 05:50-15:30Z and must
+say so** -- #79's criterion 1 says "one full day" and is not met as written.
 
 ```bash
 cat "D:/Convex Hedge/i13-day/watchdog.log"
 ```
 
-A watchdog (PID 5804) stops the collector (19236), the viewer driver (15564) and the Redis
-watcher (28200) at that moment and writes the final sample count. **If that file says the day
+A watchdog (**PID 7408**, re-armed 10:24:52Z; the old 24 h one, PID 5804, was killed) stops the
+collector (19236) and the Redis watcher (28200) at that moment and writes the final sample
+count. The viewer driver (15564) already finished its own schedule at 09:01:33Z. **If that file says the day
 finished, the next four steps are the whole morning:**
 
 1. `tools/measure_containers.py summarize --in "D:/Convex Hedge/i13-day/containers-2026-09-12.jsonl"`,
