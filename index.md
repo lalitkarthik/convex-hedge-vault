@@ -72,5 +72,8 @@ for anything inside them — this is a map to it, never a copy of it.
   research ticket closes — is `delta-exchange-payoff` #57, mirrored at
   `delta-exchange-payoff/docs/design/cloud/epic.md`, tickets #58–#73. Five research tickets and two implementation tickets landed the same day;
   the decisions are one page each under `delta-exchange-payoff/docs/design/decisions/`, the
-  evidence under `docs/design/research/`, and the two cloud documents assemble from
-  `docs/design/cloud/`. Study a ticket with `docs/study-with-chatgpt.md` — **2026-09-09**
+  evidence under `docs/design/research/`. **The two cloud documents are written** (#72):
+  `delta-exchange-payoff/docs/design/cloud/message-bus.md` and `.../data-feed-engine.md`, with
+  the AWS services list written once in `.../services.md` and the ubiquitous language both use
+  in `delta-exchange-payoff/CONTEXT.md` — read that one first, it is where every term resolves.
+  Study a ticket with `docs/study-with-chatgpt.md` — **2026-09-12**
