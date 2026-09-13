@@ -1,4 +1,4 @@
-> As of delta-exchange-payoff@7783a4b, 2026-09-14
+> As of delta-exchange-payoff@f31c89c, 2026-09-14
 
 # Service health — what each check can see
 
