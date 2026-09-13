@@ -140,11 +140,11 @@ differently, both are recorded rather than reconciled:
 
 ## Pointers
 
-- Our own engine's architecture, written as a design rather than inferred from modules:
-  `delta-exchange-payoff/docs/design/hld.md` for the parts and the traffic between them, and
-  `delta-exchange-payoff/docs/design/events.md` for the events that carry it. Different system
-  from this map — theirs is a backtesting terminal, ours is a live feed — but the vocabulary for
-  a chain, a leg and an expiry is shared, and the design documents are where ours is fixed.
+- Our own engine: [feed-engine](feed-engine.md), the vault's map of `delta-exchange-payoff`, with
+  its design in `delta-exchange-payoff/docs/design/hld.md` and the events in
+  `delta-exchange-payoff/docs/design/events.md`. Different system from this map — theirs is a
+  backtesting terminal, ours is a live feed — but the vocabulary for a chain, a leg and an expiry
+  is shared. Where words collide, [GLOSSARY](../GLOSSARY.md) lists both meanings.
 - Backtest engine truth, once the repo lands — _access pending._
 - Payoff and Greek maths, reimplemented independently: `payoff-project/docs/calculations.md`
 - Vocabulary for that project: `payoff-project/CONTEXT.md`

@@ -138,3 +138,48 @@ paper over.
 **Regime**:
 A field stamped on every backtest diagnostic row and filterable in the UI, intended to classify
 market conditions at a decision. **Currently empty on every row.**
+
+## The feed engine (`delta-exchange-payoff`)
+
+Canon for these is `delta-exchange-payoff/CONTEXT.md`; this section holds only the terms vault notes
+use. The map is [feed-engine](domain/feed-engine.md).
+
+**Split mode / Monolith**: The seven-service composition over Redis (`DELTA_BUS=redis`), and the
+default single process with an in-process bus.
+
+**Stream / Consumer group**: A stream is one Redis key of entries; a consumer group is one service's
+place in it. Never used for each other.
+
+**Lossless / Drop-oldest**: A subscription that reads through a group and drops nothing (`store`),
+and one that keeps only the newest and counts what it skipped (the chain cache).
+
+**Retention**: Thirty minutes, by age. What a restarted `store` can still recover.
+
+**Seal**: Closing a minute's bucket. Final — a minute sealed while its data is unread is lost.
+
+**Store flush**: Writing sealed bars to Parquet every 300 s; the only durability boundary.
+_Avoid_: save, write, persist
+
+**Watermark / Checkpoint / Generation**: The last flushed entry per stream; the file holding the
+watermarks; the number in a flush file's name. See [bar-store](domain/bar-store.md).
+
+**Ladder**: The chain as the screen shows it, rows ascending by strike.
+
+**Computed chain**: Our own IV, Greeks and forward, beside the venue's reference figures.
+
+**`measured` / `assumed` / `derived`**: The provenance tag every number carries — observed in a named
+run, chosen by a person, or computed from the other two. One origin each, never re-tagged.
+
+**Instance**: One EC2 machine. _Avoid_: box, node.
+
+## Collisions between the two
+
+Recorded rather than reconciled, as [platform-map](domain/platform-map.md) does for `payoff-project`.
+
+- **Tag.** On the terminal, a leg's exit reason. In the engine, a number's provenance.
+- **Instance.** On the terminal, half of the Group / Instance leg identifier. In the engine, an EC2 machine.
+- **Signal.** On the terminal, a rule that fires on a candle. In the engine, what an adapter reports
+  about its socket (the connection signal).
+- **Run.** On the terminal, one backtest execution. In the engine, one measurement window, named with its dates.
+- **Snapshot vs Ladder.** Both are one chain at one moment; the terminal's is reconstructed from
+  history, the engine's is live and rebuilt on arrival.

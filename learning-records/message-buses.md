@@ -1,5 +1,11 @@
 # Message buses, caching, and what our architecture actually is
 
+> **Update 2026-09-14.** The standing decision below — "no broker while we are one process; if we
+> ever split, Redis alone" — was acted on. The engine split into seven services on Redis Streams
+> on 2026-09-11/12 (epic #57), Redis alone, as decided. "Ours, and why it needs no broker"
+> describes the monolith, which still exists as the default composition. The mechanics, the
+> brokers and the state table stand. The system as it now runs: [feed-engine](../domain/feed-engine.md).
+
 **Learned 2026-09-07.** Workspace and evidence: [teach/message-bus/](../teach/message-bus/plan.md).
 Taught in five sessions built from the senior's own answers, each closed by answering a
 check question unaided.

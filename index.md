@@ -1,10 +1,11 @@
 # Convex Hedge — front door
 
-Understand Convex Hedge's options-trading platform and its data well enough to build on it.
+Understand Convex Hedge's options-trading platform and its data well enough to build on it — and
+improve our own live engine, which is part of that system.
 
 Read this first, then open only what you need.
 
-## Domains
+## Domains — the terminal (Convex Hedge's backtesting platform)
 
 <!-- one line per domain note: link — what it covers — status (solid / partial / stub) -->
 
@@ -17,26 +18,34 @@ Read this first, then open only what you need.
 - [backtest-engine](domain/backtest-engine.md) — runs, the four report tabs, per-run parameter JSON, cost models, and which numbers not to trust — **solid**
 - [portfolio](domain/portfolio.md) — combining runs into a book: correlation, the no-diversification baseline, and why there is no per-unit track — **solid**
 
+## Domains — our feed engine (`delta-exchange-payoff`)
+
+- [feed-engine](domain/feed-engine.md) — **start here for the engine**: the seven services on a Redis Streams bus, how data moves, what the split promises and does not, the constants, and where each truth lives — **solid, 2026-09-14**
+- [bar-store](domain/bar-store.md) — the four tables, seal then flush, the crash-and-replay protocol, the one known loss window (#119), and what the recordings show — **solid, 2026-09-14**
+- [service-health](domain/service-health.md) — what each `/health` can and cannot detect, the #103 incident, the logs and alarms, and five improvement candidates — **solid, 2026-09-14**
+- [deployment-and-cost](domain/deployment-and-cost.md) — one `c7g.xlarge` on ECS, CPU and RAM measured, T1/T2/T4 costed, the split threshold and the hop — **solid, nothing built yet**
+
+## Learning records — what I understand, in order
+
+- [message-buses](learning-records/message-buses.md) — why a bus exists at all, the three brokers
+  measured, Redis Streams' mechanics and its one trap, state sorted by recoverability — **2026-09-07**
+- [tests-that-prove-nothing](learning-records/tests-that-prove-nothing.md) — six green tests that
+  verified nothing, the five checks that find them, and three mechanisms wearing "flaky" — **2026-09-12**
+- [silent-success](learning-records/silent-success.md) — the engine's recurring defect: a value that
+  stopped meaning what it says, eight instances, and the five questions that found them — **2026-09-12**
+
 ## Workspace
 
 - [MISSION.md](MISSION.md) — what I am learning here, and why
-- [GLOSSARY.md](GLOSSARY.md) — canonical terms for Convex Hedge
+- [GLOSSARY.md](GLOSSARY.md) — canonical terms: the terminal's, the engine's, and where they collide
 - [RESOURCES.md](RESOURCES.md) — trusted sources
 - [NOTES.md](NOTES.md) — working scratch for the teach skill
-- [learning-records/](learning-records/) — what I understand, in order
-  - [message-buses](learning-records/message-buses.md) — why a bus exists at all, the three
-    brokers measured, Redis Streams' mechanics and its one trap, state sorted by
-    recoverability, and why our cache cannot go stale — **2026-09-07**
-  - [tests-that-prove-nothing](learning-records/tests-that-prove-nothing.md) — six green
-    tests that verified nothing, the five checks that find them, and the three mechanisms
-    that all wore the symptom "flaky under load" — **2026-09-12**
-- [teach/](teach/) — teach-skill workspaces, one folder per topic
-  - [message-bus](teach/message-bus/plan.md) — message buses and caching: our in-process fan-out
-    against the senior's Nautilus + Redis engine, RabbitMQ vs Redis vs Kafka measured, and the
-    four caches. His answers are in [what-the-senior-said](teach/message-bus/what-the-senior-said.md);
-    the teaching order is [sessions](teach/message-bus/sessions.md) — **solid**
-- [session-log.md](session-log.md) — decisions and open questions. Closed periods are
-  split off: [August](session-log-2026-08.md), [1–9 September](session-log-2026-09-01-to-09-09.md)
+- [teach/message-bus](teach/message-bus/plan.md) — message buses and caching against the senior's
+  Nautilus + Redis engine. His answers: [what-the-senior-said](teach/message-bus/what-the-senior-said.md);
+  teaching order: [sessions](teach/message-bus/sessions.md) — **solid**
+- [session-log.md](session-log.md) — decisions and open questions, current period. Closed periods:
+  [August](session-log-2026-08.md) · [1–9 September](session-log-2026-09-01-to-09-09.md) ·
+  [10–12 September](session-log-2026-09-10-to-09-12.md) · [12 September, evening](session-log-2026-09-12.md)
 
 ## Research
 
@@ -50,30 +59,13 @@ Read this first, then open only what you need.
 
 ## Code repos
 
-Listed in the contract, [CLAUDE.md](CLAUDE.md). Their own documentation is the canonical answer
-for anything inside them — this is a map to it, never a copy of it.
+Listed in the contract, [CLAUDE.md](CLAUDE.md). **Their own documentation is the canonical answer
+for anything inside them** — this vault maps to it and never copies it.
 
-- `payoff-project` — payoff diagrams for option structures.
-- `delta-exchange-payoff` — live crypto option analytics over Delta Exchange India: our own
-  implied volatility and Greeks computed off the websocket while the venue's own figures travel
-  beside them, and a one-minute bar store. Two front doors, both written to be read first:
-  `docs/maths-start-here.md` for how the forward, the IV and the Greeks are each computed, and
-  `docs/storage-start-here.md` for what is kept and where. The evidence behind them is in
-  `docs/forward.md`, `docs/implied-vol.md`, `docs/settlement.md`, `docs/ingestion.md`,
-  `docs/storage.md` and the published interface in `docs/chain-contract.md` — **2026-09-04**
-  The design of the feed as a whole now lives beside the code: `delta-exchange-payoff/docs/design/hld.md`
-  is the high-level design — the venues, the broker adapters, the connection controller and its
-  supervisor, the bus, the consumers and the two screens, with the five connection states and
-  their transitions — and `delta-exchange-payoff/docs/design/events.md` is the events catalogue,
-  the envelope and the nine events that cross between them. Low-level designs land one per
-  component in `delta-exchange-payoff/docs/design/lld/`. `docs/architecture.md` is superseded by
-  the first of these and kept — **2026-09-07**
-  The services epic — four services on a Redis Streams bus, no AWS service decided until its
-  research ticket closes — is `delta-exchange-payoff` #57, mirrored at
-  `delta-exchange-payoff/docs/design/cloud/epic.md`, tickets #58–#73. Five research tickets and two implementation tickets landed the same day;
-  the decisions are one page each under `delta-exchange-payoff/docs/design/decisions/`, the
-  evidence under `docs/design/research/`. **The two cloud documents are written** (#72):
-  `delta-exchange-payoff/docs/design/cloud/message-bus.md` and `.../data-feed-engine.md`, with
-  the AWS services list written once in `.../services.md` and the ubiquitous language both use
-  in `delta-exchange-payoff/CONTEXT.md` — read that one first, it is where every term resolves.
-  Study a ticket with `docs/study-with-chatgpt.md` — **2026-09-12**
+- `payoff-project` — payoff diagrams and Greek maths for option structures, reimplemented to be
+  understood. Front door `payoff-project/CONTEXT.md`.
+- `delta-exchange-payoff` — the feed engine. Front doors, in order: `delta-exchange-payoff/CONTEXT.md`
+  (every term), `delta-exchange-payoff/docs/split-start-here.md` (what runs and what was chosen),
+  `delta-exchange-payoff/docs/maths-start-here.md` (forward, IV, Greeks),
+  `delta-exchange-payoff/docs/storage-start-here.md` (what is kept). Epic #57. The vault's map of it
+  is [feed-engine](domain/feed-engine.md).

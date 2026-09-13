@@ -22,6 +22,18 @@ terminal needs checking against something you derived yourself.
 Its vocabulary disagrees with the terminal's in two places; both are recorded in
 [platform-map](domain/platform-map.md) rather than reconciled.
 
+**`delta-exchange-payoff`** — `D:\Convex Hedge\delta-exchange-payoff`, GitHub
+`lalitkarthik/delta-exchange-payoff`. Our live crypto option analytics engine, and the system this
+vault is here to improve. Reach for it for anything about the feed, the bus, the bar store, health
+or deployment; the vault's map is [feed-engine](domain/feed-engine.md). **The GitHub issues are its
+state of record** and win over any document, this vault included.
+
+- `CONTEXT.md` — every term; read first
+- `docs/split-start-here.md` — what runs and what was chosen
+- `docs/design/hld.md`, `docs/design/lld/` — the design, one LLD per component
+- `docs/design/decisions/` — records 0001–0010
+- `docs/split-numbers.md` — every measured figure with its run
+
 **Convex Hedge platform repo** — _access pending._ Will supersede inference about how the engine
 works. The strategy pages expose Python source, so some engine structure is already visible;
 anything read there is theirs and stays out of this repo as a pointer only.
