@@ -96,3 +96,9 @@ the only witness**: the monolith's `data/` showed the source was fine where neit
 four other remote branches carry none; 13 stale local pre-rewrite branches still do and are unpushed.
 
 **Open:** #121, #122, #63. AWS for #70, #71, #80. IV/RV parked. #1, #6–#8 untriaged.
+
+**Correction, 2026-09-14.** The RAM figures in this period's first entry were divided by 1,000, not
+1,024. Seven containers sum to `derived` **1,226.7 MiB = 1.20 GiB** mean (not ~1.23) and
+**1,356.5 MiB = 1.32 GiB** as a sum of p95s (not ~1.36); the worst case with Redis at its 2 GiB
+ceiling is ~3.0 GiB of 8 (not ~3.1). CPU is `derived` 1.14 cores mean and 1.91 as a sum of p95s;
+there is no 1.36-core figure. `domain/deployment-and-cost.md` corrected in place.

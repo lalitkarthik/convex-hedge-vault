@@ -35,9 +35,12 @@ I13 (#79), 2026-09-12T05:50:07Z–11:02:38Z, 5h12m, at `derived` 0.86× of norma
 
 - **Total CPU `derived` 1.1351 cores** across seven — two runs in one sum. The six-container
   total is `derived` 1.0888, re-tagged at all five sites by #118. Redis's earlier 1,056.4 MiB is `measured` (I2's run).
-- **Total RAM `derived` ~1.23 GiB mean, ~1.36 GiB at p95.**
-- **Worst case `derived` ~3.1 GiB of 8:** Redis full at its 2 GiB ceiling, services at p95, ~0.5 GiB
-  for the OS and ECS agent. **Memory does not bind at 1×.** At 10× Redis alone is `derived` 10.269 GiB, so it does.
+- **Total RAM `derived` 1,226.7 MiB = 1.20 GiB mean; 1,356.5 MiB = 1.32 GiB as a sum of p95s.**
+  A sum of p95s overstates the simultaneous peak; it is the safe side, not a reading.
+- **Worst case `derived` ~3.0 GiB of 8:** Redis full at its 2 GiB ceiling (1.22 GiB above its own p95),
+  the rest at p95 — 2.54 GiB — plus ~0.5 GiB for the OS and ECS agent. **Memory does not bind at 1×.**
+  At 10× Redis alone is `derived` 10.269 GiB, so it does.
+- **CPU as a sum of p95s: `derived` 1.91 cores** across seven, 1.77 across the six of record 0008.
 - **The reservations sum to 8.25 GB** (`compute.md` §4) against 8 GiB — sized before measurement.
   They could be lowered; nothing has decided that.
 - **CPU binds, not memory.** Every Python service is one event loop, one core at most (record 0007).
