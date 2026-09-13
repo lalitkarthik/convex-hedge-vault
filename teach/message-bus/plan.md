@@ -1,3 +1,10 @@
+> **Archived 2026-09-14 — a finished workspace, kept as the record of how the decision was reached.**
+> Its recommendation, "if we ever cross a process boundary: Redis alone", was acted on: the engine
+> split into services on Redis Streams (#57). Its other conclusion, "no broker while we are one
+> process", is superseded. What it taught is in [message-buses](../../learning-records/message-buses.md);
+> the system as it now runs is [feed-engine](../../domain/feed-engine.md); the choices are
+> [design-decisions](../../domain/design-decisions.md).
+
 # Message buses and caching — the plan
 
 **Why this exists.** The senior's execution engine runs on Nautilus Trader with Redis as its

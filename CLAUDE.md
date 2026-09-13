@@ -45,7 +45,11 @@ Linked repos:
 
 **Link with relative Markdown links** — `[greeks](domain/greeks.md)`. They resolve in every tool and fail loudly.
 
-**Name files in kebab-case. Hold each note to one topic and under 200 lines**, this file included. Split a note that outgrows the bound.
+**Name files in kebab-case. Hold each note to one topic and under 200 lines**, this file included. Split a note that outgrows the bound. Raw record — `inbox/`, `meetings/`, `research/_raw/` — is exempt.
+
+**Conclusions live here; figures live in the repo.** A note that cites code opens with `> As of <repo>@<sha>, <date>`, quotes only the few numbers its conclusion needs, and points at the file that holds the rest.
+
+**Every design choice is a row in [design-decisions](domain/design-decisions.md).** A replaced one moves to its *Superseded* table with the successor and the date. Read [MISSION.md](MISSION.md) for what this vault is for.
 
 **Keep Convex Hedge proprietary code and data out of this repo — notes and pointers only.** This vault is a personal repo; their code lives in their repos. Documents they hand you belong in `sources/`, which git ignores.
 

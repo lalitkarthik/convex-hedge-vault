@@ -62,15 +62,9 @@ Ten event types, catalogued in `delta-exchange-payoff/docs/design/events.md`.
 
 ## The constants that govern it
 
-| | Value | Where |
-|---|---|---|
-| Bus retention | 30 min, by age | `redis_bus.py` |
-| Publisher batch | 50 ms | record I2, #61 |
-| Store flush | 300 s | `store.py` |
-| Reconnect budget | 10 **consecutive** failures | `controller.py` |
-| `degraded_after` / `reconnect_after` | 15 s / 45 s | `controller.py` |
-| Store lag alert | 100,000 entries | `store_main.py` |
-| Rate carried | `derived` 1,849.8 events/s | #58 |
+**The table, with the file each value lives in, is `delta-exchange-payoff/docs/split-start-here.md` §4.**
+The three that shape every design question: **retention 30 minutes** by age, a **store flush every
+300 s**, and a **50 ms publisher batch**. Why each was chosen: [design-decisions](design-decisions.md).
 
 ## Where the truth lives — read in this order
 

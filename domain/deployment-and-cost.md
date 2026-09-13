@@ -23,15 +23,10 @@ ap-south-1 — `derived` $78.07 a month.** Confirmed by the owner on 2026-09-13.
 
 I13 (#79), 2026-09-12T05:50:07Z–11:02:38Z, 5h12m, at `derived` 0.86× of normal load, BTC only.
 
-| Container | CPU, cores (mean) | RAM mean | RAM p95 |
-|---|---|---|---|
-| `feed` | 0.3592 | 97.1 MiB | 105.8 MiB |
-| `store` | 0.3048 | 113.0 MiB | 183.4 MiB |
-| `api` | 0.3045 | 80.2 MiB | 81.5 MiB |
-| `web` (idle, no viewers) | 0.0388 | 110.6 MiB | 112.5 MiB |
-| Redis | 0.0706 | 761.8 MiB | 802.9 MiB |
-| proxy | 0.0109 | 17.1 MiB | 17.7 MiB |
-| `discord-alerts` (separate 10-min run) | 0.0463 | 46.9 MiB | 52.7 MiB |
+**The per-container table is `delta-exchange-payoff/docs/design/research/0007a-container-measurement.md`
+§ its first table** — quote from there. What it says, in short: `feed`, `store` and `api` each use about a
+third of a core; **Redis holds 761.8 MiB of the memory**, every Python service under 185 MiB at p95; `web`
+was idle all window; `discord-alerts` comes from a separate ten-minute run.
 
 - **Total CPU `derived` 1.1351 cores** across seven — two runs in one sum. The six-container
   total is `derived` 1.0888, re-tagged at all five sites by #118. Redis's earlier 1,056.4 MiB is `measured` (I2's run).

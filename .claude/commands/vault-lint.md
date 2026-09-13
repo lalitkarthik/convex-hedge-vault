@@ -8,7 +8,7 @@ Run all eight checks and report each as pass, or as a specific list of offenders
 
 1. **Broken links** — every relative Markdown link resolves to a file that exists.
 2. **Orphans** — every note under `domain/` is reachable from `index.md` or another domain note.
-3. **Oversized notes** — flag any note over 200 lines, `CLAUDE.md` included, and propose a split.
+3. **Oversized notes** — flag any note over 200 lines, `CLAUDE.md` included, and propose a split. Raw record — `inbox/`, `meetings/`, `research/_raw/` — is exempt.
 4. **Inbox backlog** — count files under `inbox/` with no `promoted:` line. Over five means `/process-inbox` is due.
 5. **Missing domains** — a topic recurring across inbox files with no `domain/` note is a domain waiting to exist. Name it.
 6. **Stale pointers** — every repo path cited in a pointer still exists on disk.

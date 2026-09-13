@@ -102,3 +102,22 @@ four other remote branches carry none; 13 stale local pre-rewrite branches still
 **1,356.5 MiB = 1.32 GiB** as a sum of p95s (not ~1.36); the worst case with Redis at its 2 GiB
 ceiling is ~3.0 GiB of 8 (not ~3.1). CPU is `derived` 1.14 cores mean and 1.91 as a sum of p95s;
 there is no 1.36-core figure. `domain/deployment-and-cost.md` corrected in place.
+
+### Later, 2026-09-14 — the vault made reusable
+
+**Decided:** the vault's purpose is written down ([MISSION.md](MISSION.md)) — the memory of the work, so a
+fresh session answers *what runs, what was chosen, what is broken, what is next* from `index.md`.
+Every design choice is now one row in [design-decisions](domain/design-decisions.md), with a *Superseded*
+table (ten replaced choices, from "no broker while one process" to R4's seal clock). The August meetings,
+never promoted, became [product-direction](domain/product-direction.md) — each ask traced or marked *not
+traced* — and [team-workflow](domain/team-workflow.md). `teach/message-bus` is archived with a banner.
+**Figures now live in the repo and conclusions here**: the per-container and constants tables were
+replaced by pointers after a copied RAM figure proved wrong. `CLAUDE.md` and `/vault-lint` exempt raw
+record from the size bound. **Kept, deliberately:** `research/_raw/` and the `.tex` (the evidence behind the
+PDF's claims) and the closed session logs (append-only history), both labelled *Archive* in the index.
+
+**Also:** every service stopped on the owner's instruction — the `dxp` stack, `:8000` and `:3000`. The 13
+stale local branches with old Claude trailers deleted; GitHub's contributors API lists no Claude, so the
+sidebar entry is GitHub's cache.
+
+**Open:** what "XPX" is; whether `/codex-route` still stands; the *not traced* meeting asks.
