@@ -30,6 +30,9 @@ it: [MISSION.md](MISSION.md).**
 - [bar-store](domain/bar-store.md) — the four tables, seal then flush, crash and replay, the pause loss (#121), what the recordings show — **solid, 2026-09-14**
 - [service-health](domain/service-health.md) — what each `/health` can and cannot detect, the #103 incident, logs, improvement candidates — **solid, 2026-09-14**
 - [deployment-and-cost](domain/deployment-and-cost.md) — one `c7g.xlarge` on ECS, CPU and RAM, T1/T2/T4, the split threshold and the hop — **solid, nothing built**
+- **Execution half — strategy worker, OMS, RMS, paper broker** — designed 2026-09-16, not built. Canon is
+  `delta-exchange-payoff/docs/design/execution/00-overview.md`; the decisions are rows in [design-decisions](domain/design-decisions.md);
+  the books picture is [assets/oms-books.png](assets/oms-books.png) — **decided, nothing built**
 
 ## Across both
 

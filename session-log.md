@@ -121,3 +121,29 @@ stale local branches with old Claude trailers deleted; GitHub's contributors API
 sidebar entry is GitHub's cache.
 
 **Open:** what "XPX" is; whether `/codex-route` still stands; the *not traced* meeting asks.
+
+## 2026-09-16 — the execution half designed: strategy worker, OMS, RMS, paper broker
+
+**Decided, after three grilling rounds with the owner (all recommendations taken):** the contracts
+for the right half of the senior's diagram, written as eight reader-facing pages in
+`delta-exchange-payoff/docs/design/execution/` (branch `docs/execution-design`), each with a mermaid
+diagram, and as eight new rows in [design-decisions](domain/design-decisions.md). The headline
+choices: a strategy publishes a desired position and never an order; orders are diffed **per
+strategy** (a deviation from the senior's pooled diagram, to be confirmed with him); the engine's mark
+is `client_order_id`, so a fill without one is discretionary and Book 6 is derived; reconciliation
+every 10 s freezes a mismatched contract; one `oms` process with risk and execution as modules, the
+sandbox a second instance on venue `PAPER`; Postgres for all state that outlives a process; three
+tracing ids on every envelope; risk checks reject and never resize; paper broker first, fills at the
+touch, never real money in this phase. The books picture: [assets/oms-books.png](assets/oms-books.png).
+
+**Facts established:** Delta's API has no order-source field and positions carry no lineage, so
+`client_order_id` is the only mark; there is no pre-trade margin estimate; the India testnet has its
+own base address and keys; daily options settle 12:00 UTC (17:30 IST) and auto-close.
+
+**The senior's standing instructions, recorded:** "build first, fix later" — no audits now, the broad
+machine first with logging that backtracks; converge on a design document with detailed flowcharts
+before any spec or tickets; write for a reader who has never seen the project.
+
+**Open:** the per-strategy-versus-pooled deviation; one-sided stop re-entry semantics; margin model
+for Delta; whether the live `oms` sits dormant in compose. Then `/setup-matt-pocock-skills`,
+`to-spec`, `to-tickets`. The excalidraw pack waits on gstack being installed on this machine.

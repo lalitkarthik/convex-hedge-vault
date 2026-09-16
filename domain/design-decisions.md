@@ -46,6 +46,14 @@ what the code does.
 | **#63 criterion 4 and #79 criterion 1 accept the 2026-09-12 evidence** in place of a full day | Owner, 2026-09-13 | The busiest hour is inside it; no decision would move |
 | **IV/RV parked** — #31, #54, #116 | Owner | — |
 | **No AI attribution** in commits, trailers or PRs | Owner; `delta-exchange-payoff/CLAUDE.md` | — |
+| **A strategy publishes a desired position (Book 1), never an order**; orders are diffed **per strategy**, not pooled — deviates from the senior's diagram, to confirm with him | `delta-exchange-payoff/docs/design/execution/books.md`, 2026-09-16 | Attribution becomes a broker fact; execution stays out of strategy code by construction |
+| **The engine's mark is `client_order_id`**; a fill without it is discretionary; reconcile every 10 s and on each fill, a mismatch freezes that contract | `.../execution/books.md`, 2026-09-16 | Delta has no order-source field; positions carry no lineage |
+| **One `oms` process** with risk checks and execution as modules; the sandbox is a second instance on venue `PAPER` with the paper broker inside | `.../execution/oms.md`, 2026-09-16 | Change-safety is between strategies, not inside one order's path |
+| **Postgres for every state that must outlive a process**; Redis stays a pipe; `event_log` is the trace store | `.../execution/oms.md`, 2026-09-16 | The senior named in-memory state as his system's gap |
+| **Three ids on every envelope**: `correlation_id`, `causation_id`, `actor`; no OpenTelemetry, no log server yet | `.../execution/events-and-tracing.md`, 2026-09-16 | Greg Young's pattern; Python has no Redis Streams instrumentation for OTel |
+| **Risk checks reject, never resize**; loss-limit breach blocks opening orders, allows closes, never auto-flattens | `.../execution/rms.md`, 2026-09-16 | A resized order is a value that stopped meaning what it says |
+| **Paper broker first, fills at the touch, fee and slippage 0 by default**; testnet next; never real money in this phase | `.../execution/paper-broker.md`, 2026-09-16 | Owner, 2026-09-16 |
+| **Execution v1 = limit at touch, cancel and replace; buy legs first, wait, then sells** | `.../execution/oms.md`, 2026-09-16 | Margin; a market order on a thin 0dte wing |
 
 How the work itself is run — tickets, tests, agents, branches — is [team-workflow](team-workflow.md).
 

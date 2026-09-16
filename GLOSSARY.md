@@ -172,6 +172,13 @@ run, chosen by a person, or computed from the other two. One origin each, never 
 
 **Instance**: One EC2 machine. _Avoid_: box, node.
 
+**Book (execution design)**: A table of signed lots per contract — a position snapshot, never prices
+or orders. Six are named: desired per strategy (1), desired pooled (2), actual per strategy (3),
+actual engine (4), actual broker (5, the truth), discretionary (6, derived as 5 − 4). Canon:
+`delta-exchange-payoff/CONTEXT.md` §8 and `docs/design/execution/books.md`.
+
+**Strategy set**: Every strategy process currently running. _Avoid_: portfolio — see Collisions.
+
 ## Collisions between the two
 
 Recorded rather than reconciled, as [platform-map](domain/platform-map.md) does for `payoff-project`.
@@ -183,3 +190,9 @@ Recorded rather than reconciled, as [platform-map](domain/platform-map.md) does 
 - **Run.** On the terminal, one backtest execution. In the engine, one measurement window, named with its dates.
 - **Snapshot vs Ladder.** Both are one chain at one moment; the terminal's is reconstructed from
   history, the engine's is live and rebuilt on arrival.
+- **Portfolio.** On the terminal, a book of backtest runs. On the senior's execution diagram, the set
+  of running strategies — the design writes **strategy set** instead.
+- **Book.** On the terminal, a portfolio's combined position ("one book"). In the execution design, one
+  of six signed-lots-per-contract tables, always numbered.
+- **Leg.** On the terminal's portfolio screen, one backtest run. In the execution design, one option
+  contract of a spread, as everywhere else.
