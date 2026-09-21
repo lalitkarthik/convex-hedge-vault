@@ -79,3 +79,5 @@ anything inside them** — this vault maps to it and never copies it.
   `delta-exchange-payoff/docs/split-start-here.md` (what runs and what was chosen),
   `delta-exchange-payoff/docs/split-what-to-do-next.md` (open work), `delta-exchange-payoff/docs/maths-start-here.md`
   (forward, IV, Greeks), `delta-exchange-payoff/docs/storage-start-here.md` (what is kept). Epic #57.
+
+- [code-graphs.md](domain/code-graphs.md): where the Graphify code graphs live, what commit each was built from, and how to query and refresh them. Pointers only.
