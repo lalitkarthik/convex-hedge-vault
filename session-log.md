@@ -147,3 +147,26 @@ before any spec or tickets; write for a reader who has never seen the project.
 **Open:** the per-strategy-versus-pooled deviation; one-sided stop re-entry semantics; margin model
 for Delta; whether the live `oms` sits dormant in compose. Then `/setup-matt-pocock-skills`,
 `to-spec`, `to-tickets`. The excalidraw pack waits on gstack being installed on this machine.
+
+## 2026-09-24 — the 20 September design review, and Meghav's revision (#128)
+
+**Landed before the review:** `delta-exchange-payoff` #128 (Meghav, merged 2026-09-17) revised the
+execution pages: pooled diffing from Book 2 with a settling window, reallocation without orders,
+working orders in the execution module's memory with no table, portfolio-level margin that alerts,
+tracing ids renamed `decision_id` / `parent_event_id`, `event_log` dropped, manual orders a test hook.
+
+**Asked at the 20 September review (raw notes, not yet promoted):** Redis retention 30 → 5 min, per
+feed, which forces the store's 300 s flush down too; market hours per venue and instrument in the
+adapter, and a connection controller that follows them; per-instrument multiplier and lot size;
+per-adapter subscription lists (SPXW only from Databento, a data vendor, not a broker); a signal
+card for slippage research, never read by execution; strategy state in a per-strategy Postgres table
+as JSONB with checkpoints; Postgres reached only through the bus; **working orders persisted**, which
+reverses #128; reconciliation that re-fires cancelled orders behind a loop guard; Bilal to write
+Book 3 documentation by 2026-09-25 and consider a recovery fallback beyond the strategy tag; choose
+the execution broker; add authentication; implement test-first after the docs.
+
+**Open:** whether "Postgres only through the bus" covers the OMS; the "outside venue/exchange
+folder" note; the 8:00–9:00 window; SPX 0DTE 16:00 and 1DTE 16:30 ET to verify against Cboe. The 18
+ClickUp tasks are drafted as a CSV and not yet in ClickUp, because the connector is not connected.
+The design pages are not yet edited for any of this; that waits for the next meeting and Bilal's
+Book 3 section.
