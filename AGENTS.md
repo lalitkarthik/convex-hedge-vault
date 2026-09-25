@@ -28,7 +28,7 @@ it yourself: canon has one writer.
 | Every design choice and what replaced it | `domain/design-decisions.md` |
 | What the company asked for, in their words | `meetings/`, recaps first; transcripts are machine-transcribed and partly Malayalam |
 | Convex Hedge's backtesting terminal | `domain/platform-map.md` and the notes it links |
-| **General options theory** (Greeks, straddles, ratios, gamma, skew) | Not here. It lives in `D:\second-brain\second-brain\learning\option-structures\`. Run those sessions with Codex started in `D:\second-brain\second-brain` |
+| **General options theory** (Greeks, straddles, ratios, gamma, skew) | Not here. It lives in `D:\second-brain\second-brain\learning\option-structures\`. Teach it from here only if Codex was started with `--add-dir D:\second-brain\second-brain`, so the session can be saved there; otherwise tell Lalit to start Codex in that repo instead. That workspace's files are the only ones outside this vault you may write |
 
 The engine repository's own documents are the authority for anything inside it. Quote them, point
 at them, and never copy large parts of them into `teach/`.
