@@ -59,7 +59,7 @@ it: [MISSION.md](MISSION.md).**
 
 - [teach/execution-design](teach/execution-design/PLAN.md) — Convex Hedge's execution design and the feed engine under it, from a trader's seat. Sixteen sessions; **none run yet**
 - General options theory — Greeks, structures, ratios, gamma, skew — lives outside this vault in
-  `second-brain/learning/option-structures/`: 52 sessions, 1–13 and 19–21 done as of 2026-09-08
+  `second-brain/learning/option-structures/`: plan v2, 29 sessions from 2026-09-25, opening with a rebuild of the faded basics
 
 ## Archive — history, not canon
 
