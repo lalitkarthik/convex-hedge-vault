@@ -26,17 +26,17 @@ it: [MISSION.md](MISSION.md).**
 
 ## Domains — our feed engine (`delta-exchange-payoff`)
 
-- [feed-engine](domain/feed-engine.md) — seven services on a Redis Streams bus, how data moves, the promises and non-promises, status — **solid, 2026-09-14**
-- [bar-store](domain/bar-store.md) — the four tables, seal then flush, crash and replay, the pause loss (#121), what the recordings show — **solid, 2026-09-14**
-- [service-health](domain/service-health.md) — what each `/health` can and cannot detect, the #103 incident, logs, improvement candidates — **solid, 2026-09-14**
+- [feed-engine](domain/feed-engine.md) — seven services on a Redis Streams bus, how data moves, the promises and non-promises, status — **solid, 2026-09-25**
+- [bar-store](domain/bar-store.md) — the four tables, seal then flush, crash and replay, the pause loss (#121), what the recordings show — **solid, 2026-09-25**
+- [service-health](domain/service-health.md) — what each `/health` can and cannot detect, the #103 incident, component-named logs (#126), improvement candidates — **solid, 2026-09-25**
 - [deployment-and-cost](domain/deployment-and-cost.md) — one `c7g.xlarge` on ECS, CPU and RAM, T1/T2/T4, the split threshold and the hop — **solid, nothing built**
-- **Execution half — strategy worker, OMS, RMS, paper broker** — designed 2026-09-16, not built. Canon is
+- **Execution half — strategy worker, OMS, RMS, paper broker** — designed 2026-09-16, revised by #128 on 09-17, not built. Changes asked on 20 and 25 September are not yet in it. Canon is
   `delta-exchange-payoff/docs/design/execution/00-overview.md`; the decisions are rows in [design-decisions](domain/design-decisions.md);
   the books picture is [assets/oms-books.png](assets/oms-books.png) — **decided, nothing built**
 
 ## Across both
 
-- [design-decisions](domain/design-decisions.md) — the ten engine records, standing decisions, and the superseded table — **solid, 2026-09-14**
+- [design-decisions](domain/design-decisions.md) — the ten engine records, standing decisions, the execution-design rows, and the superseded table — **solid, 2026-09-25**
 - [product-direction](domain/product-direction.md) — the senior's asks from the August meetings, each traced or marked *not traced* — **partial**
 - [team-workflow](domain/team-workflow.md) — idea to merged work: specs, tickets, tests, branches, agents — **solid**
 
@@ -53,6 +53,13 @@ it: [MISSION.md](MISSION.md).**
 - [RESOURCES.md](RESOURCES.md) — trusted sources and when to reach for each
 - [NOTES.md](NOTES.md) — threads no ticket or note tracks yet
 - [session-log.md](session-log.md) — the current period's decisions and open questions
+- [AGENTS.md](AGENTS.md) — **Codex is the tutor here**: what it may write, where the material lives, how it teaches
+
+## Study — Codex tutors, Claude builds
+
+- [teach/execution-design](teach/execution-design/PLAN.md) — Convex Hedge's execution design and the feed engine under it, from a trader's seat. Sixteen sessions; **none run yet**
+- General options theory — Greeks, structures, ratios, gamma, skew — lives outside this vault in
+  `second-brain/learning/option-structures/`: 52 sessions, 1–13 and 19–21 done as of 2026-09-08
 
 ## Archive — history, not canon
 
@@ -66,7 +73,7 @@ Read these to learn how a decision was reached; cite the notes above for what st
 ## Capture — raw record
 
 - [inbox/](inbox/) — daily capture, staging only
-- [meetings/](meetings/) — onboarding and daily meetings, 17–24 August 2026; promoted into [product-direction](domain/product-direction.md) and [team-workflow](domain/team-workflow.md)
+- [meetings/](meetings/) — onboarding and daily meetings, 17–24 August 2026, promoted into [product-direction](domain/product-direction.md) and [team-workflow](domain/team-workflow.md); the design review of **20 September** and the meeting of **25 September**, **not yet promoted**
 - [sources/](sources/) — their documents, kept off GitHub
 
 ## Code repos

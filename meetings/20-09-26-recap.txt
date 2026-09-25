@@ -1,0 +1,86 @@
+Design Review
+Sun, Sep 20, 2026
+
+Participants named: Lalit Karthikeyan, Bilal Sagar Razak (and others, unnamed in the recap)
+Source: meeting-assistant summary, plus Lalit's own notes taken during the meeting.
+
+Summary:
+
+The meeting aligned trading-data architecture, reconciliation, and strategy recovery requirements.
+• Five-minute retention preferred over thirty minutes
+• Instrument-specific subscriptions and market timing required
+• Broker data remains authoritative for positions
+• PostgreSQL checkpoints proposed for strategy recovery
+• Book Three documentation targeted for Friday
+• Test-driven implementation approach proposed
+
+
+Action Items:
+
+* Meeting participant will determine the final data-retention window for each feed, with five minutes identified as the preferred starting point.
+* Meeting participant will define market timing for each supported venue and instrument, including Nifty, Sensex, and SPX-related instruments.
+* Meeting participant will configure instrument-specific multipliers and lot sizes rather than using a universal multiplier.
+* Meeting participant will implement broker- or adapter-specific instrument subscription lists.
+* Meeting participant will design signal-card storage for signal prices, execution prices, Greeks, implied volatility, and slippage analysis.
+* Meeting participant will define the strategy-state persistence and recovery approach for worker crashes.
+* Bilal Sagar Razak will consider fallback methods beyond the strategy tag for recovering strategy state.
+* Bilal Sagar Razak will add the agreed Book Three-related details to the documentation by Friday.
+* Meeting participant will begin implementation after the Book Three documentation is completed.
+* Meeting participant will refine the documentation before proceeding with the implementation layer.
+* Meeting participant will implement the design using a test-driven development approach.
+* Meeting participant will select the broker adapter for execution.
+* Meeting participant will add the authentication layer.
+
+
+Key Discussion Points:
+
+Data Retention and Feed Capacity
+The review began with data-engineering concerns around market-data timing, feed separation, and retention. The participants identified Redis memory limits for high-volume option data and favored approximately five minutes of retention over thirty minutes.
+
+Market Timing and Instrument Configuration
+The discussion moved to vendor feeds, polling frequency, and the need for accurate market timing by instrument. It also covered instrument-specific multipliers, lot sizes, and broker or adapter subscription lists.
+
+Feed Control and Market-Open Handling
+The proposed feed controller would use market timing and market-open information to determine when data should be processed. The discussion emphasized that this timing information must be represented in the design rather than assumed globally.
+
+Execution Signals and Slippage Analysis
+The review then addressed the execution layer, including strategy signals, position decisions, signal-time prices, Greeks, implied volatility, and execution prices. Signal-card records were discussed as a basis for measuring slippage and supporting dashboards, while remaining separate from order generation.
+
+Strategy State Persistence and Crash Recovery
+The final portion examined how strategy-worker crashes could cause counters and transient state variables to reset. The proposed persistence model included message-based communication, PostgreSQL tables, JSONB state, and checkpoints, but the complete recovery and fallback design was still under consideration.
+
+Broker Data and Reconciliation
+The discussion clarified broker capabilities, including limitations around discretionary trading, and established that broker data should be treated as authoritative for holdings and order status. The team identified the need for reconciliation logic, safeguards against endless loops, and additional validation to limit manual intervention.
+
+Order Books and Strategy Mapping
+The team reviewed the relationships among Books One through Four, with particular emphasis on connecting Book Three to Book Four. They discussed how working orders, fills, open orders, positions, strategy tags, and combinations of contracts should be represented, while noting that some attribution rules still required definition.
+
+Documentation, Testing, and Implementation
+The working book was expected to remain active for tracking purposes, and Book Three documentation was targeted for completion by Friday. The team planned to begin implementation afterward and favored test-driven development, iterative refinement, and testing after each implementation cycle.
+
+Execution Infrastructure
+The discussion shifted to selecting a broker adapter for execution and adding an authentication layer. Bilal also referenced reusing an existing connection-control planning approach, and an 8:00–9:00 time window was mentioned without further context.
+
+
+Lalit's notes, verbatim:
+
+outside venue/exchange folder
+time reduce to 5 mins redis retention
+databendo (data vendor not broker)
+spx 0dte till 4 if 1 dte till 4.30 so try to bring the time into adapter
+multiplier different for different instruments
+each broker its own subscription list like from databendo we have spxw and spx if we need only spxw then we subscribe to that only
+feed connection controller based on market timing
+
+execution engine slippage
+signal card -> time fo signal price will be different price used for research purposes later like greeks, price, slippage, iv
+store it don't use this for execution and all
+
+nothing is relating strategy worker to postgres what if stuff crashes we ened some sort fo state variables
+postgres should be connected to message bus nothing direct connection
+postgres should have strategywise table
+in postgres stuff will be added in jsonb format
+reconcile needs to be like apart from alert some orders should be fired to make it reconcile some orders might eb like cancelled so we might need ot fire it again
+working should be persisted
+
+("databendo" is Databento, a market-data vendor.)

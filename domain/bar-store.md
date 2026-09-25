@@ -1,4 +1,4 @@
-> As of delta-exchange-payoff@7783a4b, 2026-09-14
+> As of delta-exchange-payoff@27a4d89, 2026-09-25. Since `7783a4b` only #126 touched the code this note cites: the store now reads its subscription through counting calls for the throughput log, and a column-order bug in merging disk with the in-memory buffer was fixed. Sealing, flushing and replay are unchanged.
 
 # Bar store — sealing, flushing, replay
 

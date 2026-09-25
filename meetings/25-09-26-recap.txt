@@ -1,0 +1,89 @@
+Meet
+Fri, Sep 25, 2026
+
+Participants: Lalit Karthikeyan, Bilal Sagar Razak, Rahul J Perumatty, Meghav Pradeep
+Source: meeting-assistant summary. Most of the talk was in Malayalam; the transcript beside this
+file (25-09-26-transcript.txt) is the machine transcription and is unreliable in those stretches.
+
+Summary:
+
+The meeting aligned trading-system architecture with strategy, risk, and execution requirements.
+• Common OMS will support brokers, clients, funds, and venues
+• Live losses were linked to tick-level slippage and price spikes
+• Configurable decision intervals are required
+• Long-gamma strategies may offset short-gamma exposure
+• Strategies must be evaluated separately by instrument
+• Execution will support broker routing and manual traders
+
+
+Action Items:
+
+* Rahul J Perumatty will implement the discussed strategy in the system for backtesting.
+* Rahul J Perumatty will conduct approximately one week of backtesting on the implemented system.
+* Meeting participant will continue calculating the Nifty strike spacing, premiums, and dollar exposures for the second account.
+* The team will evaluate execution timing around the seven-to-nine or eight-to-nine market-open window
+* The team will update implied-volatility and Greek-related analysis for the strategy work
+* Bilal Sagar Razak will build the strategy constructs and complete testing before execution
+* Bilal Sagar Razak will begin the strategy-development and research work the following day
+* The team will design execution routing for sending the same positions across multiple brokers
+
+
+Key Discussion Points:
+
+Trading System Architecture and Account Structure
+The participants discussed a common OMS, broker adapters, downstream execution components, and support for multiple broker and client accounts. They considered how client accounts, fund-manager books, execution venues, and broker-specific configurations should fit into the architecture.
+
+Client Subscriptions, Risk Allocation, and Strategy Books
+The discussion focused on differing strategy risk levels, client eligibility, subscription-based order placement, and client-specific allocations. The participants also examined strategy units, lot sizing for straddles and ratios, and the need to manage book attribution when multiple strategies produce related orders.
+
+Architecture Planning and Strategy Development
+The participants reviewed the architecture-planning timeline and the intention to build execution-engine functionality on the existing design. Strategy development, backtesting, templates, and timing for further work were also discussed.
+
+Backtest-to-Live Execution Discrepancy
+The group identified a mismatch between positive backtests and negative live execution results. They attributed the difference to one-minute backtest decisions versus tick-level live decisions, along with sudden price movements and execution slippage.
+
+Latency, Configurable Cadence, and Market Spikes
+The participants considered lower-latency and real-time decision-making, configurable decision intervals, and the impact of rapid SPX and option-price movements. They discussed how market-maker order withdrawal, slippage, stop losses, and delayed hedging can degrade live performance. The discussion was still continuing when the transcript ended, including further examination of put behavior.
+
+Volatility Skew and Ratio Structures
+Rahul and Meghav discussed inverted and asset-specific skew, with USD-INR described as exhibiting call skew and risky assets generally showing put skew. They explained how ratios and butterflies place positions across the skew curve and can reveal sentiment or benefit when the skew reverses.
+
+Long-Gamma Overlay
+Rahul described a session with approximately 10% implied volatility and a $16 straddle, suggesting that such conditions could support a long-gamma strategy. The participants considered pairing limited-downside long gamma with the existing short-gamma book so that either a market move or time decay could contribute to overall performance.
+
+Timing, Decay, and Profit Profile
+Bilal and Rahul examined the timing of potential gamma and delta gains from relatively small market moves. They discussed how combining the strategy with existing short gamma could reduce broad losses and produce a more consistent overall profit profile.
+
+Execution and Stop-Loss Risks
+The participants reviewed issues affecting short-gamma and ratio trading, including low-movement periods, sudden candles, stop-loss decisions, market-order execution, and options that temporarily expand dramatically in value before returning to their prior range. Bilal cited a stop-loss example involving a fill at 14.9 after a stop level of 9.82.
+
+Nifty Strategy Development
+The discussion shifted to Nifty and the effort to improve short-gamma ratio strategies. Rahul referenced directional positioning and protection, while the group worked through strike intervals, premiums, and distances from the market.
+
+System Testing and Capital Allocation
+Rahul discussed implementing the approach in the system and conducting approximately one week of backtesting. The participants also considered a second account with roughly $250,000 and reviewed further numerical examples involving strike spacing, premiums, and dollar values.
+
+Volatility Analysis and Strategy Alignment
+The participants discussed measuring market moves using sigma bands and evaluating next-day performance after gap-ups. They planned to use the results to align ratios, strangles, and related strategies with a defined confidence level.
+
+Alternative Strategies and Execution Timing
+The discussion turned to alternative strategies and possible trading windows. The participants considered moving execution toward the seven-to-nine or eight-to-nine period around market open.
+
+Instrument-Specific Behavior and Delayed Entry
+Rahul emphasized that common quantitative theory does not guarantee consistent behavior across SPX, Nifty, Bank Nifty, and Bitcoin. He also explained that deliberately delaying entries could reduce mistakes and produce materially different P&L from immediate execution.
+
+Ratio Strategies, Data, and Model Updates
+The team discussed developing ratios and ratio butterflies, scaling them over time, and relying on experience and historical data. They also considered updating implied-volatility and Greek-related analysis across the coming months.
+
+Construct Development and Testing
+Bilal described building strategy constructs and conducting testing before execution. The discussion stressed that substantial research would be required, and Bilal stated that he would begin the work the following day.
+
+Development Workflow and Coding Setup
+The participants discussed separating the engine, using existing development links and coding resources, and starting implementation with the selected coding environment. The goal was to establish a practical development workflow before progressing further.
+
+Multi-Broker Execution and Position Routing
+The final discussion addressed execution infrastructure for manual traders and multiple brokers. The participants considered sending the same positions to different brokers and propagating orders and position information through the relevant routing and streaming systems.
+
+
+Lalit's note after the meeting: first the OMS changes for per-client support, then strategy work,
+for which the basics need to be understood first.

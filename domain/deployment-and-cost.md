@@ -1,4 +1,4 @@
-> As of delta-exchange-payoff@7783a4b, 2026-09-14
+> As of delta-exchange-payoff@27a4d89, 2026-09-25. Nothing this note cites has changed since `7783a4b`.
 
 # Deployment and cost — where the engine will run
 

@@ -1,4 +1,4 @@
-> As of delta-exchange-payoff@f31c89c, 2026-09-14
+> As of delta-exchange-payoff@27a4d89, 2026-09-25
 
 # Service health — what each check can see
 
@@ -52,6 +52,13 @@ routed JSON logs to `docker logs` and `.stack-logs/<service>/`. **Its bounded-re
 produced the next silent loss, #111** — 30.8% of `md.option_bar` stranded in `api`'s pending list.
 
 ## Logs and alerts worth knowing
+
+**Since #126 (2026-09-15) every record carries `component`**, the subsystem that wrote it rather
+than the process, and the feed and bus report liveness on a timer: `feed.throughput` (frames,
+bytes, frames per second) and `bus.throughput` (per consumer: offered, consumed, **queued**). A
+`queued` that climbs report over report is a consumer falling behind, the thing #103 could not
+see. `DELTA_LOG_TRACE=1` turns on the per-message lifecycle. Canon:
+`delta-exchange-payoff/docs/final-design/logging.md`.
 
 | Record or code | Means |
 |---|---|

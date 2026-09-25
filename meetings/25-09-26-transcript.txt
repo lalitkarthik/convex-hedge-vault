@@ -1,0 +1,502 @@
+Meet
+Fri, Sep 25, 2026
+
+Machine transcription. Most of the talk was in Malayalam and is transcribed poorly; read the recap
+(25-09-26-recap.txt) first and use this for the English stretches and the numbers.
+
+0:59 - Lalit Karthikeyan
+specca update like spec update and then book three e-meeting twenty-fifth book three costs architecture costudium radio currently.
+
+1:47 - Bilal Sagar Razak
+Different broker accounts and different clients account now.
+
+2:23 - Lalit Karthikeyan
+We have a fixed OMS and then the broker adapter and down feed engine or adapter on this. So if we just need to con like where a broker integrity adapter change AWS container spin up issues screen share is We'll be having strategic signals.
+
+3:59 - Bilal Sagar Razak
+Let's say the DB Protal Karang Diva. Let's say we have different lines. Different lines in client MRE and the same proprietary together.
+
+5:03 - Bilal Sagar Razak
+So in a sense, is having uh uh let's say an amount of uh tension.
+
+5:18 - Bilal Sagar Razak
+He is having one CR he is having, let's say like two CR.
+
+5:33 - Bilal Sagar Razak
+They are client for example. Very sure if we are having a a common OMS system, the number of lots for everyone is different.
+
+5:47 - Bilal Sagar Razak
+Other issue OMS is a common idea OMS is to order send him signal send him it will be based on the strategy strategy per unit executed.
+
+6:12 - Bilal Sagar Razak
+In that client basically eternal auto and another the other garment lines in different itela uh what did OMS studio adding?
+
+6:41 - Meghav Pradeep
+Execution engineer clients.
+
+6:48 - Rahul J Perumatty
+Adam, Adam, Namada clients and fund manager clients.
+
+6:54 - Meghav Pradeep
+Okay, okay, okay, fundamentally.
+
+6:56 - Rahul J Perumatty
+If I share the company fund manager.
+
+7:02 - Rahul J Perumatty
+Multiple clients are multiple books. Are not necessary, IBKRANLA teller selects a platform. Apadini window pickups on Bilal Barano.
+
+7:14 - Bilal Sagar Razak
+Abo, one thing is just broker adapt. Let's say client one is in IBKR, client two is in select. Okay. Broker matron, his amount he is giving us. That is also different.
+
+7:30 - Bilal Sagar Razak
+Adurigaran.
+
+7:33 - Bilal Sagar Razak
+Let's say strategy one is more riskier than strategy two and three its drawdown is more than that. I risking riskier strategy one. Some of the clients won't be subscribing to that because we will be allocating him differently. Because all the risk capability is we have to. Subscribe to the strategies.
+
+8:04 - Bilal Sagar Razak
+We will give strategy one.
+
+8:08 - Bilal Sagar Razak
+We won't give strategy one to him.
+
+8:16 - Bilal Sagar Razak
+Let's say 10 crore lalke, he can subscribe to three because he has that amount he can do. Two CR Law or one CR Lake Aga Puri strategy or two strategy can be only subscribed that is again another hiccup. After common it in the Allah strategy, then would it be a message we will be adding the signals for every strategy, but based on the subscription only, we will be putting the orders. Order management system basically or client-based items.
+
+9:29 - Bilal Sagar Razak
+Book two varies for a lot of people. Book one, book two varies for people.
+
+9:38 - Bilal Sagar Razak
+Messages will be having a full thing. Book one will be based on the subscription.
+
+9:49 - Bilal Sagar Razak
+that is the thing it will be based on the number of lots per unit. Or your strategy minimum lot if it is straddle, then it is one lot of cell and one lot of one lot of tall cell and one lot of put cell. Adana per unit of strategy. Adhimai, if it is ratios, it will be one lot of buy and three lot of cell. Our unit is four lots basically.
+
+10:31 - Bilal Sagar Razak
+Per unit basic we will be putting and events will be based on. Key on the strategies.
+
+10:40 - Bilal Sagar Razak
+Okay. In the team strategies in a subscribe, we'll be having a different thing. Or you must layer number in the book two minus book four and book one minus book three Gany corpundila because. Two strategies at the same time order coravanum Nadamalium will see strategy by orders almost similar item in a less era and slain corpundawanda book three attribution personal orders or a strategy by combined it effective in down a level book treaty persona.
+
+ Why issue very young in the area but I carry a system on the lady subscribe either or the MI or you client.
+
+12:03 - Meghav Pradeep
+Okay, so like client specifically, like in execution in a risk management specific.
+
+12:23 - Bilal Sagar Razak
+might give him allocation only for five CR. Adum Nyamkus management discomfort for per client. Alangia Alla client in a terrorist management. Ado would be capsule loan on it. Architecture diagnosa pinnelika den Cai. We were planning almost one month.
+
+12:57 - Bilal Sagar Razak
+About the second one, we thought like we'll start with this idea. What how the execution engine is like the strategy development would be under So idea tuned you can it will build with you guys already architecture and building is easy implementation development will be working with this one itself execution engine. Pinna we'll be and this is the next person will be doing strategy development.
+
+13:43 - Rahul J Perumatty
+Back testing of the chain and number labs and you know labs.
+
+13:54 - Rahul J Perumatty
+I'll give a separate attitude.
+
+13:58 - Bilal Sagar Razak
+Lab Silicon Labs in Duncept.
+
+14:08 - Bilal Sagar Razak
+Other templates.
+
+14:12 - Bilal Sagar Razak
+How much the movement is there when I VRV just decide who will be coming with the uh is it strategy development?
+
+14:33 - Lalit Karthikeyan
+timing, and then is it like one timing mostly aftermarket?
+
+14:47 - Rahul J Perumatty
+Meeting four thirty five I need to plan.
+
+15:09 - Bilal Sagar Razak
+One more thing what we saw now is like we had our back test for last one and a half months. Our back test was positive, but in real execution it was negative.
+
+15:27 - Bilal Sagar Razak
+It is negative.
+
+15:30 - Bilal Sagar Razak
+Bactus was in one minute decision decision was in tick by tick.
+
+15:43 - Bilal Sagar Razak
+About tick by tickets, seriously will be out of the market. But in back test, because one minute it will check for the decision.
+
+15:59 - Bilal Sagar Razak
+A big deviation and SPX deviation lot of sudden spikes in our than usual market.
+
+16:10 - Rahul J Perumatty
+Sadana market random spikes SPX ten dollars, fifteen dollars jumbo in the Tirasad in like thirty seconds.
+
+16:40 - Rahul J Perumatty
+Since we are not doing any HFT, usually one minute speaks. And if T lay number one minute back to CLA, ideally, we run our strategies on even little lesser latency.
+
+16:58 - Rahul J Perumatty
+Ideally, real tick by decision making.
+
+17:07 - Rahul J Perumatty
+Two dollar option, ten dollars, three dollars. All of this will happen in one minute. Upam uh Prashna Nachan real-time execution system definitely sister stop. Upam I spikes on a system immediately stop half a second, thirty seconds.
+
+17:40 - Rahul J Perumatty
+Upon slag, I know cha either some searchable, especially SPXL, Icha placed a polar lag created decision making. Inganta s uh hiccups in the jumps in the award uh escape amid the implementing delay in decision making.
+
+18:43 - Bilal Sagar Razak
+One minute.
+
+18:48 - Bilal Sagar Razak
+It should be configur configurable.
+
+18:53 - Bilal Sagar Razak
+We can make it thirty seconds. Five seconds, five seconds. So our cadence we have to bring into the system.
+
+19:02 - Rahul J Perumatty
+Namak isn't the side flexibility on the mat and a threm flexible on the Makumunodomanal. And then I'm continue caring markets in a different area.
+
+19:18 - Rahul J Perumatty
+One minute delay or a third choice and wash a correct pairing in the lagging on the system.
+
+19:25 - Rahul J Perumatty
+See, Namal Delta headshot.
+
+19:48 - Rahul J Perumatty
+Up SPX starting scale up in a moon or lot and moonlight and allotted profitable eye and will start to go. Abigail Greeks in the involved hedging lot of the hedging will not be proper. That is why we are facing these challenges now.
+
+20:09 - Rahul J Perumatty
+If there is a 10-15 dollar move in the underlying, we will take any SL. In the last one and a half months, since July 15th, we have seen random moves like this, which is recovered in less than a minute. In a single tick? Yes.
+
+20:37 - Rahul J Perumatty
+I think mostly it is because of the zero DT and the heavy retail concentration in zero DT participation. That is why there are such moves. In the US markets, when there is a random directional move, the market makers pull orders and when it is stable, they re-enter.
+
+21:01 - Rahul J Perumatty
+Ideally, it's best to not get caught in these moves.
+
+21:28 - Bilal Sagar Razak
+our life should also perform well.
+
+21:31 - Rahul J Perumatty
+Last one and a half months, it was positive. Huge positive. But our life system was negative because of this slippage and spikes.
+
+21:57 - Bilal Sagar Razak
+I'm going to go ahead.
+
+22:22 - Meghav Pradeep
+It's in the opposite shape. Is it like this? No, it's not like that. It's the peak.
+
+22:27 - Rahul J Perumatty
+It's usually more for putts, right?
+
+22:29 - Meghav Pradeep
+It's more for inverted skews. Because you're looking at it now, the current period.
+
+22:50 - Rahul J Perumatty
+Crypto is not in a good direction. If it gets momentum, it will be a rocket.
+
+23:18 - Rahul J Perumatty
+If you look at the skew of USD-INR, it is a call skew. Risky assets always have a put skew. The denominator in USD-INR is INR, right? When I traded in 2022-23, there was always a call skew. Calls are more premium.
+
+23:47 - Rahul J Perumatty
+So each asset has its own SKU. If you trade in SPX, you can see it clearly. Has the most beautiful SKU. If you look at the $3 premium on the call side and the put side, if the put side is $60 away from $3, the call side is only $30 away There is that much difference.
+
+24:14 - Meghav Pradeep
+That's because people are taking the risk.
+
+24:17 - Rahul J Perumatty
+They are anticipating the move in which direction. People's sentiment can be easily obtained from that. When you come to the ratio, you can see it clearly. When we do waterflies or ratio, As in 1 is to 2 is to 1, or 1 is to 3 is to 2 trading, we will be trading across the curve. So your long, let's say close to ATM, body a little far from ATM, and the hedge is very far from ATM. So you are placing it at each point of the skew.
+
+ So when the call skew or put skew is clear, you can see the premiums moving and when it reverses, you can see that you are getting money from it.
+
+25:17 - Rahul J Perumatty
+If we can crack a long-term strategy, there is nothing more rewarding than that.
+
+25:34 - Rahul J Perumatty
+This week, I think it was Tuesday, Monday or Tuesday, I was in the gym and sent a message to Bilal that I only have 10% IV and the straddle The straddle is $16, which means when the market starts at 7 o'clock, the market is pricing in, like until closing today, the market will not move At that time, the market moved That is, it closed at $16 and now it is Can we crack these things? Or even if we add it to our short gamma book, it is a huge plus point.
+
+ In terms of SPX and Indian markets. But we cannot trade long gamma book.
+
+26:32 - Bilal Sagar Razak
+At that time, I understood that we will be losing in our strategy. I took a screenshot of it and sent it to Rahul. I tried to see how far the market would go. It was going like this.
+
+26:43 - Rahul J Perumatty
+The market started The price of the straddle at 7 o'clock It was impossible. If we figure out a lot of such things, it will be great.
+
+27:10 - Bilal Sagar Razak
+In this straddle, if you look at the structuralization, it is you will get In a small movie, let's say in a 5 dollar movie, you will In a 5 dollar movie, you will Do you understand? But the decay will not come. If this $16 is $8, it has to decay a lot as well as the IV is very less. The IV is already very less.
+
+27:57 - Bilal Sagar Razak
+It's not possible.
+
+27:58 - Rahul J Perumatty
+Your downside is very limited. You will get a $16 straddle at 7pm or $15-$14 straddle at 8.30pm. You already have a short gamma book, which you know if the market does not move, you will earn a certain amount of money. If you start a long gamma book with a limited downside risk, either move the bumper lottery or short gamma book is making money anyways. In the same scenario, today's start On the same day, at 7 o'clock, the start Today, after 1.5 hours, the start This is the normal scenario.
+
+28:52 - Rahul J Perumatty
+will take maybe 10.30, 11 o'clock at night. But it was $16 that day. This is not a short call. But you have an idea, okay? Like with 80% or 90% confidence that this will make money.
+
+29:19 - Bilal Sagar Razak
+I missed 10, 11 o'clock. That was I saw this value I saw this value I time should be like almost uh let's say one o'clock You have to time corona. Time should be like almost let's say one o'clock here five eight dollars.
+
+30:23 - Bilal Sagar Razak
+At a good time you can gain from gamma, gamma or delta, delta move. For five dollars, you can gain a lot. If just five dollars. Uh three hundred dollars or like forty dollars forty dollars a lot. But just five dollars sixteen and ninety nine sixteen ninety nine Abo even slayer sixty five dollars and the movie movie it's like we'll be gaining from uh our short gambo. But under na combined, it will be easy.
+
+31:18 - Bilal Sagar Razak
+Cheapness, cheap if you are doing it, other a certain profit level, a profit we'll be exiting.
+
+31:39 - Bilal Sagar Razak
+Overall, we will be having a good straight line. Broad once will be minimized.
+
+31:58 - Bilal Sagar Razak
+Ratiosum and ratios.
+
+33:18 - Rahul J Perumatty
+Paksha is a move under low yum high in the middle, almost ten dollars under which is basically there's no move typical examiner the start of the day first minute on the can you see this can you see this There's no market move.
+
+34:06 - Rahul J Perumatty
+Persian Nangal is a serious severe issue on the Orthodox back testimony deviation under the Netipui. The only reason is the candles.
+
+34:19 - Rahul J Perumatty
+If a delta hits, at least we are there in the market.
+
+34:24 - Rahul J Perumatty
+But not stopping out. Like realize in the losses.
+
+34:39 - Rahul J Perumatty
+And you can't, you can't tell the system not to trade. Allah okay direct if it is an actual move, which is an actual move in the start at zero two.
+
+34:54 - Rahul J Perumatty
+Apping and the STX main issues on zero detail. And then we have an underlying option.
+
+35:08 - Rahul J Perumatty
+Adipa Kanikamalagango previous data. 10x will go 10x in value, come back and be at the same range. And the worst part is the market order.
+
+35:22 - Rahul J Perumatty
+10x in the top filler.
+
+35:25 - Bilal Sagar Razak
+Our turn is stop losser 9.82. We got filled at 14.9.
+
+36:45 - Rahul J Perumatty
+Then we'll go to Nifty by Nifty. Nifty senses.
+
+36:59 - Rahul J Perumatty
+Namal main idea on the short gamma on the ratios.
+
+37:16 - Rahul J Perumatty
+We are trying to make whatever we are doing in a better way.
+
+37:58 - Rahul J Perumatty
+Ah, nifty landing directional yellow. Especially directional, protegi.
+
+38:08 - Rahul J Perumatty
+Ah, do any kind of free free money.
+
+38:17 - Rahul J Perumatty
+Don't sister.
+
+38:24 - Rahul J Perumatty
+August starting at the August first order.
+
+38:30 - Rahul J Perumatty
+Issues August first order.
+
+38:40 - Bilal Sagar Razak
+August August.
+
+38:49 - Bilal Sagar Razak
+Zero, one, two, three, four, five, six, seven, eight, nine, ten.
+
+39:02 - Bilal Sagar Razak
+Okay, guess I saw.
+
+39:03 - Rahul J Perumatty
+Anita leg C uh leg C zero.
+
+39:12 - Unidentified Speaker
+Okay.
+
+39:45 - Rahul J Perumatty
+100 points difference. A second row, second row, second row. Need if I data in a second row.
+
+39:52 - Rahul J Perumatty
+Another step per twenty five step per twenty five. Okay, you perfect. Yeah.
+
+40:01 - Bilal Sagar Razak
+In let's say three seventy five. Three seventy five we are getting seven point four five dollars.
+
+40:39 - Bilal Sagar Razak
+It is eight point four.
+
+40:44 - Rahul J Perumatty
+So you are almost five percent away from the market and your short leg is even further hundred points six percent away.
+
+40:52 - Bilal Sagar Razak
+Yesterday about three point one dollar and three hundred dollars you t next next day.
+
+41:00 - Bilal Sagar Razak
+Eighteen five point. Six hundred dollars.
+
+41:35 - Rahul J Perumatty
+Pino number implemented in the first day, but a lag implemented.
+
+41:54 - Rahul J Perumatty
+One week for the system at the Rune. And it is one week back testing match attention.
+
+42:04 - Rahul J Perumatty
+line line with the second account two fifty K dollars Apa starting in a mumbama ignoring so always you want to start here.
+
+42:18 - Bilal Sagar Razak
+Zero, one, two, three, four, five, six, seven, eight, nine, ten, four, eight, two hundred ten dollars. Ten dollars. Seven uh round number and it's seven thousand seven thousand seven thousand four to sixty four four seven thousand eighty dollars Needle ultrasound.
+
+43:53 - Bilal Sagar Razak
+Ah, I did it. I did panival in one, two. Three, four, five, six, seven, eight, nine, ten.
+
+44:03 - Rahul J Perumatty
+Seventh is Seventy one hundred though.
+
+44:14 - Bilal Sagar Razak
+Seventy one hundred seventy one hundred is seven.
+
+44:24 - Bilal Sagar Razak
+Is it right? Seven.
+
+44:28 - Bilal Sagar Razak
+Send you another eighteen. At GTA Hapter ten, eight hundred dollars.
+
+44:42 - Bilal Sagar Razak
+I'm in three days.
+
+44:47 - Rahul J Perumatty
+But this ten thirty to ten thirty. Ideally, in radar movie, we will stop out on day.
+
+46:16 - Bilal Sagar Razak
+as an average two sigma movie in a gap up. Let's say a gap up of one sigma two sigma move and what is that day's performance? Tell the target. How volatile is that this market next day's market? Angry analyze. About marketing idea to how much move is expected. Only one sigma move at random, two sigma move at five sigma five and a three sigma move a trend. Above we can uh align our ratios alignment strangles and they in this year we can align it based on that.
+
+ For confidence in the ninety nine percentage other percentage we won't and we uh we with the market.
+
+47:38 - Rahul J Perumatty
+I mean Miss Sotea development or at the end of the development, development in them strategy called Hippanyani Latubana call the car on the Labaksha.
+
+48:07 - Bilal Sagar Razak
+Number 11 alternatives are continuing. Alternative strategy alternatives.
+
+48:21 - Rahul J Perumatty
+Ningakari four entire time Friana, Lalit, and Mego. Any time after four.
+
+48:32 - Lalit Karthikeyan
+Ah, like usually seven to nine April.
+
+48:41 - Rahul J Perumatty
+Alternate days, but instead of three to four, we'll keep it at maybe eight to nine or something. Or we'll keep it at seven to eight.
+
+48:55 - Rahul J Perumatty
+Market open.
+
+48:59 - Unidentified Speaker
+Villa?
+
+49:12 - Rahul J Perumatty
+In case I'm not incorrect in the mature on Dengi, Matron, Nertha informed And they're going in a strategy development, underlined, or all get speaking or if So that you guys can work separately and then come together.
+
+50:02 - Rahul J Perumatty
+Basically, it's all the same.
+
+50:09 - Rahul J Perumatty
+All these are numbers for us. And theory is the same for everything. Just aura market or a behavior on the things which are working in SPX don't work Nifty. Something which work Bank Nifty won't work in Bitcoin. Atrolo. Other can duty can learn duty. If you have spikes in Nifty Bilal, Nifty La. Anyone would ideally want to trade closer to real time. You don't want to make mistakes.
+
+50:37 - Rahul J Perumatty
+We are purposely delaying our entry.
+
+50:42 - Rahul J Perumatty
+It might sound strange, but huge difference in PNL.
+
+50:49 - Rahul J Perumatty
+When the world is moving forward, a lot of people are doing this purposely.
+
+50:57 - Rahul J Perumatty
+Genuine manipulation avoiding On paper, everything looks super strategy and 50% return and value.
+
+51:23 - Rahul J Perumatty
+And ratios. Ratios is something which we we will work by the end of the third month.
+
+51:33 - Rahul J Perumatty
+We can go to any any number. Ratios butterflies, which has a very decent size. Apa other trade is almost like maybe in the last five, six years.
+
+51:55 - Rahul J Perumatty
+Yeah, so that is something which you can scale to any amount. Maybe five hundred thousand five hundred paksha. Adhine it quantify the banger you and you can basic work basic work with experience lot comes with experience.
+
+52:41 - Rahul J Perumatty
+In one year and if it is one year same period in the data like recent data recent data data.com you see an angle you might be using in the Twitter notebook.
+
+53:00 - Bilal Sagar Razak
+This analysis download an angle from uh cloud is accession.
+
+53:12 - Unidentified Speaker
+Okay.
+
+53:13 - Bilal Sagar Razak
+Yeah, it's E and India or April.
+
+53:20 - Bilal Sagar Razak
+April.
+
+53:21 - Rahul J Perumatty
+In May, June, July, August update you.
+
+53:29 - Bilal Sagar Razak
+Update IVP IV Greek suit.
+
+54:05 - Bilal Sagar Razak
+Uh like I was thinking Nyano Repo I sit on I believe temper for Ice on I like temporal number And Andrea.
+
+54:34 - Rahul J Perumatty
+Andrea.
+
+55:26 - Bilal Sagar Razak
+Here we'll start building constructs. But IDA in the delta extends character field in the time we can do the execution. And the testing of the building should be before field in the time, we will be doing the execution.
+
+55:49 - Bilal Sagar Razak
+Testing, execution testing.
+
+55:52 - Lalit Karthikeyan
+Okay.
+
+56:03 - Bilal Sagar Razak
+At the end, you have to research a lot. And that is not mistakes.
+
+56:22 - Bilal Sagar Razak
+Okay, what do you do?
+
+56:29 - Bilal Sagar Razak
+I will start from tomorrow. Notorio Terra spectrum.
+
+56:35 - Bilal Sagar Razak
+Okay. The issue to angle idea.
+
+56:47 - Lalit Karthikeyan
+engine separate over and last meeting feed engine changes directly in open directly it will be easier for us.
+
+57:13 - Bilal Sagar Razak
+A lot of the link work is done.
+
+57:19 - Bilal Sagar Razak
+Context is a collordinate on the YouTube.
+
+57:31 - Bilal Sagar Razak
+Open five five point five at naana for coding, but uh client.
+
+57:38 - Bilal Sagar Razak
+Planning proof and waste better.
+
+57:43 - Bilal Sagar Razak
+Our coding works in a game for Opus 5.5 UCA and then in the usage talk and we start with that. In the copy trading in it, what I end up.
+
+58:11 - Rahul J Perumatty
+about the execution.
+
+58:22 - Bilal Sagar Razak
+We have a set of manual traders too with us.
+
+58:36 - Bilal Sagar Razak
+different brokers on above or nothing trading the same position should go to other brokers. Abo manually or nothing trades. Are they a position backula pool? Are they table? I put an idea position would be a director backload. Route. Same positions as well.
+
+59:10 - Bilal Sagar Razak
+Or you broken or either adapt or sit in Nagano, connections to character setting. Or you pop subma pop sub stream on the end of Sila, ready streaming and a vision. So orders of Madramo push it out. Other forget.

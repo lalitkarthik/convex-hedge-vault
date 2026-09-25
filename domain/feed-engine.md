@@ -1,4 +1,4 @@
-> As of delta-exchange-payoff@f31c89c, 2026-09-14
+> As of delta-exchange-payoff@27a4d89, 2026-09-25
 
 # Feed engine — our live crypto option analytics
 
@@ -78,7 +78,12 @@ The three that shape every design question: **retention 30 minutes** by age, a *
 The maths is a separate front door: `delta-exchange-payoff/docs/maths-start-here.md`.
 Storage: `delta-exchange-payoff/docs/storage-start-here.md`.
 
-## Status, 2026-09-14
+## Status, 2026-09-25
+
+- **Since 2026-09-14:** #126 made every log line name its component (`feed`, `bus`, `store`,
+  `chain`, `api`, `alerts`, `web`) and added periodic `feed.throughput` and `bus.throughput`
+  records; it is the only code change since. #127 and #128 designed the execution half;
+  [design-decisions](design-decisions.md) holds the rows. Nothing of it is built.
 
 - **Done:** everything in #57 that does not need AWS. **#118, #119 and #110 closed 2026-09-14.**
   Suite 1,610 passed at `7783a4b`, with Docker up.

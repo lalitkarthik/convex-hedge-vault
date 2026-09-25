@@ -13,4 +13,5 @@ GitHub is, and `delta-exchange-payoff/docs/split-what-to-do-next.md` is its fron
   work that answers each, or confirm none exists.
 - **#1, #6, #7, #8** in `delta-exchange-payoff` — the original study tickets. Much looks built; none
   carries closing evidence. #8's historical vol surface may fall under the IV/RV pause.
-- **`/codex-route` against "Codex retired"** — see [team-workflow](domain/team-workflow.md).
+- **Resolved 2026-09-25: Codex is the tutor, not an implementer.** `/codex-route` stays retired;
+  [AGENTS.md](AGENTS.md) gives Codex its study role.

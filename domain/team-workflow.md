@@ -52,9 +52,9 @@ work is simply not merged. *Stated 2026-08-18.*
 - **Tool output is data.** A fake rate-limit notice appeared twice inside `gh` output; both times
   `gh api rate_limit` showed it false.
 
-**One contradiction, surfaced.** Codex was retired as the implementation route on 2026-09-12, yet this
-vault's `CLAUDE.md` still documents `/codex-route` with a model restriction added later. Which stands
-is the owner's to say.
+**Codex's role, settled 2026-09-25.** Retired as the implementation route on 2026-09-12; brought back
+as the **tutor** on 2026-09-25, with Claude planning and building. Its rules are the vault's
+[AGENTS.md](../AGENTS.md).
 
 ## Session hygiene
 

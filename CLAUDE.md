@@ -30,7 +30,7 @@ Linked repos:
 | `index.md` | Curated links and status. A map, never content. | Claude keeps current |
 | `GLOSSARY.md` | Canonical terms for Convex Hedge. | Claude, updated in place |
 | `MISSION.md`, `RESOURCES.md`, `NOTES.md`, `learning-records/` | Why this vault exists, its sources, and what you now understand. | Human and Claude |
-| `teach/<topic>/` | One teach-skill workspace per topic about their system. Never the vault root. | teach skill |
+| `teach/<topic>/` | One study workspace per topic about their system. Never the vault root. | Codex, as tutor ([AGENTS.md](AGENTS.md)) |
 | `session-log.md` | Decisions and open questions. | Claude, appended each session |
 
 ## Rules
@@ -61,4 +61,4 @@ Linked repos:
 
 - `/process-inbox` — promote durable capture into `domain/` and the glossary
 - `/vault-lint` — check links, orphans, note size, inbox overflow
-- `/codex-route` — run a published ticket through Codex, gated by Claude. Codex models: **Sol `medium` or `high` only** — no Luna, Astra or other effort levels. Global skill at `~/.claude/skills/codex-route/`; each linked code repo carries its own `AGENTS.md`. Not used in this vault — implementation happens in the code repos.
+- **Codex is the tutor in this vault; Claude plans and builds.** [AGENTS.md](AGENTS.md) holds Codex's rules: it writes only `teach/` and appends to `inbox/`; Claude promotes. Codex models: **Sol `medium` or `high` only**. `/codex-route` is retired for implementation since 2026-09-12.
