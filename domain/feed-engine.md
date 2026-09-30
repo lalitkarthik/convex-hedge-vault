@@ -1,4 +1,6 @@
-> As of delta-exchange-payoff@27a4d89, 2026-09-25
+> Superseded by [trading-engine](trading-engine.md) as the engine we build on, 2026-10-01. Kept as the record of `delta-exchange-payoff`; what carried over is [engine-lineage](engine-lineage.md).
+
+> As of delta-exchange-payoff@fce8d39, 2026-10-01
 
 # Feed engine — our live crypto option analytics
 

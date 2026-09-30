@@ -1,3 +1,5 @@
+> Superseded by [trading-engine](trading-engine.md) as the engine we build on, 2026-10-01. Kept as the record of `delta-exchange-payoff`; what carried over is [engine-lineage](engine-lineage.md).
+
 > As of delta-exchange-payoff@27a4d89, 2026-09-25. Nothing this note cites has changed since `7783a4b`.
 
 # Deployment and cost — where the engine will run

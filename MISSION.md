@@ -8,8 +8,9 @@ reading old chats. It holds understanding and decisions; the code repos hold the
 
 1. **Understand Convex Hedge's terminal and its data** well enough to build on it —
    [platform-map](domain/platform-map.md) and the terminal notes.
-2. **Build and improve our own live engine**, `delta-exchange-payoff`, toward the architecture the
-   senior runs: feed, bus, execution, strategies — [feed-engine](domain/feed-engine.md).
+2. **Build and improve the trading engine**, `Convex-Hedge-Trading-Engine`, the current design
+   since 2026-10-01: feed, bus, chain, strategies, execution — [trading-engine](domain/trading-engine.md).
+   Our earlier engine, `delta-exchange-payoff`, is history and prior design — [engine-lineage](domain/engine-lineage.md).
 3. **Keep every design choice, its reason, and what replaced it, in one place** —
    [design-decisions](domain/design-decisions.md).
 4. **Trace what the company asked for** in meetings to the work that answers it —

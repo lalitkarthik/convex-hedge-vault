@@ -83,3 +83,30 @@ Convex Hedge's own design. Claude promotes durable results into `domain/`.
 **Open:** the per-client OMS design (subscriptions, units, per-client books and risk); whether the
 20 September changes and the 25 September ones are folded in together; the 20 September questions
 still unanswered (Postgres via the bus for the OMS too, the venue folder, the 8:00–9:00 window).
+
+## 2026-10-01 — the trading engine becomes the engine we build on
+
+**Decided (owner):** `Convex-Hedge-Trading-Engine` (`bilal-sagar-razak/…`, cloned to
+`D:\Convex Hedge\Convex-Hedge-Trading-Engine`) is the most recent design and the target of all work
+from now on. `delta-exchange-payoff` becomes history and prior design.
+
+**Mapped** at `b47d8ee`: [trading-engine](domain/trading-engine.md) (front door),
+[engine-market-data](domain/engine-market-data.md), [engine-strategies](domain/engine-strategies.md),
+[engine-dashboard](domain/engine-dashboard.md), [trading-engine-decisions](domain/trading-engine-decisions.md)
+(0001–0044) and [engine-lineage](domain/engine-lineage.md), which sets the two engines side by side
+and checks the 20/25 September asks against both. The four `delta-exchange-payoff` notes carry a
+*Superseded by* line. GLOSSARY was split into two engine glossaries, and its collisions are now
+three-way. The MISSION, RESOURCES, team-workflow, code-graphs and CLAUDE.md repo list are updated.
+
+**Graph:** a code-only Graphify graph (319 files, no tokens), in the repo's `graphify-out/`, which
+`.git/info/exclude` keeps out of git.
+
+**Found in the repo:** twelve features merged from 26 to 30 September. Live checks #86, #119 and #144
+are still open for a person. Feature #150 (analytics tabs: STC, SMI, GEX, GXC; SQLite history;
+ECharts) is in flight. Drift: the README status and the project overview still say "no code".
+Five merged specs read "awaiting merge". The config comment on the cooldown predates #151.
+
+**Open:** whether the execution engine starts from `delta-exchange-payoff`'s execution pages; where
+Bitcoin options (Delta Exchange) enters; which database; whether `teach/execution-design` is rebuilt
+on the trading engine.
+

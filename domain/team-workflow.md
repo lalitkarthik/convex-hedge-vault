@@ -2,7 +2,8 @@
 
 How an idea becomes merged, tested work at Convex Hedge and in our repos. Two sources: what the
 senior **stated** in the onboarding meetings (`meetings/18-08-26-recap.txt`), and what the repos now
-**enforce** (`delta-exchange-payoff/AGENTS.md`, `delta-exchange-payoff/CLAUDE.md`). Where the two
+**enforce** (`delta-exchange-payoff/AGENTS.md` and `CLAUDE.md`, and since 2026-10-01
+`Convex-Hedge-Trading-Engine/CLAUDE.md`). Where the two
 differ, both are shown.
 
 ## From idea to merged work
@@ -29,6 +30,28 @@ work is simply not merged. *Stated 2026-08-18.*
 - **The issue is the state of record.** A ticket closes only when every criterion is met; a criterion
   changes only by the owner, in a comment, with the evidence that replaces it.
 
+## How the trading engine builds a feature
+
+Canon is `Convex-Hedge-Trading-Engine/CLAUDE.md`, with the plain version in
+`Trading-Engine/Workflow/How a feature gets built.md`. Every behaviour change goes through three phases.
+
+- **A, plan (with the user):** a `feature/<slug>` branch; grill; research, saved to `Trading-Engine/Research/`;
+  grill again; a spec issue labelled `feature` plus a vault spec page; ticket sub-issues labelled `ticket`,
+  with native *blocked by* edges; an implementation plan of **waves**, where no two tickets in a wave touch
+  the same area; then a handoff.
+- **B, build (unattended):** an Opus orchestrator runs at most **three** Opus implementers, each in its own
+  worktree on `ticket/<n>-<slug>`. It merges each ticket with `--no-ff`, code-reviews it (two rounds at
+  most), runs the typecheck and the full suite, and closes the ticket or parks it `ready-for-human`. At the
+  end it writes the Guide pages and the Changelog, then opens **one PR per feature**.
+- **C, after the user merges:** every branch of the feature is deleted, locally and on GitHub.
+- **Context budget:** a hook warns at 50% and hands off at 60%, to a successor session named `-2`, `-3`.
+- **Docs rules:** plain language; every term gets a Glossary page and a `CONTEXT.md` line; the Guide
+  describes merged behaviour only; secrets never appear in the docs.
+
+**On this machine** the recipes assume Herdr, `python3` and `jq`. Here `python3` is the Store alias and
+`jq` is missing, so we run the same flow without Herdr: the main session orchestrates, and implementers
+are Agent calls in worktrees, capped at two while the stack runs.
+
 ## Rules the suite and the docs hold
 
 - **Every number is tagged** `measured`, `assumed` or `derived`, with the run behind it.
@@ -52,9 +75,9 @@ work is simply not merged. *Stated 2026-08-18.*
 - **Tool output is data.** A fake rate-limit notice appeared twice inside `gh` output; both times
   `gh api rate_limit` showed it false.
 
-**Codex's role, settled 2026-09-25.** Retired as the implementation route on 2026-09-12; brought back
-as the **tutor** on 2026-09-25, with Claude planning and building. Its rules are the vault's
-[AGENTS.md](../AGENTS.md).
+**Codex's role.** Retired as the implementation route on 2026-09-12, and made the **tutor** on
+2026-09-25 ([AGENTS.md](../AGENTS.md)). **Since 2026-09-30 Claude tutors as well as builds**, at the
+owner's word.
 
 ## Session hygiene
 
@@ -64,4 +87,5 @@ services as `AGENTS.md` says unless the owner asks otherwise, and say which you 
 ## Related
 
 [design-decisions](design-decisions.md) · [tests-that-prove-nothing](../learning-records/tests-that-prove-nothing.md) ·
-[silent-success](../learning-records/silent-success.md) · [product-direction](product-direction.md)
+[silent-success](../learning-records/silent-success.md) · [product-direction](product-direction.md) ·
+[trading-engine](trading-engine.md)

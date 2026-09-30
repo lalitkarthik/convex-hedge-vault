@@ -1,15 +1,17 @@
 # Convex Hedge — front door
 
 Understand Convex Hedge's options-trading platform and its data well enough to build on it — and
-improve our own live engine, which is part of that system. **What this vault is for, and how to use
+build the **trading engine**, `Convex-Hedge-Trading-Engine`, which since 2026-10-01 is the engine all
+work targets and the most recent design. **What this vault is for, and how to use
 it: [MISSION.md](MISSION.md).**
 
 ## Start here
 
-1. [design-decisions](domain/design-decisions.md) — every choice, why, and what replaced what
-2. [feed-engine](domain/feed-engine.md) — our engine: what runs, how data moves, what is open
-3. [platform-map](domain/platform-map.md) — Convex Hedge's terminal, surface by surface
-4. [product-direction](domain/product-direction.md) — what the company asked for, traced to the work
+1. [trading-engine](domain/trading-engine.md) — the engine we build on: what runs, what is built, what is next, where its docs answer
+2. [engine-lineage](domain/engine-lineage.md) — what carried over from `delta-exchange-payoff`, what changed, what the meetings asked
+3. [design-decisions](domain/design-decisions.md) and [trading-engine-decisions](domain/trading-engine-decisions.md) — every choice, why, and what replaced what
+4. [platform-map](domain/platform-map.md) — Convex Hedge's terminal, surface by surface
+5. [product-direction](domain/product-direction.md) — what the company asked for, traced to the work
 
 ## Domains — the terminal (Convex Hedge's backtesting platform)
 
@@ -24,7 +26,21 @@ it: [MISSION.md](MISSION.md).**
 - [backtest-engine](domain/backtest-engine.md) — runs, the four report tabs, cost models, which numbers not to trust — **solid**
 - [portfolio](domain/portfolio.md) — combining runs into a book, and why there is no per-unit track — **solid**
 
-## Domains — our feed engine (`delta-exchange-payoff`)
+## Domains — the trading engine (`Convex-Hedge-Trading-Engine`, current)
+
+- [trading-engine](domain/trading-engine.md) — the front door: markets, the parts of one engine instance, status, where the repo's docs answer each question, drift found — **solid, 2026-10-01**
+- [engine-market-data](domain/engine-market-data.md) — the bus, feed adapters (Databento, Fyers, replay), the chain engine, recording and replay — **solid, 2026-10-01**
+- [engine-strategies](domain/engine-strategies.md) — beats and cards, the four strategies, the simulated broker, Discord fill cards — **solid, 2026-10-01**
+- [engine-dashboard](domain/engine-dashboard.md) — option chain, Strategies and details pages; analytics tabs in flight (#150) — **solid, 2026-10-01**
+- [trading-engine-decisions](domain/trading-engine-decisions.md) — records 0001–0044 grouped by phase, 0045–0050 on a branch, what is still undecided — **solid, 2026-10-01**
+- [engine-lineage](domain/engine-lineage.md) — `delta-exchange-payoff` against the trading engine, and the 20/25 September asks against both — **solid, 2026-10-01**
+- **Execution engine (OMS, RMS, real orders)** — the trading engine's next features; no design page there yet. The prior design is `delta-exchange-payoff`'s, below — **not designed**
+
+## Earlier engine — `delta-exchange-payoff` (history and prior design)
+
+Superseded as the engine we build on, 2026-10-01. Kept because its execution design is the most
+worked-out answer to what the trading engine builds next.
+
 
 - [feed-engine](domain/feed-engine.md) — seven services on a Redis Streams bus, how data moves, the promises and non-promises, status — **solid, 2026-09-25**
 - [bar-store](domain/bar-store.md) — the four tables, seal then flush, crash and replay, the pause loss (#121), what the recordings show — **solid, 2026-09-25**
@@ -36,7 +52,7 @@ it: [MISSION.md](MISSION.md).**
 
 ## Across both
 
-- [design-decisions](domain/design-decisions.md) — the ten engine records, standing decisions, the execution-design rows, and the superseded table — **solid, 2026-09-25**
+- [design-decisions](domain/design-decisions.md) — our own choices, `delta-exchange-payoff`'s ten records and execution-design rows, and the superseded table — **solid, 2026-10-01**
 - [product-direction](domain/product-direction.md) — the senior's asks from the August meetings, each traced or marked *not traced* — **partial**
 - [team-workflow](domain/team-workflow.md) — idea to merged work: specs, tickets, tests, branches, agents — **solid**
 
@@ -49,15 +65,15 @@ it: [MISSION.md](MISSION.md).**
 ## Workspace
 
 - [MISSION.md](MISSION.md) — why this vault exists, what success looks like, how to use it
-- [GLOSSARY.md](GLOSSARY.md) — canonical terms: the terminal's, the engine's, and where they collide
+- [GLOSSARY.md](GLOSSARY.md) — canonical terms: the terminal's, and where the three systems collide; engine terms split into [glossary-trading-engine](domain/glossary-trading-engine.md) and [glossary-feed-engine](domain/glossary-feed-engine.md)
 - [RESOURCES.md](RESOURCES.md) — trusted sources and when to reach for each
 - [NOTES.md](NOTES.md) — threads no ticket or note tracks yet
 - [session-log.md](session-log.md) — the current period's decisions and open questions
-- [AGENTS.md](AGENTS.md) — **Codex is the tutor here**: what it may write, where the material lives, how it teaches
+- [AGENTS.md](AGENTS.md) — the rules Codex followed as tutor (what it may write, how it teaches); Claude tutors since 2026-09-30
 
-## Study — Codex tutors, Claude builds
+## Study — Claude tutors and builds (since 2026-09-30)
 
-- [teach/execution-design](teach/execution-design/PLAN.md) — Convex Hedge's execution design and the feed engine under it, from a trader's seat. Sixteen sessions; **none run yet**
+- [teach/execution-design](teach/execution-design/PLAN.md) — Convex Hedge's execution design and the feed engine under it, from a trader's seat. Sixteen sessions; **none run yet**. Built on `delta-exchange-payoff`, so it predates the trading engine — revisit before running it
 - General options theory — Greeks, structures, ratios, gamma, skew — lives outside this vault in
   `second-brain/learning/option-structures/`: plan v2, 29 sessions from 2026-09-25, opening with a rebuild of the faded basics
 
@@ -82,9 +98,12 @@ Listed in the contract, [CLAUDE.md](CLAUDE.md). **Their own documentation is the
 anything inside them** — this vault maps to it and never copies it.
 
 - `payoff-project` — payoff diagrams and Greek maths for option structures. Front door `payoff-project/CONTEXT.md`.
-- `delta-exchange-payoff` — the feed engine. Front doors: `delta-exchange-payoff/CONTEXT.md` (every term),
+- `Convex-Hedge-Trading-Engine` — **the engine we build on.** Front doors: `CONTEXT.md` (every term),
+  `Trading-Engine/Home.md` (its docs vault), `Trading-Engine/Guide/What the engine does.md`,
+  `Trading-Engine/Guide/Changelog.md`, `README.md` (running it). Map: [trading-engine](domain/trading-engine.md).
+- `delta-exchange-payoff` — the earlier feed engine. Front doors: `delta-exchange-payoff/CONTEXT.md` (every term),
   `delta-exchange-payoff/docs/split-start-here.md` (what runs and what was chosen),
   `delta-exchange-payoff/docs/split-what-to-do-next.md` (open work), `delta-exchange-payoff/docs/maths-start-here.md`
   (forward, IV, Greeks), `delta-exchange-payoff/docs/storage-start-here.md` (what is kept). Epic #57.
 
-- [code-graphs.md](domain/code-graphs.md): which repos have a local Graphify code graph, the commit each was built from, and how Claude uses and refreshes them.
+- [code-graphs](domain/code-graphs.md) — which repos have a local Graphify code graph (all three), the commit each was built from, and how Claude uses and refreshes them

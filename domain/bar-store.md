@@ -1,4 +1,6 @@
-> As of delta-exchange-payoff@27a4d89, 2026-09-25. Since `7783a4b` only #126 touched the code this note cites: the store now reads its subscription through counting calls for the throughput log, and a column-order bug in merging disk with the in-memory buffer was fixed. Sealing, flushing and replay are unchanged.
+> Superseded by [trading-engine](trading-engine.md) as the engine we build on, 2026-10-01. Kept as the record of `delta-exchange-payoff`; what carried over is [engine-lineage](engine-lineage.md).
+
+> As of delta-exchange-payoff@fce8d39, 2026-10-01. Since `7783a4b` only #126 touched the code this note cites: the store now reads its subscription through counting calls for the throughput log, and a column-order bug in merging disk with the in-memory buffer was fixed. Sealing, flushing and replay are unchanged.
 
 # Bar store — sealing, flushing, replay
 

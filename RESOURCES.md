@@ -22,10 +22,23 @@ terminal needs checking against something you derived yourself.
 Its vocabulary disagrees with the terminal's in two places; both are recorded in
 [platform-map](domain/platform-map.md) rather than reconciled.
 
+**`Convex-Hedge-Trading-Engine`** — `D:\Convex Hedge\Convex-Hedge-Trading-Engine`, GitHub
+`bilal-sagar-razak/Convex-Hedge-Trading-Engine`. **The engine all work targets since 2026-10-01.**
+Reach for it for anything about the bus, feeds, chain engine, strategies, simulated broker, alerts or
+dashboard; the vault's map is [trading-engine](domain/trading-engine.md). Its GitHub issues are the
+state of record.
+
+- `CONTEXT.md` — index of 463 terms, each a page in `Trading-Engine/Glossary/`; read first
+- `Trading-Engine/Home.md` — front door of its own Obsidian docs vault
+- `Trading-Engine/Architecture/` — overview, overall architecture, one design page per part
+- `Trading-Engine/Decisions/` — records 0001–0044
+- `Trading-Engine/Guide/` — what it does today; `Changelog.md` for when
+- `README.md` — running an instance, the Fyers login, replay, the acceptance day
+
 **`delta-exchange-payoff`** — `D:\Convex Hedge\delta-exchange-payoff`, GitHub
-`lalitkarthik/delta-exchange-payoff`. Our live crypto option analytics engine, and the system this
-vault is here to improve. Reach for it for anything about the feed, the bus, the bar store, health
-or deployment; the vault's map is [feed-engine](domain/feed-engine.md). **The GitHub issues are its
+`lalitkarthik/delta-exchange-payoff`. Our earlier live crypto option analytics engine; since
+2026-10-01 history and prior design, superseded by the trading engine above. Reach for it for the
+Delta Exchange feed, the bar store, and the unbuilt execution design; the vault's map is [feed-engine](domain/feed-engine.md). **The GitHub issues are its
 state of record** and win over any document, this vault included.
 
 - `CONTEXT.md` — every term; read first

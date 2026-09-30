@@ -139,60 +139,39 @@ paper over.
 A field stamped on every backtest diagnostic row and filterable in the UI, intended to classify
 market conditions at a decision. **Currently empty on every row.**
 
-## The feed engine (`delta-exchange-payoff`)
+## The engines
 
-Canon for these is `delta-exchange-payoff/CONTEXT.md`; this section holds only the terms vault notes
-use. The map is [feed-engine](domain/feed-engine.md).
+Each engine's terms live in their own note. Their canon is each repo's own `CONTEXT.md`.
 
-**Split mode / Monolith**: The seven-service composition over Redis (`DELTA_BUS=redis`), and the
-default single process with an in-process bus.
+- **The trading engine** (`Convex-Hedge-Trading-Engine`, current since 2026-10-01):
+  [glossary-trading-engine](domain/glossary-trading-engine.md).
+- **The feed engine** (`delta-exchange-payoff`, the earlier engine):
+  [glossary-feed-engine](domain/glossary-feed-engine.md).
 
-**Stream / Consumer group**: A stream is one Redis key of entries; a consumer group is one service's
-place in it. Never used for each other.
-
-**Lossless / Drop-oldest**: A subscription that reads through a group and drops nothing (`store`),
-and one that keeps only the newest and counts what it skipped (the chain cache).
-
-**Retention**: Thirty minutes, by age. What a restarted `store` can still recover.
-
-**Seal**: Closing a minute's bucket. Final — a minute sealed while its data is unread is lost.
-
-**Store flush**: Writing sealed bars to Parquet every 300 s; the only durability boundary.
-_Avoid_: save, write, persist
-
-**Watermark / Checkpoint / Generation**: The last flushed entry per stream; the file holding the
-watermarks; the number in a flush file's name. See [bar-store](domain/bar-store.md).
-
-**Ladder**: The chain as the screen shows it, rows ascending by strike.
-
-**Computed chain**: Our own IV, Greeks and forward, beside the venue's reference figures.
-
-**`measured` / `assumed` / `derived`**: The provenance tag every number carries — observed in a named
-run, chosen by a person, or computed from the other two. One origin each, never re-tagged.
-
-**Instance**: One EC2 machine. _Avoid_: box, node.
-
-**Book (execution design)**: A table of signed lots per contract — a position snapshot, never prices
-or orders. Six are named: desired per strategy (1), desired pooled (2), actual per strategy (3),
-actual engine (4), actual broker (5, the truth), discretionary (6, derived as 5 − 4). Canon:
-`delta-exchange-payoff/CONTEXT.md` §8 and `docs/design/execution/books.md`.
-
-**Strategy set**: Every strategy process currently running. _Avoid_: portfolio — see Collisions.
-
-## Collisions between the two
+## Collisions between them
 
 Recorded rather than reconciled, as [platform-map](domain/platform-map.md) does for `payoff-project`.
+"The feed engine" is `delta-exchange-payoff`; "the trading engine" is the current one.
 
-- **Tag.** On the terminal, a leg's exit reason. In the engine, a number's provenance.
-- **Instance.** On the terminal, half of the Group / Instance leg identifier. In the engine, an EC2 machine.
-- **Signal.** On the terminal, a rule that fires on a candle. In the engine, what an adapter reports
-  about its socket (the connection signal).
-- **Run.** On the terminal, one backtest execution. In the engine, one measurement window, named with its dates.
-- **Snapshot vs Ladder.** Both are one chain at one moment; the terminal's is reconstructed from
-  history, the engine's is live and rebuilt on arrival.
-- **Portfolio.** On the terminal, a book of backtest runs. On the senior's execution diagram, the set
-  of running strategies — the design writes **strategy set** instead.
-- **Book.** On the terminal, a portfolio's combined position ("one book"). In the execution design, one
-  of six signed-lots-per-contract tables, always numbered.
-- **Leg.** On the terminal's portfolio screen, one backtest run. In the execution design, one option
-  contract of a spread, as everywhere else.
+- **Backtest engine.** The trading engine's name for the terminal. Same program, `app.convexhedge.ai`.
+- **Tag.** On the terminal, a leg's exit reason. In the feed engine, a number's provenance.
+- **Instance.** On the terminal, half of the Group / Instance leg identifier. In the feed engine, an EC2
+  machine. In the trading engine, an **engine instance** (Redis plus every part, from one settings file)
+  or a **strategy instance** (one configured copy of a strategy). Neither of the last two is a machine.
+- **Signal.** On the terminal, a rule that fires on a candle. In the feed engine, what an adapter reports
+  about its socket. In the trading engine, a strategy's stated **target position**, never an order.
+- **Run.** On the terminal, one backtest execution. In the feed engine, one measurement window, named
+  with its dates. In the trading engine, one recorder file per run.
+- **Snapshot.** On the terminal, a chain reconstructed from history. In the feed engine the live chain is
+  the **ladder**. In the trading engine, the **chain snapshot** (every strike, numbered, kept 10 s) or the
+  bus's **latest values**, read once by a late starter.
+- **Portfolio.** On the terminal, a book of backtest runs. On the senior's diagram, and as the trading
+  engine's **strategy portfolio**, the set of running strategies. The feed engine's execution design
+  wrote **strategy set** instead.
+- **Book.** On the terminal, a portfolio's combined position ("one book"). In the feed engine's execution
+  design, one of six signed-lots-per-contract tables, always numbered. The trading engine has no books;
+  it has one **model account** per strategy instance.
+- **Leg.** On the terminal's portfolio screen, one backtest run. Everywhere else, one option contract
+  of a spread.
+- **Stale.** In the feed engine, a connection state. In the trading engine it is also data too old to
+  decide on (the strategy is not asked) and a **stale fill** (filled from an older mid or the last trade).

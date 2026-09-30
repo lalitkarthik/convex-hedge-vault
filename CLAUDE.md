@@ -17,6 +17,8 @@ Linked repos:
 - `payoff-project` — payoff diagrams for option structures, at `D:\Convex Hedge\payoff-project`
 - `delta-exchange-payoff` — live crypto option analytics over Delta Exchange India, at
   `D:\Convex Hedge\delta-exchange-payoff`
+- `Convex-Hedge-Trading-Engine` — the current trading engine and the latest design, built on the `delta-exchange-payoff` work; the repo everything is built on from 2026-10-01, at
+  `D:\Convex Hedge\Convex-Hedge-Trading-Engine` (docs vault inside: `Trading-Engine/`)
 - _Platform repo — access pending._
 
 ## Note types

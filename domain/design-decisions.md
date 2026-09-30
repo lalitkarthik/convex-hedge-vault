@@ -1,4 +1,4 @@
-> As of delta-exchange-payoff@27a4d89, 2026-09-25
+> As of delta-exchange-payoff@fce8d39, 2026-10-01
 
 # Design decisions — what was chosen, and what replaced it
 
@@ -7,6 +7,10 @@ When a decision is replaced, its row moves to *Superseded* with the successor an
 choice stays visible, because the reason it lost is part of the answer.
 
 Engine records live in `delta-exchange-payoff/docs/design/decisions/`. Terms: `delta-exchange-payoff/CONTEXT.md`.
+
+**Since 2026-10-01 the current engine is `Convex-Hedge-Trading-Engine`.** Its 44 records are mapped in
+[trading-engine-decisions](trading-engine-decisions.md); the rows below are `delta-exchange-payoff`'s, kept as
+history and as the prior design for execution. How the two line up: [engine-lineage](engine-lineage.md).
 
 ## The engine's decision records
 
@@ -37,7 +41,7 @@ what the code does.
 | **Split the monolith into services on Redis Streams**, keeping the monolith as the default (`DELTA_BUS` unset) | #57, 2026-09-11 | Change-safety: a new consumer costs producers nothing — the senior's pattern |
 | **Redis alone — not Kafka, not both** | [message-buses](../learning-records/message-buses.md), 2026-09-07; kept by #57 | ~1,850 events/s and a handful of readers; Parquet holds history |
 | **Ack on receipt; the store flush is the durability boundary** | 0010, #63 | An ack means delivered; a flush means safe |
-| **Store flush every 300 s; retention 30 min by age** | #63; `message-bus.md` | A restarted store replays inside retention, so the loss window closes |
+| **Store flush every 300 s; retention 30 min by age** — *built*. The execution design (#129) plans 60 s flushes to S3, 5 min retention per feed, a store that refuses retention under 3 × flush, and Redis AOF every second; **design only, no code** | #63; `message-bus.md`; `.../execution/message-bus.md` | A restarted store replays inside retention, so the loss window closes |
 | **Publisher batch 50 ms** | I2, #61 | Measured; the hop never enters it while Redis stays beside `feed` |
 | **Never forward-fill; `null` is not `0`** | `delta-exchange-payoff/CLAUDE.md` | A padded bar is a fabricated observation |
 | **Venue IV and Greeks are reference columns, never inputs** | `delta-exchange-payoff/CLAUDE.md`; `test_no_delta_inputs.py` | The venue's fit lags the book it prices |
@@ -46,12 +50,14 @@ what the code does.
 | **#63 criterion 4 and #79 criterion 1 accept the 2026-09-12 evidence** in place of a full day | Owner, 2026-09-13 | The busiest hour is inside it; no decision would move |
 | **IV/RV parked** — #31, #54, #116 | Owner | — |
 | **No AI attribution** in commits, trailers or PRs | Owner; `delta-exchange-payoff/CLAUDE.md` | — |
-| **A strategy publishes a desired position (Book 1), never an order**; orders are worked out **pooled**, `Book 2 − Book 4 − working`, after a short settling window; a pooled-neutral change rewrites Book 3 as a **reallocation** | `delta-exchange-payoff/docs/design/execution/books.md`; #128, 2026-09-17 | Two strategies wanting opposite things trade nothing; execution stays out of strategy code by construction |
-| **The engine's mark is `client_order_id`**; a fill without it is discretionary; reconcile every 10 s and on each fill, a mismatch freezes that contract | `.../execution/books.md`, 2026-09-16 | Delta has no order-source field; positions carry no lineage |
-| **One `oms` process** with risk checks and execution as modules; the sandbox is a second instance on venue `PAPER` with the paper broker inside | `.../execution/oms.md`, 2026-09-16 | Change-safety is between strategies, not inside one order's path |
-| **Postgres for every state that must outlive a process**; Redis stays a pipe; **working orders live only in the execution module's memory**, rebuilt from the broker's open orders on restart | `.../execution/oms.md`; #128, 2026-09-17 | The senior named in-memory state as his system's gap; the broker is the better record of what is open |
+| **A strategy publishes a target in strategy units, never an order**; a client's Book 1 = target × that client's units; orders are worked out **pooled within one client**, `Book 2 − Book 4 − working`, after a short settling window; a pooled-neutral change rewrites Book 3 as a **reallocation** | `delta-exchange-payoff/docs/design/execution/books.md`, `clients.md`; #128, 2026-09-17; #130, 2026-09-28 | Two strategies wanting opposite things trade nothing; the strategy decides the shape, the client the size |
+| **The engine's mark is `client_order_id`**; a fill without it is discretionary; reconcile every 10 s and on each fill; reconciliation **adopts the broker's record and repairs**: at most 3 re-fires per contract per decision after a cancel, at most 2 Book 4 repairs per contract per day, then the contract freezes; Book 6 never causes an order | `.../execution/books.md`; #129, 2026-09-28 | Delta has no order-source field; the 20 September ask for a reconciliation that re-fires |
+| **One OMS per client** (`oms-<client>`, one broker account each, configured by `clients/<id>.yaml`), with risk checks and execution as modules; **nothing crosses clients**; the sandbox is **paper clients**, each with its own paper broker; `oms:* kill` is the firm-wide kill | `.../execution/clients.md`, `oms.md`; #130, 2026-09-28 | The 25 September ask: clients subscribe to strategies by risk appetite and capital |
+| **Postgres for every state that must outlive a process, reached only through the bus**: a **persistence service** is its only client, idempotent by `event_id`, and answers restore requests; the OMS has no database connection and publishes each order's record before sending it; **working orders live only in memory**, rebuilt from the broker's open orders | `.../execution/message-bus.md`, `oms.md`; #128, 2026-09-17; #129, 2026-09-28 | The senior named in-memory state as his system's gap; one writer to Postgres |
+| **Strategy state is checkpointed** (`strategy_checkpoints`, JSONB with `schema_version`), restored over the bus before the first evaluation; a **signal card** is recorded at every decision for slippage research, never read by the order path | `.../execution/strategy-worker.md`; #129, 2026-09-28 | The 20 September asks: state as JSONB over the bus, signal cards |
+| **Data adapters and broker adapters are always separate**, even for one company; market hours from `pandas_market_calendars` (NSE, BSE, Cboe), checked each morning against the broker; a `venues/` folder holds one file per venue | `.../execution/data-feed.md`; #129, 2026-09-28 | A closed market must not look like a dead feed |
 | **Three ids on every envelope**: `decision_id`, `parent_event_id`, `actor`; the trace is a filter over the JSON log files; no event table, no OpenTelemetry, no log server | `.../execution/events-and-tracing.md`; #128, 2026-09-17 | Greg Young's correlation/causation pattern, spelled out; a second copy of the events is a second thing to keep in step |
-| **Risk checks reject, never resize**; margin is priced on the **resulting portfolio** and only alerts until measured; a pooled order passes every contributing strategy's limits; loss-limit breach blocks opening orders, allows closes, never auto-flattens | `.../execution/rms.md`; #128, 2026-09-17 | A resized order is a value that stopped meaning what it says; margin is not additive per order |
+| **Risk checks reject, never resize**, and are **client-wise**; strategy limits are in units with per-client overrides; check 2's ceiling is the client's **allocation cap**; margin is priced on the **resulting portfolio** and only alerts until measured; loss-limit breach blocks opening orders, allows closes, never auto-flattens | `.../execution/rms.md`; #128, 2026-09-17; #130, 2026-09-28 | A resized order is a value that stopped meaning what it says; margin is not additive per order |
 | **Paper broker first, fills at the touch, fee and slippage 0 by default**; its manual door is a test hook with no route or command; testnet next; never real money in this phase | `.../execution/paper-broker.md`; #128, 2026-09-17 | Owner, 2026-09-16; real manual trades happen on Delta's own app |
 | **Execution v1 = limit at touch, cancel and replace; buy legs first, wait, then sells** | `.../execution/oms.md`, 2026-09-16 | Margin; a market order on a thin 0dte wing |
 
@@ -61,6 +67,7 @@ How the work itself is run — tickets, tests, agents, branches — is [team-wor
 
 | Was | Replaced by | When |
 |---|---|---|
+| `delta-exchange-payoff` as the engine this vault builds on | `Convex-Hedge-Trading-Engine`, the most recent design ([trading-engine](trading-engine.md)) | 2026-10-01 |
 | No broker while the engine is one process | The services split on Redis Streams (#57) | 2026-09-11 |
 | Flush the bar buffer hourly | Every 300 s, with replay from the last flush (#63) | 2026-09-07 → 09-12 |
 | One `m7g.large`, 2 vCPU (0005) | One `c7g.xlarge`, 4 vCPU (0008) — `api`'s viewers could take `feed`'s core | 2026-09-12 |
@@ -75,9 +82,14 @@ How the work itself is run — tickets, tests, agents, branches — is [team-wor
 | `correlation_id` / `causation_id` and an `event_log` table (#127) | `decision_id` / `parent_event_id`, traced over the log files (#128) | 2026-09-17 |
 | Margin checked per order, rejecting | Margin of the resulting portfolio, alerting until measured (#128) | 2026-09-17 |
 | A manual-order API route and command for the paper broker (#127) | A test hook only (#128) | 2026-09-17 |
+| Reconciliation that only freezes a mismatched contract | Adopt the broker's record and repair, bounded, then freeze (#129) | 2026-09-28 |
+| One `oms` process for the engine; the sandbox as a second instance on venue `PAPER` | One OMS per client; paper clients (#130) | 2026-09-28 |
+| Book 1 as a strategy's desired lots; pooling across the engine | Target × client units; pooling inside one client (#130) | 2026-09-28 |
+| Engine-wise risk checks | Client-wise, strategy limits in units, an allocation cap (#130) | 2026-09-28 |
+| Stream names `{type}:{VENUE}` for strategy output | By owner: feed by venue, strategy by market, OMS by client (#130) | 2026-09-28 |
 | Seal clock pinned only by streams `behind` (R4) | Also held by streams still catching up (R4d, #119) | 2026-09-14 |
 
 ## Related
 
-[feed-engine](feed-engine.md) · [bar-store](bar-store.md) · [deployment-and-cost](deployment-and-cost.md) ·
+[trading-engine-decisions](trading-engine-decisions.md) · [feed-engine](feed-engine.md) · [bar-store](bar-store.md) · [deployment-and-cost](deployment-and-cost.md) ·
 [product-direction](product-direction.md) · [team-workflow](team-workflow.md)
