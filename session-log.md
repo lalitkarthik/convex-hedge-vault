@@ -131,3 +131,18 @@ Fyers adapter and none for Upstox or Zerodha.
 built from scratch or from our `docs/design`** — the transcript reads as scratch, while
 [trading-engine](domain/trading-engine.md) and CLAUDE.md say it builds on `delta-exchange-payoff`.
 
+## 2026-10-01 — Upstox first
+
+**Decided (owner):** observe the Indian market through **Upstox**, where an account already exists,
+instead of opening a Fyers account. That makes the Upstox feed adapter the first feature we build in
+the trading engine.
+
+**Started:** local branch `feature/upstox-data-feed` in `Convex-Hedge-Trading-Engine` (not pushed),
+and the research note `Trading-Engine/Research/Upstox data feed.md` (uncommitted, 36 sources).
+Its main findings: a free one-year read-only **Analytics token** removes the daily login; the feed is
+snapshots, not tick-by-tick, and gives no exchange time for quotes or open interest; NIFTY and
+SENSEX at 0–7 days (854 contracts on 1 October) fit one connection; the official library is unsafe
+for a long-running reader.
+
+**Open:** the ten decisions listed at the foot of that note, before the spec.
+
