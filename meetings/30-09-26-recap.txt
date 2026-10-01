@@ -1,0 +1,139 @@
+Daily meet
+Wed, Sep 30, 2026 (21:00 IST, about 80 minutes)
+
+Participants: Bilal Sagar Razak, Lalit Karthikeyan, Meghav Pradeep, Rahul J Perumatty
+Source: meeting-assistant summary, then a reading of both machine transcriptions made on
+2026-10-01. Most of the talk was in Malayalam. The transcripts beside this file
+(30-09-26-transcript.txt, English rendering; 30-09-26-transcript-malayalam.txt, Malayalam script,
+longer) are unreliable in those stretches. Raw record: nothing here is fact until promoted.
+
+Summary (meeting assistant):
+
+The meeting covered trading-system design, testing, and an options strategy.
+• Separate containers and data feeds were proposed for strategies and clients.
+• Backtest and execution timing require consistent clocks and latency definitions.
+• Dashboard, broker adapters, and ticket orchestration were discussed.
+• Rahul outlined a non-directional options approach using volatility and position adjustments.
+
+Action Items (meeting assistant):
+
+* No action items generated
+
+
+READING OF THE TRANSCRIPTS (2026-10-01)
+
+Confidence marks: [clear] said plainly; [read] reconstructed from garbled text; [missing] not captured.
+
+1. Engine status (Bilal)
+- [read] About 119 tickets closed; everything up to paper trading nearly complete; only the
+  execution engine remains.
+- [read] Lalit asked whether it was built from our docs/design or from scratch. The answer is
+  garbled; it reads as "from scratch, with requirements going back and forth, because something a
+  bit different was needed". TO CONFIRM WITH BILAL: the vault currently says the engine builds on
+  the delta-exchange-payoff work.
+
+2. Clients and instances (Bilal)
+- [clear] One instance (e.g. a sandbox, run locally or on EC2) is a set of containers: data feeder,
+  recorder writing to disk, one container per strategy, fill simulation, alerter to Discord.
+- [clear] "One client will be linked to different instances. In the instances, orders will be
+  filled to him." A client subscribes only to a strategy's events.
+- [clear] A different data vendor means a different data feeder.
+
+3. Signal and fill timing (Bilal)
+- [clear] Signal price = the mid at the time of the signal. The backtest decides on the previous
+  one-minute candle and fills at the current one: decision 9:59, fill 10:00.
+- [clear] The cooldown bug: a stop filled at 10:08:00.573; plus two minutes is 10:10:00.573; the
+  decision check runs at 10:10:00.000, so it missed and the re-entry slipped a minute. Corrected
+  (ticket #151 in the repo: the cooldown counts from the stop signal).
+- [clear] Signal-to-fill gap about 500 ms. Going forward, client and execution-engine latency must
+  be defined, with the clock.
+
+4. Checking decisions on the strategy details page (Bilal)
+- [read] The 11:29 entry: premium target 3.818; the strike chosen at or below it; filled the next
+  minute. The market data card shows what the strategy saw.
+- [clear] Stop check: (3.6 + 2.98) x 1.25 = 8.225.
+- [read] The long straddle buys when ATM IV is below 5%.
+- [read] The NSE delta-hedged straddle was tested that morning and validated from its signals and
+  strategy states.
+- [clear] Logs are structured (the structlog library) and can be fed to agents.
+- [read] Data is taken once a second so the display is not overloaded.
+
+5. Keys, logins, brokers
+- [clear] Environment file: Databento API key, Fyers app id, Fyers secret, Fyers access token,
+  Redis URL. A broker login is needed every day.
+- [read] Fyers and Upstox APIs are free; only Zerodha charges, about Rs 500. Rahul offered his own
+  Zerodha account, or Lalit takes one. Lalit has a Zerodha account.
+- [clear] "This is the way we will be giving to the clients too. We won't be providing the data."
+  Each person and each client uses their own broker login for Indian data.
+- [read] For SPX: Bilal puts the Databento key in the environment and hosts that instance in the
+  cloud, because only two devices can be connected at a time.
+- [clear] Going forward the login, and starting containers, move into the dashboard.
+- [missing] Any handover of a Databento key. It may have been shared in chat.
+
+6. Upstox adapter
+- [clear] Lalit: Databento and Fyers adapters are built, so using Upstox needs a custom adapter?
+  Bilal: yes, built through the workflow already set up in the repo's CLAUDE.md.
+- [read] Once it is in, the charts work automatically. The adapter runs in its own container.
+- [missing] Any instruction to integrate Zerodha. It came up as an account and a cost only.
+
+7. Other technical points (Bilal)
+- [clear] Calculations are always based on the implied spot / implied forward. Indian brokers also
+  give the index level.
+- [clear] The feature workflow, shown on #150 (dashboard analytics): planning session, research,
+  spec, tickets, then an orchestrator and implementers; tickets #153 and #154 shown with their
+  blocked-by edges. Details are also in the repo's Obsidian vault; decisions are saved there; the
+  glossary is for the agent to understand.
+- [read] Orchestrator model: Opus 5.5 or Fable; planning model is the user's choice.
+- [read] Python's global interpreter lock and SQLite's lock "don't matter for us"; Postgres is the
+  same; more strategies means more CPU. A lower-latency language later if latency becomes an issue.
+
+8. Backtest against paper (Bilal, answering Lalit)
+- [clear] 25, 28 and 29 September were run with the same logic: similar strikes, similar times,
+  fills differing by about $0.05.
+- [clear] The backtest uses the implied forward; execution uses the index, which IBKR supplies.
+
+9. Research direction
+- [read] The new charts (structure chain, gamma exposure, GEX with spot, skew at 25 and 10 delta)
+  are values to observe and use going forward.
+- [clear] "First you have to try out. If that is getting it, why go to complex things?"
+- [read] Data: take six months to a year for now. For 0DTE, the "CBBO one minute" dataset (read as
+  Databento's cbbo-1m). SPX and SPXW are two contracts with different specifications. Look across
+  0 to 8 days to expiry.
+- [missing] The statistical tests. Bilal says "the test called ..., then two more" and that many
+  statistics test this way, to check a signal generically first. No name was captured.
+
+10. Rahul's trading explanation
+- [clear] Institutions hedge a portfolio (say Rs 1,000 crore) by buying puts and selling calls. When
+  the market falls the portfolio is worth less, the hedge is too big, so they exit the puts and buy
+  back the calls: the opposite of the textbook, and call premiums rise on a big fall.
+- [clear] After the 400-point fall Rahul closed the put ratio from the previous day and put full
+  margin into call ratios. If the market stays or reverses slightly, the structure normalises; if
+  it falls further he is on the call side and theta-positive; if it reverses he makes money on
+  calls. As call IV subsides he cuts calls for profit and deploys into puts. "We are always trading
+  non-directional."
+- [read, Malayalam transcript] Stress-test a 2,000-point gap open; convert the ratio into a capped
+  structure with similar Greeks; compare 25-delta skew with its historical level and place the
+  ratio where IV is elevated; buy subdued IV and sell elevated IV on the same side; build regime
+  detection and an IV-against-realised-volatility comparison; start with short gamma (short
+  straddle or strangle) and the ways to hedge its delta; work out a skeleton together.
+- [read] First focus is understanding: how each underlying's IV behaves, per days to expiry, and
+  what counts as low or high IV for it. Watch the live market now that a live feed exists.
+
+11. Logistics
+- [clear] Rahul: next call earlier on 1 October (5-6 or 6-7 pm); away from then until Monday.
+- [read] Bilal: make a plan each day; focus on planning.
+- [missing] Why the Discord link was given. Only the word "Discord" survives near the end. The
+  engine posts a card to Discord for every paper fill, so the link is probably that channel.
+
+TO-DOS AS READ
+
+1. Run the engine locally with our own .env; do the broker login each morning.
+2. Settle the Indian data login: Fyers (adapter exists), Upstox (free, needs an adapter) or Zerodha
+   (about Rs 500 a month).
+3. Build the Upstox feed adapter through the repo's workflow. Zerodha after, if wanted.
+4. Watch the live market daily on the dashboard.
+5. Study IV behaviour per underlying and per days to expiry; what is low and high.
+6. Pull 6-12 months of history and the 0DTE one-minute data; analyse it.
+7. Find a generic statistical check for a signal. Get the test names from Bilal.
+8. Work out a short-gamma skeleton with Rahul.
+9. Confirm with Bilal: scratch or from our docs; the Discord link; the Databento key.

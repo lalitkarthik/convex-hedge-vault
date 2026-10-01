@@ -89,7 +89,7 @@ Read these to learn how a decision was reached; cite the notes above for what st
 ## Capture — raw record
 
 - [inbox/](inbox/) — daily capture, staging only
-- [meetings/](meetings/) — onboarding and daily meetings, 17–24 August 2026, promoted into [product-direction](domain/product-direction.md) and [team-workflow](domain/team-workflow.md); the design review of **20 September** and the meeting of **25 September**, **not yet promoted**
+- [meetings/](meetings/) — onboarding and daily meetings, 17–24 August 2026, promoted into [product-direction](domain/product-direction.md) and [team-workflow](domain/team-workflow.md); the design review of **20 September** and the meetings of **25 and 30 September**, **not yet promoted**
 - [sources/](sources/) — their documents, kept off GitHub
 
 ## Code repos

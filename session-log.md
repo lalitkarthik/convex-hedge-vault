@@ -110,3 +110,24 @@ Five merged specs read "awaiting merge". The config comment on the cooldown pred
 Bitcoin options (Delta Exchange) enters; which database; whether `teach/execution-design` is rebuilt
 on the trading engine.
 
+## 2026-10-01 — the 30 September meeting recorded
+
+**Recorded, not promoted:** [meetings/](meetings/) now holds `30-09-26-recap.txt` (the assistant's
+summary plus a marked reading of both transcripts), `30-09-26-transcript.txt` (English rendering)
+and `30-09-26-transcript-malayalam.txt`.
+
+**Asked (raw):** build an **Upstox feed adapter** through the engine's own workflow; each person and
+each client brings their own broker login for Indian data; watch the live market daily; study how
+IV behaves per underlying and per days to expiry; pull 6–12 months of history and the 0DTE
+one-minute data; find a generic statistical check for a signal; a short-gamma skeleton with Rahul.
+One client links to several engine instances and subscribes to strategy events.
+
+**Checked on 2026-10-01:** Fyers' API and market data are free; Upstox's APIs and websockets are
+free; Zerodha's Kite Connect with live data is ₹500 a month per key. The engine already has a
+Fyers adapter and none for Upstox or Zerodha.
+
+**Open:** the names of the statistical tests (not captured); why the Discord link was given
+(probably the fill-card channel); whether a Databento key was handed over; **whether the engine was
+built from scratch or from our `docs/design`** — the transcript reads as scratch, while
+[trading-engine](domain/trading-engine.md) and CLAUDE.md say it builds on `delta-exchange-payoff`.
+

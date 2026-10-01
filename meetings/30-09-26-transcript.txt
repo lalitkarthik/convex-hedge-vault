@@ -1,0 +1,464 @@
+Daily meet
+Wed, Sep 30, 2026
+
+Machine transcription, English rendering. Most of the talk was in Malayalam and is transcribed poorly;
+read the recap (30-09-26-recap.txt) first and use this for the English stretches and the numbers.
+The Malayalam-script transcription of the same call is 30-09-26-transcript-malayalam.txt; it runs
+longer (to 1:20) and its timestamps are offset from these.
+
+1:31 - Bilal Sagar Razak
+Hello.
+
+1:34 - Unidentified Speaker
+Hello.
+
+1:55 - Meghav Pradeep
+Ah, inner new.
+
+1:57 - Bilal Sagar Razak
+Okay.
+
+2:32 - Bilal Sagar Razak
+Action day we intend to the crown is traditional idea. Almost a one nineteen tickets closely about till paper trading almost is uh completed on it over.
+
+3:08 - Bilal Sagar Razak
+Tillpaper reading a little locally and I would be joining you.
+
+4:15 - Unidentified Speaker
+Hello.
+
+4:16 - Bilal Sagar Razak
+Are you kidding me?
+
+4:23 - Unidentified Speaker
+Hello. Hello.
+
+4:29 - Bilal Sagar Razak
+Okay.
+
+5:14 - Bilal Sagar Razak
+Indian markets room paper dating statue Indian market data window would eat data window speaks.
+
+5:30 - Bilal Sagar Razak
+Live market observation.
+
+5:38 - Bilal Sagar Razak
+data kind of strategies.
+
+6:30 - Bilal Sagar Razak
+different processes in the same brand. Same RAM ala same in CPU and SLA Avo Namukupo AWCOMO or EC2 instances are key to the matamatu alangil namu locally hosting and angle locally different instances or local hosting is different instance upon the name most of our clients will be we are planning uh this way. In ye uh let's say different in the different instance uh client accounting. Let's say uh e-moon strategy client accounting.
+
+7:28 - Bilal Sagar Razak
+Um One client will be linked to different instances. In the instances, orders will be filled to him. Execution engine matron will be almost complete. Let's say talks back slash design prefer complete scratch complete scratching and back and forth requirements as well for any requirements.
+
+8:19 - Bilal Sagar Razak
+We needed something a bit different. Naja over your instant. Let's say one instant if you are running, let's say example and can be running locally.
+
+8:48 - Bilal Sagar Razak
+Let's say if it occurs. In the other sandbox it will be having these processes. Indeed, a few cancelled simulation, which is helping us to pay for it.
+
+9:12 - Bilal Sagar Razak
+For everyone, we won't be doing because to just we can't do an alerting to discord. About for different one, even a data feeder for your son. So, if you are using a different data vendor, then we will be using a different this one. Our sandbox is that sandbox and you are not water even a data feeder in the data vendor.
+
+9:45 - Bilal Sagar Razak
+data feed on you. Delay recorder of it because be saving into my disk.
+
+10:03 - Bilal Sagar Razak
+Different strategies running in different containers.
+
+10:09 - Bilal Sagar Razak
+Different containers are different instances.
+
+10:17 - Bilal Sagar Razak
+If a client is coming, he will be subscribing only to these events.
+
+10:29 - Bilal Sagar Razak
+Let's say your strategy is a strategy.
+
+11:01 - Unidentified Speaker
+timing, what are the signals?
+
+11:03 - Bilal Sagar Razak
+A signal price. What is the mid price coming out at the time of signal?
+
+11:09 - Unidentified Speaker
+Pinna fill.
+
+11:11 - Bilal Sagar Razak
+Let's say in the back test, we will be filling it one minute after signaling. Like previous candle, previous one minute decision backer, and we fill at the current.
+
+11:26 - Unidentified Speaker
+Well, execution.
+
+11:29 - Bilal Sagar Razak
+if you are starting at 10 o'clock, then 9:59 is the decision making thing. So, 10 o'clock will be the film.
+
+11:47 - Bilal Sagar Razak
+We kept two two minutes. So, it should have done at 10.9 basically. But paper trail is a rare bug in there fill in or any two minutes.
+
+12:03 - Bilal Sagar Razak
+Fill your not basically ten eight zero zero ten eight zero zero point five seven three nor time layer. Addu plus two minutes ten ten zero zero point five seven three. Share decision check another. Decision check over a time or not correct zero zero Above Adun Saibu for us and correct point five seven three in the garam like poison signal and the filla one gap and not even one second five hundred millisecond on.
+
+ Are latency, fulfilling.
+
+12:54 - Bilal Sagar Razak
+Going forward, client and execution engineer latency. Defined, we need that clock, everything.
+
+13:09 - Bilal Sagar Razak
+We are helping the position there.
+
+13:52 - Bilal Sagar Razak
+If you need a detailed one, Tornaya, we'll get a detailed one. If let's say our time full change.
+
+14:04 - Bilal Sagar Razak
+Above eleven forty-three. Well, let's say.
+
+14:09 - Bilal Sagar Razak
+ten o'clock in eleven. Okay, eleven thirty non our decision was made at uh twenty nine. Okay. Abo uh eleven twenty nine. Target it's like uh target target three. It is like three point because Data type in the correct strategy state. At that time of point, what is the strategy state? Let's say 929.
+
+15:06 - Unidentified Speaker
+There's no need to fill it.
+
+15:08 - Bilal Sagar Razak
+Above other we will be adding a twenty-nine hypo, we give a market data.
+
+15:17 - Bilal Sagar Razak
+But you see the target value. It is basically three point eight one and the value. For three point eight one in the tarilla. Uh strike target premium. About three point eight twenty third Bakuka for Naraya Apocalypte in a point of time and dona choosi the mansera. Choosi the next day when it land we will be filling it.
+
+15:49 - Bilal Sagar Razak
+Next minute to see the next. Next, two into fill it. Two seconds of fill light about E into a fill and either executive waiting for the fill. The fill I have ear value Neil oxide logs in Adele.
+
+16:21 - Bilal Sagar Razak
+filled with ten seconds TDND other in the ten seconds TDMD other than the one second learning.
+
+16:38 - Bilal Sagar Razak
+Paper broker like paper broker director director fill the word and share direct the data on the mantra field.
+
+16:54 - Bilal Sagar Razak
+Let's say one second learner we are taking the data because generate display pattern will be overloaded with it.
+
+17:16 - Bilal Sagar Razak
+are you delivering. This pin are correct. First, what you have to do is this one. Latency remotely.
+
+17:30 - Bilal Sagar Razak
+About idea to end the decision corrector. I'm decisions correct on another metal. This delta. Okay in the current day it lay in okay. Adana stock multiple current stately stock multiplier one point two two five of uh either stock level stock level eight point two one one this year.
+
+18:28 - Bilal Sagar Razak
+3.6C plus C 2.98 into 1.25. Eight point two two and eight point two two five eight point one one the name you know near next time that it will remove Remari name long st uh you do just a back to say that lab, just a paper that took a long long pressure on the Lilo in Loka and the IV basis that go eighty mill eighty less than five one and be. Let's say ATM or six points five six hundred. If less than five, then a good time to energy by less than five hours be buying it.
+
+20:04 - Bilal Sagar Razak
+Then today morning, uh NSC Dem which dre uh test out you do NSIOC Delta H in the somewhere test out evil. Other validated because I time signal strategy state to learn other than adequate. In the in the additional strategy is login, I log in equal to material.
+
+20:36 - Bilal Sagar Razak
+Idane in These logs can be used for uh to feed uh agents here. Locks matra. The logs are state and in a uh iruvi. The sinamara decimatili or agent in a portion. I will go ahead see um in the clock. Shataned at the jury link like shit and structured a log uh structured login or a little structure log library.
+
+21:32 - Bilal Sagar Razak
+Struct logo library.
+
+21:45 - Bilal Sagar Razak
+It is taking right back.
+
+21:49 - Bilal Sagar Razak
+I just took it.
+
+21:57 - Bilal Sagar Razak
+So pancho also after with bits and Irikana or Mary Irikium plans in Edith strategy full market in the data full way.
+
+22:30 - Bilal Sagar Razak
+Alangil Moonana Tamali, basically I'll moonanale. I matrad Tamari Ivi in a moon sanamatra it tamali.
+
+23:09 - Bilal Sagar Razak
+Even the API keys or data window fires in the same is the login which is fires in brokers in the Russian we have to log in with our login.
+
+23:30 - Lalit Karthikeyan
+So, environment file under environment file examining API key files app ID, files secret, fires access token, and redis you all redis you know.
+
+24:49 - Meghav Pradeep
+Began and your payment.
+
+24:51 - Rahul J Perumatty
+Ah, Sero the Kimadro.
+
+24:52 - Bilal Sagar Razak
+Sera Akilam Fria Abstracts in Fria, England Friane, Pinifier Sisrian.
+
+25:02 - Rahul J Perumatty
+Serodamatra will charge in it. On the end, I'll lingi little Edamadi. Payment. Either way.
+
+25:24 - Unidentified Speaker
+Every day we have to log in with this method.
+
+25:39 - Bilal Sagar Razak
+This going forward, we will be integrating the dashboard itself dashboard in dashboard planning and engineering planning.
+
+25:58 - Bilal Sagar Razak
+I engage the container starting on the from the dashboard itself, we have to we can control in SRILA.
+
+26:36 - Bilal Sagar Razak
+Sensible login at the login with the Roda Marota. I'll log it with Angela. But the email address, we will be getting the feeds.
+
+26:55 - Bilal Sagar Razak
+This is the way we will be giving to the clients too. We won't be providing the data. We took it. It with us because XPXA received two devices at a time.
+
+27:16 - Bilal Sagar Razak
+What I thought is I will put it in ENV itself and host it in cloud. About cloud, you can directly go through XPX. About traces different. Devices. Okay, because we need two devices already. Like very cloudy, the futures first in the local host.
+
+27:44 - Lalit Karthikeyan
+We need to cloud it and then remaining accounted for API, the key generator.
+
+28:23 - Bilal Sagar Razak
+if if it is data feed one that other data window different abstracts there will be abstracts in the adapter data feed upstocks data window and fires in the adapter build so if we have to use abstracts we have to like adapter custom build yes that we are calling cloud.mdi sector such that we have the same workflow.
+
+29:07 - Lalit Karthikeyan
+Should you share a handoff file to us as well or either Read a engineer?
+
+29:14 - Bilal Sagar Razak
+This training engine, I have other sector.
+
+29:45 - Bilal Sagar Razak
+Calculations are a fall back.
+
+29:54 - Bilal Sagar Razak
+If a spot in the calculation will be always based on implied spot.
+
+30:02 - Bilal Sagar Razak
+Implied forward on we'll be using S I D.
+
+30:09 - Bilal Sagar Razak
+Will be getting implied.
+
+30:16 - Bilal Sagar Razak
+But with IOSU, Indian brokers will be getting that.
+
+30:31 - Bilal Sagar Razak
+How to get a feature done. Correctory method and department planning and planning session orchestrator implement the ticket.
+
+30:48 - Bilal Sagar Razak
+Design specunda specundaki alla design. Adam agree lingua, otherwise research in a way that we indoor agrillum.
+
+31:15 - Bilal Sagar Razak
+You can go with that. Pinna automatically give a orchestrator like this.
+
+31:33 - Bilal Sagar Razak
+Ah, let's see. Lego is another. Very pretty catch in a can go the plane. The big lingering linguistic research. Our research is.
+
+32:02 - Bilal Sagar Razak
+You will be having to spec in the already logo on the it will itself give next step to spec and to specifically tickets one fifty day a publisher. Publishing two types publishing and publishing issues invoke invoked a caring local orchestrator, it will do its own work. Uh go Idupo one fifty. Dashboard analytics. Idana spec query.
+
+33:00 - Bilal Sagar Razak
+Iduko Anna Mego Varna Panam like the cloud.
+
+33:07 - Bilal Sagar Razak
+You can understand most of it.
+
+33:11 - Bilal Sagar Razak
+Problem statement, structure, anger, or dashboards.
+
+34:07 - Bilal Sagar Razak
+Then it will go and publish the tickets. In the tip after publishing the tickets, it will give us an orchestrator from prompting.
+
+34:25 - Bilal Sagar Razak
+If over can uh clot dot and delay I set you as one.
+
+34:53 - Bilal Sagar Razak
+Trading domains in the United parts of the engine.
+
+35:06 - Bilal Sagar Razak
+In a technology inside the context channel.
+
+35:47 - Bilal Sagar Razak
+for possibly 5.5 fabric orchestrated model. Planning if you want, you can use fabric. User's choice on a model. Above almost fabric, let me take ninety percentage face in the face beam or other build them. Orchestrate other cleaning at the merger and that gender. Merger in Alana they will go and fill up obsidian obsidian in that okay. This obsidian it will be doing the same. Specinary M D fail and researcher in Yale it will be having the inevitable decisions we will be making, right?
+
+ Our decisions will be added to its right.
+
+36:55 - Bilal Sagar Razak
+Glossary is for the agent to understand itself.
+
+37:06 - Bilal Sagar Razak
+I know glossary.
+
+37:14 - Bilal Sagar Razak
+Dashboard is saying going forward we will be refining more. Now we understanding cost student understanding we will be uh refining it later.
+
+38:17 - Bilal Sagar Razak
+It will be more either server.
+
+38:29 - Bilal Sagar Razak
+Basically, C plus F open lay f dot open. Filer item and a little Idino. One will be using Oral Editium Machal the log diet or you gill for Python that gill. That is the reason why Python is slow.
+
+39:22 - Bilal Sagar Razak
+Gillimo Sana. Oral editing rare editor madiga. Pangantiru somebo. Python logo in Dakumu lack it. But later on, I will give issue another latency language. Python global interpreter log. Pangante log SQLite land, but that doesn't matter for us.
+
+39:53 - Bilal Sagar Razak
+One, two, three seconds to the personal lawyer.
+
+40:01 - Bilal Sagar Razak
+Ah, yes, postgress postgres is the same. For the alangelena If you are using more strategies, then CPU will be used. Adhinda combines CPU, CNN will be more.
+
+42:17 - Lalit Karthikeyan
+Last week, back testing issues and there is the one-minute through this week back test.
+
+42:30 - Bilal Sagar Razak
+lasted two days in the let's say three days twenty-five, twenty-eight, twenty-nine. We did with the same logic.
+
+42:46 - Bilal Sagar Razak
+We are using index data because IBGR is giving us index data. Namaste strategy index in the value UCLU. For back test, we are using implied forward, but execution we are using spot pick.
+
+43:06 - Unidentified Speaker
+It's coming similar strikes.
+
+43:09 - Bilal Sagar Razak
+Similar time.
+
+43:12 - Bilal Sagar Razak
+I have filled in different zero point zero five dollars.
+
+43:17 - Unidentified Speaker
+Zero five dollars.
+
+43:21 - Bilal Sagar Razak
+Paper with the mill. Paper as well as. Decision. Adolfan paper is suddenly an indicated.
+
+43:53 - Bilal Sagar Razak
+Dashboard analytics work three or lingua even orchestrator will be planning it. This orchestrator or it will hand off the implement task tickets, it will be detailed about it. It. Get a very detailed issue. It's universal. What he has taken is the ticket one fifty-three ticket one fifty-three. One fifty-three.
+
+44:41 - Bilal Sagar Razak
+One fifty-three.
+
+45:16 - Bilal Sagar Razak
+dependency.
+
+45:29 - Bilal Sagar Razak
+Are they blocked by you can see one fifty four out? One fifty four. One fifty four, it will uh spawn the conflict.
+
+45:42 - Bilal Sagar Razak
+out of one fifty four kajiya other universal details. It be there in uh obsidian. Obsidium area to can adulate work in adulterate working.
+
+46:03 - Bilal Sagar Razak
+After back to change I'm gonna acima time and listen because other older up by changes were canadium to sugar. If you're flow suggesting petani development in the starting out of our obsidian, which is almost similar ticket side, like almost buying refaster building. Pina decisions are already saved. It is easy. In almost any poor broker adapt and back and uh obsidium if you obsidium uh can avoid feed engine that traffic engine do delay.
+
+47:30 - Bilal Sagar Razak
+Engine engineer abstracts in our already the borough failures active. What only decisions it was made are. In a this is also connected to fires data feed. In a data feed might engine. Data feed engine is signature.
+
+47:56 - Bilal Sagar Razak
+uh fires in the data if you do it at a few sign you doing a connective years.
+
+48:13 - Bilal Sagar Razak
+Usional is it done.
+
+48:21 - Bilal Sagar Razak
+This will be inside the broker adapter itself. Adama broker adapter math right to the container.
+
+48:31 - Bilal Sagar Razak
+Okay. When you have stocks, charts automatically checks.
+
+48:47 - Bilal Sagar Razak
+Charge say that you are structured in the structure, pinela, gamma exposure, and a gamma exposure with spot pins cube. Then the skewer islands of the I Chanav.
+
+49:19 - Bilal Sagar Razak
+Different values.
+
+49:34 - Bilal Sagar Razak
+Activated ten delta this. So this observant these values we'll be using going forward.
+
+49:51 - Bilal Sagar Razak
+First, you have to try research.
+
+49:59 - Bilal Sagar Razak
+First, you have to try out. Adina is getting then why going to complex things?
+
+50:08 - Bilal Sagar Razak
+But Ibina will. Start with other things.
+
+50:13 - Unidentified Speaker
+Okay.
+
+50:14 - Bilal Sagar Razak
+After data share.
+
+50:18 - Rahul J Perumatty
+You're already data sharing.
+
+50:21 - Bilal Sagar Razak
+Data sharing in item.
+
+50:27 - Rahul J Perumatty
+Specs would nifty the mad on the backular item remaining.
+
+50:47 - Bilal Sagar Razak
+Just take one year one year, six months in the data, you can try out for now.
+
+50:54 - Bilal Sagar Razak
+Next zero D TM Adram uh download is CB C B O one meetu uh data set only Adita zero uh zero d t a splotina speaks w sorry x p x x p specifications are going to be under contract under okay ganamitu.
+
+52:19 - Unidentified Speaker
+Yeah.
+
+52:20 - Bilal Sagar Razak
+Zero D T learn and they one D T l D tiny more thirty one two pina five three four five six seven eight. So zero D T like crypto crypto. Crypto language and two dt.
+
+52:52 - Bilal Sagar Razak
+In a crypto yanja, sell we won't be gaining ultra cells with it.
+
+54:02 - Unidentified Speaker
+Ah, gay narrow.
+
+54:36 - Rahul J Perumatty
+portfolio value completed in a portfolio. I have a portfolio. So, a thousand gross in a portfolio they will hit by buying puts and selling goals. Correct? So, when market falls, the portfolio put to value. Let's say it comes to 950 gross. So, then our initial hedge is a position delta of Above. That iron code.
+
+55:08 - Rahul J Perumatty
+So they have to exit the puts they have bought and they have to also exit the costs they have sold. So they will exactly do the opposite.
+
+55:22 - Rahul J Perumatty
+Which is exactly opposite of how the premiums will behave.
+
+55:27 - Rahul J Perumatty
+Usually, when there is a big fault, call premiums tend to increase. Fine grade and when there is a big sharp move upwards, put premiums tend put premiums tend to increase. Theoretically, opposite to market.
+
+55:50 - Rahul J Perumatty
+This is the opposite direction.
+
+55:55 - Rahul J Perumatty
+Market put in the skew pine grade from the previous day, which is which is saying that the premiums are like elevated on IVs, even when the market fell.
+
+56:14 - Rahul J Perumatty
+Take away.
+
+56:20 - Rahul J Perumatty
+When the market fell up, in number if a trade in the position, any key putiliman called the ratio the previous day. And the next day, and the ratio naucha close by I have a long position and further I have a short position. Up initially, your position will be comma neutral or gamma slight short I did move in the direction of the gamma positive. Okay, up market put side lexic. So, and the put IVs were so much elevated.
+
+56:57 - Lalit Karthikeyan
+Sorry, put side lexic.
+
+56:58 - Rahul J Perumatty
+And call IV is a pine elevator. There is no point in staying input. So, current double premium call. So, full margin.
+
+57:08 - Rahul J Perumatty
+So, there are two scenarios. On 400 points in the market, or the market can stay there or it can reverse slightly. So, market staying there or reversing slightly will reduce the market structure.
+
+57:27 - Rahul J Perumatty
+Okay, if it falls further, I am anywhere in the call side and I am theta positive.
+
+57:31 - Unidentified Speaker
+So, it doesn't matter to me.
+
+57:33 - Rahul J Perumatty
+Experienced theater motto getu. And if it reverses, I'm making money on calls.
+
+57:45 - Rahul J Perumatty
+One day to experience the next day, okay.
+
+57:55 - Rahul J Perumatty
+Ah, reverse call IVs reduce him, but put IVs will start picking up because of the same thing I said.
+
+58:03 - Rahul J Perumatty
+Okay, up a subdued item put IV starts increasing and elevated at the call IV starts reducing, which is coming back to the normal shape market in there. Okay, now what I'll do, I won't exit put calls in margin zero.
+
+58:20 - Rahul J Perumatty
+As my long legs come closer to ATM, none of the exit I go. Okay. And now what I can do is if when market stabilizes or when the call IV starts sub coming down, I will cut my calls for profit and deploy inputs.
+
+58:39 - Rahul J Perumatty
+We are always trading non-directional. We are not taking a call on direction. Now, if the market reverses, I have marketed, an opportunity of exit. If I shift half my position to puts.
+
+58:51 - Rahul J Perumatty
+Further, I have shots. So if it comes down, I'll again get exiting puts. It up, I'll again get exiting calls. So it's a win-win for me.
