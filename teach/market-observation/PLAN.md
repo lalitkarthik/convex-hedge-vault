@@ -1,0 +1,126 @@
+# Market observation — plan
+
+**Agreed 2026-10-05.** One sitting per market on every trading day, India and the US side by side.
+First US sitting: Monday 5 October, evening. First India sitting: Tuesday 6 October, morning.
+
+## Why
+
+The 30 September meeting asked for it ([recap](../../meetings/30-09-26-recap.txt), items 9–10):
+
+- **First focus is understanding**: how each underlying's IV behaves, per days to expiry, and what
+  counts as low or high for it.
+- **The new charts are the values to watch**: structure chain, gamma exposure, GEX with spot, skew
+  at 25 and 10 delta.
+- **Rahul's trades rest on that feel**: "place the ratio where IV is elevated", "buy subdued IV,
+  sell elevated IV".
+
+Observing means building a sense of normal, one reading a day, until an unusual reading stands
+out without anyone pointing at it. Meghav's notebook is the same job done on six months of SPXW
+history ([strategy-research](../../domain/strategy-research.md)). India has no such baseline, so
+these records start one.
+
+**Done when** Lalit can look at a reading for NIFTY, SENSEX or SPXW at a given DTE and say whether
+it is low, usual or high, and what that would change in a trade.
+
+## Where
+
+| Market | Address | Session in IST | Sitting (default) |
+|---|---|---|---|
+| India | `india.convexhedge.ai` | 09:15–15:30 | **10:00**, 40 minutes |
+| US | `spxw.convexhedge.ai` | 19:00–01:30 (an hour later from 2 November) | **20:00**, 40 minutes |
+
+- **The same clock time every day.** IV decays through the session and GEX levels move, so
+  readings compare day to day only at the same time.
+- Outside its session an address answers 503. The map of the pages is
+  [engine-dashboard](../../domain/engine-dashboard.md).
+- Lalit signs in to the browser pane. Claude drives the pages and sends annotated screenshots,
+  because the dashboard has no phone layout and inline widgets do not show on his phone.
+
+## How a sitting runs
+
+Claude teaches throughout: every figure is explained, with the answer stated. No questions, no
+quizzes, no predictions asked for.
+
+1. **The sweep (5 minutes).** Claude reads the fixed readings below from every page and adds one
+   row per root to [normal-ranges](normal-ranges.md).
+2. **The day so far (10 minutes).** Two pages hold the session's history:
+   - *Spot + GEX*: the candles since the open against the call wall, the put wall and the gamma
+     flip. Where the index turned, where it ran through, when a wall moved.
+   - *IV smile*: the curve now against today's open curve and yesterday's close curve. Whether the
+     whole curve rose or fell, and whether one side moved more.
+3. **One page in depth (15 minutes).** The page of the day, from the rotation below. Each figure on
+   it is rebuilt from the chain once, so no number is taken on trust.
+4. **What it means (5 minutes).** Today's readings against the rows already in
+   [normal-ranges](normal-ranges.md). For SPXW, also against the notebook's yardstick.
+5. **The sweep again, at the end.** A second row, so the sitting itself shows forty minutes of
+   change.
+6. **The record.** Claude writes `days/YYYY-MM-DD-<market>.md` and commits it.
+
+## The fixed readings
+
+Taken per root, at the start and the end of every sitting.
+
+| Reading | Page | Why it is watched |
+|---|---|---|
+| Spot, forward, DTE | any header | Where the market is and how much time the options hold |
+| ATM IV | header | The level of volatility; the figure "low or high" is about |
+| ATM straddle price, as a share of spot | structure chain | The move the options charge for |
+| 25Δ put skew, risk reversal, butterfly, skew slope | IV smile | The shape: how much more downside costs than upside |
+| 10Δ put IV, 25Δ put IV, 25Δ call IV | IV smile | The points Rahul's ratios are placed on |
+| Net GEX, gamma flip, R1, S1 | GEX | Where hedging may pin the index or let it run |
+| Day's high, low and range so far | Spot + GEX | The movement that actually happened |
+| Each strategy's PnL and number of hedges | Strategies | What a real short-gamma book did with that day |
+
+## The rotation
+
+Week one learns the pages. Week two follows a theme across them.
+
+| Sitting | US, SPXW (0 DTE every day) | India, NIFTY and SENSEX |
+|---|---|---|
+| 1 | Mon 5 Oct — header and option chain on a same-day expiry; the implied move from the straddle; opening IV against the notebook's 8.0% | Tue 6 Oct — header and option chain on **NIFTY's expiry day**; SENSEX two days out beside it |
+| 2 | Tue 6 — IV smile and its five tiles; the open curve against now | Wed 7 — IV smile; NIFTY's new weekly at its longest DTE |
+| 3 | Wed 7 — GEX and Spot + GEX; why SPXW's open interest is a morning figure | Thu 8 — GEX and Spot + GEX on **SENSEX's expiry day** |
+| 4 | Thu 8 — structure chain; the 25Δ and 10Δ strangles of the notebook's part D, priced live | Fri 9 — structure chain; the 1:3:2 ratio grid Rahul trades |
+| 5 | Fri 9 — Strategies: each SPXW instance's entry, fills and PnL against the day's path | Mon 12 — Strategies: `nifty-straddle`, its hedges traced against the candles |
+| 6 | Mon 12 — theme: IV through the day on a 0 DTE, open to close | Tue 13 — theme: IV by DTE, the second pass over each day of the week |
+| 7 | Tue 13 — theme: implied move against the move so far | Wed 14 — theme: skew by DTE; is the put side dearer nearer expiry |
+| 8 | Wed 14 — theme: skew through the day | Thu 15 — theme: did the walls hold; NIFTY against SENSEX |
+| 9 | Thu 15 — theme: did the walls hold | Fri 16 — theme: implied move against the move that happened, all week |
+| 10 | Fri 16 — review | Mon 19 — review |
+
+A day the market is shut, or a sitting missed, moves the rotation on by one. Nothing is skipped.
+
+## The review
+
+After ten sittings per market, Claude reads every day record and
+[normal-ranges](normal-ranges.md) and writes what held up into `domain/`: what is low, usual and
+high IV for each root at each DTE, and how the skew and the walls behaved. That note is canon;
+the day records stay raw record. SPXW conclusions are checked against the notebook, and any
+disagreement is surfaced, not chosen silently.
+
+## The record of one day
+
+```
+# YYYY-MM-DD — <market>, sitting N
+Readings      the two sweep rows, per root
+The day so far   what the candles, levels and curves did, with times
+Page of the day  what was learned on it, each figure rebuilt once
+What it means    against normal-ranges and, for SPXW, the yardstick
+Not explained    anything that looked wrong or was not understood
+For the team     three lines Lalit can paste to Rahul, Bilal and Meghav
+```
+
+Screenshots sent during the sitting are kept in `days/assets/` only when the record cites them.
+
+## Beside this plan
+
+- **Meghav's notebook**, parts B to D: Lalit reads it himself. Claude only cites its figures.
+- **Option structures**: [teach/option-structures](../option-structures/PLAN.md), nine workshops,
+  whenever there is time. A sitting here may borrow a live example for a workshop; it does not
+  replace one.
+
+## Defaults Lalit can change
+
+- The two clock times, 10:00 and 20:00 IST.
+- Forty minutes per sitting.
+- Ten sittings before the review.

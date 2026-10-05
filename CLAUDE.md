@@ -19,6 +19,8 @@ Linked repos:
   `D:\Convex Hedge\delta-exchange-payoff`
 - `Convex-Hedge-Trading-Engine` — the current trading engine and the latest design, built on the `delta-exchange-payoff` work; the repo everything is built on from 2026-10-01, at
   `D:\Convex Hedge\Convex-Hedge-Trading-Engine` (docs vault inside: `Trading-Engine/`)
+- `convex-hedge-strategy` — Meghav's strategy research: SPXW 0DTE studies on six months of history, at
+  `D:\Convex Hedge\convex-hedge-strategy` (docs vault inside: `Strategy-Research/`)
 - _Platform repo — access pending._
 
 ## Note types

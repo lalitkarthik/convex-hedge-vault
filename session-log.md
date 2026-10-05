@@ -146,3 +146,28 @@ for a long-running reader.
 
 **Open:** the ten decisions listed at the foot of that note, before the spec.
 
+
+## 2026-10-05 — market observation planned, the live dashboard mapped
+
+**Decided (owner):** observe the live market every trading day, **India and the US in parallel**, one
+sitting per market, Claude teaching from the deployed dashboard. First US sitting tonight, first
+India sitting on 6 October. The plan is [teach/market-observation](teach/market-observation/PLAN.md):
+a fixed sweep of readings, the day so far, one page in depth, a dated record, and a running table,
+[normal-ranges](teach/market-observation/normal-ranges.md). A review after ten sittings per market
+promotes what held up into `domain/`.
+
+**Mapped:** `india.convexhedge.ai` walked page by page at 15:09–15:14 IST;
+[engine-dashboard](domain/engine-dashboard.md) rewritten at `59c1083` (seven pages, Google sign-in,
+the Broker page, what each page keeps over time). `convex-hedge-strategy` (Meghav) cloned to
+`D:\Convex Hedge\convex-hedge-strategy` and mapped in [strategy-research](domain/strategy-research.md)
+at `4bcf653`; it is now a linked repo in CLAUDE.md.
+
+**Found:** each address answers 503 outside its own session. The India badge reads STALE while
+Fyers is connected, because the unselected Upstox feed counts as disconnected. Only Spot + GEX, the
+smile's open and close curves, and the strategy details pages hold a day's history; the rest are
+live snapshots.
+
+**Open:** the two sitting times (defaults 10:00 and 20:00 IST); three readings not yet explained
+(two ATM IV figures that differ, the step in NIFTY's IV at the forward, SENSEX's discount factor of
+0.9757); whether `spxw.convexhedge.ai` needs its own sign-in; `Convex-Hedge-Trading-Engine` notes
+other than the dashboard are still stamped `b47d8ee` while `main` is at `59c1083`.

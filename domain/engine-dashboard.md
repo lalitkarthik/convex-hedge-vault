@@ -1,64 +1,81 @@
-> As of Convex-Hedge-Trading-Engine@b47d8ee, 2026-10-01
+> As of Convex-Hedge-Trading-Engine@59c1083, 2026-10-05
 
 # Engine dashboard — what the team sees
 
-The screens of the [trading-engine](trading-engine.md). Canon is
-`Trading-Engine/Architecture/Dashboard design.md` and `Trading-Engine/Guide/The dashboard.md`.
+The screens of the [trading-engine](trading-engine.md), now deployed for the team. Canon is
+`Trading-Engine/Guide/The dashboard.md`, `Trading-Engine/Guide/Signing in and the Broker page.md`
+and `Trading-Engine/Architecture/Dashboard design.md`. This note maps the screens and says what
+each one keeps over time; the guide holds every detail.
 
-## How it is built
+## Where it runs
 
-- A Next.js app in TypeScript, under `frontend/`, **served as static files** by the Python
-  `dashboard` part (0019). It uses pnpm and Node 24, and its checks are Vitest and a typecheck.
-- The page gets live data over one **websocket** from the part (`ws://…/socket`). The part reads
-  the bus and never writes to it. Shared sample socket messages in
-  `tests/dashboard/socket-messages.json` are checked by both the Python and the Vitest tests.
-- It is reachable **only from the same machine** (`127.0.0.1:8080`) and has **no login**.
-- **It copies the look of Convex Hedge's terminal**, which the repo calls "the Backtest engine"
-  (0035). It is dark only (0037), in its own font (0036), with amber for anything clickable, green
-  calls and red puts. Only in-the-money cells are tinted (0039). Small ▲/▼ **change markers** show
-  which way a figure moved (0038).
+| Address | Market | Roots seen | Open when |
+|---|---|---|---|
+| `india.convexhedge.ai` | India, INR · IST | NIFTY, SENSEX | Indian session, 09:15–15:30 IST |
+| `spxw.convexhedge.ai` | US, USD · ET | SPXW | US session, 09:30–16:00 ET (19:00–01:30 IST until 1 November 2026, then an hour later) |
 
-## Pages today
+- Each address is one engine instance with its own dashboard. Sign-in is by an authorised Google
+  account.
+- **Outside its session an address answers `503 Service Temporarily Unavailable`** (seen on
+  `spxw` at 15:14 IST on 5 October). Observation has to happen while the market is open.
+- The page is laid out for a computer screen. The guide says there is no phone layout.
 
-| Page | What it shows |
-|---|---|
-| **Option chain** | Every strike of the chosen root and expiry, calls and puts mirrored around the strike. A column picker offers twelve columns, eight by default: OI, bid and ask with sizes, last, IV and delta per strike. The top shows the index level, the implied index level, both forwards, the discount factor, trading-day DTE and ATM IV. ATM follows each expiry's own forward. Rupee figures are grouped in lakh and crore. One status word covers all feeds: LIVE, STALE, CLOSED and so on. |
-| **Strategies** | A grid of cards, one per strategy instance. Each shows a status badge, data freshness, total PnL valued live, today's change, a sparkline, open legs and the age of its last beat. Filters are kept in the page address, and a strip on top gives spot and today's PnL per currency. **Rupees and dollars are never added together.** |
-| **Strategy details** | Addressed by a query parameter (0044). It has an Overview (PnL figures, cash, open positions, the day's closed trades) beside a **total-PnL curve** in 1D and 5D ranges. Below are signals and fills, where a signal highlights the fills it produced. The **decision snapshot** shows the market data the strategy saw at a chosen beat, narrowed to its legs, with its state card. A *Full chain ↗* link opens the whole snapshot. Then the log. |
+## The seven pages
 
-## In flight — feature #150, *Dashboard analytics tabs*
+Five pages share the top two lines: asset, index level (SPOT), implied index level, units, the
+status badge, then expiry, DTE in trading days, both forwards, DF, ATM IV and the strike count.
 
-These pages live on `feature/dashboard-analytics-tabs`, with tickets #155–#162. They are the same
-screens our terminal notes describe, now live:
+| Page | Path | What it shows | What it keeps over time |
+|---|---|---|---|
+| **Option chain** | `/` | Every strike, calls left and puts right. Twelve columns, eight by default: OI, theta, gamma, delta, IV, bid, ask, last. | Nothing. A live snapshot. |
+| **Structure chain** | `/structure-chain/` | Two tabs. *Straddle / strangle*: a grid by strike and offset. *Ratio spreads*: three legs, 1 long : 3 short : 2 long by default, separate call and put grids. Either shows net premium or net delta, gamma, vega, theta; bought or sold; per unit or per contract. | Nothing. A live snapshot. |
+| **IV smile** | `/smile/` | IV across strikes, put IV below the forward and call IV above. Tiles: 25Δ put skew, risk reversal, butterfly, skew slope, skew rank. | **Today's open curve** (white, dotted) and **yesterday's close curve** (teal, dotted). The **skew rank** takes one reading per expiry a day, at 14:30 IST or 15:00 ET, and needs twenty. |
+| **Spot + GEX** | `/spot-gex/` | Index candles (1, 5 or 15 minutes) with the call wall R1 (red), the put wall S1 (green) and the gamma flip (purple) drawn as step lines, and net GEX per strike as sideways amber bars. | **The whole session minute by minute, and the last five sessions.** The one page that shows a day evolving. |
+| **GEX** | `/gex/` | Three bars per strike: calls (green), puts (red), net (amber). Lines for R1–R4, S1–S4, the index and the gamma flip. A strip gives NET and FLIP. This expiry or all expiries. | Nothing. A live snapshot. |
+| **Strategies** | `/strategies/` | One card per strategy instance: status, total PnL, today's change, a sparkline, open legs, age of the last beat. | Each instance's details page keeps a PnL curve (1D, 5D), the day's signals and fills, and a decision snapshot per beat. |
+| **Broker** | `/broker/` | India only. Which broker feeds the prices (Fyers or Upstox), who chose it and when. Only the control list can switch. | — |
 
-| Code | Page | Vault note on the terminal's version |
-|---|---|---|
-| STC | Structure chain: straddle/strangle grid and ratio spreads (1:3:2 by default), price or net Greeks | [structure-chain](structure-chain.md) |
-| SMI | IV smile: put IV below the forward, call IV above; tiles for 25Δ skew, risk reversal, butterfly, slope, skew rank | [volatility](volatility.md) |
-| GEX | Gamma exposure by strike, with walls and gamma flip | [open-interest](open-interest.md) |
-| GXC | Spot + GEX: index candles with the day's levels drawn over them | [open-interest](open-interest.md) |
+## What was live on 5 October 2026, 15:09–15:14 IST
 
-Decisions on the branch, not yet on `main`:
+- **Chains:** NIFTY 06-OCT (244 strikes, 1.07 DTE) and SENSEX 08-OCT (199 strikes, 3.07 DTE).
+  One expiry per root, so the smile's *+2 EXPIRIES* and *+3 EXPIRIES* buttons add nothing yet.
+- **Feed:** Fyers selected and connected; Upstox disconnected, with a token valid to 2027-10-04.
+- **Strategy:** one instance, `nifty-straddle` (`delta-hedged-straddle`), short 100 lots each of the
+  22,550 call and put, entered at 09:17, re-hedged sixteen times by shifting lots between the legs.
+- **Skew rank:** *building history (1/20)*.
 
-- **0045** — the structure chain is worked out in the dashboard.
-- **0046** — GEX and skew come from the derived data engine.
-- **0047** — that engine keeps its history in **SQLite on a named Docker volume**.
-- **0048** — every chart uses **Apache ECharts**, and the PnL curve moves to it.
-- **0049** — the gamma flip is found from the GEX profile.
-- **0050** — GEX is measured **per 1% move, with dealers long calls and short puts**.
+The readings themselves are in [teach/market-observation](../teach/market-observation/PLAN.md).
 
-The last one is the dealer-positioning assumption [RESOURCES](../RESOURCES.md) lists as a gap.
+## Things that read wrongly at first sight
 
-## Still open (from the design page)
+- **STALE does not mean the prices are old here.** The badge turns STALE when any feed is
+  degraded, stale or disconnected. In India the unselected broker's feed is always disconnected,
+  so the badge read STALE while Fyers was connected and prices moved every second. Click the
+  badge to see each feed. *This is our reading of the guide's rule against what the page showed.*
+- **Level colours swap between the two GEX pages.** On GEX, resistance is green and support red.
+  On Spot + GEX, R1 is red and S1 green.
+- **The implied index level may come from another expiry** than the one on screen: it is the
+  nearest expiry's forward.
+- **SPXW has no real index level.** No feed sends it, so SPOT shows a dash and the candles follow
+  the implied level.
+- **SPXW open interest is a morning figure**, counted once before the open. Its GEX leaves out
+  today's trading. India's is recounted through the day (*"Open interest as of 15:10"*).
+- **GEX rests on one assumption** (decision 0050): dealers are long the calls and short the puts.
+  It is the dealer-positioning gap [RESOURCES](../RESOURCES.md) lists.
+- **History starts when the chain engine first ran.** Candles, levels, the open and close curves
+  and the skew readings are empty before that.
 
-- A login, and reaching the dashboard from outside the machine, such as on AWS. The likely path is
-  Next.js's own server.
-- Whether several engine instances share one dashboard.
-- Later pages: orders, broker positions, margin and balance, and the logs of each part. Logs today
-  go only to each container's own output.
-- A full history of fills, states and signals that survives a restart. That waits for the database.
+## Not explained yet
+
+- The summary strip's ATM IV and the smile strip's ATM IV differed at the same moment
+  (13.66% against 13.97%).
+- NIFTY's IV steps down at the forward: 15.37% at 22,500 and 13.29% at 22,550. The put side and
+  the call side do not meet.
+- DF read 0.9985–0.9994 for NIFTY at one day and **0.9757 for SENSEX at three days**. A discount
+  factor that far from one over three days is not an interest rate.
 
 ## Related
 
 [trading-engine](trading-engine.md) · [engine-strategies](engine-strategies.md) ·
-[platform-map](platform-map.md) · [option-chain](option-chain.md)
+[structure-chain](structure-chain.md) · [volatility](volatility.md) ·
+[open-interest](open-interest.md) · [strategy-research](strategy-research.md)

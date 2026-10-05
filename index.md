@@ -31,7 +31,8 @@ it: [MISSION.md](MISSION.md).**
 - [trading-engine](domain/trading-engine.md) — the front door: markets, the parts of one engine instance, status, where the repo's docs answer each question, drift found — **solid, 2026-10-01**
 - [engine-market-data](domain/engine-market-data.md) — the bus, feed adapters (Databento, Fyers, replay), the chain engine, recording and replay — **solid, 2026-10-01**
 - [engine-strategies](domain/engine-strategies.md) — beats and cards, the four strategies, the simulated broker, Discord fill cards — **solid, 2026-10-01**
-- [engine-dashboard](domain/engine-dashboard.md) — option chain, Strategies and details pages; analytics tabs in flight (#150) — **solid, 2026-10-01**
+- [engine-dashboard](domain/engine-dashboard.md) — the deployed dashboard at `india.` and `spxw.convexhedge.ai`: seven pages, what each keeps over time, what reads wrongly at first sight — **solid, 2026-10-05**
+- [strategy-research](domain/strategy-research.md) — Meghav's `convex-hedge-strategy`: where its pages answer, and the SPXW yardstick for live watching — **solid, 2026-10-05**
 - [trading-engine-decisions](domain/trading-engine-decisions.md) — records 0001–0044 grouped by phase, 0045–0050 on a branch, what is still undecided — **solid, 2026-10-01**
 - [engine-lineage](domain/engine-lineage.md) — `delta-exchange-payoff` against the trading engine, and the 20/25 September asks against both — **solid, 2026-10-01**
 - **Execution engine (OMS, RMS, real orders)** — the trading engine's next features; no design page there yet. The prior design is `delta-exchange-payoff`'s, below — **not designed**
@@ -73,6 +74,7 @@ worked-out answer to what the trading engine builds next.
 
 ## Study — Claude tutors and builds (since 2026-09-30)
 
+- [teach/market-observation](teach/market-observation/PLAN.md) — one sitting per market per trading day on the live dashboard, India and the US; the running table is [normal-ranges](teach/market-observation/normal-ranges.md). **Starts 2026-10-05 (US), 2026-10-06 (India)**
 - [teach/execution-design](teach/execution-design/PLAN.md) — Convex Hedge's execution design and the feed engine under it, from a trader's seat. Sixteen sessions; **none run yet**. Built on `delta-exchange-payoff`, so it predates the trading engine — revisit before running it
 - General options theory — Greeks, structures, ratios, gamma, skew — lives outside this vault in
   `second-brain/learning/option-structures/`: plan v2, 29 sessions from 2026-09-25, opening with a rebuild of the faded basics
@@ -101,6 +103,8 @@ anything inside them** — this vault maps to it and never copies it.
 - `Convex-Hedge-Trading-Engine` — **the engine we build on.** Front doors: `CONTEXT.md` (every term),
   `Trading-Engine/Home.md` (its docs vault), `Trading-Engine/Guide/What the engine does.md`,
   `Trading-Engine/Guide/Changelog.md`, `README.md` (running it). Map: [trading-engine](domain/trading-engine.md).
+- `convex-hedge-strategy` — Meghav's strategy research. Front doors: `Strategy-Research/Home.md`,
+  `Strategy-Research/Guide/SPXW 0DTE descriptive statistics.md`, `CONTEXT.md`. Map: [strategy-research](domain/strategy-research.md).
 - `delta-exchange-payoff` — the earlier feed engine. Front doors: `delta-exchange-payoff/CONTEXT.md` (every term),
   `delta-exchange-payoff/docs/split-start-here.md` (what runs and what was chosen),
   `delta-exchange-payoff/docs/split-what-to-do-next.md` (open work), `delta-exchange-payoff/docs/maths-start-here.md`
