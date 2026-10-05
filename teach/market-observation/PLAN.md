@@ -75,19 +75,30 @@ number only.
 | 1 | Taylor P&L of one option on a real day | 5 Oct |
 | 2 | From IV to an expected move; why the straddle price equals it | 5 Oct |
 | 3 | Theta against gamma: the breakeven move | 5 Oct |
-| 4 | Delta as a label for a strike: 25Δ and 10Δ | |
-| 5 | Skew: IV by strike, and the numbers that summarise it | |
-| 6 | Delta hedging: realised against implied volatility | |
-| 7 | Hedging as market flow: GEX at one strike | |
-| 8 | Net GEX and the gamma flip | |
-| 9 | Walls and pinning | |
-| 10 | Strangles and ratio spreads as combinations of the above | |
+| 4 | Put-call parity and the forward: where the implied index level comes from |  |
+| 5 | Intrinsic and time value; why decay speeds up on the last day |  |
+| 6 | Delta as a label for a strike and as a probability: 25Δ and 10Δ |  |
+| 7 | Skew and smile: IV by strike, risk reversal, butterfly |  |
+| 8 | How the Greeks change through a 0DTE day: gamma gathers at the strike, vega fades |  |
+| 9 | Realised volatility: measuring it from candles; its pattern through the day |  |
+| 10 | Delta hedging: realised against implied; how often, and what it costs |  |
+| 11 | The volatility premium: implied above realised on most days, and the seller's rare large loss |  |
+| 12 | Bid, ask and mid: what a structure costs to trade |  |
+| 13 | Open interest against volume: what each can and cannot say |  |
+| 14 | Hedging as market flow: GEX at one strike |  |
+| 15 | Net GEX and the gamma flip |  |
+| 16 | Walls and pinning |  |
+| 17 | Strangles: payoff, breakevens, distance in implied moves |  |
+| 18 | Ratio spreads 1:3:2: payoff, where they win and lose |  |
+| 19 | Index and IV move against each other: what that does to a position |  |
+| 20 | IV by days to expiry: the weekly cycle in NIFTY and SENSEX, and expiry day |  |
+| 21 | Reading the engine's strategies: entry rule, stop, hedge, and their PnL |  |
 
 This replaces step 4 of *How a sitting runs* (one page in depth) and cuts the new notebook facts
 from three a sitting to one, chosen to fit the concept. The sweep, the ledgers and the five paper
 structures still run in full, in the background, and are reported in two or three sentences. The
 market part of a sitting uses only concepts already taught, so it grows with the ladder. When the
-ladder is done, sittings are observation only. Explanations are short paragraphs in Simplified
+ladder is done, sittings are observation only. Extended from ten steps to twenty-one on 5 October. Explanations are short paragraphs in Simplified
 Technical English, not bullet lists.
 
 ## Making the notebook stick
