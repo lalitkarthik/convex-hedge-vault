@@ -58,6 +58,10 @@ quizzes, no predictions asked for.
    yesterday's five paper positions became, split into the move, time and IV. Then today's
    readings against [normal-ranges](normal-ranges.md), said plainly: premium rich or thin, which
    side dearer, spot above or below the flip. Then today's five are opened from those readings.
+5a. **The deployed strategies, every sitting.** For each instance on the Strategies page: what it
+   holds now, total and today's PnL (realised and unrealised), and a timeline of today's signals,
+   fills and closed trades with their reasons. Yesterday's final result is read first, from the
+   5D curve. Asked for by the team; reported as facts, with the rule explained at step 4.
 6. **The sweep again, at the end.** A second row, so the sitting itself shows forty-five minutes
    of change.
 7. **The record.** Claude writes `days/YYYY-MM-DD-<market>.md`, updates the ledger and commits.
@@ -75,24 +79,24 @@ number only.
 | 1 | Taylor P&L of one option on a real day | 5 Oct |
 | 2 | From IV to an expected move; why the straddle price equals it | 5 Oct |
 | 3 | Theta against gamma: the breakeven move | 5 Oct |
-| 4 | Put-call parity and the forward: where the implied index level comes from |  |
-| 5 | Intrinsic and time value; why decay speeds up on the last day |  |
-| 6 | Delta as a label for a strike and as a probability: 25Δ and 10Δ |  |
-| 7 | Skew and smile: IV by strike, risk reversal, butterfly |  |
-| 8 | How the Greeks change through a 0DTE day: gamma gathers at the strike, vega fades |  |
-| 9 | Realised volatility: measuring it from candles; its pattern through the day |  |
-| 10 | Delta hedging: realised against implied; how often, and what it costs |  |
-| 11 | The volatility premium: implied above realised on most days, and the seller's rare large loss |  |
-| 12 | Bid, ask and mid: what a structure costs to trade |  |
-| 13 | Open interest against volume: what each can and cannot say |  |
-| 14 | Hedging as market flow: GEX at one strike |  |
-| 15 | Net GEX and the gamma flip |  |
-| 16 | Walls and pinning |  |
-| 17 | Strangles: payoff, breakevens, distance in implied moves |  |
-| 18 | Ratio spreads 1:3:2: payoff, where they win and lose |  |
-| 19 | Index and IV move against each other: what that does to a position |  |
-| 20 | IV by days to expiry: the weekly cycle in NIFTY and SENSEX, and expiry day |  |
-| 21 | Reading the engine's strategies: entry rule, stop, hedge, and their PnL |  |
+| 4 | Reading the engine's strategies: entry rule, stop, hedge, and their PnL | |
+| 5 | Put-call parity and the forward: where the implied index level comes from | |
+| 6 | Intrinsic and time value; why decay speeds up on the last day | |
+| 7 | Delta as a label for a strike and as a probability: 25Δ and 10Δ | |
+| 8 | Skew and smile: IV by strike, risk reversal, butterfly | |
+| 9 | How the Greeks change through a 0DTE day: gamma gathers at the strike, vega fades | |
+| 10 | Realised volatility: measuring it from candles; its pattern through the day | |
+| 11 | Delta hedging: realised against implied; how often, and what it costs | |
+| 12 | The volatility premium: implied above realised on most days, and the seller's rare large loss | |
+| 13 | Bid, ask and mid: what a structure costs to trade | |
+| 14 | Open interest against volume: what each can and cannot say | |
+| 15 | Hedging as market flow: GEX at one strike | |
+| 16 | Net GEX and the gamma flip | |
+| 17 | Walls and pinning | |
+| 18 | Strangles: payoff, breakevens, distance in implied moves | |
+| 19 | Ratio spreads 1:3:2: payoff, where they win and lose | |
+| 20 | Index and IV move against each other: what that does to a position | |
+| 21 | IV by days to expiry: the weekly cycle in NIFTY and SENSEX, and expiry day | |
 
 This replaces step 4 of *How a sitting runs* (one page in depth) and cuts the new notebook facts
 from three a sitting to one, chosen to fit the concept. The sweep, the ledgers and the five paper
@@ -170,6 +174,7 @@ Notebook facts   yesterday closed out; each fact shown, its figure, today's figu
 The day so far   what the candles, levels and curves did, with times
 Page of the day  what was learned on it, each figure rebuilt once
 Structures       yesterday's five settled or marked; today's verdict; today's five opened
+Strategies       per instance: position, PnL, and the day's timeline of signals and fills
 Not explained    anything that looked wrong or was not understood
 For the team     three lines Lalit can paste to Rahul, Bilal and Meghav
 ```
