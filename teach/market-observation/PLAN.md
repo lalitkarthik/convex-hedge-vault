@@ -43,18 +43,31 @@ quizzes, no predictions asked for.
 
 1. **The sweep (5 minutes).** Claude reads the fixed readings below from every page and adds one
    row per root to [normal-ranges](normal-ranges.md).
-2. **The day so far (10 minutes).** Two pages hold the session's history:
+2. **The notebook's facts (7 minutes).** From [notebook-facts](notebook-facts.md): yesterday is
+   closed out first, since a whole-day fact can only be checked once the day is over. Then three
+   new facts and up to five returning ones, each stated with the notebook's figure and today's
+   live number side by side. The ledger records the date and whether the day agreed.
+3. **The day so far (8 minutes).** Two pages hold the session's history:
    - *Spot + GEX*: the candles since the open against the call wall, the put wall and the gamma
      flip. Where the index turned, where it ran through, when a wall moved.
    - *IV smile*: the curve now against today's open curve and yesterday's close curve. Whether the
      whole curve rose or fell, and whether one side moved more.
-3. **One page in depth (15 minutes).** The page of the day, from the rotation below. Each figure on
+4. **One page in depth (15 minutes).** The page of the day, from the rotation below. Each figure on
    it is rebuilt from the chain once, so no number is taken on trust.
-4. **What it means (5 minutes).** Today's readings against the rows already in
-   [normal-ranges](normal-ranges.md). For SPXW, also against the notebook's yardstick.
-5. **The sweep again, at the end.** A second row, so the sitting itself shows forty minutes of
+5. **What it means (5 minutes).** Today's readings against the rows already in
+   [normal-ranges](normal-ranges.md).
+6. **The sweep again, at the end.** A second row, so the sitting itself shows forty minutes of
    change.
-6. **The record.** Claude writes `days/YYYY-MM-DD-<market>.md` and commits it.
+7. **The record.** Claude writes `days/YYYY-MM-DD-<market>.md`, updates the ledger and commits.
+
+## Making the notebook stick
+
+One read of the notebook does not stay. Its facts are kept in
+[notebook-facts](notebook-facts.md), about forty of them, and each returns on a widening gap: one
+sitting later, then three, then seven, then every tenth. A fact is never asked for. It is shown
+again, each time against a different real day, until today's number is read with the notebook's
+already in mind. Every Friday Claude sends one picture card of the week's facts and their live
+tallies. The India sitting holds the same facts up against NIFTY and SENSEX.
 
 ## The fixed readings
 
@@ -103,9 +116,10 @@ disagreement is surfaced, not chosen silently.
 ```
 # YYYY-MM-DD — <market>, sitting N
 Readings      the two sweep rows, per root
+Notebook facts   yesterday closed out; each fact shown, its figure, today's figure, agrees or not
 The day so far   what the candles, levels and curves did, with times
 Page of the day  what was learned on it, each figure rebuilt once
-What it means    against normal-ranges and, for SPXW, the yardstick
+What it means    against normal-ranges
 Not explained    anything that looked wrong or was not understood
 For the team     three lines Lalit can paste to Rahul, Bilal and Meghav
 ```
@@ -114,7 +128,8 @@ Screenshots sent during the sitting are kept in `days/assets/` only when the rec
 
 ## Beside this plan
 
-- **Meghav's notebook**, parts B to D: Lalit reads it himself. Claude only cites its figures.
+- **Meghav's notebook**, parts B to D: Lalit reads it himself. Its facts are repeated here, in
+  notebook order, so a sitting may show a fact before he has reached that part.
 - **Option structures**: [teach/option-structures](../option-structures/PLAN.md), nine workshops,
   whenever there is time. A sitting here may borrow a live example for a workshop; it does not
   replace one.
