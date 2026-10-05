@@ -62,6 +62,34 @@ quizzes, no predictions asked for.
    of change.
 7. **The record.** Claude writes `days/YYYY-MM-DD-<market>.md`, updates the ledger and commits.
 
+## The concept ladder (since 2026-10-05)
+
+Lalit knows the Greeks, the Taylor expansion of an option's price, and IV. Sitting 1 showed ten
+new ideas at once, which was too many. From now on **a sitting teaches one or two concepts, two or
+three a day across both markets**, in the order below. Each is derived first, then checked on that
+sitting's live numbers. No term is used before its step; a reading that needs one is given as a
+number only.
+
+| Step | Concept | Taught |
+|---|---|---|
+| 1 | Taylor P&L of one option on a real day | 5 Oct |
+| 2 | From IV to an expected move; why the straddle price equals it | 5 Oct |
+| 3 | Theta against gamma: the breakeven move | 5 Oct |
+| 4 | Delta as a label for a strike: 25Δ and 10Δ | |
+| 5 | Skew: IV by strike, and the numbers that summarise it | |
+| 6 | Delta hedging: realised against implied volatility | |
+| 7 | Hedging as market flow: GEX at one strike | |
+| 8 | Net GEX and the gamma flip | |
+| 9 | Walls and pinning | |
+| 10 | Strangles and ratio spreads as combinations of the above | |
+
+This replaces step 4 of *How a sitting runs* (one page in depth) and cuts the new notebook facts
+from three a sitting to one, chosen to fit the concept. The sweep, the ledgers and the five paper
+structures still run in full, in the background, and are reported in two or three sentences. The
+market part of a sitting uses only concepts already taught, so it grows with the ladder. When the
+ladder is done, sittings are observation only. Explanations are short paragraphs in Simplified
+Technical English, not bullet lists.
+
 ## Making the notebook stick
 
 One read of the notebook does not stay. Its facts are kept in
