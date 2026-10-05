@@ -26,8 +26,8 @@ it is low, usual or high, and what that would change in a trade.
 
 | Market | Address | Session in IST | Sitting (default) |
 |---|---|---|---|
-| India | `india.convexhedge.ai` | 09:15–15:30 | **10:00**, 40 minutes |
-| US | `spxw.convexhedge.ai` | 19:00–01:30 (an hour later from 2 November) | **20:00**, 40 minutes |
+| India | `india.convexhedge.ai` | 09:15–15:30 | **10:00**, 45 minutes |
+| US | `spxw.convexhedge.ai` | 19:00–01:30 (an hour later from 2 November) | **20:00**, 45 minutes |
 
 - **The same clock time every day.** IV decays through the session and GEX levels move, so
   readings compare day to day only at the same time.
@@ -54,10 +54,12 @@ quizzes, no predictions asked for.
      whole curve rose or fell, and whether one side moved more.
 4. **One page in depth (15 minutes).** The page of the day, from the rotation below. Each figure on
    it is rebuilt from the chain once, so no number is taken on trust.
-5. **What it means (5 minutes).** Today's readings against the rows already in
-   [normal-ranges](normal-ranges.md).
-6. **The sweep again, at the end.** A second row, so the sitting itself shows forty minutes of
-   change.
+5. **The structures (10 minutes).** From [structures-book](structures-book.md): first what
+   yesterday's five paper positions became, split into the move, time and IV. Then today's
+   readings against [normal-ranges](normal-ranges.md), said plainly: premium rich or thin, which
+   side dearer, spot above or below the flip. Then today's five are opened from those readings.
+6. **The sweep again, at the end.** A second row, so the sitting itself shows forty-five minutes
+   of change.
 7. **The record.** Claude writes `days/YYYY-MM-DD-<market>.md`, updates the ledger and commits.
 
 ## Making the notebook stick
@@ -68,6 +70,15 @@ sitting later, then three, then seven, then every tenth. A fact is never asked f
 again, each time against a different real day, until today's number is read with the notebook's
 already in mind. Every Friday Claude sends one picture card of the week's facts and their live
 tallies. The India sitting holds the same facts up against NIFTY and SENSEX.
+
+## Using the readings: five paper structures
+
+Watching is not enough; the readings have to place something. Every sitting opens the same five
+structures on paper: a sold ATM straddle, sold 25Δ and 10Δ strangles, and a 1:3:2 ratio on each
+side. [structures-book](structures-book.md) says how the IV level, the implied move, the skew,
+the GEX walls and the structure chain each choose a strike, what is written at the open, and how
+each position is taken apart at the next sitting. SPXW opens a set every sitting; NIFTY and SENSEX
+open one per weekly expiry and mark it daily.
 
 ## The fixed readings
 
@@ -119,7 +130,7 @@ Readings      the two sweep rows, per root
 Notebook facts   yesterday closed out; each fact shown, its figure, today's figure, agrees or not
 The day so far   what the candles, levels and curves did, with times
 Page of the day  what was learned on it, each figure rebuilt once
-What it means    against normal-ranges
+Structures       yesterday's five settled or marked; today's verdict; today's five opened
 Not explained    anything that looked wrong or was not understood
 For the team     three lines Lalit can paste to Rahul, Bilal and Meghav
 ```
@@ -137,5 +148,5 @@ Screenshots sent during the sitting are kept in `days/assets/` only when the rec
 ## Defaults Lalit can change
 
 - The two clock times, 10:00 and 20:00 IST.
-- Forty minutes per sitting.
+- Forty-five minutes per sitting.
 - Ten sittings before the review.

@@ -74,7 +74,7 @@ worked-out answer to what the trading engine builds next.
 
 ## Study — Claude tutors and builds (since 2026-09-30)
 
-- [teach/market-observation](teach/market-observation/PLAN.md) — one sitting per market per trading day on the live dashboard, India and the US; the running table is [normal-ranges](teach/market-observation/normal-ranges.md); the notebook facts repeated against live days are in [notebook-facts](teach/market-observation/notebook-facts.md). **Starts 2026-10-05 (US), 2026-10-06 (India)**
+- [teach/market-observation](teach/market-observation/PLAN.md) — one sitting per market per trading day on the live dashboard, India and the US; the running table is [normal-ranges](teach/market-observation/normal-ranges.md); the notebook facts repeated against live days are in [notebook-facts](teach/market-observation/notebook-facts.md); the five paper structures opened each sitting are in [structures-book](teach/market-observation/structures-book.md). **Starts 2026-10-05 (US), 2026-10-06 (India)**
 - [teach/execution-design](teach/execution-design/PLAN.md) — Convex Hedge's execution design and the feed engine under it, from a trader's seat. Sixteen sessions; **none run yet**. Built on `delta-exchange-payoff`, so it predates the trading engine — revisit before running it
 - General options theory — Greeks, structures, ratios, gamma, skew — lives outside this vault in
   `second-brain/learning/option-structures/`: plan v2, 29 sessions from 2026-09-25, opening with a rebuild of the faded basics
