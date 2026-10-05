@@ -85,24 +85,26 @@ number only.
 | 7 | Delta as a label for a strike and as a probability: 25Δ and 10Δ | |
 | 8 | Skew and smile: IV by strike, risk reversal, butterfly | |
 | 9 | How the Greeks change through a 0DTE day: gamma gathers at the strike, vega fades | |
-| 10 | Realised volatility: measuring it from candles; its pattern through the day | |
-| 11 | Delta hedging: realised against implied; how often, and what it costs | |
-| 12 | The volatility premium: implied above realised on most days, and the seller's rare large loss | |
-| 13 | Bid, ask and mid: what a structure costs to trade | |
-| 14 | Open interest against volume: what each can and cannot say | |
-| 15 | Hedging as market flow: GEX at one strike | |
-| 16 | Net GEX and the gamma flip | |
-| 17 | Walls and pinning | |
-| 18 | Strangles: payoff, breakevens, distance in implied moves | |
-| 19 | Ratio spreads 1:3:2: payoff, where they win and lose | |
-| 20 | Index and IV move against each other: what that does to a position | |
-| 21 | IV by days to expiry: the weekly cycle in NIFTY and SENSEX, and expiry day | |
+| 10 | Ratios of Greeks: theta per gamma, vega per theta, vega per gamma, and what each compares | |
+| 11 | Realised volatility: measuring it from candles; its pattern through the day | |
+| 12 | Delta hedging: realised against implied; how often, and what it costs | |
+| 13 | The volatility premium: implied above realised on most days, and the seller's rare large loss | |
+| 14 | Bid, ask and mid: what a structure costs to trade | |
+| 15 | Open interest against volume: what each can and cannot say | |
+| 16 | Hedging as market flow: GEX at one strike | |
+| 17 | Net GEX and the gamma flip | |
+| 18 | Walls and pinning | |
+| 19 | Reading the structure chain: the grid, net premium, net Greeks, per unit and per contract | |
+| 20 | Strangles: payoff, breakevens, distance in implied moves | |
+| 21 | Ratio spreads 1:3:2: payoff, where they win and lose | |
+| 22 | Index and IV move against each other: what that does to a position | |
+| 23 | IV by days to expiry: the weekly cycle in NIFTY and SENSEX, and expiry day | |
 
 This replaces step 4 of *How a sitting runs* (one page in depth) and cuts the new notebook facts
 from three a sitting to one, chosen to fit the concept. The sweep, the ledgers and the five paper
 structures still run in full, in the background, and are reported in two or three sentences. The
 market part of a sitting uses only concepts already taught, so it grows with the ladder. When the
-ladder is done, sittings are observation only. Extended from ten steps to twenty-one on 5 October. Explanations are short paragraphs in Simplified
+ladder is done, sittings are observation only. Extended from ten steps to twenty-three on 5 and 6 October. Explanations are short paragraphs in Simplified
 Technical English, not bullet lists.
 
 ## Making the notebook stick
