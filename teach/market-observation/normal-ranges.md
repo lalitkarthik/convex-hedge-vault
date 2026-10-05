@@ -22,6 +22,8 @@ and IV at five are different things.
 
 | Date | ET | Expiry | DTE | Implied level | Forward | ATM IV | ATM straddle | % of level | 25Δ put skew | Risk reversal | Butterfly | Skew slope | Net GEX | Gamma flip | R1 | S1 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 2026-10-05 | 10:45 | 05-OCT | 0.81 | 7,751 | 7,751 | 5.6–5.7% | 19.80 | 0.26% | +0.61 | +0.85 | +0.36 | +0.07 /Δ | 12.7B | 7,728 | 7,770 | 7,700 |
+| 2026-10-05 | 11:29 | 05-OCT | 0.70 | 7,755–7,758 | 7,755–7,758 | 5.2–5.3% | 16.95 | 0.22% | +0.61 | +0.88 | +0.35 | +0.08 /Δ | 15.78B | 7,731 | 7,770 | 7,750 |
 
 ## Notes on the rows
 
@@ -30,3 +32,7 @@ and IV at five are different things.
   comparable reading. Ranges are given where a figure moved between pages over five minutes.
 - The NIFTY straddle is the 22,550 call and put at mid, from the option chain at 15:09.
 - R1 and S1 for that row were read off the Spot + GEX chart's axis, not from a printed figure.
+- **2026-10-05, SPXW** is sitting 1, begun fifteen minutes after the 20:00 IST slot. The 10:45
+  straddle is the 7,750 strike; the 11:29 one is the 7,755 strike, the nearest by then.
+- R1 and S1 in the 10:45 row were read off the chart's axis. The page printed them from about
+  10:50, and S1 changed from 7,700 to 7,750 at that moment without a move in the index.

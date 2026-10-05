@@ -171,3 +171,18 @@ live snapshots.
 (two ATM IV figures that differ, the step in NIFTY's IV at the forward, SENSEX's discount factor of
 0.9757); whether `spxw.convexhedge.ai` needs its own sign-in; `Convex-Hedge-Trading-Engine` notes
 other than the dashboard are still stamped `b47d8ee` while `main` is at `59c1083`.
+
+## 2026-10-05 — US observation, sitting 1
+
+[Record](teach/market-observation/days/2026-10-05-us.md). SPXW 0DTE, 10:45–11:29 ET. Page of the
+day: header and option chain. Facts A1–A3 shown; five paper structures opened at 10:47 ET.
+
+**Found:** opening ATM IV about 7.1% against the notebook's 8.0%, 5.2% by 11:30, skew unchanged.
+On a same-day expiry the chain's theta equals the time value left (Claude's inference). The
+dashboard changed at about 10:50 ET: GEX and Spot + GEX have new layouts and a printed levels table.
+
+**Open:** [engine-dashboard](domain/engine-dashboard.md) is out of date on those two pages and was
+not edited; S1's jump from 7,700 to 7,750 at the change; the strategy page losing its morning; the
+62-second gap between `spxw-inflow-1000`'s signal and its fills. Sitting 2 settles today's five
+structures and closes out A1–A3 from today's candles.
+

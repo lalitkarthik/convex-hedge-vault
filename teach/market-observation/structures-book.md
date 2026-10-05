@@ -70,6 +70,15 @@ One row per structure per root, updated at every settle. The rows behind it are 
 
 | Root | Structure | Settled | Above zero | Median | Worst | Best |
 |---|---|---|---|---|---|---|
+| SPXW | ATM straddle, sold | 0 | — | — | — | — |
+| SPXW | 25Δ strangle, sold | 0 | — | — | — | — |
+| SPXW | 10Δ strangle, sold | 0 | — | — | — | — |
+| SPXW | Call ratio 1:3:2 | 0 | — | — | — | — |
+| SPXW | Put ratio 1:3:2 | 0 | — | — | — | — |
+
+First SPXW set opened 5 October ([record](days/2026-10-05-us.md)); it settles at sitting 2.
+The ratios are placed 10 points apart, about half an implied move: the grid's default of 50 leaves
+one usable column on a same-day expiry.
 
 ## What the tally is not
 

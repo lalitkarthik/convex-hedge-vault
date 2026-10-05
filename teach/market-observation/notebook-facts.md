@@ -20,6 +20,7 @@ statistics.md` and `Strategy-Research/Guide/SPXW 0DTE smile study.md`. Map:
   hold there; the tally is India's first evidence either way.
 - **Every Friday** Claude sends one picture card of the week's facts with their live tallies.
 - *Shown* lists the dates. *Live* counts live days that agreed out of days checked, US then India.
+  *due* means the fact was shown and its day is checked at the next sitting.
   Every live day is after 30 September, so the tally is also the only unseen evidence there is.
 
 SPXW, options expiring the same day, 127 days to 30 September 2026. D is the descriptive
@@ -29,9 +30,9 @@ notebook, S the smile notebook. "Usual" means the median day.
 
 | # | Fact | Source | Where it shows live | Shown | Live |
 |---|---|---|---|---|---|
-| A1 | A usual day travels **0.72%** from low to high. Calmest 0.26%, widest 3.18%. | D A3 | Candles, next day | | |
-| A2 | A usual day ends **0.34%** from its 9:35 reading, about half its range. | D A3 | Candles, next day | | |
-| A3 | A usual day travels **twice** the distance it keeps (range ÷ open-to-close move, 2.00). | D A4 | Candles, next day | | |
+| A1 | A usual day travels **0.72%** from low to high. Calmest 0.26%, widest 3.18%. | D A3 | Candles, next day | 5 Oct | due 6 Oct |
+| A2 | A usual day ends **0.34%** from its 9:35 reading, about half its range. | D A3 | Candles, next day | 5 Oct | due 6 Oct |
+| A3 | A usual day travels **twice** the distance it keeps (range ÷ open-to-close move, 2.00). | D A4 | Candles, next day | 5 Oct | due 6 Oct |
 | A4 | **The morning moves most.** Realised vol is 14.7% in the first half-hour and 8–9% from 11:30. | D A5, S 4 | Candle size through the session | | |
 | A5 | **The high or the low is set early or late.** Of 252 highs and lows, 64 came before 10:00 and 34 after 15:30. 14:00 is the quietest window. | D A6 | Candles, next day | | |
 | A6 | **Five-minute moves reverse a little.** Below zero on 63% of days, median −0.05. | D A7 | 5M candles | | |
