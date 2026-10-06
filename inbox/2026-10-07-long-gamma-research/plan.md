@@ -73,8 +73,9 @@ for the first hour — is the strongest lead in hand and has no source yet.
 
 ## Next steps, in order
 
-1. Lalit reads part D of `spxw_descriptive_stats.ipynb` (8 October).
-2. Claude teaches the concepts below (8 October).
+1. Lalit reads part D of `spxw_descriptive_stats.ipynb` on his own (8 October). It is not part of
+   the teaching sitting.
+2. Claude teaches every concept below (8 October).
 3. Lalit agrees the split with Meghav.
 4. Open and check each source; write the five research notes.
 5. Spec issue and build of the target table (feature 1).
@@ -83,11 +84,9 @@ for the first hour — is the strongest lead in hand and has no source yet.
 
 ## To teach on 8 October — every concept this session used
 
-Lalit asked to be taught all of it properly. Paragraphs first, charts as PNG from the repo's own
-days, nothing asked of him. Four blocks, in this order; blocks A and B are also what part D shows.
-
-**Two sittings (decision 20).** First: Lalit reads part D with Claude alongside, and blocks A and B
-are taught as each section comes up. Second, after a break: blocks C and D.
+Lalit asked to be taught all of it well: everything found today, all sixteen items. He reads part D
+on his own, so the sitting does not walk through the notebook. Paragraphs first, charts as PNG from
+the repo's own days, nothing asked of him. Four blocks, in this order, with a break after block B.
 
 **A. Where a hedged straddle's money comes from**
 1. The pricing link between theta and gamma; why theta ÷ gamma, vega ÷ theta and delta ÷ gamma are IV and the clock in other units.

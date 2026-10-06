@@ -239,5 +239,5 @@ hedged long straddle won 42 of 126 days and summed to −214 points. Time of day
 **Open:** the literature report's links are not yet opened by hand. The split is not yet agreed with
 Meghav. The date range of the desk's backtest tool is unchecked, and the proof depends on it.
 
-**Next (8 October):** Lalit reads part D; Claude teaches every concept this session used — the
-sixteen items in four blocks at the end of the plan.
+**Next (8 October):** Claude teaches every concept this session used — all sixteen items in four
+blocks at the end of the plan. Lalit reads part D on his own; it is not part of the sitting.
