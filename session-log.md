@@ -222,3 +222,22 @@ slot was missed by 100 minutes.
 too tired. They count as untaught. The India sitting of 7 October teaches both from the start, on
 NIFTY and SENSEX numbers, as if nothing had been shown. The square-root decay needed a second
 explanation: a table of equal time stretches with unequal losses read better than the formula.
+
+## 2026-10-07 — long-gamma research grilled and planned
+
+Nineteen decisions on how to get from the SPXW 0DTE data to a strategy, with at least one long-gamma
+one: [plan](inbox/2026-10-07-long-gamma-research/plan.md), beside the
+[literature report](inbox/2026-10-07-long-gamma-research/literature-report.md). Staging, not canon.
+
+**Decided:** mechanism first, one target (hedged ATM straddle after the spread), five hypotheses
+each with a source, three hedge rules side by side, no new data download now. Work goes into
+`convex-hedge-strategy` on branches, in two features.
+
+**Found:** Greek ratios restate IV and the clock, by the study's own definition of theta. The plain
+hedged long straddle won 42 of 126 days and summed to −214 points. Time of day is the one lead.
+
+**Open:** the literature report's links are not yet opened by hand. The split is not yet agreed with
+Meghav. The date range of the desk's backtest tool is unchecked, and the proof depends on it.
+
+**Next (8 October):** Lalit reads part D; Claude teaches every concept this session used — the
+sixteen items in four blocks at the end of the plan.
