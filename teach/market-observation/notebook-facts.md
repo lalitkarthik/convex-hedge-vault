@@ -70,7 +70,7 @@ notebook, S the smile notebook. "Usual" means the median day.
 
 | # | Fact | Source | Where it shows live | Shown | Live |
 |---|---|---|---|---|---|
-| D1 | The hedged short straddle won on **84 of 126 days**: usual day +2.45 points, worst −23.71, about **ten times** the usual gain. | D D2 | Strategies page | | |
+| D1 | The hedged short straddle won on **84 of 126 days**: usual day +2.45 points, worst −23.71, about **ten times** the usual gain. | D D2 | Strategies page | 6 Oct (India) | due 7 Oct |
 | D2 | **Wider wins more often and earns less.** 25Δ strangle 90 days, 10Δ strangle 99 days. | D D2 | Structure chain; Strategies | | |
 | D3 | **Time value and movement nearly cancel**: the straddle's usual day earned 13.7 and lost 13.9. | D D3 | Strategy details | | |
 | D4 | **The breakeven move for a minute is IV × index × √(one minute).** At 6.9% it was 1.69 points. | D D4 | ATM IV, 1M candles | | |

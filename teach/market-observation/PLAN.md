@@ -79,8 +79,8 @@ number only.
 | 1 | Taylor P&L of one option on a real day | 5 Oct |
 | 2 | From IV to an expected move; why the straddle price equals it | 5 Oct |
 | 3 | Theta against gamma: the breakeven move | 5 Oct |
-| 4 | Reading the engine's strategies: entry rule, stop, hedge, and their PnL | |
-| 5 | Put-call parity and the forward: where the implied index level comes from | |
+| 4 | Reading the engine's strategies: entry rule, stop, hedge, and their PnL | 6 Oct |
+| 5 | Put-call parity and the forward: where the implied index level comes from | 6 Oct |
 | 6 | Intrinsic and time value; why decay speeds up on the last day | |
 | 7 | Delta as a label for a strike and as a probability: 25Δ and 10Δ | |
 | 8 | Skew and smile: IV by strike, risk reversal, butterfly | |

@@ -76,6 +76,7 @@ One row per structure per root, updated at every settle. The rows behind it are 
 | SPXW | Call ratio 1:3:2 | 0 | — | — | — | — |
 | SPXW | Put ratio 1:3:2 | 0 | — | — | — | — |
 
+NIFTY 06-OCT and SENSEX 08-OCT sets opened 6 October ([record](days/2026-10-06-india.md)).
 First SPXW set opened 5 October ([record](days/2026-10-05-us.md)); it settles at sitting 2.
 The ratios are placed 10 points apart, about half an implied move: the grid's default of 50 leaves
 one usable column on a same-day expiry.

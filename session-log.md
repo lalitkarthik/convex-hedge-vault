@@ -186,3 +186,17 @@ not edited; S1's jump from 7,700 to 7,750 at the change; the strategy page losin
 62-second gap between `spxw-inflow-1000`'s signal and its fills. Sitting 2 settles today's five
 structures and closes out A1–A3 from today's candles.
 
+## 2026-10-06 — India observation, sitting 1; the concept ladder
+
+[Record](teach/market-observation/days/2026-10-06-india.md). After US sitting 1 Lalit asked for a
+slower pace and paragraph explanations. [PLAN](teach/market-observation/PLAN.md) now carries a
+23-step concept ladder, one or two steps a sitting, and a strategies review every sitting. Steps
+1–3 taught 5 Oct, steps 4–5 today.
+
+**Found:** the page forward disagrees with put-call parity, 45 points on SENSEX. *Inference:* that
+explains the DF far from one and the step in IV at the forward, both open since 5 October.
+
+**Open:** confirm the forward finding with the team; `domain/engine-dashboard.md` still describes
+the old GEX and Spot + GEX pages; the US sitting tonight settles the first SPXW structures and
+reads the three SPXW strategies' results for 5 October.
+
