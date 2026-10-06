@@ -217,3 +217,8 @@ parity to 0.02 points.
 DF 1.0048 on the 07-OCT chain; `spxw-inflow-1130` filled 0.70 away from its signal price on each
 leg; `domain/engine-dashboard.md` still describes the old GEX and Spot + GEX pages. The 20:00 IST
 slot was missed by 100 minutes.
+
+**After the sitting (Lalit):** steps 6 and 7 did not land; the sitting ran past 22:30 IST and he was
+too tired. They count as untaught. The India sitting of 7 October teaches both from the start, on
+NIFTY and SENSEX numbers, as if nothing had been shown. The square-root decay needed a second
+explanation: a table of equal time stretches with unequal losses read better than the formula.

@@ -81,8 +81,8 @@ number only.
 | 3 | Theta against gamma: the breakeven move | 5 Oct |
 | 4 | Reading the engine's strategies: entry rule, stop, hedge, and their PnL | 6 Oct |
 | 5 | Put-call parity and the forward: where the implied index level comes from | 6 Oct |
-| 6 | Intrinsic and time value; why decay speeds up on the last day | 6 Oct (US) |
-| 7 | Delta as a label for a strike and as a probability: 25Δ and 10Δ | 6 Oct (US) |
+| 6 | Intrinsic and time value; why decay speeds up on the last day | not yet: shown 6 Oct (US) too late at night; teach fresh 7 Oct (India) |
+| 7 | Delta as a label for a strike and as a probability: 25Δ and 10Δ | not yet: shown 6 Oct (US) too late at night; teach fresh 7 Oct (India) |
 | 8 | Skew and smile: IV by strike, risk reversal, butterfly | |
 | 9 | How the Greeks change through a 0DTE day: gamma gathers at the strike, vega fades | |
 | 10 | Ratios of Greeks: theta per gamma, vega per theta, vega per gamma, and what each compares | |
