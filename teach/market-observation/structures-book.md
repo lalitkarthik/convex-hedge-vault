@@ -70,14 +70,16 @@ One row per structure per root, updated at every settle. The rows behind it are 
 
 | Root | Structure | Settled | Above zero | Median | Worst | Best |
 |---|---|---|---|---|---|---|
-| SPXW | ATM straddle, sold | 0 | — | — | — | — |
-| SPXW | 25Δ strangle, sold | 0 | — | — | — | — |
-| SPXW | 10Δ strangle, sold | 0 | — | — | — | — |
-| SPXW | Call ratio 1:3:2 | 0 | — | — | — | — |
-| SPXW | Put ratio 1:3:2 | 0 | — | — | — | — |
+| SPXW | ATM straddle, sold | 1 | 0 | −5.55 | −5.55 | −5.55 |
+| SPXW | 25Δ strangle, sold | 1 | 0 | −1.65 | −1.65 | −1.65 |
+| SPXW | 10Δ strangle, sold | 1 | 1 | +2.70 | +2.70 | +2.70 |
+| SPXW | Call ratio 1:3:2 | 1 | 1 | +0.05 | +0.05 | +0.05 |
+| SPXW | Put ratio 1:3:2 | 1 | 1 | +0.05 | +0.05 | +0.05 |
 
 NIFTY 06-OCT and SENSEX 08-OCT sets opened 6 October ([record](days/2026-10-06-india.md)).
-First SPXW set opened 5 October ([record](days/2026-10-05-us.md)); it settles at sitting 2.
+First SPXW set opened 5 October ([record](days/2026-10-05-us.md)) and settled at about 7,775
+([record](days/2026-10-06-us.md)). That close is known to about 2 points, and the call ratio and
+the 25Δ strangle change sign inside that band. Second set opened 6 October at 12:11 ET.
 The ratios are placed 10 points apart, about half an implied move: the grid's default of 50 leaves
 one usable column on a same-day expiry.
 

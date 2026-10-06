@@ -200,3 +200,20 @@ explains the DF far from one and the step in IV at the forward, both open since 
 the old GEX and Spot + GEX pages; the US sitting tonight settles the first SPXW structures and
 reads the three SPXW strategies' results for 5 October.
 
+## 2026-10-06 — US observation, sitting 2
+
+[Record](teach/market-observation/days/2026-10-06-us.md). SPXW 0DTE, 12:11–12:56 ET, 100 minutes
+after the slot. Steps 6 and 7 taught: intrinsic and time value with the square-root decay, and
+delta as a probability. 5 October closed out: range 0.89%, close about 7,775; A1 and A3 agreed,
+A2 did not. First five paper structures settled: straddle −5.55, 25Δ strangle −1.65, the rest at
+or above zero.
+
+**Found:** the page keeps exact candles, chain rows and PnL curves behind its charts, so readings
+no longer need the chart read by eye. The chain's theta is the loss over the next full trading day
+(*inference*, fitted on the 06-OCT and 07-OCT chains). On SPXW the page forward matches put-call
+parity to 0.02 points.
+
+**Open:** the 15:59 candle of 5 October is missing, so that close is known to about 2 points;
+DF 1.0048 on the 07-OCT chain; `spxw-inflow-1130` filled 0.70 away from its signal price on each
+leg; `domain/engine-dashboard.md` still describes the old GEX and Spot + GEX pages. The 20:00 IST
+slot was missed by 100 minutes.

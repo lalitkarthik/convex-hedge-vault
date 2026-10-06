@@ -21,6 +21,7 @@ statistics.md` and `Strategy-Research/Guide/SPXW 0DTE smile study.md`. Map:
 - **Every Friday** Claude sends one picture card of the week's facts with their live tallies.
 - *Shown* lists the dates. *Live* counts live days that agreed out of days checked, US then India.
   *due* means the fact was shown and its day is checked at the next sitting.
+  A day agrees when it is within a quarter of the notebook's usual figure (Claude's rule).
   Every live day is after 30 September, so the tally is also the only unseen evidence there is.
 
 SPXW, options expiring the same day, 127 days to 30 September 2026. D is the descriptive
@@ -30,9 +31,9 @@ notebook, S the smile notebook. "Usual" means the median day.
 
 | # | Fact | Source | Where it shows live | Shown | Live |
 |---|---|---|---|---|---|
-| A1 | A usual day travels **0.72%** from low to high. Calmest 0.26%, widest 3.18%. | D A3 | Candles, next day | 5 Oct | due 6 Oct |
-| A2 | A usual day ends **0.34%** from its 9:35 reading, about half its range. | D A3 | Candles, next day | 5 Oct | due 6 Oct |
-| A3 | A usual day travels **twice** the distance it keeps (range ÷ open-to-close move, 2.00). | D A4 | Candles, next day | 5 Oct | due 6 Oct |
+| A1 | A usual day travels **0.72%** from low to high. Calmest 0.26%, widest 3.18%. | D A3 | Candles, next day | 5 Oct, 6 Oct | US 1/1 (5 Oct: 0.89%) |
+| A2 | A usual day ends **0.34%** from its 9:35 reading, about half its range. | D A3 | Candles, next day | 5 Oct, 6 Oct | US 0/1 (5 Oct: 0.51%) |
+| A3 | A usual day travels **twice** the distance it keeps (range ÷ open-to-close move, 2.00). | D A4 | Candles, next day | 5 Oct, 6 Oct | US 1/1 (5 Oct: 1.75) |
 | A4 | **The morning moves most.** Realised vol is 14.7% in the first half-hour and 8–9% from 11:30. | D A5, S 4 | Candle size through the session | | |
 | A5 | **The high or the low is set early or late.** Of 252 highs and lows, 64 came before 10:00 and 34 after 15:30. 14:00 is the quietest window. | D A6 | Candles, next day | | |
 | A6 | **Five-minute moves reverse a little.** Below zero on 63% of days, median −0.05. | D A7 | 5M candles | | |
@@ -86,7 +87,7 @@ notebook, S the smile notebook. "Usual" means the median day.
 | S1 | **Shape is steadier than level.** The 25Δ put carries 1.11 times ATM IV, between 1.09 and 1.14. | S 2 | Smile tiles: 25Δ put IV ÷ ATM IV | | |
 | S2 | **Puts cost more than calls**: 1.44 times ATM at the 5Δ put, 0.94 at the 25Δ call, at 10:00. | S 2 | Smile curve | | |
 | S3 | **Far calls turn up in the afternoon**: the 5Δ call is at 1.15 by 13:30. | S 2 | Smile against its open curve | | |
-| S4 | **The smile narrows.** The 5Δ put sits 1.2% below the index at the open and 0.3% after 15:30. | S 2 | Smile's strike axis | | |
+| S4 | **The smile narrows.** The 5Δ put sits 1.2% below the index at the open and 0.3% after 15:30. | S 2 | Smile's strike axis | 6 Oct | US 1/1 (6 Oct: 0.59% at 12:11, 0.51% at 12:56) |
 | S5 | **IV and the index move against each other** in the same half-hour (−0.51). A 1% fall goes with about 3.2 vol points. | S 6 | Candles against ATM IV | | |
 | S6 | **Skew and the index move against each other** too (−0.35). | S 6 | Candles against 25Δ put skew | | |
 | S7 | A change in IV or skew says **nothing about the next half-hour's** index return. | S 6 | — | | |

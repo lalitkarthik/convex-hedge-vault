@@ -27,6 +27,8 @@ and IV at five are different things.
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 2026-10-05 | 10:45 | 05-OCT | 0.81 | 7,751 | 7,751 | 5.6–5.7% | 19.80 | 0.26% | +0.61 | +0.85 | +0.36 | +0.07 /Δ | 12.7B | 7,728 | 7,770 | 7,700 |
 | 2026-10-05 | 11:29 | 05-OCT | 0.70 | 7,755–7,758 | 7,755–7,758 | 5.2–5.3% | 16.95 | 0.22% | +0.61 | +0.88 | +0.35 | +0.08 /Δ | 15.78B | 7,731 | 7,770 | 7,750 |
+| 2026-10-06 | 12:11 | 06-OCT | 0.59 | 7,837 | 7,837 | 4.8–4.9% | 14.90 | 0.19% | +0.43 | +0.51 | +0.35 | +0.06 /Δ | 54.3B | 7,770 | 7,860 | 7,830 |
+| 2026-10-06 | 12:56 | 06-OCT | 0.47 | 7,828 | 7,828 | 4.7–4.8% | 12.95 | 0.17% | +0.45 | +0.54 | +0.35 | +0.06 /Δ | 48.8B | 7,770 | 7,830 | 7,825 |
 
 ## Notes on the rows
 
@@ -42,3 +44,6 @@ and IV at five are different things.
 - **2026-10-06, India**: sitting 1, at 11:30 and not the 10:00 slot. The Forward column is the
   page's; put-call parity gave 22,670–22,675 for NIFTY and 72,777 for SENSEX. SENSEX's skew figures
   rest on that forward and are doubtful.
+- **2026-10-06, SPXW** is sitting 2, at 12:11 ET and not the 10:30 ET slot: compare it with other
+  rows near DTE 0.6, not with the 5 October rows. Straddles are the 7,835 and 7,830 strikes. The
+  opening ATM IV was 6.15%, from the smile table's OPEN column.
