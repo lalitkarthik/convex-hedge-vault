@@ -241,3 +241,16 @@ Meghav. The date range of the desk's backtest tool is unchecked, and the proof d
 
 **Next (8 October):** Claude teaches every concept this session used — all sixteen items in four
 blocks at the end of the plan. Lalit reads part D on his own; it is not part of the sitting.
+
+**Later the same day — the target table planned in `convex-hedge-strategy`.** Meghav agreed the
+split. PR #19 was merged as it stood, market data included, on Lalit's say; the repo's own rule
+against committing `data/` was pointed out first. Feature issue
+[#20](https://github.com/MeghavPradeep/convex-hedge-strategy/issues/20) "Hedged straddle results"
+with tickets #21, #22, #23 in a straight line; research note, spec page, ticket board and decisions
+0020 to 0022 are on the local branch `feature/hedged-straddle-table`, **not pushed**. Checking the
+sources by hand changed two things: Vilkov's 0DTE study is unhedged, and the Whalley and Wilmott
+band formula could not be confirmed from the abstract.
+
+**Next (8 October), in this order:** the teaching sitting; then build #21, #22, #23 one at a time
+with one audit pass at the end. The study of the five hypotheses is a second feature, specified only
+after this one is merged.
