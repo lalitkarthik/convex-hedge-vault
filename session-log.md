@@ -269,3 +269,7 @@ the step in IV at the forward changed sign with it. `nifty-straddle` now enters 
 `nifty-straddle` result and fact D1 could not be closed; the Spot candles miss 15:16–15:28, so the
 6 October expiry close is not settled (straddle −20.97 or +37.43); whether steps 6 and 7 landed
 this time is Lalit's to say.
+
+**Later the same morning:** Lalit asked for two more steps. Steps 8 and 9 taught at 12:23 on NIFTY.
+Step 9 was derived and checked against the page's gamma and vega at 4.5 days; its same-day check
+waits for NIFTY's expiry day, 13 October. The structure chain is step 19 of the ladder.
