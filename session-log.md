@@ -273,3 +273,16 @@ this time is Lalit's to say.
 **Later the same morning:** Lalit asked for two more steps. Steps 8 and 9 taught at 12:23 on NIFTY.
 Step 9 was derived and checked against the page's gamma and vega at 4.5 days; its same-day check
 waits for NIFTY's expiry day, 13 October. The structure chain is step 19 of the ladder.
+
+**7 October, built the same day.** The feature-loop orchestrator built #21 to #23; PR #26 (the hedged
+straddle results table) is merged. The study was specified as issue #25 without the usual spec and
+ticket steps, because Lalit needed the notebook; one worker built it, and PR
+[#27](https://github.com/MeghavPradeep/convex-hedge-strategy/pull/27) is open, **not merged**.
+Result on the 127 days: no long-gamma idea passed. H1 is a finding against its own idea (the 14:30
+buyer lost on 86 of 112 days); H2 to H5 are not findings. The notebook is
+`convex-hedge-strategy/notebooks/spxw_hedged_straddle.ipynb` on `feature/hedged-straddle-study`.
+
+**Open:** three readings of the skipped-hedge rule on issue #20 wait for Lalit's word; the merged
+feature branch and its worktree are not cleaned up; lesson 1 of 16 is taught
+([chart](teach/long-gamma-research/01-theta-over-gamma.png)), lessons 2 to 16 are not.
+
