@@ -254,3 +254,18 @@ band formula could not be confirmed from the abstract.
 **Next (8 October), in this order:** the teaching sitting; then build #21, #22, #23 one at a time
 with one audit pass at the end. The study of the five hypotheses is a second feature, specified only
 after this one is merged.
+
+## 2026-10-07 — India observation, sitting 2
+
+[Record](teach/market-observation/days/2026-10-07-india.md). NIFTY 13-OCT at 4.8 days,
+10:35–11:20 IST. Steps 6 and 7 taught from the start on NIFTY numbers, table of equal days first.
+Lalit asked for NIFTY only part-way through. NIFTY 06-OCT paper set settled; 13-OCT set opened.
+
+**Found:** NIFTY's page forward sat 8 above put-call parity and then 8 below within an hour, and
+the step in IV at the forward changed sign with it. `nifty-straddle` now enters at 10:00;
+`sensex-straddle` is a new instance.
+
+**Open:** the strategy pages read *since 7 Oct 2026* and hold no earlier day, so 6 October's
+`nifty-straddle` result and fact D1 could not be closed; the Spot candles miss 15:16–15:28, so the
+6 October expiry close is not settled (straddle −20.97 or +37.43); whether steps 6 and 7 landed
+this time is Lalit's to say.

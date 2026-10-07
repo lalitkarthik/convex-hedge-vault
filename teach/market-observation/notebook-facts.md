@@ -31,9 +31,9 @@ notebook, S the smile notebook. "Usual" means the median day.
 
 | # | Fact | Source | Where it shows live | Shown | Live |
 |---|---|---|---|---|---|
-| A1 | A usual day travels **0.72%** from low to high. Calmest 0.26%, widest 3.18%. | D A3 | Candles, next day | 5 Oct, 6 Oct | US 1/1 (5 Oct: 0.89%) |
-| A2 | A usual day ends **0.34%** from its 9:35 reading, about half its range. | D A3 | Candles, next day | 5 Oct, 6 Oct | US 0/1 (5 Oct: 0.51%) |
-| A3 | A usual day travels **twice** the distance it keeps (range ÷ open-to-close move, 2.00). | D A4 | Candles, next day | 5 Oct, 6 Oct | US 1/1 (5 Oct: 1.75) |
+| A1 | A usual day travels **0.72%** from low to high. Calmest 0.26%, widest 3.18%. | D A3 | Candles, next day | 5 Oct, 6 Oct | US 1/1 (5 Oct: 0.89%); India 0/1 (6 Oct: 0.95%) |
+| A2 | A usual day ends **0.34%** from its 9:35 reading, about half its range. | D A3 | Candles, next day | 5 Oct, 6 Oct | US 0/1 (5 Oct: 0.51%); India 0/1 (6 Oct: 0.85%) |
+| A3 | A usual day travels **twice** the distance it keeps (range ÷ open-to-close move, 2.00). | D A4 | Candles, next day | 5 Oct, 6 Oct | US 1/1 (5 Oct: 1.75); India 0/1 (6 Oct: 1.12) |
 | A4 | **The morning moves most.** Realised vol is 14.7% in the first half-hour and 8–9% from 11:30. | D A5, S 4 | Candle size through the session | | |
 | A5 | **The high or the low is set early or late.** Of 252 highs and lows, 64 came before 10:00 and 34 after 15:30. 14:00 is the quietest window. | D A6 | Candles, next day | | |
 | A6 | **Five-minute moves reverse a little.** Below zero on 63% of days, median −0.05. | D A7 | 5M candles | | |
@@ -71,8 +71,8 @@ notebook, S the smile notebook. "Usual" means the median day.
 
 | # | Fact | Source | Where it shows live | Shown | Live |
 |---|---|---|---|---|---|
-| D1 | The hedged short straddle won on **84 of 126 days**: usual day +2.45 points, worst −23.71, about **ten times** the usual gain. | D D2 | Strategies page | 6 Oct (India) | due 7 Oct |
-| D2 | **Wider wins more often and earns less.** 25Δ strangle 90 days, 10Δ strangle 99 days. | D D2 | Structure chain; Strategies | | |
+| D1 | The hedged short straddle won on **84 of 126 days**: usual day +2.45 points, worst −23.71, about **ten times** the usual gain. | D D2 | Strategies page | 6 Oct (India) | due: 6 Oct result lost with the page's history; check 8 Oct on 7 Oct |
+| D2 | **Wider wins more often and earns less.** 25Δ strangle 90 days, 10Δ strangle 99 days. | D D2 | Structure chain; Strategies | 7 Oct (India) | India 1/1 (06-OCT set: 25Δ +20.10, 10Δ +12.05) |
 | D3 | **Time value and movement nearly cancel**: the straddle's usual day earned 13.7 and lost 13.9. | D D3 | Strategy details | | |
 | D4 | **The breakeven move for a minute is IV × index × √(one minute).** At 6.9% it was 1.69 points. | D D4 | ATM IV, 1M candles | | |
 | D5 | Opened again every half-hour, **little is left once the spread is paid**: 0.05 to 0.55 points. | D D6 | Bid and ask on the chain | | |

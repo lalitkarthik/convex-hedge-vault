@@ -75,8 +75,16 @@ One row per structure per root, updated at every settle. The rows behind it are 
 | SPXW | 10Δ strangle, sold | 1 | 1 | +2.70 | +2.70 | +2.70 |
 | SPXW | Call ratio 1:3:2 | 1 | 1 | +0.05 | +0.05 | +0.05 |
 | SPXW | Put ratio 1:3:2 | 1 | 1 | +0.05 | +0.05 | +0.05 |
+| NIFTY | ATM straddle, sold | 1 | 0 | −20.97 | −20.97 | −20.97 |
+| NIFTY | 25Δ strangle, sold | 1 | 1 | +20.10 | +20.10 | +20.10 |
+| NIFTY | 10Δ strangle, sold | 1 | 1 | +12.05 | +12.05 | +12.05 |
+| NIFTY | Call ratio 1:3:2 | 1 | 1 | +26.68 | +26.68 | +26.68 |
+| NIFTY | Put ratio 1:3:2 | 1 | 1 | +3.48 | +3.48 | +3.48 |
 
 NIFTY 06-OCT and SENSEX 08-OCT sets opened 6 October ([record](days/2026-10-06-india.md)).
+NIFTY 06-OCT settled at the last candle, 22,776.10 ([record](days/2026-10-07-india.md)); the
+candles from 15:16 to 15:28 are missing and at 22,717.70 the straddle is +37.43, not −20.97.
+NIFTY 13-OCT set opened 7 October at 10:38.
 First SPXW set opened 5 October ([record](days/2026-10-05-us.md)) and settled at about 7,775
 ([record](days/2026-10-06-us.md)). That close is known to about 2 points, and the call ratio and
 the 25Δ strangle change sign inside that band. Second set opened 6 October at 12:11 ET.
