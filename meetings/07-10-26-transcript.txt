@@ -1,0 +1,588 @@
+Daily meet
+Wed, Oct 7, 2026
+
+0:32 - Rahul J Perumatty
+Like, what is the change? What happened in the last half an hour?
+
+0:37 - Rahul J Perumatty
+How does the strategy move? How is the Greeks move?
+
+0:43 - Rahul J Perumatty
+If you announce margin numbering in margin yesterday.
+
+1:02 - Bilal Sagar Razak
+Nyani asked fires in okay margin value good too. So otherwise it calculated.
+
+1:16 - Rahul J Perumatty
+And the other five margin fires.
+
+1:23 - Bilal Sagar Razak
+strike in the Ethereum argument. They sell you.
+
+1:28 - Rahul J Perumatty
+But they get tanned no crop.
+
+1:31 - Bilal Sagar Razak
+Okay, okay.
+
+1:40 - Bilal Sagar Razak
+Pinay uh nan justifier sila answer. Fire silly Adium uh number three.
+
+2:02 - Bilal Sagar Razak
+It's better to have like this strategy will do set up.
+
+2:14 - Bilal Sagar Razak
+He can directly go into. Something short straddle and something short iron fly. During iron federal preset would automatically vary. Similar to what we have now.
+
+2:31 - Bilal Sagar Razak
+This presets in the window.
+
+2:38 - Bilal Sagar Razak
+You really have PNL Greeks.
+
+2:45 - Bilal Sagar Razak
+I'm a little safe.
+
+2:48 - Bilal Sagar Razak
+Add emo, even a learner. Otherwise, you would summarize like starters. We have two tabs here.
+
+3:02 - Unidentified Speaker
+Two tabs in the name.
+
+3:05 - Bilal Sagar Razak
+Adamari, you can add a tab here.
+
+3:11 - Unidentified Speaker
+Pinera.
+
+3:14 - Bilal Sagar Razak
+it tries to theory and collects six zero two five and a half I just take values corrected to Rinanovana. Where we go to this remembering on the I remember implanting only recandi it to the night.
+
+3:57 - Bilal Sagar Razak
+I spotted spotted implied spot on me are using. Expect we can't get click data, we get only options data index data. So, what we do is we take implied it will be ATM Kitranangil. What you can do is ATM are you C minus P value of Calling the bid called in the bit doom middle, put in the middle and good on minimum strike ATM.
+
+4:43 - Unidentified Speaker
+Okay.
+
+4:43 - Bilal Sagar Razak
+Cheapest tragedy.
+
+4:46 - Rahul J Perumatty
+Yes.
+
+4:47 - Bilal Sagar Razak
+Cheapest idle, cheapest forward.
+
+4:50 - Unidentified Speaker
+Ah.
+
+4:51 - Bilal Sagar Razak
+Yes.
+
+4:52 - Rahul J Perumatty
+Cheapest idle forward on the email spot.
+
+5:46 - Bilal Sagar Razak
+We can know about this.
+
+5:48 - Rahul J Perumatty
+Irikana Sugoya, Amana original Lukui.
+
+5:52 - Meghav Pradeep
+Be yourself on apply.
+
+5:53 - Bilal Sagar Razak
+I like Narasambo, we can love it. Adamari Idum you wouldn't know you were dicta. Idu Ivada Martumana the very other. In a going forward, I was thinking of uh either of KP.
+
+6:23 - Bilal Sagar Razak
+Secondary one that was customized in the delta by gamma not the do instead of delta by gamma senior material arithmetic idea and plan and compute power radio region.
+
+6:50 - Bilal Sagar Razak
+I will tell upo I didn't merging okay. Then a spec ito spec uh pick in a country. Speco, I guess, a merging of the pranamaria. Pinela nana meta idele I E V versus R V versus R V. In a variety of mooding and do I see an if ten occup Iduir in the Odiv.
+
+7:22 - Bilal Sagar Razak
+You can observe them like Tamil A TM OTM ITMO OTMO ATMIPANGUE JUMBONDER JUMBO If THIDINOCOMA DEMARY WINDES AND THEY A TRAIDOCOMO, IT THE SIMILIENDODENDING AND THAT A ODIVE trade in railing.
+
+9:06 - Rahul J Perumatty
+At the ATM Art and ATM plus or minus in the Rondo. And then ATMA.
+
+9:11 - Bilal Sagar Razak
+Are the ATM Artur no Pella then? Ah, okay.
+
+9:15 - Rahul J Perumatty
+I'd like to compare it to Sydney Matrumi.
+
+9:23 - Bilal Sagar Razak
+Padi almost it in the twelve point five if T D. Who I would have ATM interpolating Madocke in the person interpolating a relation. Interpolating this.
+
+10:40 - Bilal Sagar Razak
+Cash basically redegited my debut UI margin deployment. If you toggle button, my turn toggle button.
+
+11:07 - Rahul J Perumatty
+Okay, but long trigger on the condition.
+
+12:09 - Bilal Sagar Razak
+Straddle condition will be long strategy. Long straddle is a basic idea.
+
+12:22 - Bilal Sagar Razak
+If making money, we can plan more things like Adina only find you. But other portfolio item we have put into this two. This three strategies IT is just two strategies. The paranya is added. What we saw is the short term positions negative. This is making profit. Overall, we are making profit.
+
+13:47 - Lalit Karthikeyan
+Versus R V actually for Iran English, right?
+
+14:10 - Lalit Karthikeyan
+So, intraday and positional intraday if intraday implementation calculation So positionally, we have a lot of stuff like Garmin class, Parkinson, Yangsan, either the formulas.
+
+14:32 - Unidentified Speaker
+Let's say this is Garmin class.
+
+14:34 - Lalit Karthikeyan
+So this formula you So this is for positional. Thing. So, formulas, first intraday, intraday like standard usage is five minutes sub-sampling, sorry, five-minute sampling and close to close. This is overnight gaps, high to low.
+
+15:08 - Bilal Sagar Razak
+So, within an intraday, close to close.
+
+15:14 - Bilal Sagar Razak
+in this also overnight value because starting candle will take last days close to take the returns. Parkinson's Garmin class it is coming under Indra day because it takes only OHLC data, not close last days close on the equation you can understand. Parkinson's is full clearly Indraday.
+
+15:45 - Lalit Karthikeyan
+Parkinson's minus high minus log of highway and radio it la candle uh so close to close to close to implement a nam nagara like Parkinson Garment class or yes, yes, okay.
+
+16:16 - Lalit Karthikeyan
+And okay, Adana return and then square aimbo realized open like basically square either normalize like scaling up to a particular year. Normalization itchri Idunde. We can't just let's say one-minute ticker candle. In the kitchen are realized variance directly root of 98 to 18 that use each minute equal weight.
+
+16:55 - Lalit Karthikeyan
+Like basically realized annualized notakana, convert.
+
+17:03 - Lalit Karthikeyan
+Directly I'm gonna check the root of nine eight two eight zero to multiply because Rv is like U shaped up. I'm gonna check in the La Daws like every minute equal weight.
+
+17:17 - Bilal Sagar Razak
+So this calculate difference in it because complicated that if the difference is less than one percent, then there is no use of it.
+
+17:41 - Lalit Karthikeyan
+So scaling by the clock open to a particular time or a previous five sessions, like five days, etra volatility actually is. So, like randomly just scaling by fifty-eight percentage higher. So, like research paper stock exchange and random works are like chain.
+
+18:16 - Bilal Sagar Razak
+More complex, we are just overfitting two things. Because the market I use that learn would be because what we need is robust alpha at last. So sometimes they might be more or fitted to some of the markets. What we are doing is we are doing it into a general market, like Indian markets as well as US markets.
+
+18:47 - Bilal Sagar Razak
+General it is something what we are looking into.
+
+18:55 - Bilal Sagar Razak
+Just check just Google Google Spiller matrix matrix simulator.
+
+19:21 - Bilal Sagar Razak
+There will be one page for calculator node and what is matrix calculator.
+
+19:40 - Bilal Sagar Razak
+A git tab is a computer voltage.
+
+20:13 - Bilal Sagar Razak
+Let me see Parkinson Samaro.
+
+21:29 - Unidentified Speaker
+Let's see.
+
+21:48 - Bilal Sagar Razak
+And there is the folding aims and deepening.
+
+21:55 - Unidentified Speaker
+Mm-hmm.
+
+21:57 - Bilal Sagar Razak
+Did you want any miss important came back?
+
+22:40 - Bilal Sagar Razak
+Daily values is not daily high values.
+
+22:48 - Bilal Sagar Razak
+I will just learn some work.
+
+22:57 - Bilal Sagar Razak
+You a question, what do you mean?
+
+23:07 - Bilal Sagar Razak
+Spiller matrix.
+
+23:19 - Unidentified Speaker
+Variance.
+
+23:25 - Lalit Karthikeyan
+Intraday variance is Tawandi.
+
+23:27 - Bilal Sagar Razak
+This is one of the methods.
+
+23:35 - Bilal Sagar Razak
+because the prices sample daily. You can use one minute can run, one minute, five minutes running, five minute. This also a method.
+
+23:55 - Bilal Sagar Razak
+This is just equation.
+
+24:04 - Rahul J Perumatty
+Or then you could pass.
+
+24:38 - Lalit Karthikeyan
+See Q currently can I look at This is like positional long-term method constantly. I'll go testing.
+
+25:30 - Bilal Sagar Razak
+We won't be using thirty-day. We won't be trading thirty-day thirty DT.
+
+25:44 - Bilal Sagar Razak
+It will be like four days we won't be selling it.
+
+25:49 - Bilal Sagar Razak
+Four weeks we won't be selling. That is not the case. One or two days we won't be selling. Other was proper. One week is max.
+
+26:02 - Rahul J Perumatty
+Yes.
+
+26:09 - Bilal Sagar Razak
+multiple like multiple entry and exits in in a day itself ideally angina short gamma books seven days is fine seven days in the constant maturity seven days in the final and then look back on look back okay seven days data I think constant maturity increments. I didn't know okay, max time horizons.
+
+26:58 - Lalit Karthikeyan
+So, constant maturity is constant maturity paper formula. Like basically, for seven day ATM IV Venangi exact seven day ATM IV Kittilla. So we will take like if a particular e da vasatilarin like exactly seven days ATM II Venangi like we just interpolate between them and this is the formula for that.
+
+27:51 - Lalit Karthikeyan
+India India big said.
+
+28:16 - Bilal Sagar Razak
+We can't take that.
+
+28:19 - Bilal Sagar Razak
+One thing is we can use uh ATM IV of our uh current one.
+
+28:27 - Bilal Sagar Razak
+That is one thing.
+
+28:36 - Lalit Karthikeyan
+Positional seven days interpolation is one of the ways. Like I begin, RV seven days, like previous look seven days edit it, like Parkinson, or whatever method it is. And it should be plotted against the ATM IV for next seven days, right? Like, ah, other like lending is one of the way. What position item we won't be doing buying strategies because theta tier two Position I do you won't be buying position sorry intraday implement and then paper chat and I don't come plus nyana it's like I don't know like other continuous simple close to close with straight out root of ninety to eighty good scale.
+
+
+
+29:52 - Rahul J Perumatty
+I think introduced difference on the land in the gym, like you other than Arthur Mandan here, we'll see who's both.
+
+30:09 - Bilal Sagar Razak
+for sector box. We can see that official language, remove it, right?
+
+30:16 - Bilal Sagar Razak
+We can't use it.
+
+30:25 - Rahul J Perumatty
+We'll see what it is.
+
+30:28 - Bilal Sagar Razak
+Square, R V by R I V squared. Okay, good.
+
+30:32 - Lalit Karthikeyan
+Minus Algo test you say na.
+
+30:39 - Lalit Karthikeyan
+Exactly, present IV low, I V high Ingana Kim dashboarding it. I think it is implemented.
+
+30:53 - Bilal Sagar Razak
+I think it is equivalent.
+
+31:14 - Lalit Karthikeyan
+I think IUS is a strategy.
+
+31:21 - Bilal Sagar Razak
+We have to use it for this too.
+
+31:32 - Bilal Sagar Razak
+Why are we using it in the video concept?
+
+31:38 - Bilal Sagar Razak
+In the taxpayer, the guide look. Adam Dana Adium, other research entity you see the day Adini dashboard equal. If it is of nothing no use, pina dashbody codina taya respooling ourselves and clients.
+
+31:54 - Bilal Sagar Razak
+But Adina use in Dona no key tree we can bring.
+
+32:02 - Bilal Sagar Razak
+With calculation other search set here, we can bring it to EBITDA. I already see the trend after setting up the set.
+
+32:23 - Rahul J Perumatty
+Whether it has some significance, strategy and the latest. Research better on the practical use.
+
+32:35 - Bilal Sagar Razak
+0 to 10 percent, what is the random per cancellable pace?
+
+32:43 - Bilal Sagar Razak
+In the random, how it varies with returns of short strategy.
+
+32:53 - Bilal Sagar Razak
+Short strategy, how it is varying.
+
+33:05 - Lalit Karthikeyan
+Rv by Iv square is okay. Highly correlated with returns.
+
+33:13 - Bilal Sagar Razak
+Highly correlated with what returns. Returns for an underlook. What returns?
+
+33:23 - Lalit Karthikeyan
+The strategy returns.
+
+33:25 - Rahul J Perumatty
+You must what the underlying return on.
+
+33:29 - Lalit Karthikeyan
+Like in the sense, nyan no kila, in the sense theoretically no keya in the sense delta square by uh gamma seta no kambrandan. Okay, delta square by gamma simplify the delta square by uh r ratio will pi theta will be equivalent to r v by v square.
+
+33:50 - Bilal Sagar Razak
+This is other than I was also looking into something that other to itself. I do calculate the tun delta square by the army would calculate what is come other later on other pina I didn't worry on the machete uh r v by I v square room uh pinna or the straddle a short straddle uh returns from barrier short straddle nine thirty thirty can be sell straddle nine thirty and nine sev uh seventy nine seventeen you are selling a straddle.
+
+
+
+34:32 - Rahul J Perumatty
+Are they uh I V versus R V actually naked delta neutral I told the straddle we are trying to make money on I V right.
+
+34:50 - Bilal Sagar Razak
+Delta neutral delta neutral. We have to do a delta neutral at the signal.
+
+35:16 - Lalit Karthikeyan
+So, dynamically like a H2 delta same strategy and the returns is in the correlator.
+
+35:46 - Bilal Sagar Razak
+What will be the child also movement in title?
+
+35:52 - Rahul J Perumatty
+Movement, Ni Parney, Pasha Namga exact conclusion to Arnangil. If IV was realized, Most of the time, yes, yes.
+
+36:22 - Unidentified Speaker
+Yes.
+
+36:22 - Bilal Sagar Razak
+Forty percentage is fine. Signal.
+
+36:29 - Unidentified Speaker
+Yes, yes.
+
+36:36 - Bilal Sagar Razak
+Above with the IV versus R V almost nala you purple other correlation is fine. I'll square curve other than the name it is fine.
+
+36:51 - Rahul J Perumatty
+Then we can move to the next thing. Yes, yes.
+
+36:53 - Bilal Sagar Razak
+Pina refining Adum uh with the rolling window, like if RB, if you are capturing for uh, let's say, uh, thirty minutes thirty minutes, one minute, thirty minutes backwards it can angle every thirty minutes returns right level. And come very into it. Nana Indra day whether uh returns were keen on the logo.
+
+37:34 - Bilal Sagar Razak
+Rabila nine seventeen from thirty nine forty seven you will get the first uh data point. By I V D in D returns indeed for that day fully bucket you too are very sample for every day.
+
+38:34 - Bilal Sagar Razak
+Is nine seventy in to turn you what a uh time I'm gonna change gap on a gap Let me see. In a return substrate till nine uh forty seven you won't be having any values and you need at least thirty points for lookback For R V. For R V you need 30 points. Answer. Above from E.2 to 3, you will be having IV. Every E V window, this is R V window. Let's say it is A only it is A here. Pin gap or you A minus A very A divided by A Vada nine seventeen nine forty seven returns.
+
+ What is the value of uh price of it? Minus uh uh nine seventeen day. Price divided by other return nine seventy in the price R return would I vary the R1 other marriage returns and like nine forty seven uh like eleven of close to close nine forty seven by something okay close to I'll log log is more better. Loger toma logerto, so it will be more stationary. Log of log of price, returns log of nine nine seventeen nine seventeen straddle price minus.
+
+ Uh minus the element of five okay I think the forty seven seventy straddled twice.
+
+41:35 - Unidentified Speaker
+Idana would R18.
+
+41:38 - Bilal Sagar Razak
+I'm going R2 nine forty eight to nine rolling eighty.
+
+41:47 - Bilal Sagar Razak
+Panda says it is rolling without the window.
+
+42:02 - Bilal Sagar Razak
+948 in the IV 948 in the ATM.
+
+42:14 - Bilal Sagar Razak
+You have to be careful.
+
+42:22 - Bilal Sagar Razak
+Make it analyzed or make it down.
+
+42:29 - Bilal Sagar Razak
+For thirty minutes, thirty minutes, annualized data.
+
+42:39 - Bilal Sagar Razak
+Same format minus return. You will get to a column.
+
+42:51 - Bilal Sagar Razak
+What you can see is whether it is coming out to be saved. This is scatterplotted returns by gap. You can see some clustering.
+
+43:07 - Bilal Sagar Razak
+Next, I'll say clustering randomly.
+
+43:17 - Bilal Sagar Razak
+Returns in a basic, you will be sorting it.
+
+43:22 - Bilal Sagar Razak
+In the returns, you will make a deciles. In the returns in the distribution, whether it is unique.
+
+43:51 - Meghav Pradeep
+I'll say three. Little Yamagarin.
+
+43:57 - Lalit Karthikeyan
+So checkamigo and cheguri dousinda.
+
+44:05 - Lalit Karthikeyan
+Are you testinde then the like anovana analysis of like in a core group I split it f test in a lake Adenda you see it in the same high voltage.
+
+44:42 - Unidentified Speaker
+Uh it it makes me.
+
+45:32 - Unidentified Speaker
+Oh, there you go.
+
+45:57 - Unidentified Speaker
+Exact distribution.
+
+46:07 - Bilal Sagar Razak
+Safety clear.
+
+46:59 - Rahul J Perumatty
+In the no corner.
+
+47:26 - Bilal Sagar Razak
+Variance high voltage market on earth variance is blue blue backlog blue. Variance or statistics is different than the red one.
+
+47:51 - Bilal Sagar Razak
+Basically, the characteristics of returns. Are the return distribution characteristics different. That is when regimes changed.
+
+48:02 - Bilal Sagar Razak
+When you have three buckets, let's say four buckets. If two distributions are different, you can easily say they are distinct regimes.
+
+48:17 - Bilal Sagar Razak
+Marketing behaviors are basically the return distribution. Characteristics change statistically change in variance change like null hypothesis.
+
+48:37 - Lalit Karthikeyan
+Yes, yes.
+
+48:38 - Bilal Sagar Razak
+Upon null hypothesis, what it says is the mean and variance is similar and what it says is. The distribution is purely different.
+
+48:54 - Bilal Sagar Razak
+Where look at the stem in community the ancient slaughter and like the very pano kita.
+
+49:20 - Bilal Sagar Razak
+Alpha validation regimes on it.
+
+49:49 - Bilal Sagar Razak
+You can see like high voltage market high voltage high voltage voltile mother.
+
+49:58 - Bilal Sagar Razak
+It is minus six.
+
+50:03 - Bilal Sagar Razak
+Returns is coming out to be minus six percentage. When it comes to low voltage, minus two. Minus four meral.
+
+50:15 - Bilal Sagar Razak
+Even the biggest tail is that much. Our variance is very different. Our distribution is different. If I look at high voltage, high trending, it is minus eight to eight.
+
+50:30 - Bilal Sagar Razak
+But difference properties high voltage, lower categorization. Adhine, this is enough. Variance different that return distribution change.
+
+50:47 - Unidentified Speaker
+Okay.
+
+50:51 - Bilal Sagar Razak
+That is what we are trying to find out in EU bucketing, which it is we are finding out that.
+
+51:07 - Bilal Sagar Razak
+Ah, voltility is either vagues in diagonal. Like high voltage, we can send. Number one direction opioid unidirectional. This uh non-directional unidirection non-directional about uh either volatility about voltility would have a return distribution. By tails are bigger in both sides.
+
+51:43 - Bilal Sagar Razak
+What to find out is straddle as well as spot in the returns of vegetarian.
+
+51:56 - Bilal Sagar Razak
+Returns in the straddle return, another is returns of spot. Returns of spot implied forward.
+
+52:10 - Bilal Sagar Razak
+In blight forward values in the return.
+
+52:15 - Bilal Sagar Razak
+Okay, otherwise you will get an idea.
+
+52:21 - Bilal Sagar Razak
+10 4 buckets are what will this like very low voltile, very high voltage?
+
+52:47 - Bilal Sagar Razak
+First hour we'll be buying uh straddles. We'll be buying meta four and we'll be only uh selling.
+
+52:57 - Bilal Sagar Razak
+At Aile, what we will do, we will figure it out later.
+
+53:03 - Bilal Sagar Razak
+This is 80%, 70%. I'm sell with Ningano. Back to 10%, we just need to cut it off. About 10%, like edge, we are in a good position.
+
+53:25 - Bilal Sagar Razak
+You find out whether the distribution market in the behaviour change.
+
+53:32 - Bilal Sagar Razak
+That is to be how you test.
+
+53:36 - Bilal Sagar Razak
+Okay.
+
+53:48 - Bilal Sagar Razak
+You have to write out.
+
+53:51 - Bilal Sagar Razak
+You can try out delta square by gamma, delta by gamma, eta by gamma. Try out. Then this is what point is. That which it can be filtered out. After features, if it is explaining the farmer, better.
+
+54:46 - Meghav Pradeep
+Like number on the underneath, like I V correlation or another just the black shorts equation number, the like I V square ne like proportion.
+
+55:01 - Meghav Pradeep
+But under Black Scholars on a tenure to the I computian pina like ye black shorts in it, like the obvious and corporation.
+
+55:24 - Bilal Sagar Razak
+Next meeting statistical distribution that will be more better. Other PL is positive. Just are you a day?
+
+55:44 - Bilal Sagar Razak
+Just some PL. And that is whether the PNL is good or not. Above bad idler regime, we will be having lesser return.
+
+55:54 - Unidentified Speaker
+Negative return down lesser return.
+
+55:58 - Bilal Sagar Razak
+Expect lesser return, not negative returns.
+
+56:04 - Rahul J Perumatty
+If Bilal are perpetual it is added delta neutral and almost sixty-five to seventy percentage. We are profitable out of hundred days, almost sixty-five to seventy days profitable. Ini Namaka Symanda, how to make this better. Either we will control the drawdowns or India is also sixty percentage in the market.
+
+56:33 - Bilal Sagar Razak
+Like either just market strategy validated. This is like high voltage option markets by motion. Or nam returns.
+
+56:49 - Bilal Sagar Razak
+This is having ten drawdown periods.
+
+56:55 - Bilal Sagar Razak
+Pina is the max drawdown just for that one. Pina profit factor three point one twenty. Baki go high voltage trending idle markets. It was working with because our trending strategy. Above indeed. About choppy market sense paniamer movie. I lay eight mundane high voltage of p max todon manga good the layer. Nine percentage max todon a fifty kana maga volume terrano. That too inokiya you periodic correct.
+
+ Before starting it, we were able to catch that move.
+
+57:37 - Bilal Sagar Razak
+This similarly with the R B finding would be more better.
+
+57:50 - Unidentified Speaker
+Okay.
+
+57:51 - Rahul J Perumatty
+Adapting Bilal and Namkuri are in the last three, four years in the short gamada results.
+
+58:02 - Rahul J Perumatty
+What you can do is at least April are data number on the low.
+
+58:11 - Rahul J Perumatty
+Last two years in the data when you were at a shared class financially financially exact picture you took. Like, is there any difference in what number in the strategy and difference? Correct picture you took.
+
+58:29 - Bilal Sagar Razak
+filtering it.
+
+58:31 - Rahul J Perumatty
+Namadan lifted data managle number present real it put the latest last two financial share either to Umbo.
+
+58:39 - Bilal Sagar Razak
+Yes, yes.
+
+58:51 - Unidentified Speaker
+Yes.
+
+58:57 - Bilal Sagar Razak
+Where are the little doubts in the morning?

@@ -297,3 +297,13 @@ Six main quotes were checked against the live pages; the rest rests on the worke
 Lalit has not yet said which feature experiments to build (variance ratio by half hour,
 delta squared over gamma per hedge interval, charm and colour maps were proposed).
 
+**7 October, evening: the daily meet and the data.** Bilal set how a feature is tested: a bucket test
+of return distributions over rolling 30-minute windows. The meeting, with each point marked clear or
+read, is [meeting.md](inbox/2026-10-07-feature-testing/meeting.md); the test made exact, the features
+and the order of work are [test-plan.md](inbox/2026-10-07-feature-testing/test-plan.md). Lalit asked
+for three Databento downloads (ES bars, about 500 more same-day SPXW days, the week ahead); the
+script is written, and its first run failed with a 401 before anything was spent.
+
+**Open:** the Databento key; which experiments to build; the choices in test-plan section 1, which
+are proposals; the overlap with issue #28. The state is in [HANDOFF.md](HANDOFF.md).
+

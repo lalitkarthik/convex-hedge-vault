@@ -1,0 +1,58 @@
+Daily meet
+Wed, Oct 7, 2026
+
+Summary:
+
+The meeting examined volatility measures and options-strategy performance.
+• Strategy returns were reportedly positive on 65–70 of 100 days.
+• High-volatility trending markets showed a 3.1 profit factor.
+• Seven-day implied and realized volatility comparisons remained unresolved.
+• Drawdown control and performance across recent years were unclear.
+
+
+Action Items:
+
+* Lalit Karthikeyan will test the approach under discussion.
+* Meeting participant will research the practical use
+* Meeting participant will write out and test candidate delta- and gamma-based features.
+
+
+Key Discussion Points:
+
+Strategy Setup and Presets
+Rahul asked about recent changes, strategy movement, Greeks, and margin. Bilal discussed strategy setup, including short straddles and short iron flies, presets, P&L and Greeks, and a two-tab interface.
+
+Options Data and ATM Calculations
+The discussion shifted to the interface and available market data. Bilal said click data was unavailable and described using options and index data, ATM values, and a cheapest-forward measure.
+
+Volatility Measures and Interpolation
+Participants discussed volatility measures, including IV and RV, and ATM-related values. Bilal also referred to interpolation and comparison of ATM measures, though the precise calculation remained unclear.
+
+Strategy Conditions and Portfolio Results
+The participants discussed conditions for a long strategy and identified the long straddle as a basic idea. They also reviewed the number of strategies and portfolio performance, describing short-term positions as negative while saying the overall portfolio was profitable.
+
+Volatility Estimators and Robustness
+Lalit and Bilal compared intraday and positional volatility calculations, including close-to-close sampling and OHLC-based estimators. They also discussed annualization and scaling, with Bilal cautioning against excessive complexity and overfitting across markets.
+
+Intraday Variance Sampling
+The participants discussed intraday variance and recognized one-minute and five-minute sampling as possible estimation approaches. The discussion focused on calculation methods rather than selecting a definitive sampling interval.
+
+Trading Horizon and Seven-Day Volatility
+The group discussed a maximum trading horizon of roughly one week and considered estimating seven-day constant-maturity implied volatility through interpolation. They proposed comparing it with seven-day realized volatility; Lalit said he would test the approach.
+
+RV/IV Measure and Strategy Returns
+The participants discussed the RV/IV-squared measure, its practical significance, and its reported correlation with strategy returns. They considered the measure in the context of a delta-neutral short-straddle strategy and then moved on to another topic.
+
+Rolling Windows and Return Calculations
+Bilal described a rolling-window approach for capturing returns and noted that RV needs at least 30 observations. The discussion covered price-based and log-return calculations, matching IV and RV windows, and annualizing 30-minute data.
+
+Return Distributions and Regime Analysis
+Bilal discussed return clustering and whether distribution characteristics, including variance and tails, change across market regimes. The group considered comparing straddle, spot, and implied-forward returns across volatility buckets and testing candidate features.
+
+Strategy Performance and Historical Comparison
+The discussion shifted to profitability, drawdowns, and strategy behavior in trending and choppy markets. Rahul raised comparing results across recent years and financial-year data, but the comparison remained unresolved.
+
+
+Notepad:
+
+* No notes
