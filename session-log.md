@@ -286,3 +286,14 @@ buyer lost on 86 of 112 days); H2 to H5 are not findings. The notebook is
 feature branch and its worktree are not cleaned up; lesson 1 of 16 is taught
 ([chart](teach/long-gamma-research/01-theta-over-gamma.png)), lessons 2 to 16 are not.
 
+**7 October, afternoon: how practitioners research a strategy.** Lalit asked how real people research
+options strategies: where hypotheses come from, whether they screen ratios, how they use notebooks.
+Six source lanes were read by workers (Reddit, forums, blogs, papers and tooling, podcasts, YouTube;
+212 sources) and merged into [pipeline.md](inbox/2026-10-07-research-pipeline/pipeline.md) with a
+[flowchart](inbox/2026-10-07-research-pipeline/pipeline.png). Staging only; nothing is promoted.
+Six main quotes were checked against the live pages; the rest rests on the workers' reading.
+
+**Open:** the YouTube lane is short (13 talks of 25 to 30, five by Sinclair, no Indian channels);
+Lalit has not yet said which feature experiments to build (variance ratio by half hour,
+delta squared over gamma per hedge interval, charm and colour maps were proposed).
+
