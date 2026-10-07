@@ -307,3 +307,22 @@ script is written, and its first run failed with a 401 before anything was spent
 **Open:** the Databento key; which experiments to build; the choices in test-plan section 1, which
 are proposals; the overlap with issue #28. The state is in [HANDOFF.md](HANDOFF.md).
 
+**8 October, overnight: the feature experiments, built and tested on fresh days.** Lalit fixed the
+Databento key (it lacked its `db-` prefix), asked for the download, then said: no futures, one year
+for now, three requests at once, and build the experiments while he slept, in two or three
+notebooks. The download brought 124 more same-day SPXW days and 249 week-ahead files for $0.21
+($3.44 with the ES bars bought earlier). Four notebooks were built on a local branch,
+`feature/feature-experiments` (`bc7d9a5`), with a package, tests and two build scripts. Each claim
+was written and committed on the 127 days already read, then tested once on the new days. Results
+are in [results.md](inbox/2026-10-08-feature-experiments/results.md). In short: Bilal's bucket test
+describes the seller's return and does not predict it; the one filter rule that looked real failed
+on the fresh days; costs decide the every-window version; delta squared over gamma measures the end
+point and realised variance the path; the nights are a third of a week's movement. A reviewer agent
+found that two half days were priced on the wrong clock, and that many tests were weak; both were
+fixed before the final run.
+
+**Open:** nobody has read the branch; it is not pushed and has no spec issue; how it enters Meghav's
+repo is Lalit's to settle with him; the half-day fault is in the repo's own loader and Meghav has
+not been told; four leads in the notebooks need days that neither sample holds. The state is in
+[HANDOFF.md](HANDOFF.md).
+

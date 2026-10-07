@@ -1,6 +1,8 @@
 # Feature testing: the plan as it stands
 
-> Staging note, 2026-10-07. As of `convex-hedge-strategy@0ff3c74`. Nothing here is built. Parts marked **proposal** are Claude's and wait for Lalit's or Bilal's word.
+> Staging note, 2026-10-07. As of `convex-hedge-strategy@0ff3c74`. Parts marked **proposal** are Claude's and wait for Lalit's or Bilal's word.
+>
+> **Built on 8 October 2026.** Bilal's table of section 1 and the experiments of section 2 were run on a local branch, with a seven-day comparison added; what they showed is in [results.md](../2026-10-08-feature-experiments/results.md). The numbering there differs from this page's. The day sheets (experiment 7 below) were not built. This page is kept as the plan that was followed.
 
 Read [meeting.md](meeting.md) first: it holds what Bilal asked for. This page turns that into a test we can run on the data in `convex-hedge-strategy`, and lists the features to put through it.
 
@@ -109,9 +111,9 @@ Asked for, not yet downloaded (the state is in [HANDOFF.md](../../HANDOFF.md)):
 
 | Part | What | Lands in |
 |---|---|---|
-| ES futures | one-minute bars, all hours, 1 April 2024 to 30 September 2026 | `data/ES/` |
-| More same-day SPXW | every trading day, 1 April 2024 to 30 March 2026, about 500 days | `data/history/SPXW/` |
-| Week ahead | SPXW expiring 1 to 7 calendar days later, strikes within 5% of the money, every minute, all days | `data/week-ahead/SPXW/` |
+| ES futures | one-minute bars, all hours, 1 April 2024 to 30 September 2026. **Not used** (Lalit, 8 October): the studies read the index from the implied forward only. Downloaded once on 7 October for $3.24 before that decision; no further futures request is made | `data/ES/` |
+| More same-day SPXW | every trading day, 1 October 2025 to 30 March 2026, about 125 days. With the 127 held this makes one year (Lalit, 8 October: one year for now). The script's `--since` goes further back later, to April 2024 for Rahul's two financial years | `data/history/SPXW/` |
+| Week ahead | SPXW expiring 1 to 7 calendar days later, strikes within 5% of the money, every minute, for the same one year | `data/week-ahead/SPXW/` |
 
 The script is `convex-hedge-strategy/scripts/databento_download.py`. New days are kept out of `data/SPXW/` so that the existing 127-day studies do not change when they are rebuilt.
 
