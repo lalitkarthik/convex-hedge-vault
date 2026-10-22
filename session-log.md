@@ -326,3 +326,67 @@ repo is Lalit's to settle with him; the half-day fault is in the repo's own load
 not been told; four leads in the notebooks need days that neither sample holds. The state is in
 [HANDOFF.md](HANDOFF.md).
 
+
+**15 to 17 October: the options research harness, from the book to a design grilling.** Bilal asked
+Lalit and Meghav to read López de Prado's *Advances in Financial Machine Learning* and to build a
+faster research pipeline by connecting MCP servers. Six research lanes went into
+[inbox/2026-10-16-options-harness-research/](inbox/2026-10-16-options-harness-research/findings.html):
+agent harnesses, options backtesters, alpha axes, validation, MCP tools and Jev. Lalit is learning
+harness engineering from The Carbon Layer's playlist; study notes on all twelve videos, with a
+glossary and the principles, are in
+[inbox/2026-10-17-carbon-layer-harness/](inbox/2026-10-17-carbon-layer-harness/00-index.md). Facts
+about our code, data, docs and the senior's dashboards are in
+[inbox/2026-10-17-harness-planning-facts.md](inbox/2026-10-17-harness-planning-facts.md).
+
+Decisions from the grilling so far:
+
+- The harness lives in a private repo on Lalit's own GitHub, `options-research-harness`, cloned to
+  `D:\Convex Hedge\options-research-harness`. Company code may be copied into it; the senior moves
+  it into the organisation later. Python, matching `convex-hedge-strategy`.
+- SPXW 0DTE only for now.
+- The harness improves itself as in video 02: weakness mining, an editable surface, held-in and
+  held-out tasks, an acceptance rule, and a PR that a human merges. It never writes to the frozen
+  layer (data, labels, splits, cost model, scoring).
+- Agents follow videos 05 and 10: code owns the steps between tasks and the limits; specialist
+  agent packages judge inside a step; results are read from files and git, never from an agent's
+  report; each step returns one JSON block checked against a schema.
+- Logs follow the IBM talk and video 10: one append-only event file per run, rendered into a report
+  a person can read, with trial cards and a ledger index built from it.
+- An evaluation harness tests the research harness (video 08); its detailed design waits.
+- Feature combination is in the design and is built after single features are screened.
+- The specialist roles from the research stay, including a strategist who must give each feature an
+  economic story.
+- Ideas come from forums (Elite Trader, r/thetagang, r/options, r/quant, Quant StackExchange, a few
+  volatility Substacks), as leads only.
+- One backtester interface, local first; the engine adapter waits for the senior's MCP, which is
+  not built yet. Our run record matches the engine's outputs.
+- The context pack comes from the findings in the `convex-hedge-strategy` notebooks.
+- Regimes: high against low volatility is one example only. The research looks at every axis that
+  can condition a result, each known at decision time, with lines drawn on the train half.
+- Pass bar: the workflow page's version (one variant, picked on the train half).
+- Backtest-Engine's maths is the canonical version (its 405-minute clock).
+- Docs: feature-loop's `docs/design/` layout, written in plain, good English for a new reader, with
+  Excalidraw diagrams and the playlist's terms.
+- Build order F0 to F8, as proposed in the grilling.
+- The 2024-07-01 to 2025-06-30 data is the sealed holdout. Lalit believes it is free; the ledger shows
+  older days cost about $0.02 to $0.07 each. Lalit runs the download.
+
+**Open:** Lalit asked to slow down and finish the playlist first, so the grilling is paused. Still to
+settle: the evaluation harness in detail; the data download and its cost; whether the harness may
+re-check results that came from the convex_strategy clock.
+
+## 2026-10-19 to 2026-10-22 — harness: build order, setup, F1 spec, hand-over
+
+**Decisions** (full reasoning in `options-research-harness`, `docs/design/grilling-log.md`):
+- Design PR #1 merged. Build order changed to F1 ledger → F2 tools → F0 frozen layer → F3
+  meta-harness (Q46, PR #2): the frozen layer guards against agents, and none exist before F3.
+- The tools are built and tested on the free year we hold (Q47); the senior may get more data.
+- Feature-loop setup merged (PR #3). F1 slice grilled (Q48–Q52, decision 0007): records in a
+  git-ignored `records/` folder inside the main checkout, hash-chained JSON Lines, ledger rebuilt
+  from `trial_recorded` events, `harness demo` and `harness build-views`, HTML pages. Spec merged
+  as docs PR #4; no tickets and no build until the senior agrees.
+- The Carbon Layer study notes are now committed here and copied into the harness repo at
+  `docs/research/carbon-layer/`, so a second person's Claude reads the same terms.
+
+**Open:** a friend continues the harness with his own Claude (handoff at the repo's
+`docs/handoff.md`). His Claude does not have Lalit's `feature-loop` skill or memory notes.
