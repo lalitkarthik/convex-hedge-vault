@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Options Research Harness</title>
+<style>
+:root{
+  --bg:#fbfaf7; --card:#ffffff; --ink:#1d1d1b; --muted:#5f5d57; --line:#e3e0d8;
+  --accent:#1f5f8b; --accent-soft:#e6f0f7; --code:#6b3fa0; --code-soft:#f1ebf8;
+  --warn:#9a5b00; --warn-soft:#fbf1e1; --bad:#a3302a; --bad-soft:#f9e7e5; --ok:#2e6b3a; --ok-soft:#e5f2e7;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16171a; --card:#1f2024; --ink:#ecebe6; --muted:#a3a19a; --line:#34353a;
+    --accent:#7db7e0; --accent-soft:#1d2d3a; --code:#c4a3ec; --code-soft:#2c2338;
+    --warn:#e6b766; --warn-soft:#352a17; --bad:#ef8a83; --bad-soft:#3a201e; --ok:#8fcf9a; --ok-soft:#1d3122;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16171a; --card:#1f2024; --ink:#ecebe6; --muted:#a3a19a; --line:#34353a;
+  --accent:#7db7e0; --accent-soft:#1d2d3a; --code:#c4a3ec; --code-soft:#2c2338;
+  --warn:#e6b766; --warn-soft:#352a17; --bad:#ef8a83; --bad-soft:#3a201e; --ok:#8fcf9a; --ok-soft:#1d3122;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:920px;margin:0 auto;padding:28px 16px 64px}
+h1{font-size:1.75rem;line-height:1.25;margin:0 0 6px}
+h2{font-size:1.25rem;margin:40px 0 10px;padding-top:12px;border-top:1px solid var(--line)}
+h3{font-size:1.05rem;margin:22px 0 6px}
+p{margin:8px 0}
+.sub{color:var(--muted);font-size:.92rem;margin-bottom:18px}
+a{color:var(--accent)}
+.callout{background:var(--accent-soft);border-left:4px solid var(--accent);padding:12px 14px;border-radius:6px;margin:14px 0}
+.warn{background:var(--warn-soft);border-left:4px solid var(--warn);padding:12px 14px;border-radius:6px;margin:14px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:14px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.card b{display:block;margin-bottom:4px}
+.tbl{overflow-x:auto;margin:10px 0;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--line)}
+th{background:var(--bg);font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+.tag{display:inline-block;font-size:.75rem;font-weight:600;padding:1px 7px;border-radius:10px;white-space:nowrap}
+.t-agent{background:var(--accent-soft);color:var(--accent)}
+.t-code{background:var(--code-soft);color:var(--code)}
+.t-human{background:var(--warn-soft);color:var(--warn)}
+/* flow */
+.flow{display:flex;flex-direction:column;align-items:stretch;gap:0;margin:16px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;display:flex;gap:12px;align-items:flex-start}
+.step .n{flex:0 0 28px;height:28px;border-radius:50%;background:var(--accent);color:var(--bg);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step.code .n{background:var(--code)}
+.step.human{border-style:dashed;border-color:var(--warn)}
+.step.human .n{background:var(--warn)}
+.step .body{flex:1}
+.step .body b{margin-right:6px}
+.step .out{color:var(--muted);font-size:.85rem}
+.arrow{align-self:center;color:var(--muted);font-size:1rem;line-height:1;padding:3px 0}
+.loop{font-size:.85rem;color:var(--muted);text-align:center;margin-top:6px}
+ol.gate{padding-left:22px}
+ol.gate li{margin:5px 0}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.86em;background:var(--code-soft);color:var(--code);padding:1px 5px;border-radius:4px}
+.formula{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 12px;overflow-x:auto;font-size:.88rem}
+ul{padding-left:22px}
+li{margin:3px 0}
+.small{font-size:.85rem;color:var(--muted)}
+.toggle{position:fixed;top:10px;right:10px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:4px 10px;font-size:.8rem;cursor:pointer}
+</style>
+</head>
+<body>
+<button class="toggle" onclick="var r=document.documentElement;r.dataset.theme=(r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme: dark)').matches))?'light':'dark'">Theme</button>
+<main>
+
+<h1>An agent harness for options research</h1>
+<p class="sub">Findings page · 16 October 2026 · merged from five research lanes and López de Prado, <i>Advances in Financial Machine Learning</i> (AFML). Raw research capture in the vault inbox: staging, not fact. Everything marked "proposal" is for Lalit and Bilal to decide.</p>
+
+<div class="callout">
+<b>The short answer.</b> There is no complete, real-quality options research harness in public. The serious options benchmark (LiveOption, September 2026) finds that an LLM that trades options freely has no edge. So we cannot copy a system. We must assemble one from the general quant harnesses, the coding harnesses, and AFML, and add the options parts ourselves.
+</div>
+
+<p>Every harness that works follows three rules. Our design follows them too.</p>
+<div class="grid3">
+  <div class="card"><b>1. The fence</b>The agent edits one small surface: a strategy spec or a feature. Data, labels, splits, the cost model and the scorer are frozen code that no agent can change. When this fence was missing, one agent edited its own time limit, and another chose a sample that skipped a drawdown.</div>
+  <div class="card"><b>2. A separate judge</b>The role that judges must not be the role that built. Builders praise their own work. The judge reads code, traces and the ledger, but not the author's reasoning. It re-runs the work and can veto it. It is tested on planted bugs before we trust it.</div>
+  <div class="card"><b>3. Memory on disk</b>Every trial goes into an append-only ledger, failures included. Each batch of agents starts with a clean context and reads the ledger. The ledger gives the true trial count that the deflated Sharpe needs, and it is the audit trail.</div>
+</div>
+
+<div class="warn">
+<b>The finding to remember.</b> A 2026 paper (Gençay, <a href="https://arxiv.org/html/2608.27734">arXiv 2608.27734</a>) planted a look-ahead "oracle" in an agent loop. It posted a Sharpe ratio of 34.7 and a deflated Sharpe of 1.00, so it <b>passed</b> the statistics. In the same paper, the best honest LLM-found strategy after 102 trials had an in-sample Sharpe of 1.69, a deflated Sharpe of 0.86 and an out-of-sample Sharpe of 0.18. Deflation catches selection among honest backtests. It cannot see leaked data. That is why the fence (rule 1) comes first and the statistics come second. I checked both numbers at the source.
+</div>
+
+<h2>1. The workflow: roles and handoffs (proposal)</h2>
+<p>This merges the agent-harness lane's proposal with AFML's "research factory" stations (AFML ch. 1). AFML has no idea scout and no separate skeptic: it assumes that humans bring ideas, and its checks live inside the backtest statistics. The agent sources show that a harness needs both. Blue steps are agents, purple steps are frozen code, and dashed steps are where a cap or a human stops the loop.</p>
+
+<div class="flow">
+  <div class="step"><div class="n">1</div><div class="body"><b>Director</b><span class="tag t-agent">agent</span><br>Owns the budget, the caps and the idea queue. A bandit chooses the next alpha axis by past yield (the RD-Agent(Q) idea). It writes no research code. It stops the loop when a budget reaches zero.<div class="out">→ an axis to explore</div></div></div>
+  <div class="arrow">▼</div>
+  <div class="step"><div class="n">2</div><div class="body"><b>Idea scout</b><span class="tag t-agent">agent</span><br>Reads the seed queue (section 4), papers and the ledger. Writes one <b>hypothesis card</b>: market, mechanism ("who loses money to us, and why"), label, predictor, sample boundary, kill line, cost assumption, trial budget. It cannot see the test data.<div class="out">→ hypothesis card</div></div></div>
+  <div class="arrow">▼</div>
+  <div class="step"><div class="n">3</div><div class="body"><b>Card reviewer</b><span class="tag t-agent">agent</span><br>Checks the mechanism and novelty against the ledger and the do-not-redo list. It rejects a card that is a new instance of a killed axis. It ranks cards in a tournament (the Google co-scientist idea). The card is then hashed and frozen: this is the preregistration.<div class="out">→ approved, frozen card</div></div></div>
+  <div class="arrow">▼</div>
+  <div class="step code"><div class="n">4</div><div class="body"><b>Data curator</b><span class="tag t-code">code</span><br>One frozen <b>data contract</b> per market (SPXW, NIFTY). It holds point-in-time chains, our own IV and Greeks from synchronised quotes, strikes as listed at decision time, quote age, session calendars, half days, and settlement rules by date. No agent edits it.<div class="out">→ data contract (hashed)</div></div></div>
+  <div class="arrow">▼</div>
+  <div class="step"><div class="n">5</div><div class="body"><b>Feature miner</b><span class="tag t-agent">agent</span><br>Builds features on <i>seen</i> days only, from the shared feature library. It must check whether a new ratio reduces to an existing feature (see Δ²/(2Γθ) in section 4). Feature importance uses purged CV (AFML ch. 8).<div class="out">→ feature spec + commit</div></div></div>
+  <div class="arrow">▼</div>
+  <div class="step"><div class="n">6</div><div class="body"><b>Strategist</b><span class="tag t-agent">agent</span><br>Turns a signal into a <b>typed strategy spec</b>, not free code: structure, strike rule (by delta, or by strike offset near the 0DTE close), entry and exit times, hedge rule, size. Deterministic code picks the contracts (the OQL and SOTA lesson).<div class="out">→ strategy spec</div></div></div>
+  <div class="arrow">▼</div>
+  <div class="step code"><div class="n">7</div><div class="body"><b>Backtester</b><span class="tag t-code">code, frozen</span><br>Marks positions at mid and charges a fraction of the spread on every trade. It handles settlement to the official print, margin, purged k-fold with whole-day folds, and CPCV. Every run writes one ledger row: trial id, legs, free parameters, data hash, engine hash, cost. It is the one way to evaluate anything, so the trial count cannot be under-reported.<div class="out">→ run record + ledger row</div></div></div>
+  <div class="arrow">▼</div>
+  <div class="step"><div class="n">8</div><div class="body"><b>Critic</b><span class="tag t-agent">agent, read-only</span><br>Reads the notebook, the trace and the run record. Files a severity checklist with verbatim output, and fixes nothing. It is calibrated on clean and flawed pairs, with a closed list of flaw types and no adversarial persona (a "skeptic" persona raised false alarms in one study).<div class="out">→ critique</div></div></div>
+  <div class="arrow">▼</div>
+  <div class="step"><div class="n">9</div><div class="body"><b>Replicator</b><span class="tag t-agent">agent</span><br>Rebuilds the signal from the card and the data contract alone. Runs the robustness panel and a <b>zero-alpha arm</b> first: reshuffled days, or a synthetic chain priced at fair volatility. If the harness finds an edge there, the harness is broken.<div class="out">→ robustness table</div></div></div>
+  <div class="arrow">▼</div>
+  <div class="step"><div class="n">10</div><div class="body"><b>Judge</b><span class="tag t-code">code</span> <span class="tag t-agent">+ agent</span><br>Runs the 12-step gate (section 2). Opens the frozen holdout <b>once</b> per card and returns only pass or fail. Writes the <b>verdict card</b>: kill, iterate or promote, plus what to add to the do-not-redo list.<div class="out">→ verdict card</div></div></div>
+  <div class="arrow">▼</div>
+  <div class="step human"><div class="n">H</div><div class="body"><b>Human sees one page</b><span class="tag t-human">stop</span><br>The card, the gate results and the ledger count. Before that point the loop is fully autonomous on free data and local runs (your Q1 answer). It stops at a hard cap on anything paid or shared, such as Databento pulls older than 12 months or company lab compute.</div></div>
+</div>
+<p class="loop">Kill and iterate verdicts return to the Director. The ledger is the shared memory under every step.</p>
+
+<h3>Ideas we take, and where each comes from</h3>
+<div class="tbl"><table>
+<tr><th>Idea</th><th>Source</th><th>Why it matters for options</th></tr>
+<tr><td>Proposer → Implementer → Critic → Replicator, with a typed log between them</td><td><a href="https://jonathankinlay.com/2026/05/agentic-workflows-for-alpha-research/">Kinlay, May 2026</a> (checked)</td><td>The closest match to what you want. Funnel: 38 hypotheses, 14 passed the critic, 4 passed robustness, 2 promoted. Cost about $365 a week. The critic caught 5 of 5 planted look-ahead bugs but only 3 of 5 regime cherry-picks.</td></tr>
+<tr><td>Log legs and free parameters, not only trials; run a zero-alpha arm</td><td><a href="https://jonathankinlay.com/2026/09/a-sharpe-of-2-1-from-nothing-the-second-number-your-agent-doesnt-log/">Kinlay, Sep 2026</a></td><td>On data with no alpha, an agent reported a Sharpe of 2.12, mostly by blending about four signals into one. Option structures have many legs, so this risk is larger for us.</td></tr>
+<tr><td>The agent edits one file; everything else is frozen</td><td><a href="https://github.com/karpathy/autoresearch">autoresearch</a>; crucible (Claude Code + AFML CPCV); AQuA</td><td>crucible already combines Claude Code with AFML's triple-barrier labels and purged CPCV. It is the nearest working template.</td></tr>
+<tr><td>A separate feedback window between validation and test</td><td>AutoScientist-Quant; Yuksel (SSRN)</td><td>When the loop queries the same history every round, validation data becomes training data. One study lost a quarter to a third of its edge this way.</td></tr>
+<tr><td>Halt tests, a do-not-redo list, a bug log with each bug's direction</td><td><a href="https://zonted.com/posts/nothing-looked-wrong/">Zonted 0DTE study</a></td><td>Written for 0DTE. Bugs that pushed results toward the author's belief lived longest.</td></tr>
+<tr><td>Log refusals as loudly as fills; an auditor with its own Greeks</td><td><a href="https://github.com/mrnetwork0001/Deflow">Deflow</a></td><td>The model is the least trusted part. Its auditor re-derives the Greeks itself.</td></tr>
+<tr><td>A compact 3×3 IV grid as agent input</td><td><a href="https://arxiv.org/html/2609.33470v1">LiveOption</a> (checked)</td><td>Moneyness × expiry summary instead of the full surface. Its 0DTE medians were negative for all six models.</td></tr>
+<tr><td>Long-running harness: a JSON feature list, a progress file, one task per session</td><td><a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents">Anthropic</a>; <a href="https://openai.com/index/harness-engineering/">OpenAI harness engineering</a></td><td>This is the "dev-style harness" you asked for. Retest each harness part with each new model, and remove parts that no longer carry load.</td></tr>
+</table></div>
+
+<h2>2. The validation gate (proposal)</h2>
+<p>A strategy reaches a human only when it passes every step in order. The first failure stops it, and every result goes to the ledger. Two adaptations run through all of it. The unit of independence is the <b>trading day</b>, not the 30-minute window. Performance is measured on <b>daily P&amp;L</b>, with its real skew and fat tails.</p>
+<ol class="gate">
+<li><b>Preregistration.</b> The hypothesis card, with its trial budget, is hashed before the agent touches evaluation data.</li>
+<li><b>No look-ahead by construction.</b> Features come only from the registry. A truncation test passes: cut the data at time t and recompute, and every earlier value must stay the same. A planted-oracle canary must be flagged.</li>
+<li><b>Data hygiene.</b> Quote age, crossed and locked quotes, strikes as listed at decision time, the right settlement rule for each market and date.</li>
+<li><b>Costs.</b> The edge survives the spread at a realistic fill, and it survives 2× costs.</li>
+<li><b>Deflation.</b> Raw and clustered trial counts. Deflated Sharpe ≥ 0.95 on daily P&amp;L. For a broad search, also t ≥ 3 (Harvey–Liu–Zhu).</li>
+<li><b>PBO ≤ 0.2</b> through CSCV on the family's daily P&amp;L.</li>
+<li><b>CPCV</b> with whole-day groups, purging and at least one day of embargo (for NIFTY, the label length). At least 80% of paths are positive.</li>
+<li><b>Tails and track record.</b> CVaR 95 and 99, the worst day ÷ premium, maximum drawdown, the Omega curve, the 5 worst days replayed. The minimum track-record length fits inside the sample.</li>
+<li><b>Strategy risk</b> (AFML ch. 15). The probability that the hit rate falls below the break-even rate is ≤ 0.05, with the spread paid.</li>
+<li><b>Robustness.</b> The sign holds in each volatility tercile and in both half-samples. Neighbouring parameters also work: a plateau, not a peak.</li>
+<li><b>Frozen holdout, scored once,</b> on days nobody has downloaded yet. The result comes back only as pass or fail.</li>
+<li><b>Calibrated skeptic</b> in a fresh context. It re-runs the work and can veto.</li>
+</ol>
+<p class="small">The 0.2 and 80% thresholds are the lane's starting points, to tune. No paper applies PBO, CPCV or deflated Sharpe to intraday or 0DTE options, so these adaptations are reasoning from AFML and from our 8 October method, not tested practice.</p>
+
+<h3>Why Sharpe misleads for short volatility</h3>
+<p>Short-volatility books win small and often, and lose large rarely. Lo's "Capital Decimation Partners" sold out-of-the-money puts from 1992 to 1999 and showed a Sharpe ratio of 1.94. Goetzmann et al. (2007) prove that option trades can raise the Sharpe ratio with no skill at all. The probabilistic Sharpe ratio corrects for skew and kurtosis:</p>
+<div class="formula">PSR = Z[ (SR − SR*)·√(T−1) / √(1 − γ₃·SR + ((γ₄−1)/4)·SR²) ]</div>
+<p>Negative skew (γ₃ &lt; 0) and fat tails (γ₄ &gt; 3) make the denominator larger, so PSR falls. Here is an illustration with assumed numbers. Take a daily Sharpe of 0.1 (about 1.6 a year) with skew −3 and kurtosis 20. At 95% confidence it needs about 366 trading days, which is more than one year of SPXW data. One year cannot prove a short-volatility claim of that size.</p>
+
+<h2>3. What the backtester must model (options, not stocks)</h2>
+<p>A stock engine holds one price series. An options engine holds a chain: at each step, a grid of strike × expiry × call/put whose contracts are listed and expire. The backtester lane compared about a dozen engines. These are the parts we must get right, ordered by how often existing engines get them wrong.</p>
+<div class="tbl"><table>
+<tr><th>Part</th><th>Rule for our engine</th><th>Evidence</th></tr>
+<tr><td>Settlement</td><td>Settle to the official print, by market and date. SPXW: official close at 16:00 ET, 13:00 on half days. SPX monthly: the SOQ. NIFTY: the index close (see the open check below).</td><td>LEAN settles every option at the underlying close (open bug since 2024). Option Omega uses the 16:00 quote. One study found about $20 a contract between the 15:59 quote and the official settlement.</td></tr>
+<tr><td>Expiry time at load</td><td>Fix expiry times when loading. Write a test that fails on a midnight-UTC expiry.</td><td>Databento OPRA definitions stamp expiry at midnight UTC, so a plain loader expires the contract before its last session (NautilusTrader docs, checked).</td></tr>
+<tr><td>Fills</td><td>Mark at mid. Trade at mid ± a fraction of the width that depends on leg count: 75%, 66%, 56%, 53% for one to four legs. Always report at least two cost levels.</td><td>ORATS (checked); optopsy uses the same table.</td></tr>
+<tr><td>IV solver</td><td>Let's Be Rational (vectorised vollib) on the put-call-parity forward, using the out-of-the-money side. On failure return NaN and count it, never 0.</td><td>LEAN returns IV = 0 on failure: our known "signal that became a default" defect.</td></tr>
+<tr><td>Bad quotes</td><td>Skip markets wider than 5% of strike or 15% of mid. Skip the first noisy minutes. Avoid the quote decay in the last minutes.</td><td>ORATS filter; Option Omega starts at 9:32.</td></tr>
+<tr><td>Strike selection</td><td>Near the 0DTE close, select by strike offset, because every delta is 0 or 1.</td><td>ZIPLIME docs.</td></tr>
+<tr><td>Intra-bar order</td><td>One-minute bars cannot say whether the stop or the target came first. Mark those labels ambiguous, and test with "stop first".</td><td>AlgoTest; Option Omega checks stops on 1-second mids.</td></tr>
+<tr><td>Margin</td><td>SPXW: Reg-T by structure. NIFTY: SPAN from the daily NSE <code>.spn</code> file (the <code>marginism</code> library), plus the 2% expiry-day ELM and no calendar offset on expiry day.</td><td>NSE SPAN files; SEBI circular of 1 Oct 2024.</td></tr>
+<tr><td>Dated tables</td><td>NIFTY lot size, expiry weekday, weekly listings and STT change with the date. Hold them as dated tables, never constants.</td><td>Lot size 75 → 65 from January 2026. Expiry moved to Tuesday from 1 Sep 2025. STT on option sales is 0.15% from 1 Apr 2026.</td></tr>
+<tr><td>Diagnostics</td><td>Every result carries the effective config, counts of skipped entries, the data hash and the engine version. A run that matched no contracts must say so.</td><td>ORATS: "a summary of zeros means the legs matched nothing".</td></tr>
+</table></div>
+
+<h2>4. The seed idea queue: options alpha axes</h2>
+<p>An <b>axis</b> is one independent reason an options position makes money. The alpha lane wrote 19 axes as typed cards, each with a hypothesis, who loses, the features, the data, a test in our bucket method, and a kill line. These cards are the idea scout's starting backlog. An idea the scout finds later is an <i>instance</i> of an axis, such as a clock time or an event type.</p>
+<p>One fact frames all of it. Inside the SPXW 0DTE day, the pooled ratio of realised to charged variance is 1.01–1.02 on our year of data. So "options are dear" adds nothing inside the day. An axis must say <i>when</i> or <i>which</i> options are dear.</p>
+<div class="tbl"><table>
+<tr><th>Rank</th><th>SPXW 0DTE</th><th>NIFTY weekly / monthly</th></tr>
+<tr><td>1</td><td>Variance clock at fixed burst times (10:00, 14:00 FOMC, 15:50)</td><td>Overnight (non-trading-period) premium: refereed NIFTY evidence</td></tr>
+<tr><td>2</td><td>Event vol: FOMC, CPI</td><td>Variance premium conditioned on the IV level, weekly horizon</td></tr>
+<tr><td>3</td><td>1DTE overnight and weekend premium</td><td>Retail far-OTM premium on expiry Tuesday (the SEBI loss studies)</td></tr>
+<tr><td>4</td><td>Jump premium in the wings: which wing is dear</td><td>Event vol: Union Budget, RBI</td></tr>
+<tr><td>5</td><td>Dealer gamma as a variance regime (needs open interest, not held)</td><td>Term structure: weekly against monthly</td></tr>
+</table></div>
+<p><b>The evidence calls these myths:</b> max pain at index level; the public put-call ratio as a timing signal; vanna and charm "driving the market" (no academic test found); dispersion and parity violations as edges for us; and Greek ratios as new information. Run max pain and the put-call ratio once each as <b>negative controls</b>. If the harness finds an edge there, suspect the harness.</p>
+
+<h3>What your ratio Δ²/(2Γθ) measures</h3>
+<p>With zero rates, the delta-hedged Black–Scholes equation gives θ = −½σ²S²Γ. For a straddle struck at K, the delta is about Γ·(S − K). Put these together:</p>
+<div class="formula">Δ² / (2Γ|θ|) ≈ Γ²(S−K)² / (Γ²σ²S²) = (S−K)² / (σ²S²)</div>
+<p>Divide by the elapsed time h, and you get the squared move since the strike over the implied variance for that time. That is the window's end-point move against what the market charged. The hedged seller's P&amp;L instead sums the squared <i>increments</i> along the path. So the ratio, divided by (RV/IV)², is the Lo–MacKinlay <b>variance ratio</b>. It is above 1 when the window trended and below 1 when it chopped. This explains why it fits the unhedged seller well. It is a real feature, but it is "trendiness", not new Greek information. Test it once, under that name. I checked this algebra myself.</p>
+
+<h2>5. MCP servers: reuse or build (proposal)</h2>
+<p>No existing server reads our Databento SPXW files, and none records trials. The vendors and brokers now ship official servers, but they serve their own APIs. So the research core is ours to write. Literature, notebooks, SQL and memory we can reuse.</p>
+<div class="tbl"><table>
+<tr><th>Build</th><th>Main tools</th><th>Pattern to copy</th></tr>
+<tr><td><code>trial-ledger</code> — build first</td><td>open_study, record_trial (called by servers, not agents), count_trials, deflated_sharpe, pbo, budget_status, close_study. No delete or update tool. Each row carries the hash of the row before it.</td><td>Nothing found does this.</td></tr>
+<tr><td><code>chain-data</code> (SPXW)</td><td>list_sessions, get_chain → handle + summary + Parquet link, get_surface (our own IV and Greeks), data_quality, query (SQL with a row cap), estimate_pull (free), pull (billed, hard cap)</td><td>dbn-go: free discovery tools, one billed tool with <code>--max-cost</code>. It cannot fetch <code>cbbo-1m</code>, so we take its shape, not the server.</td></tr>
+<tr><td><code>nifty-data</code></td><td>list_expiries, lot_size, holidays, get_rolling_options, capture_chain (a daily snapshot into our own store), get_chain, data_quality</td><td>Dhan's expired-options API: five years of minute data with IV and OI. Its strikes are named relative to spot. Bid/ask presence and price are not checked.</td></tr>
+<tr><td><code>feature-lab</code></td><td>list_features, describe_feature (with the time each value is known), compute_feature, bucket_test (the bucket method), feature_importance, propose_feature (a draft for review; it never registers itself)</td><td>—</td></tr>
+<tr><td><code>backtest-lab</code></td><td>prepare_run (checked against the budget) → start_run (with an idempotency key) → run_status → run_result → cancel_run; make_splits (purged k-fold, CPCV); compare_runs</td><td>cloudQuant/backtrader-mcp's job lifecycle; ORATS's result shape. Plain job tools, because Claude Code's support for MCP Tasks is unknown.</td></tr>
+</table></div>
+<p><b>Reuse</b>, pinned and run in containers: <code>arxiv-mcp-server</code> and <code>paper-search-mcp</code> (Sci-Hub off) for the idea scout; the DuckDB server for quick SQL; Jupyter MCP for the report notebook only; MLflow as a read-only mirror of the ledger; basic-memory or plain vault files for context. Later: Kite's hosted server for live NIFTY quotes, and Delta Exchange's official server for crypto.</p>
+<p><b>Enforce limits in servers and credentials, not in prompts.</b> The tool list can change by token role, so the critic gets a read-only token. Billed tools have per-call caps, and a Claude Code <code>PreToolUse</code> hook acts as a backstop. Large data comes back as handles and resource links, never as rows.</p>
+
+<h2>6. Jev: typed decisions inside the loop</h2>
+<p><b>Jev</b> is a "System One" decision model from TypeSafe AI, released in September 2026. It does not write text. You send it a state and typed questions, and it returns typed answers with probabilities. There are three question types: <b>Choice</b> (pick one from a closed set), <b>Score</b> (place the state on a rubric you define) and <b>Noul</b> (the probability that a yes/no statement is true). A call costs about $0.00004 and takes about 0.3 s. Jev is a component that goes <i>inside</i> a harness; it is not a harness.</p>
+<div class="callout"><b>The rule every source repeats:</b> "an LLM proposes, Jev answers, code decides, every step leaves a receipt." Hard rules and budgets run in code before any Jev call. A Jev answer can relax friction only toward a floor that code sets, and answers near 0.5 escalate to a reasoning model or a human. This is our fence and our ledger, applied to every small decision.</div>
+<p>Jev is strong at <b>local judgments about text</b>. In one independent benchmark of 22,500 calls, reranking rose from MRR 0.62 to 0.84 and routing among 199 tools reached 96.5%. On prompt injection it is good but not enough alone: Red Hat measured 78% recall (checked), and injections hidden inside tool output were caught 85% of the time. It is weak at <b>judging across steps</b>: 51% on model-difficulty routing, and AUROC 0.56 (near random) on finding which step of a trajectory caused a failure. The one end-to-end A/B test is mixed. It filtered a coding agent's tool output through Jev: an early 30-task run favoured Jev (25 vs 22 passed), and a later run went the other way (2 vs 5).</p>
+<p><b>The request format is now open.</b> Ollama (since 0.35) and vLLM serve the same <code>/v1/systemone</code> request on local models, and TypeSafe's own adapter sends it to Claude. So one <code>decide()</code> function can send public text to hosted Jev and our internal text to a local model, with no change in code (checked).</p>
+<div class="tbl"><table>
+<tr><th>Use Jev for</th><th>Keep Jev out of</th></tr>
+<tr><td>Ranking papers and search results by relevance for the idea scout. Screening fetched web text for instructions aimed at the agent. Tagging each card with one of the 19 axes (Choice). Dedup: a Choice proposes the nearest past cards, then a Noul verifies "same hypothesis?". A form check on each card with separate Nouls ("names a counterparty?", "states a kill line?"). A second-layer gate on tool calls that spend money.</td><td>The critic: leakage is a judgment across steps. The Director's choice of the next axis: a bandit in code does this. Choosing a model per role. All numbers, such as Sharpe, PBO and Greeks: Jev reads text, not chains. Filtering tool results.</td></tr>
+</table></div>
+<p>Each Jev answer writes a <b>decision record</b> to the trial ledger: question, state hash, answer distribution, confidence, threshold, policy version and the action taken. Put the Jev call <b>inside our own MCP servers</b> as a library, so that no agent can skip a gate. Pin <code>jev-1.13.0</code>, because thresholds tuned on one version do not carry over to the next.</p>
+<div class="tbl"><table>
+<tr><th>Text class</th><th>What</th><th>Where it may go</th></tr>
+<tr><td>public</td><td>Paper titles and abstracts, public web pages, the alpha-axes text</td><td>Hosted Jev</td></tr>
+<tr><td>internal</td><td>Hypothesis cards, verdict text, ledger rows, critic findings</td><td>A local model only, unless Bilal approves in writing</td></tr>
+<tr><td>never</td><td>Strategy code, results, P&amp;L, parameters, chain data, IV and Greeks</td><td>Nothing outside our machines</td></tr>
+</table></div>
+<p class="small">Why the split: TypeSafe does not train on inputs. But its contract keeps a perpetual right to derive "Telemetry" from them and to process that "without restriction". Retention has no stated limit, processing is in the US, and §2.3(b) forbids training a model on Jev's output (all checked). Hosted cost for a realistic week is about $1. The real cost is labelling at least 200 items per gate before an A/B test. Full design, with each decision point's questions, thresholds and fallbacks: <a href="jev-deep-dive.md">jev-deep-dive.md</a>. First pass: <a href="jev.md">jev.md</a>.</p>
+
+<h2>7. A build order, if you build it</h2>
+<p>Kinlay's order and the MCP lane agree: trust comes before speed.</p>
+<ol>
+<li><b>The trial ledger and the single evaluation entry point.</b> Without an honest trial count, the deflated Sharpe and PBO mean nothing.</li>
+<li><b>The SPXW data contract and <code>chain-data</code></b>: settlement, the expiry-time fix, our own IV, quote age.</li>
+<li><b>The frozen backtester</b>: costs by leg count, whole-day purged splits, CPCV, diagnostics. Then the truncation test and the oracle canary.</li>
+<li><b>The critic, calibrated on planted defects</b> before anything trusts it.</li>
+<li><b>The agent roles</b>: scout, reviewer, miner, strategist, replicator, with the 19 axes as the seed queue.</li>
+<li><b>NIFTY</b>: its own data contract, dated tables and SPAN margin.</li>
+</ol>
+
+<h2>8. Open checks and contradictions</h2>
+<ul>
+<li><b>NIFTY settlement, unresolved.</b> The backtester lane says NIFTY settles to the index close, built from the constituents' last 30-minute weighted prices. The alpha and validation lanes say that, since 3 August 2026, F&amp;O stocks' closing prices come from a closing auction. Both may be true at different dates. My check of the NSE page timed out. Read the NSE circular before modelling NIFTY settlement by date.</li>
+<li><b>LiveOption's fills, corrected.</b> The harness lane wrote "mid fills plus 1 bp slippage". The paper charges a nominal $0.0001 per contract and tests charging the half-spread separately. Charging the half-spread moved the pooled 0DTE mean from −0.22 to −0.45 percentage points.</li>
+<li><b>Numbers from abstracts.</b> Most paper numbers come from abstracts or long extracts. I checked Gençay, LiveOption, Kinlay, ORATS and the Databento expiry trap at the source. Check the others at the link before citing them.</li>
+<li><b>Holdout.</b> The 122 fresh days from 8 October have been read once. The next frozen holdout must be days nobody has downloaded yet.</li>
+<li><b>Not found:</b> an academic test of vanna or charm flows; a dealer-gamma study on NIFTY; the price of the Dhan Data Plan and Theta Data; method docs for Stockmock and Opstra.</li>
+</ul>
+
+<h2>Lane files</h2>
+<ul>
+<li><a href="agent-harnesses.md">agent-harnesses.md</a>: roles, handoffs, memory, gates; complete options agent systems</li>
+<li><a href="options-backtesters.md">options-backtesters.md</a>: about a dozen engines compared; SPXW and NIFTY settlement and rules</li>
+<li><a href="alpha-axes.md">alpha-axes.md</a>: 19 axes as hypothesis cards; ranking; myths</li>
+<li><a href="validation.md">validation.md</a>: AFML methods adapted; agent failure modes; leakage traps; the 12-step gate</li>
+<li><a href="mcp-and-tools.md">mcp-and-tools.md</a>: servers found; MCP patterns; the server map</li>
+<li><a href="jev-deep-dive.md">jev-deep-dive.md</a>: Jev in full, and the proposed design for our harness: 12 decision points, receipts, data policy, A/B test plan</li>
+<li><a href="jev.md">jev.md</a>: first pass on Jev (corrected by the deep dive)</li>
+<li><a href="_brief.md">_brief.md</a>: the decisions this sweep worked from</li>
+</ul>
+
+</main>
+</body>
+</html>

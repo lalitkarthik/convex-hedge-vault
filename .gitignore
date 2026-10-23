@@ -4,3 +4,10 @@
 .trash/
 sources/*
 !sources/.gitkeep
+
+# Rendered notebook findings pages (1.7–4.5 MB each, charts of licensed Databento-derived results).
+# Kept on disk only; the vault repo is public. Conclusions are in results.md beside them.
+inbox/2026-10-08-feature-experiments/*-findings.html
+# Facts about company code, the senior's dashboards and 80 company research findings (sections 6, 8).
+# Kept on disk only while this repo is public.
+inbox/2026-10-17-harness-planning-facts.md
