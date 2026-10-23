@@ -2,6 +2,13 @@
 
 Depth note. What a run is, what it reports, and which of its numbers can be trusted.
 
+**The code is Bilal's `Backtest-Engine` repo** (engine, dashboard and Echo; `Backtest-Engine/PROJECT.md`).
+Since 2026-10-11 the page lives at `research.convexhedge.ai` for external beta users and at
+`lab.convexhedge.ai` in-house; `app.convexhedge.ai` is now the trading engine. How Bilal runs it,
+and his rules for a fair run, are in [backtest-lab](backtest-lab.md). Open legs at the end of a run
+settle at the last chain's mid (the research repo settles at intrinsic value against the 16:00
+index instead).
+
 ## A run
 
 One execution of a [strategy](strategies.md) over a date range with a capital base. Runs are
@@ -133,5 +140,7 @@ reports.
 2. What populates `regime`, and why is it empty?
 3. What causes an order to be rejected?
 4. Is there any capital constraint available, so a run can stop when the account is exhausted?
+   For Bilal's runs, returns are on a fixed 150,000 per lot with no compounding
+   ([backtest-lab](backtest-lab.md)); whether the engine can enforce a limit is still open.
 5. What is `org`, and what would a second one be?
 6. What does Rerun do to run history — new version, or overwrite?

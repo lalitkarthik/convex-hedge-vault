@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 > Lane reddit, 56 sources read, 2026-10-07
 
 ## Summary

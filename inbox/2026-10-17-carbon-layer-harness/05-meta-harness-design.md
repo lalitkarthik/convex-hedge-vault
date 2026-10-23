@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # 05 — Meta-Harness: Designing Multi-Agent AI Systems
 
 - **Title:** Meta-Harness | Designing Multi-Agent AI Systems

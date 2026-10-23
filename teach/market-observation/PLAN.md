@@ -65,6 +65,7 @@ quizzes, no predictions asked for.
 6. **The sweep again, at the end.** A second row, so the sitting itself shows forty-five minutes
    of change.
 7. **The record.** Claude writes `days/YYYY-MM-DD-<market>.md`, updates the ledger and commits.
+   The first record, [5 October, India](days/2026-10-05-india.md), is the mapping pass before sitting 1, kept as a "yesterday" for it.
 
 ## The concept ladder (since 2026-10-05)
 

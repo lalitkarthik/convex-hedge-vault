@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Positional IV vs RV: findings and sources
 
 ## The two open questions

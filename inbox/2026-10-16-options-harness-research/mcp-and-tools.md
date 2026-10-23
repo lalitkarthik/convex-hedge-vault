@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # MCP servers and tools for an options research harness
 
 > Lane report, 2026-10-16. Raw research capture: staging, not fact. Nothing here is promoted to `domain/`.

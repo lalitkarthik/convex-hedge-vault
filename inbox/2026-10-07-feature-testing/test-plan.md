@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Feature testing: the plan as it stands
 
 > Staging note, 2026-10-07. As of `convex-hedge-strategy@0ff3c74`. Parts marked **proposal** are Claude's and wait for Lalit's or Bilal's word.

@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 True volatility 20% a year; 252 days a year; 
 60000 simulated days per scenario; session 375 minutes; 1500 ticks a day.
 Every figure is  mean estimated variance / true variance  unless it says otherwise.

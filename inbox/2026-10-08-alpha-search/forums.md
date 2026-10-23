@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 > Lane forums, 32 threads read, 7 strategy cards, 13 methods, 2026-10-09
 
 ## Summary

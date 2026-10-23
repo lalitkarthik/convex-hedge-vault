@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 > Lane frontier, 47 sources read, 9 cards, 2026-10-08
 
 ## Summary

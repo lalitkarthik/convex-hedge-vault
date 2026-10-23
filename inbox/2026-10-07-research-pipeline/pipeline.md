@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # How practitioners research a trading strategy
 
 > Staging note, 2026-10-07. Merged from the six lane reports in this folder. Not canon: nothing here is promoted to `domain/`.

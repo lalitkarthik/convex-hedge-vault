@@ -21,7 +21,9 @@ Linked repos:
   `D:\Convex Hedge\Convex-Hedge-Trading-Engine` (docs vault inside: `Trading-Engine/`)
 - `convex-hedge-strategy` — Meghav's strategy research: SPXW 0DTE studies on six months of history, at
   `D:\Convex Hedge\convex-hedge-strategy` (docs vault inside: `Strategy-Research/`)
-- _Platform repo — access pending._
+- `Backtest-Engine` — Bilal's backtesting engine, dashboard and Echo: the terminal at
+  `research.convexhedge.ai` and `lab.convexhedge.ai` (`app.` until 2026-10-11), at
+  `D:\Convex Hedge\Backtest-Engine` (docs vault inside: `Convex-Hedge/`)
 
 ## Note types
 

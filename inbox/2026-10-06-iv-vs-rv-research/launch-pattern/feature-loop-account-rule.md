@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 ## Account rule (the owner's, set 2026-10-04; it replaces every earlier account rule and overrides the skill wherever they differ)
 
 `ACCT` is `node "C:/Users/Acer/AppData/Local/Temp/feature-loop-acct.mjs"`. Use it wherever the

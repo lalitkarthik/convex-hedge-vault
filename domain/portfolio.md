@@ -1,6 +1,10 @@
 # Portfolio — `/portfolio`
 
 > Stamped 2026-08-24. The screen is new — the only portfolio on it was created that day.
+> Seen again 2026-09-26: the list now holds several portfolios, some marked `DEGRADED`, and the
+> report has its own **DIVERSIFICATION** tab (contribution, daily-P&L correlation, the
+> no-diversification baseline). The "only one portfolio" line above is history; the Overview
+> sections below describe the August layout, where those blocks sat under Overview.
 
 Depth note. Combines finished [backtest](backtest-engine.md) runs into one book and reports what
 the combination does that the runs alone do not.
@@ -112,7 +116,8 @@ stopped out again, re-entered a third time.
 
 ## Open questions
 
-1. What sets a leg's `STATE`, and what states exist besides `OK`?
+1. What sets a leg's `STATE`, and what states exist besides `OK`? `DEGRADED` appears on some
+   portfolios since September; what makes a book degraded is not known.
 2. Can the same run be added twice, and does the picker prevent it?
 3. Is capital always summed from the legs, or can a book be given its own capital?
 4. Does the correlation use net or gross daily P&L?

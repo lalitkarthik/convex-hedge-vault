@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 > Merged from five lanes, 157 sources across them, 20 re-opened at the merge, 2026-10-09. Staging note, not canon.
 
 # Read first: new hypotheses for SPXW same-day options

@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Agent harnesses: roles, handoffs, memory, gates and stop rules
 
 > Lane `agent-harnesses`, 2026-10-16. Raw research capture for the options research harness. Staging, not fact. Written by Claude from about 45 sources.

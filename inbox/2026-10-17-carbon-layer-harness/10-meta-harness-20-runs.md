@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # 10 — Meta-Harness: Testing Multi-Agent AI Systems Across 20 Runs
 
 - **Title:** Meta-Harness | Testing Multi-Agent AI Systems Across 20 Runs

@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # IV vs RV: the calculations and where each comes from
 
 For the meeting on 7 October 2026. Part 1 is the intraday calculation as built (PR #306). Part 2 is the positional calculation as researched, not built. Each step names the source and the exact place in it.

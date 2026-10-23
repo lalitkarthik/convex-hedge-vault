@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Hypotheses from the desk's own data
 
 > Lane own-data, 0 outside sources, 7 cards, 2026-10-08. Written by Claude from the four feature-experiment notebooks, as of `convex-hedge-strategy@cc8b0ef`. Staging note, not canon.

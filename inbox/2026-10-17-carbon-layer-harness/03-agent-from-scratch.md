@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # 03 — Building an AI Agent From Scratch in Python
 
 - **Title:** Building an AI Agent From Scratch in Python – One Primitive at a Time

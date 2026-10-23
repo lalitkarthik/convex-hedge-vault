@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Carbon Layer harness series — index
 
 Study notes on The Carbon Layer's "Harness Engineering Masterclass" playlist (Ankit Desai, videos 01–11) and one IBM conference talk (Tejas Kumar, video 12). Written 2026-10-17 from the subtitles, in our own words. Raw subtitles stay in the session scratch folder and are not in the vault.

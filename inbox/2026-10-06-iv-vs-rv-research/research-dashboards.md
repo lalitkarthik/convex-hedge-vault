@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # How existing products show implied volatility against realised volatility
 
 Research note for the Convex Hedge IV-vs-RV dashboard feature. Written 6 October 2026.

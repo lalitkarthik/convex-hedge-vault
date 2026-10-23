@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Options backtest engines: how they model what makes options different
 
 > Lane `options-backtesters.md` of the 2026-10-16 options-harness sweep ([brief](_brief.md)). Raw research capture, staging, not fact. Nothing here is promoted to `domain/`.

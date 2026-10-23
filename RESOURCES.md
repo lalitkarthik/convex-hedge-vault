@@ -4,7 +4,8 @@ Trusted sources for this vault. Annotate every entry with what it covers and whe
 
 ## Knowledge
 
-**app.convexhedge.ai** — the terminal itself. Google SSO, authorised accounts only, currently
+**research.convexhedge.ai** (and the in-house **lab.convexhedge.ai**) — the terminal itself; it was
+`app.convexhedge.ai` until 2026-10-11, which now hosts the trading engine. Google SSO, authorised accounts only, currently
 v0.1 · Phase 1. Historical NIFTY and SPXW option data, replayed minute by minute. The primary
 source for everything in [domain/](domain/); mapped in [platform-map](domain/platform-map.md).
 Reach for it when a question is about what Convex Hedge's own system does. Read-only in this vault's

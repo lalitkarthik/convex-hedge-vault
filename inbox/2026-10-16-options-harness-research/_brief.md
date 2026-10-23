@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Brief — options research harness, inspiration sweep (2026-10-16)
 
 Raw research capture. Staging, not fact.

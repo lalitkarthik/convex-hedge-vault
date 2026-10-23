@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # 01 — Harness Engineering Masterclass
 
 - **Title:** Harness Engineering Masterclass: Technical Deep Dive on how to build Agentic Systems

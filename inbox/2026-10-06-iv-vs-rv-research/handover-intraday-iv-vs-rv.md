@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Handover: intraday IV vs RV (for whoever continues it)
 
 Written 12 October 2026. State gathered from `origin/main` that day, not from memory.

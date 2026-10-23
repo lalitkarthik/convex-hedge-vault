@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Daily meet, 7 October 2026: how to test a feature
 
 > Staging note. Written by Claude from the recap, the transcript and two screenshots. The transcript is machine-typed Malayalam and English and is badly garbled, so each point is marked **clear** (the words or the sheet say it) or **read** (my reading of a garbled passage). Confirm the **read** points with Bilal.

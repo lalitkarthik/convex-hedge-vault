@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # 08 — AI Agent Evals: Does the Agent We Built Actually Work?
 
 - **Title:** AI Agent Evals | Does the Agent We Built Actually Work?

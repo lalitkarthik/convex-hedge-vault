@@ -1,3 +1,4 @@
+# promoted: 2026-10-23
 """Numerical check of realised-volatility estimators (numpy only).
 
 Simulates geometric Brownian motion with a KNOWN volatility (20% a year, 252

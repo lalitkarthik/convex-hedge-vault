@@ -1,3 +1,4 @@
+// promoted: 2026-10-23
 // Watchdog for the implied against realised volatility orchestrator (feature #265). It is started outside the
 // Claude desktop app, so an app restart no longer takes the build down with it. It resumes the
 // orchestrator's SAME session on the max account and blocks until that turn ends; when the turn

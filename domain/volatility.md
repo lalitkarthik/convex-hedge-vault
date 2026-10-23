@@ -48,8 +48,9 @@ sawtooth as each expiry rolls. Constant maturity is what you want for a long stu
 you want if you are actually trading the front.
 
 Six estimators exist because they use different information. Close-close sees only closing prices;
-Parkinson uses the high-low range; Garman-Klass and Rogers-Satchell add the open and the drift;
-Yang-Zhang handles overnight gaps. On a gappy index they will disagree, and the disagreement is
+Parkinson uses the high-low range; Garman-Klass adds the open and close but assumes no drift;
+Rogers-Satchell is the one that is free of drift; Yang-Zhang handles both drift and overnight gaps.
+Which to use at which horizon, and the simulation check: [realised-volatility-estimators](realised-volatility-estimators.md). On a gappy index they will disagree, and the disagreement is
 itself information.
 
 ## The regime change worth studying
@@ -80,7 +81,9 @@ cheap on the tape at exactly the moment the market is still moving.
 
 ## Open questions
 
-1. Is the RV window in trading days or calendar days?
+1. Is the RV window in trading days or calendar days? Whichever it is, IV and RV must use the same
+   clock. The research also says to match horizons: a 30-DTE IV wants about 21 sessions of RV, not 20
+   days by default ([realised-volatility-estimators](realised-volatility-estimators.md)).
 2. What does `n-avg` average, and over how many sessions?
 3. Is `USER EXP` maturity pinned to the expiry chosen elsewhere, or set independently?
 4. Is `BAR` fixed at daily, or are intraday bars intended?

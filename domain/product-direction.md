@@ -6,7 +6,8 @@ recaps record that timelines and final requirements stayed unresolved. Raw recor
 
 ## The platform
 
-- **`app.convexhedge.ai` is an in-house backtesting terminal**, released as a beta with features added
+- **`app.convexhedge.ai` is an in-house backtesting terminal** (since 2026-10-11 at `research.` and
+  `lab.convexhedge.ai`; `app.` is now the trading engine), released as a beta with features added
   gradually; one GitHub branch per feature across production and main. The beta excludes a market the
   recap transcribes as "XPX" — meaning unconfirmed. *24-08.* Mapped in [platform-map](platform-map.md).
 - **Front end and back end kept apart**: the interface renders, the back end fetches and computes. *19-08.*

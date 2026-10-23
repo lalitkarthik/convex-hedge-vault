@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # 09 — AI Agent Sandboxing: Layers, Tradeoffs, and Blast Radius
 
 - **Title:** AI Agent Sandboxing: Layers, Tradeoffs, and Blast Radius

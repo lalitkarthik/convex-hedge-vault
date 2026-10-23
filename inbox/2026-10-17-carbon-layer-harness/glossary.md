@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Harness engineering — glossary
 
 Every term in the vocabulary of The Carbon Layer's harness series (videos 01–11) and the IBM talk (12), with a one-line definition and the video that introduces or explains it. Speaker's own names are kept. Principles are in [principles](principles.md); the picture is in [diagram-spec](diagram-spec.md).

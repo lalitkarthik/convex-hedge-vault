@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # 11 — The Engineering Behind a Self-Improving AI Agent
 
 - **Title:** The Engineering Behind a Self-Improving AI Agent

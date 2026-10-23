@@ -48,7 +48,7 @@ what the code does.
 | **Every number carries `measured`, `assumed` or `derived`** | `CONTEXT.md` §6 | The tag says where to check when an input moves |
 | **One `c7g.xlarge` for now; the next split is T4, not T2** | Owner, 2026-09-13; 0008 | T4 keeps `feed → Redis → store` on one machine |
 | **#63 criterion 4 and #79 criterion 1 accept the 2026-09-12 evidence** in place of a full day | Owner, 2026-09-13 | The busiest hour is inside it; no decision would move |
-| **IV/RV parked** — #31, #54, #116 | Owner | — |
+| **IV/RV parked** — #31, #54, #116 (`delta-exchange-payoff` only; the trading engine built its IV vs RV page — #306, reworked by #558, live 2026-10-17) | Owner | — |
 | **No AI attribution** in commits, trailers or PRs | Owner; `delta-exchange-payoff/CLAUDE.md` | — |
 | **A strategy publishes a target in strategy units, never an order**; a client's Book 1 = target × that client's units; orders are worked out **pooled within one client**, `Book 2 − Book 4 − working`, after a short settling window; a pooled-neutral change rewrites Book 3 as a **reallocation** | `delta-exchange-payoff/docs/design/execution/books.md`, `clients.md`; #128, 2026-09-17; #130, 2026-09-28 | Two strategies wanting opposite things trade nothing; the strategy decides the shape, the client the size |
 | **The engine's mark is `client_order_id`**; a fill without it is discretionary; reconcile every 10 s and on each fill; reconciliation **adopts the broker's record and repairs**: at most 3 re-fires per contract per decision after a cancel, at most 2 Book 4 repairs per contract per day, then the contract freezes; Book 6 never causes an order | `.../execution/books.md`; #129, 2026-09-28 | Delta has no order-source field; the 20 September ask for a reconciliation that re-fires |
@@ -62,6 +62,38 @@ what the code does.
 | **Execution v1 = limit at touch, cancel and replace; buy legs first, wait, then sells** | `.../execution/oms.md`, 2026-09-16 | Margin; a market order on a thin 0dte wing |
 
 How the work itself is run — tickets, tests, agents, branches — is [team-workflow](team-workflow.md).
+
+## Research decisions — October 2026
+
+Feature tests ([feature-testing](feature-testing.md)), volatility ([realised-volatility-estimators](realised-volatility-estimators.md)),
+long gamma ([long-gamma-research](long-gamma-research.md)), Bilal's lab ([backtest-lab](backtest-lab.md)) and the
+harness ([options-research-harness](options-research-harness.md)). Harness records are in
+`options-research-harness/docs/design/decisions/` and its `grilling-log.md` (Q-numbers).
+
+| Decision | Made where | Why |
+|---|---|---|
+| **Test a feature with Bilal's bucket test**: 30-minute windows, short-straddle log return, buckets, compare distributions | Bilal, 2026-10-07; `inbox/2026-10-07-feature-testing/meeting.md` | Shape and tails matter more than the mean; a passing feature becomes a filter on the live strategy |
+| **Test on windows that do not overlap, reshuffle whole days, write each claim before opening fresh days** | Claude, 2026-10-08; `results.md` — waits for Bilal's word | Rolling windows overstate significance |
+| **Read IV at the window's start; price the same contracts at its end** | Claude, 2026-10-08; `results.md` — pending | A forecast must be known at entry; a new at-the-money pair is not an earnable return |
+| **Leave half days out until the strategy repo's loader handles them** | 2026-10-08; `results.md` | The loader counts every day to 16:00 |
+| **Intraday RV = sum of squared 5-minute returns, scaled by a time-of-day profile** | Trading engine record 0075, PR #306, 2026-10-07 | Clock scaling reads 58% high after the first hour |
+| **Positional RV defaults to Yang-Zhang over a window matched to the IV horizon** — researched, not built | 2026-10-07; `handoff-positional-iv-vs-rv.md` | The only estimator free of both gap and drift |
+| **Backtests decide on candle i−1 and trade on candle i; returns on a fixed 150,000 per lot; no compounding** | Bilal, 2026-10-12; `handoff-2026-10-12.md` | No forward bias; comparable returns |
+| **Long-gamma research: mechanism first, one target, three hedge rules, the tests corrected together** | 2026-10-07; `long-gamma-research/plan.md` | 127 days can only find hypotheses |
+| **The harness lives in Lalit's private repo** `options-research-harness`; company code may be copied in; the senior moves it later | Harness 0006, 2026-10-17 | Lalit's call; Bilal not yet asked |
+| **SPXW 0DTE only; NIFTY parked** | Harness Q13, 2026-10-17 | One market end to end first |
+| **Code owns the steps; agents judge only inside a step** | Harness 0001, 2026-10-17 | No supervising model in the control path |
+| **A frozen layer outside agent control** (data, labels, splits, cost model, pass bar) | Harness 0002, 2026-10-17 | Leakage passes DSR and PBO, so the guard must be structural |
+| **`Backtest-Engine`'s maths is canonical** (405-minute clock) | Harness 0003, Q35, 2026-10-17 | One maths; IV on different clocks does not compare |
+| **Forward holdout**: days after 2026-09-30, sealed, opened once, pass or fail | Harness 0004, Q41, 2026-10-17 | Free, unseen, grows about 21 days a month |
+| **The harness changes only through pull requests a person merges** | Harness 0005, 2026-10-17 | Every change explainable and reversible |
+| **Only the free held year; no paid data** | Harness Q37, 2026-10-17; Q47, 2026-10-19 | The 2024–25 year costs money; the senior may add data later |
+| **Pass bar = the workflow page's**: one variant, chosen on the train half, read once on the test half | Harness Q34, 2026-10-17 | Stops picking the winner on the test half |
+| **First gate builds steps 1–5 and 11**; DSR, PBO, CPCV, tails and robustness come later | Harness `evals.md`, 2026-10-17 | Thresholds need calibrated evals first |
+| **Build order F1 ledger → F2 tools → F0 frozen layer → F3 meta-harness** | Harness Q46, PR #2, 2026-10-19 | The frozen layer guards against agents, and none exist before F3 |
+| **Records are hash-chained JSON Lines in a git-ignored `records/`; the ledger is a rebuilt view; HTML pages** | Harness 0007, Q48–Q52, 2026-10-21 | An edit or deletion shows as a break in the chain |
+| **The engine adapter waits for the senior's MCP server** | Harness Q40, 2026-10-17 | No interface exists yet |
+
 
 ## Superseded
 
@@ -88,6 +120,8 @@ How the work itself is run — tickets, tests, agents, branches — is [team-wor
 | Engine-wise risk checks | Client-wise, strategy limits in units, an allocation cap (#130) | 2026-09-28 |
 | Stream names `{type}:{VENUE}` for strategy output | By owner: feed by venue, strategy by market, OMS by client (#130) | 2026-09-28 |
 | Seal clock pinned only by streams `behind` (R4) | Also held by streams still catching up (R4d, #119) | 2026-09-14 |
+| Harness holdout: the 2024-07-01 to 2025-06-30 year, sealed (Q23) | The forward holdout, days after 2026-09-30 (Q41, decision 0004); the old year costs money | 2026-10-17 |
+| Harness build order F0 to F8, frozen layer first (Q39) | F1 ledger → F2 tools → F0 → F3 (Q46, PR #2) | 2026-10-19 |
 
 ## Related
 

@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 > Lane transfer, 38 sources read, 7 cards, 2026-10-08
 
 Staging note, not canon. Source numbers (T1 to T38) refer to the notes at the end of this file.

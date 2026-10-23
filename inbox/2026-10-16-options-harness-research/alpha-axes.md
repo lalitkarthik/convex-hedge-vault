@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 > Lane alpha-axes, 2026-10-16. Raw research capture: staging, not fact. 19 axes, about 55 sources opened.
 
 # Options alpha axes: the harness's seed idea queue

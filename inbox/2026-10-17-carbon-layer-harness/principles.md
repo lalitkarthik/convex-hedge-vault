@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Harness engineering — merged principles
 
 The principles and ideology of The Carbon Layer's harness series (videos 01–11) and the IBM talk (video 12), merged and deduplicated. Each principle names its source videos. Numbers are stable: other notes may cite "P14". Terms are defined in [glossary](glossary.md); the master picture is in [diagram-spec](diagram-spec.md).

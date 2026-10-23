@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 > As of convex-hedge-strategy@168105a, 2026-10-07. Raw capture from a grilling session — staging, not canon.
 
 # Long-gamma research on SPXW 0DTE — decisions, plan, and what to teach

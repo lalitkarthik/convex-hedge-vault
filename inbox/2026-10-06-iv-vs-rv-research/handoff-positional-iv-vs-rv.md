@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Handoff — 2026-10-07 — positional IV vs RV (the "over weeks" view)
 
 Repo: `D:\Convex Hedge\Convex-Hedge-Trading-Engine` (GitHub `bilal-sagar-razak/Convex-Hedge-Trading-Engine`). Read its `CLAUDE.md` first; the user's feature loop (`~/.claude/skills/feature-loop/`) drives planning and builds, the repo's rules decide what lands. This file lives in the user's personal vault on purpose: the repo keeps hand-offs out, and the user asked for it not to be in the temp folder.

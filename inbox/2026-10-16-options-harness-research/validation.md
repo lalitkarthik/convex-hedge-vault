@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Validation: overfitting checks for options research and for autonomous agents
 
 > Lane `validation`, 2026-10-16. Raw research capture: staging, not fact. About 30 sources opened. AFML (López de Prado, 2018) was read from the extracted book text, chapters 3, 7, 11, 12, 14 and 15. "Read: part" means that I read the abstract and long extracts through a search tool, not the whole document.

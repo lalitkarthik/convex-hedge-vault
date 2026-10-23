@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Realised volatility estimators: formulas, sources and a numerical check
 
 Research note for the implied-versus-realised volatility feature. Written 2026-10-06.

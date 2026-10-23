@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Brief: new hypotheses for SPXW same-day options
 
 Shared brief for three research workers, 2026-10-08. Each worker has one lane (given in its own prompt) and writes one report into this folder. A fourth worker merges the reports afterwards.

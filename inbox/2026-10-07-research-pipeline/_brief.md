@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Brief: how practitioners research trading strategies
 
 Shared brief for six research workers, 2026-10-07. Each worker has one lane (given in its own prompt) and writes one report into this folder.

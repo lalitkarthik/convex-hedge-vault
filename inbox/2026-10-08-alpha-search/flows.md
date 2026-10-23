@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 > Lane flows, 36 sources read, 7 cards, 2026-10-08
 
 ## Summary

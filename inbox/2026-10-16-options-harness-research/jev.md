@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Jev: a decision model inside the harness
 
 > **Corrected by [jev-deep-dive.md](jev-deep-dive.md)** (same day, more sources). Key corrections: the limit is 64k tokens per request and 32k per question; the "harness repo" is an unofficial community repo, not TypeSafe's; the jev-harness A/B is mixed (an earlier 30-task run favoured Jev, 25 vs 22); injection recall is 78–85% on harder sets, so 100% holds only on InjecAgent; signups are open with no waitlist; `jev-1.14.0` exists and accepts experimental images. Read the deep dive for the harness design.

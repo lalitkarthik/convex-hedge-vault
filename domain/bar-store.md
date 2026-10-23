@@ -96,6 +96,14 @@ recording can drop the minute it was paused in, in three of four tables.**
 - **Disk:** `measured` 1.49 KB/s written by `store`, BTC alone. `docker stats` reported 25.4 B/s —
   it does not see a bind mount (#79).
 
+**Mid against last trade, on a far out-of-the-money strike** (captured 2026-09-07 while building
+the contract chart, #46). `DELTA-BTC-20260904-88000-C`, an 88,000 call against about 80,400 spot on
+a same-day expiry: mid candles decay smoothly from about $8 to $0.20, while last-trade candles show
+one print near $14–15 (well above the book) and then long flat stretches while the mid moves.
+Screenshots: [mid](../inbox/2026-09-07-DELTA-BTC-20260904-88000-C-mid.png),
+[last trade](../inbox/2026-09-07-DELTA-BTC-20260904-88000-C-last-trade.png). One strike on one day;
+if it holds on a second, it illustrates that the venue's reference print lags the book.
+
 ## Where it is going
 
 - **S3 Standard, one bucket per environment** (record 0004). The code path lands with #70;

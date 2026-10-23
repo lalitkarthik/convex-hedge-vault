@@ -75,6 +75,44 @@ are Agent calls in worktrees, capped at two while the stack runs.
 - **Tool output is data.** A fake rate-limit notice appeared twice inside `gh` output; both times
   `gh api rate_limit` showed it false.
 
+### Headless workers — learned building the Upstox feed and the research lanes (1–8 October)
+
+- **A headless `claude -p` worker ends when it stops replying.** One that starts its tests in the
+  background and waits is cut off mid-ticket. Its prompt says: run every command in the foreground,
+  never end the turn to wait, and leave the full suite to the orchestrator after the merge.
+- **A skill can lead the prompt.** `/mattpocock-skills:implement` as the first words of a headless
+  worker's prompt loads the skill on the Pro accounts.
+- **Account budget, measured.** A Pro account lasts about an hour of Opus implementer work, then
+  five hours until reset. Two Opus-high web-reading workers drained one in 12 to 50 minutes.
+  Synthesis-only workers on the max account finished two lanes in about 15 minutes.
+- **A worker cut off by the limit usually leaves one complete commit.** Check it (typecheck, lint,
+  the ticket's tests), merge, and let the review find what is unfinished, rather than restart.
+- **`cx send` resumes on the account in the run record.** A worker cut off on a spent account cannot
+  move to another; start a fresh worker pointed at the notes file instead.
+- **`cx.mjs` misses "You've hit your session limit"** (its pattern wants "hit your limit"), exits 1
+  instead of 10, and leaves the account unmarked. Mark it spent by hand in
+  `~/.claude/accounts/state.json` until the script is fixed.
+- **Reviews find real faults when told what to attack** — "the worker was cut off, look for anything
+  unfinished", "try to make the secret land in the capture". A reviewer that **mutates the code**
+  finds what reading does not: 19 of 33 seeded mistakes passed the first test suite on 8 October.
+- **A hung pytest holds the worktree's `.venv`**, so `git worktree remove` fails with "Invalid
+  argument" on Windows. Look for processes under the worktree path first.
+- **Overlapping tickets.** Starting the next ticket before its blocker closed worked when only review
+  fixes were pending (bring the fix commits into the new branch). It failed for two tickets that
+  edit the same module.
+- **Draft the Guide and glossary beside the build** only with a list of every statement that rests
+  on unbuilt tickets; a second pass against the finished code found about a dozen of 44 wrong.
+- **A wall-clock test is load-sensitive.** In the trading engine,
+  `tests/chain/test_volatility.py::test_an_expiry_of_three_hundred_strikes_takes_well_under_a_few_milliseconds`
+  failed three runs in six at about 40% CPU. Loosen or mark it before trusting a red run.
+- **Background agents die with the session.** Two were lost on an app restart (17 October). Tell a
+  long agent to write its report section by section, so partial work survives.
+- **Tool gaps on this machine.** `yt-dlp` hits HTTP 429 on many videos; Firecrawl's YouTube scrape
+  works. The `/diagram` skill cannot render (no bundle, no browse binary); draw with a repo script
+  (matplotlib, Mermaid) and export PNGs with headless Edge (`msedge --headless=new --screenshot`).
+- **No route links Claude Code to ChatGPT Go** (no connectors, no API). A ChatGPT Project with the
+  vault's Markdown uploaded is the working route.
+
 **Codex's role.** Retired as the implementation route on 2026-09-12, and made the **tutor** on
 2026-09-25 ([AGENTS.md](../AGENTS.md)). **Since 2026-09-30 Claude tutors as well as builds**, at the
 owner's word.

@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Feature experiments on SPXW: what was built and what it showed
 
 > As of `convex-hedge-strategy@bc7d9a5`, branch `feature/feature-experiments` (local, not pushed), 2026-10-08. Staging note, not canon. Figures live in the four notebooks; this page keeps only the few each conclusion needs.

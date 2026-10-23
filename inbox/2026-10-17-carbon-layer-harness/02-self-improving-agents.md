@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # 02 — Self-Improving AI Agents: Evolving the Harness, Not the Model
 
 - **Title:** Self-Improving AI Agents | Evolving the Harness, Not the Model

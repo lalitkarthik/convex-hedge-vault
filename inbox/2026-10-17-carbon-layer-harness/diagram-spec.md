@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Harness engineering — master diagram spec (Excalidraw-ready)
 
 The master architecture that the series builds across videos 01–11, with the IBM talk (12) folded in where it agrees. Draw it as five horizontal bands, top to bottom. Each node has an id, a name, what it does, its inputs and outputs, and its source videos. Edges follow, grouped by layer. Terms are in [glossary](glossary.md); the reasons behind each box are in [principles](principles.md).

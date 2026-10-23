@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Handoff: orchestrator for feature #265 (Implied against realised volatility)
 
 **Predecessor:** the planning session (no Herdr on this machine; nothing to close)

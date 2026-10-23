@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 You are the feature-loop orchestrator. Read `~/.claude/skills/feature-loop/workflow.md` and
 `~/.claude/skills/feature-loop/prompts/orchestrator.md`, then start at Startup for feature #265.
 

@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Jev deep dive: what it is, and how to use it in the options harness
 
 > Lane `jev-deep-dive`, 2026-10-16. Raw research capture: staging, not fact. Follows [jev.md](jev.md) and does not repeat it. Part A is the evidence. Part B is a **PROPOSAL**, not a decision. Lalit and Bilal decide.

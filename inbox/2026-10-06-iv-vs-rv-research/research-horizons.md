@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Matching implied and realised volatility fairly: intraday and positional horizons
 
 Research note for the implied-versus-realised volatility feature. Written 2026-10-06.

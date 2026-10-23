@@ -9,7 +9,9 @@ Sourced from the terminal itself, [platform-map](domain/platform-map.md). Terms 
 ## The terminal
 
 **Terminal**:
-`app.convexhedge.ai`. An options backtesting terminal over historical index option data. It replays
+`research.convexhedge.ai` (external beta users) and `lab.convexhedge.ai` (in-house); it was
+`app.convexhedge.ai` until 2026-10-11, when that address passed to the trading engine. The code is the
+`Backtest-Engine` repo. An options backtesting terminal over historical index option data. It replays
 the past minute by minute; it does not route orders.
 
 **Snapshot**: (inferred)
@@ -147,13 +149,18 @@ Each engine's terms live in their own note. Their canon is each repo's own `CONT
   [glossary-trading-engine](domain/glossary-trading-engine.md).
 - **The feed engine** (`delta-exchange-payoff`, the earlier engine):
   [glossary-feed-engine](domain/glossary-feed-engine.md).
+- **Research and the harness** (feature tests, volatility research, `options-research-harness`):
+  [glossary-research](domain/glossary-research.md).
 
 ## Collisions between them
 
 Recorded rather than reconciled, as [platform-map](domain/platform-map.md) does for `payoff-project`.
 "The feed engine" is `delta-exchange-payoff`; "the trading engine" is the current one.
 
-- **Backtest engine.** The trading engine's name for the terminal. Same program, `app.convexhedge.ai`.
+- **Backtest engine.** The trading engine's name for the terminal. Same program: the `Backtest-Engine`
+  repo, at `research.` and `lab.convexhedge.ai` (`app.` until 2026-10-11).
+- **`app.convexhedge.ai`.** The terminal until 2026-10-11; the trading engine since. Read the date
+  before trusting any note that names it.
 - **Tag.** On the terminal, a leg's exit reason. In the feed engine, a number's provenance.
 - **Instance.** On the terminal, half of the Group / Instance leg identifier. In the feed engine, an EC2
   machine. In the trading engine, an **engine instance** (Redis plus every part, from one settings file)

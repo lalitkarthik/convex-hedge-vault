@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # 04 — AI Agent Memory Masterclass
 
 - **Title:** AI Agent Memory Masterclass | How Agents Remember and Forget

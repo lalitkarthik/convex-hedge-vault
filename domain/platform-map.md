@@ -1,9 +1,19 @@
-# Platform map — app.convexhedge.ai
+# Platform map — the terminal
+
+**Where it lives.** Until 2026-10-11 the terminal was `app.convexhedge.ai`. Since then the copy that
+external beta users sign in to is **`research.convexhedge.ai`**, the in-house copy is
+**`lab.convexhedge.ai`**, and `app.convexhedge.ai` belongs to the [trading engine](trading-engine.md).
+The code is Bilal's `Backtest-Engine` repo (engine, dashboard and Echo); its front doors are
+`Backtest-Engine/PROJECT.md` and `Backtest-Engine/CONTEXT.md`. See [backtest-lab](backtest-lab.md).
 
 The Convex Hedge terminal, surface by surface. A map of what exists and what each screen is *for*.
 Depth notes live in their own files; this one never grows into them.
 
 Mapped 2026-08-21 against **v0.1 · Phase 1**. Access is Google SSO, authorised accounts only.
+
+Seen again on 2026-09-26 at `lab.convexhedge.ai`: still v0.1 · Phase 1, and the sidebar now lists
+**seven** destinations — Backtest Results, Portfolio, Strategies, Option Chain, Structure Chain,
+Volatility, Open Interest. Portfolio existed in August but was not in the navigation.
 
 ## What the product is
 
@@ -17,7 +27,7 @@ The spine of the whole terminal is a **minute-level time machine**. Every resear
 asset, a date, and a time, and exposes a minute slider (`208/414`) with prev/next-minute steps. You
 are always looking at one reconstructed snapshot of the option chain, and you scrub it.
 
-## The six surfaces
+## The surfaces — six in August, seven by 26 September
 
 | Nav | Path | What it is | Depth note |
 |---|---|---|---|
@@ -27,6 +37,7 @@ are always looking at one reconstructed snapshot of the option chain, and you sc
 | STR | `/structure-chain` | Multi-leg structures priced across a whole grid at once | [structure-chain](structure-chain.md) |
 | VOL | `/iv-surface` | Volatility: smile, and implied vs realised | [volatility](volatility.md) |
 | — | `/oi` | Open interest and gamma exposure | [open-interest](open-interest.md) |
+| — | `/portfolio` | Finished runs combined into one book (in the sidebar since 2026-09-26) | [portfolio](portfolio.md) |
 
 ### `/backtest` — runs and results
 
@@ -145,6 +156,7 @@ differently, both are recorded rather than reconciled:
   `delta-exchange-payoff/docs/design/events.md`. Different system from this map — theirs is a
   backtesting terminal, ours is a live feed — but the vocabulary for a chain, a leg and an expiry
   is shared. Where words collide, [GLOSSARY](../GLOSSARY.md) lists both meanings.
-- Backtest engine truth, once the repo lands — _access pending._
+- Backtest engine truth: `Backtest-Engine/PROJECT.md` (what it is), `Backtest-Engine/GAPS.md` (known
+  problems), `Backtest-Engine/wiki/00-overview.md`, and `Backtest-Engine/Convex-Hedge/` (its docs vault).
 - Payoff and Greek maths, reimplemented independently: `payoff-project/docs/calculations.md`
 - Vocabulary for that project: `payoff-project/CONTEXT.md`

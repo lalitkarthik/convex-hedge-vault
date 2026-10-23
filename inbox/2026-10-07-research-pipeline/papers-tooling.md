@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 > Lane papers-tooling, 39 sources read, 2026-10-07
 
 # Papers and tooling: how practitioners research a strategy

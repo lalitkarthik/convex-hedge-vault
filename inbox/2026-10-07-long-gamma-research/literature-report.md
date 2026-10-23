@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # Long-gamma research brief: SPXW 0DTE, minute quotes, 127 days
 
 ## 1. Method

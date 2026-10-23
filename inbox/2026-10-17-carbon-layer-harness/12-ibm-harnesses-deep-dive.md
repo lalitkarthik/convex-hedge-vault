@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # 12 — Harnesses in AI: A Deep Dive (Tejas Kumar, IBM)
 
 - **Title:** Harnesses in AI: A Deep Dive – Tejas Kumar, IBM

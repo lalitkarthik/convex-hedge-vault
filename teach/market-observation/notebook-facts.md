@@ -1,4 +1,5 @@
-> As of convex-hedge-strategy@4bcf653, 2026-10-05
+> As of convex-hedge-strategy@292f816, 2026-10-23 (re-checked: the study guides and the smile notebook
+> are unchanged since `4bcf653`; the descriptive notebook only adds one 249-day table)
 
 # Notebook facts — the ledger
 

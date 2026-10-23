@@ -1,3 +1,4 @@
+promoted: 2026-10-23
 # 06 — Context Management Masterclass
 
 - **Title:** Context Management masterclass

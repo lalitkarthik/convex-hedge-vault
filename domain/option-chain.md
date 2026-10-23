@@ -1,7 +1,7 @@
 # Option chain — `/chain`
 
 Depth note. One reconstructed snapshot of every option quoted for one expiry, at one minute.
-The screen the rest of the terminal is built out of: [structure-chain](platform-map.md) prices
+The screen the rest of the terminal is built out of: [structure-chain](structure-chain.md) prices
 combinations of these rows, and backtests fill orders against them.
 
 Surface overview in [platform-map](platform-map.md). Vocabulary in [GLOSSARY.md](../GLOSSARY.md).
@@ -132,7 +132,36 @@ there is priced off a number nobody solved.
 **Whole rows can be one-sided.** At NIFTY 26,000 on the December expiry the put has full data and
 the call side is empty — that call never traded.
 
+**The price column changed on the SPX chain.** By 2026-09-30 the lab's SPX chain and Structure
+Chain label prices **MID ($)**, the bid/ask midpoint, not LTP. Checked on SPX 25-Sep-2026 09:31: the
+7,710 straddle cell −25.90 equals the 7,710 call mid 13.80 plus the put mid 12.10. The LTP caveats
+above still describe the NIFTY chain as mapped in August.
+
+**SPX shows OI and VOL as 0 on every row** (25-Sep-2026), so liquidity cannot be judged from the
+SPX chain.
+
+**The late-session forward can jump.** At 15:51 on the 0DTE expiry the forward read 7,751.23 with
+spot 7,740.75. The likely cause is stale or wide quotes feeding the parity fit. A rule that acts on
+that forward acts on a bad mark.
+
 Related, in the other repo: `payoff-project/docs/data-quality.md`.
+
+## Same-day expiries (SPXW, read 2026-09-30)
+
+**`DTE (NOW)` counts trading-day fractions.** It shows 0.96 d at 09:31 and 0.00 at 15:59 on a 0DTE
+expiry. With it, the rule of thumb for an ATM straddle reproduced the screen:
+
+- straddle ≈ 0.8 × F × IV × √(DTE / 252)
+- 25.86 against 25.90 at 09:31; 16.4 against about 16 at 13:16
+
+**On 0DTE, THETA equals the whole time value left.** The 7,710 call shows theta −12.10, which is its
+mid 13.80 less 1.70 intrinsic against the forward. The column reports one day of decay, and on the
+last day that decay is capped at expiry.
+
+**An ATM straddle's delta is near zero, not exactly zero.** The call and put deltas differ by
+exactly 1, so the straddle's delta is 2Δ(call) − 1. That is zero only where the call delta is
+exactly 0.5, which under lognormal pricing sits slightly away from the forward. NIFTY 13-APR at
+24,050 showed +0.515 / −0.485, a straddle delta of +0.030.
 
 ## Open questions
 
@@ -144,3 +173,6 @@ Related, in the other repo: `payoff-project/docs/data-quality.md`.
    something dated exists.
 4. What is `VOL` as a column — session volume, presumably, but confirm against OI.
 5. Are the 414 minutes every traded minute, or a fixed grid with gaps filled?
+6. A study session on 2026-09-27 read the 13-APR forward at 10:30:59 as **24,066.72** against spot
+   24,019.20; this note records **24,021.96** for 10:30. Did the minute, the dataset or the forward
+   calculation change? A 47.52-point gap at 1.8 days is itself worth checking against data quality.

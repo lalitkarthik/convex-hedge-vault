@@ -96,6 +96,13 @@ next person stops looking.
 | Audit one file's tests by the five checks | 30 minutes |
 | Fix a defect the checks find | an afternoon, if it is real |
 
+## Later evidence — 2026-10-08
+
+Check 3, made automatic. On the feature-experiments package (`convex-hedge-strategy`, local branch
+`feature/feature-experiments`), a reviewer agent seeded 33 deliberate mistakes into the code. **19
+got past the first test suite.** A test was added for each. Mutation by an agent finds what reading
+the tests does not — the same lesson as check 3, at the scale of a whole package.
+
 ## Next action
 
 Open the test file you touched most recently. Search it for `take(`, `sleep(`, and any test
