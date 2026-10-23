@@ -34,10 +34,11 @@ of October, start at [options-research-harness](domain/options-research-harness.
   page); the senior should be told.
 - Is `convex-hedge-strategy` allowed to hold Databento files on GitHub `main`? Its workflow page
   says `data/` is never committed.
-- **This vault is a public GitHub repo** (`lalitkarthik/convex-hedge-vault`). It holds notes about
-  company repos. Confirm with the senior that this is acceptable, or make the repo private.
 
 ## Traps
+
+- **This vault is public, by the owner's choice (2026-10-23).** Before each push, git-ignore company
+  results, detailed code facts and pages built from licensed data; they stay on disk only.
 
 - **"jev"** is TypeSafe AI's decision model, not "dev-style harness engineering". Ask when a term is
   unfamiliar.

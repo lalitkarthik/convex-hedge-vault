@@ -131,7 +131,10 @@ rows went into [design-decisions](domain/design-decisions.md).
 - **This vault is a public GitHub repo.** The three 8 October findings pages and the 17 October
   harness planning facts are git-ignored for that reason.
 
-**Open:** whether the vault should be private, given how much it says about company repos; the
+**Decided (owner, same day):** the vault stays public. The git-ignore rule is enough: company results,
+detailed code facts and pages built from licensed data stay on disk only.
+
+**Open:** the
 30 September asks are not yet traced into a domain note; the drift lists in
 [trading-engine](domain/trading-engine.md) and [engine-strategies](domain/engine-strategies.md) are for
 the engine's owners.
