@@ -37,8 +37,8 @@ of October, start at [options-research-harness](domain/options-research-harness.
 
 ## Traps
 
-- **This vault is public, by the owner's choice (2026-10-23).** Before each push, git-ignore company
-  results, detailed code facts and pages built from licensed data; they stay on disk only.
+- **This vault is public for now; the owner will make it private later (2026-10-23).** Everything is
+  pushed except `sources/`.
 - **"jev"** is TypeSafe AI's decision model, not "dev-style harness engineering". Ask when a term is
   unfamiliar.
 - **Run Databento downloads from `D:\Convex Hedge\convex-hedge-strategy`**, where `.env` lives, not
@@ -47,6 +47,6 @@ of October, start at [options-research-harness](domain/options-research-harness.
 - **The senior's edge dashboards default to a look-ahead regime** ("dominant regime" uses the
   outcome week). Reuse their charts, never that label.
 - **Page builders for the 8 October findings pages live only in
-  `%TEMP%\spxw-feature-experiments-kit\`**, and the pages themselves are git-ignored. Copy the kit
+  `%TEMP%\spxw-feature-experiments-kit\`**; the pages themselves are in git. Copy the kit
   somewhere durable before `%TEMP%` is cleaned.
 - Agent and tooling traps are in [team-workflow](domain/team-workflow.md), under *Headless workers*.

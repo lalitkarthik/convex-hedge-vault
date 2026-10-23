@@ -111,7 +111,7 @@ Read these to learn how a decision was reached; cite the notes above for what st
 
 ## Capture — raw record
 
-- [inbox/](inbox/) — daily capture, staging only. Every file processed by 2026-10-23 carries a `promoted:` line. Two kinds stay on disk only (git-ignored, the repo is public): the 8 October findings pages and the 17 October harness planning facts
+- [inbox/](inbox/) — daily capture, staging only. Every file processed by 2026-10-23 carries a `promoted:` line.
 - [meetings/](meetings/) — onboarding and daily meetings, 17–24 August 2026, promoted into [product-direction](domain/product-direction.md) and [team-workflow](domain/team-workflow.md); the design review of **20 September** and the meeting of **25 September**, their asks traced in [engine-lineage](domain/engine-lineage.md); the **30 September** asks recorded in the [session log](session-log-2026-09-24-to-10-01.md) and not yet traced; the **7 October** meet written up in [meeting.md](inbox/2026-10-07-feature-testing/meeting.md) and promoted into [feature-testing](domain/feature-testing.md)
 - [sources/](sources/) — their documents, kept off GitHub
 

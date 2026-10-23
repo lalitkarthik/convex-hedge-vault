@@ -131,8 +131,8 @@ rows went into [design-decisions](domain/design-decisions.md).
 - **This vault is a public GitHub repo.** The three 8 October findings pages and the 17 October
   harness planning facts are git-ignored for that reason.
 
-**Decided (owner, same day):** the vault stays public. The git-ignore rule is enough: company results,
-detailed code facts and pages built from licensed data stay on disk only.
+**Decided (owner, same day):** push everything, the findings pages and the planning facts included;
+the owner will make the vault private later. Only `sources/` stays git-ignored, as CLAUDE.md says.
 
 **Open:** the
 30 September asks are not yet traced into a domain note; the drift lists in
