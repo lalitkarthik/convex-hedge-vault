@@ -39,7 +39,6 @@ of October, start at [options-research-harness](domain/options-research-harness.
 
 - **This vault is public, by the owner's choice (2026-10-23).** Before each push, git-ignore company
   results, detailed code facts and pages built from licensed data; they stay on disk only.
-
 - **"jev"** is TypeSafe AI's decision model, not "dev-style harness engineering". Ask when a term is
   unfamiliar.
 - **Run Databento downloads from `D:\Convex Hedge\convex-hedge-strategy`**, where `.env` lives, not
